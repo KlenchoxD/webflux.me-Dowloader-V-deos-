@@ -5,13 +5,11 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.text.TextUtils
-import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import com.yausername.youtubedl_android.YoutubeDL
 
 class VDownHomeActivity : AppCompatActivity() {
 
@@ -24,7 +22,6 @@ class VDownHomeActivity : AppCompatActivity() {
     private lateinit var downloadBtn: Button
     private lateinit var navHome: LinearLayout
     private lateinit var navLibrary: LinearLayout
-    private lateinit var navPro: LinearLayout
     private lateinit var navMore: LinearLayout
     private lateinit var chipYoutube: LinearLayout
     private lateinit var chipInstagram: LinearLayout
@@ -51,7 +48,6 @@ class VDownHomeActivity : AppCompatActivity() {
         downloadBtn = findViewById(R.id.vdown_download_btn)
         navHome = findViewById(R.id.vdown_nav_home)
         navLibrary = findViewById(R.id.vdown_nav_library)
-        navPro = findViewById(R.id.vdown_nav_pro)
         navMore = findViewById(R.id.vdown_nav_more)
         chipYoutube = findViewById(R.id.vdown_chip_youtube)
         chipInstagram = findViewById(R.id.vdown_chip_instagram)
@@ -94,19 +90,15 @@ class VDownHomeActivity : AppCompatActivity() {
         navLibrary.setOnClickListener {
             startActivity(Intent(this, org.schabi.newpipe.download.DownloadActivity::class.java))
         }
-        navPro.setOnClickListener {
-            Toast.makeText(this, "VDown Pro - Coming soon", Toast.LENGTH_SHORT).show()
-        }
         navMore.setOnClickListener {
             startActivity(Intent(this, org.schabi.newpipe.settings.SettingsActivity::class.java))
         }
     }
 
-    /** Route every URL through yt-dlp (YouTube, Instagram, TikTok, 1000+ sites) */
+    /** Show format selector, then route URL through yt-dlp (YouTube, Instagram, TikTok, 1000+ sites) */
     private fun routeDownload(url: String) {
-        val intent = Intent(this, VDownloadActivity::class.java)
-        intent.putExtra(VDownloadActivity.EXTRA_URL, url)
-        startActivity(intent)
+        val sheet = org.schabi.newpipe.download.FormatSelectorBottomSheet.newInstance(url)
+        sheet.show(supportFragmentManager, "format_selector")
     }
 
     private fun handleIncomingIntent(intent: Intent?) {

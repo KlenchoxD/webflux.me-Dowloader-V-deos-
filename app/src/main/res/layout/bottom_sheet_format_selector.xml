@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@drawable/vdown_bottom_sheet_bg"
+    android:paddingBottom="16dp">
+
+    <!-- Handle bar -->
+    <View
+        android:layout_width="40dp"
+        android:layout_height="4dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="12dp"
+        android:layout_marginBottom="8dp"
+        android:background="#44FFFFFF"/>
+
+    <!-- Title -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="16dp"
+        android:text="Download as:"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#E8FFFFFF"/>
+
+    <!-- URL preview -->
+    <TextView
+        android:id="@+id/bs_url_preview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
+        android:paddingBottom="16dp"
+        android:textSize="11sp"
+        android:textColor="#66FFFFFF"
+        android:maxLines="1"
+        android:ellipsize="middle"/>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1AFFFFFF"
+        android:layout_marginBottom="8dp"/>
+
+    <!-- Music Section Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="12dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_music_note"
+            android:tint="#E60A15"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Music"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#E60A15"
+            android:letterSpacing="0.05"/>
+
+    </LinearLayout>
+
+    <!-- M4A option -->
+    <LinearLayout
+        android:id="@+id/bs_option_m4a"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:background="?android:attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_music_note"
+            android:tint="#E60A15"
+            android:padding="4dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="M4A"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#E8FFFFFF"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Fast · Best quality"
+                android:textSize="11sp"
+                android:textColor="#80FFFFFF"/>
+
+        </LinearLayout>
+
+        <RadioButton
+            android:id="@+id/bs_radio_m4a"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="#E60A15"
+            android:clickable="false"
+            android:focusable="false"
+            android:checked="false"/>
+
+    </LinearLayout>
+
+    <!-- MP3 option -->
+    <LinearLayout
+        android:id="@+id/bs_option_mp3"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:background="?android:attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_music_note"
+            android:tint="#E60A15"
+            android:padding="4dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MP3"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#E8FFFFFF"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="320kbps · Classic"
+                android:textSize="11sp"
+                android:textColor="#80FFFFFF"/>
+
+        </LinearLayout>
+
+        <RadioButton
+            android:id="@+id/bs_radio_mp3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="#E60A15"
+            android:clickable="false"
+            android:focusable="false"
+            android:checked="false"/>
+
+    </LinearLayout>
+
+    <!-- Divider -->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#1AFFFFFF"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="0dp"/>
+
+    <!-- Video Section Header -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:paddingVertical="12dp">
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/ic_play_arrow"
+            android:tint="#E60A15"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="Video"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            android:textColor="#E60A15"
+            android:letterSpacing="0.05"/>
+
+    </LinearLayout>
+
+    <!-- 360p option -->
+    <LinearLayout
+        android:id="@+id/bs_option_360p"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:background="?android:attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_play_arrow"
+            android:tint="#E60A15"
+            android:padding="4dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="360p"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#E8FFFFFF"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Small · Fast download"
+                android:textSize="11sp"
+                android:textColor="#80FFFFFF"/>
+
+        </LinearLayout>
+
+        <RadioButton
+            android:id="@+id/bs_radio_360p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="#E60A15"
+            android:clickable="false"
+            android:focusable="false"
+            android:checked="false"/>
+
+    </LinearLayout>
+
+    <!-- 720p option -->
+    <LinearLayout
+        android:id="@+id/bs_option_720p"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:background="?android:attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_play_arrow"
+            android:tint="#E60A15"
+            android:padding="4dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="720p"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#E8FFFFFF"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HD · Recommended"
+                android:textSize="11sp"
+                android:textColor="#80FFFFFF"/>
+
+        </LinearLayout>
+
+        <RadioButton
+            android:id="@+id/bs_radio_720p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="#E60A15"
+            android:clickable="false"
+            android:focusable="false"
+            android:checked="true"/>
+
+    </LinearLayout>
+
+    <!-- 1080p option -->
+    <LinearLayout
+        android:id="@+id/bs_option_1080p"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="20dp"
+        android:background="?android:attr/selectableItemBackground">
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:src="@drawable/ic_play_arrow"
+            android:tint="#E60A15"
+            android:padding="4dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1080p"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#E8FFFFFF"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Full HD · Best video"
+                android:textSize="11sp"
+                android:textColor="#80FFFFFF"/>
+
+        </LinearLayout>
+
+        <RadioButton
+            android:id="@+id/bs_radio_1080p"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:buttonTint="#E60A15"
+            android:clickable="false"
+            android:focusable="false"
+            android:checked="false"/>
+
+    </LinearLayout>
+
+    <!-- Download Now Button -->
+    <Button
+        android:id="@+id/bs_download_btn"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="8dp"
+        android:text="Download Now"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:textColor="#FFFFFF"
+        android:background="@drawable/vdown_download_btn_bg"
+        android:elevation="0dp"
+        android:stateListAnimator="@null"/>
+
+</LinearLayout>
