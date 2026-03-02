@@ -27,8 +27,9 @@ class VDownloadActivity : AppCompatActivity() {
 
     companion object {
         const val EXTRA_URL = "extra_url"
+        const val EXTRA_FORMAT_FLAGS = "extra_format_flags"
         private const val TAG = "VDownloadActivity"
-        private const val PROCESS_ID = "vdown_dl"
+        private const val PROCESS_ID = "maybox_dl"
     }
 
     private lateinit var tvUrl: TextView
@@ -103,13 +104,28 @@ class VDownloadActivity : AppCompatActivity() {
         downloading = true
 
         val downloadDir = File(
-            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "VDown"
+            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "MayBox"
         )
         if (!downloadDir.exists()) downloadDir.mkdirs()
 
+        val formatFlags = intent.getStringArrayListExtra(EXTRA_FORMAT_FLAGS)
+
         val request = YoutubeDLRequest(url).apply {
             addOption("-o", "${downloadDir.absolutePath}/%(title)s.%(ext)s")
-            addOption("-f", "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best")
+            if (formatFlags != null && formatFlags.isNotEmpty()) {
+                val iter = formatFlags.listIterator()
+                while (iter.hasNext()) {
+                    val flag = iter.next()
+                    val nextIdx = iter.nextIndex()
+                    if (nextIdx < formatFlags.size && !formatFlags[nextIdx].startsWith("-")) {
+                        addOption(flag, iter.next())
+                    } else {
+                        addOption(flag)
+                    }
+                }
+            } else {
+                addOption("-f", "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best")
+            }
             addOption("--no-mtime")
             addOption("--no-playlist")
         }
@@ -134,7 +150,7 @@ class VDownloadActivity : AppCompatActivity() {
                 btnCancel.visibility = View.GONE
                 btnDone.visibility = View.VISIBLE
                 scanDownloadFolder(downloadDir)
-                Toast.makeText(this, "Saved to Downloads/VDown", Toast.LENGTH_LONG).show()
+                Toast.makeText(this, "Saved to Downloads/MayBox", Toast.LENGTH_LONG).show()
             }, { error ->
                 downloading = false
                 tvStatus.text = "Error: ${error.message}"

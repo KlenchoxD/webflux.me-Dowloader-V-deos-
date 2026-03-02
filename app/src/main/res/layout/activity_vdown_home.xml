@@ -46,7 +46,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:layout_marginStart="12dp"
-                    android:text="VDown"
+                    android:text="MayBox"
                     android:textSize="24sp"
                     android:textStyle="bold"
                     android:textColor="#E60A15"
@@ -166,6 +166,19 @@
                 android:drawableTint="#FFFFFF"
                 android:elevation="0dp"
                 android:stateListAnimator="@null"/>
+
+            <!-- Supported Platforms Label -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="8dp"
+                android:text="Supported Platforms"
+                android:textSize="12sp"
+                android:textStyle="bold"
+                android:textColor="#80FFFFFF"
+                android:letterSpacing="0.1"/>
 
             <!-- Platform Chips -->
             <HorizontalScrollView
@@ -290,6 +303,52 @@
 
             </HorizontalScrollView>
 
+            <!-- Recent Downloads Section -->
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="8dp"
+                android:text="Recent Downloads"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                android:textColor="#E8FFFFFF"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/vdown_glass_card"
+                android:padding="24dp"
+                android:gravity="center">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_history"
+                    android:tint="#44FFFFFF"
+                    android:layout_marginBottom="12dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="No recent downloads"
+                    android:textSize="14sp"
+                    android:textColor="#80FFFFFF"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Your download history will appear here"
+                    android:textSize="12sp"
+                    android:textColor="#44FFFFFF"/>
+
+            </LinearLayout>
+
         </LinearLayout>
 
     </androidx.core.widget.NestedScrollView>
@@ -368,35 +427,7 @@
                 android:letterSpacing="0.12"/>
         </LinearLayout>
 
-        <!-- Pro Tab -->
-        <LinearLayout
-            android:id="@+id/vdown_nav_pro"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center">
-            <FrameLayout
-                android:layout_width="44dp"
-                android:layout_height="44dp"
-                android:layout_gravity="center">
-                <ImageView
-                    android:layout_width="22dp"
-                    android:layout_height="22dp"
-                    android:layout_gravity="center"
-                    android:src="@drawable/ic_star_border_white_24dp"
-                    android:tint="#44FFFFFF"/>
-            </FrameLayout>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="PRO"
-                android:textSize="9sp"
-                android:textStyle="bold"
-                android:textColor="#44FFFFFF"
-                android:letterSpacing="0.12"/>
-        </LinearLayout>
+        <!-- Pro Tab - removed -->
 
         <!-- More Tab -->
         <LinearLayout

@@ -33,7 +33,7 @@ configure<ApplicationExtension> {
     namespace = "org.schabi.newpipe"
     defaultConfig {
         applicationId = "org.schabi.newpipe"
-        resValue("string", "app_name", "VDown")
+        resValue("string", "app_name", "MayBox")
         minSdk = 24
         targetSdk = 35
         versionCode = System.getProperty("versionCodeOverride")?.toInt() ?: 1008
@@ -53,7 +53,7 @@ configure<ApplicationExtension> {
             if (normalizedWorkingBranch.isEmpty() || workingBranch in defaultBranches) {
                 // default values when branch name could not be determined or is master or dev
                 applicationIdSuffix = ".debug"
-                resValue("string", "app_name", "VDown Debug")
+                resValue("string", "app_name", "MayBox Debug")
             } else {
                 applicationIdSuffix = ".debug.$normalizedWorkingBranch"
                 resValue("string", "app_name", "NewPipe $workingBranch")
