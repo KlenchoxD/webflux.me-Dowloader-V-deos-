@@ -7,3 +7,5 @@ Perbaiki pemutaran ulang item antrian pertama saat pergantian pemain
 Tunggu lebih lama saat melakukan buffering selama streaming langsung sebelum gagal
 Perbaiki urutan hasil pencarian lokal
 Perbaiki bidang item kosong di antrian putar
+
+

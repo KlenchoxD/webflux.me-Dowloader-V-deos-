@@ -15,3 +15,5 @@ Opraveno
 • [YouTube] Oprava chybějících doporučených videí
 • Oprava pádů v Historii
 • Oprava časů v odpovědích
+
+

@@ -1,2 +1,4 @@
 # Risolto
 - Sistemato di nuovo un errore nella funzione di decifrazione.
+
+

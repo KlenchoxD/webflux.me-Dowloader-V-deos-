@@ -13,3 +13,5 @@ Javítások
 • [PeerTube] Feltöltő és alcsatorna avatárok felcserélésre kerültek
 
 és sok más
+
+

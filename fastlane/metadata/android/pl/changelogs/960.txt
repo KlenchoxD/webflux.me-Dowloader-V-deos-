@@ -2,3 +2,5 @@
 • Naprawiono parsowanie komentarzy z YouTube.
 • Naprawiono wyświetlaną nazwę usługi media.ccc.de.
 • Zaktualizowane tłumaczenia.
+
+

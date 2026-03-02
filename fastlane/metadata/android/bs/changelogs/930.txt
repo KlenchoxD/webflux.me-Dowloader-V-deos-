@@ -18,3 +18,5 @@ Ispravljeno
 • Ispravljena vidljivost dugmeta za sortiranje grupe u fragmentu pretplata
 
 i više
+
+

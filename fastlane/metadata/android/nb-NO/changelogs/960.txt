@@ -2,3 +2,5 @@
 • Fikset tolking av YouTube-kommentarer.
 • Fikset visningsnavn for media.ccc.de service.
 • Oppdaterte oversettelser.
+
+

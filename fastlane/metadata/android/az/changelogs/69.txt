@@ -16,3 +16,5 @@
 
  ### Məlum Xətalar 
 - Oxutma vəziyyəti Android P-də yadda saxlanıla bilməz
+
+

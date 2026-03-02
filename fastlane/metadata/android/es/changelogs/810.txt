@@ -17,3 +17,5 @@ Corregidos
 - [YouTube] Corregido el cambio a nulo que causaba NPE
 - [YouTube] Corregida la visualización de comentarios al abrir una url de invidio.us
 - [SoundCloud] Actualizado client_id
+
+

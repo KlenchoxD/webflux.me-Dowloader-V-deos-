@@ -30,3 +30,5 @@ public class ChannelInfoItemHolder extends ChannelMiniInfoItemHolder {
         super(infoItemBuilder, R.layout.list_channel_item, parent);
     }
 }
+
+

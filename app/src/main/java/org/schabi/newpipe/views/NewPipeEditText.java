@@ -44,3 +44,5 @@ public class NewPipeEditText extends AppCompatEditText {
         return super.onTextContextMenuItem(id);
     }
 }
+
+

@@ -22,3 +22,5 @@ Konpondua
 Garapena
 • ExoPlayer 2.10.8
 • Gradle 3.5.1 eta Kotlin onartu
+
+

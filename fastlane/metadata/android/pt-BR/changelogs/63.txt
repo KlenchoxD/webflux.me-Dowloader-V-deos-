@@ -6,3 +6,5 @@
 
 ### Corrigido
  - Downloader: corrige falha no carregamento de downloads inacabados de arquivos .giga #1407
+
+

@@ -15,3 +15,5 @@ Corretto
 • Corretto l'overlay su DeX/mouse
 • Consenti lettore in background senza flussi audio separati
 • Varie correzioni di YouTube e altro…
+
+

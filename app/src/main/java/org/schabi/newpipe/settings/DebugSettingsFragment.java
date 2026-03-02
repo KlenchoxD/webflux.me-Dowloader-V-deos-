@@ -100,3 +100,5 @@ public class DebugSettingsFragment extends BasePreferenceFragment {
         Intent getNewLeakDisplayActivityIntent();
     }
 }
+
+

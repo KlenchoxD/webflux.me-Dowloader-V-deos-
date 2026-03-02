@@ -5,3 +5,5 @@ Améliorations
 - Optimisation YouTube pour utiliser moins de données
 
 Plus de 15 bogues liés à YouTube ont été corrigés dans cette version.
+
+

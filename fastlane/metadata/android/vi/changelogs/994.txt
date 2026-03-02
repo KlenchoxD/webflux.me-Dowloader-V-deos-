@@ -13,3 +13,5 @@ Cải thiện
 • [PeerTube] Hình đại diện của người tải lên và kênh con đã bị hoán đổi
 
 và hơn thế nữa
+
+

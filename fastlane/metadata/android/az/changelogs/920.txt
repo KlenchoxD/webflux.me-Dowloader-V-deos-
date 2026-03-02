@@ -7,3 +7,5 @@ Təkmilləşdi
 
 • API 19-da qəzalara səbəb olan sabit səssiz düyməsi 
 • Uzun 1080p 60 kadr videoların endirilməsi düzəldildi
+
+

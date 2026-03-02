@@ -10,3 +10,5 @@
 - Crash fisso che si è verificato durante la rimozione di un flusso da una lista
 - [PeerTube] Flussi fissi correlati
 - [YouTube] Ricerca fissa di musica su YouTube
+
+

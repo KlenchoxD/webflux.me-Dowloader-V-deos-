@@ -142,3 +142,5 @@ NewPipe é Software Livre: Você pode usar, estudar compartilhamento e melhorá-
  Especificamente, você pode redistribuir e/ou modificá-lo sob os termos do
 [GNU General Public License](https://www.gnu.org/licenses/gpl.html) publicado pela Free Software Foundation, seja a versão 3 da Licença, ou
 (a sua opção) qualquer versão posterior.  
+
+

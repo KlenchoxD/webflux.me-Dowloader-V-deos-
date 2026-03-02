@@ -7,3 +7,5 @@ OBSERVERA: Denna version är förmodligen en bugfest, precis som den förra. Men
 
 #### Fixat
 * Popup-spelare krasch fixad #1874
+
+

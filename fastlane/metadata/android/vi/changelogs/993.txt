@@ -10,3 +10,5 @@ Cải tiến
 Đã sửa
 • Sửa lỗi mở URL trình duyệt, nội dung tải xuống và trình phát bên ngoài trên Android 11 trở lên
 • Sửa lỗi tương tác với toàn màn hình yêu cầu hai lần nhấn trên MIUI
+
+

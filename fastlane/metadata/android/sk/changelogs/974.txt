@@ -3,3 +3,5 @@ Hotfix
 • Fix YouTube comments extraction and crashes with disabled comments
 • Fix YouTube music search
 • Fix PeerTube livestreams
+
+

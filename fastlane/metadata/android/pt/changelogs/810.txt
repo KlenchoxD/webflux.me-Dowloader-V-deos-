@@ -17,3 +17,5 @@ Fixa
 - Ligar nulo fixo causando NPE
 - [YouTube] Comentários de visualização fixos ao abrir uma url invidio.us
 - ClientCloud] Client_id actualizado
+
+

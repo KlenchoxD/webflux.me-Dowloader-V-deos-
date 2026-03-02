@@ -13,3 +13,5 @@ Corrigido
 • [PeerTube] Avatares do carregador e do subcanal foram trocados
 
 e mais
+
+

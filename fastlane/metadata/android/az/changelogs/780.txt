@@ -10,3 +10,5 @@ Düzəltildi
 • [YouTube] Sabit 'java.lang.IllegalArgumentException #192
  • [YouTube] Sabit canlı yayımların işləməməsi TeamNewPipe/NewPipeExtractor#195-in işləməsi problemi
  • #52-də endirmə düzəlib
+
+

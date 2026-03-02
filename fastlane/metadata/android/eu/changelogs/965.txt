@@ -4,3 +4,5 @@ YouTubeko iruzkinak jasotzea konpondu da.
 YouTube URLetan /watch/, /v/ eta /w/ azpibideetarako laguntza gehitu da.
 SoundCloud bezeroaren IDaren eta geo-murriztutako edukiaren erauzketa konpondu da.
 Iparraldeko kurduera lokalizazioa gehitu da.
+
+

@@ -1,1 +1,3 @@
 Opgelost: Database migratie verholpen waardoor NewPipe in sommige zeldzame gevallen niet kon starten.
+
+

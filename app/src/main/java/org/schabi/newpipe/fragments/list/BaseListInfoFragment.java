@@ -289,3 +289,5 @@ public abstract class BaseListInfoFragment<I extends InfoItem, L extends ListInf
         }
     }
 }
+
+

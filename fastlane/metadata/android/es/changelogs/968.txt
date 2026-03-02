@@ -5,3 +5,5 @@ Se ha pulido el tema blanco.
 Solapamiento corregido de fuentes al usar un tamaño mayor de fuente.
 Ausencia de video corregida en dispositivos Formuler y Zephier.
 Se han corregido varios fallos.
+
+

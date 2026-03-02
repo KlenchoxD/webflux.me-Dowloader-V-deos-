@@ -5,3 +5,5 @@ Sửa lỗi
 • Sửa lỗi các luồng liên quan bằng cách hỗ trợ tiếp nối mới của YouTube
 • Sửa lỗi video YouTube bị giới hạn độ tuổi
 • [Android TV] Sửa lỗi lớp phủ nổi bật của tiêu điểm vẫn còn
+
+

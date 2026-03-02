@@ -6,3 +6,5 @@
 • Miglioramenti e sistemazione di bug per i menu di condivisione
 • Con il video è a schermo intero, metti in pausa o riproduci premendo spazio
 • [media.ccc.de] Miglioramenti vari
+
+

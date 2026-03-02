@@ -11,3 +11,5 @@ Javítva
 • A listához kapcsolódó elemek felugró panelje
 • A listához való hozzáadás panel sorrendje
 • A lejátszólista könyvjelző elemének elrendezése
+
+

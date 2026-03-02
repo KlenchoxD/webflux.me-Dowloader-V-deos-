@@ -29,3 +29,5 @@
 - ispravljen izuzetak koji se ne prikazuje, a pokreće izvještaj
 - sličica se ne prikazuje u pozadinskom playeru za Android 8.1 [pogledajte ovdje](https://github.com/TeamNewPipe/NewPipe/issues/943)
 - Ispravljeno registracija prijemnika emitiranja. Zatvoreno #1641.
+
+

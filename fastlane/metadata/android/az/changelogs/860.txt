@@ -6,3 +6,5 @@ Təkmilləşdirilmiş
 • Daha az məlumat istifadə etmək üçün optimallaşdırılmış YouTube 
 
 Bu buraxılışda YouTube ilə əlaqəli 15-dən çox baq düzəldildi.
+
+

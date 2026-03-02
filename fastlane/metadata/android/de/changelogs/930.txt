@@ -10,3 +10,5 @@ Behoben
 • Feste altersbeschränkte Inhaltseinstellung nicht funktionieren
 • Behoben bestimmte Arten von reCAPTCHAs
 • Feste Sichtbarkeit der Gruppen-Sort-Taste im Abonnement-Bereich
+
+

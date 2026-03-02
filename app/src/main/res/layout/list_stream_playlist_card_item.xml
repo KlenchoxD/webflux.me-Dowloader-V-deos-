@@ -94,3 +94,5 @@
         app:layout_constraintStart_toStartOf="@id/itemThumbnailView" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+

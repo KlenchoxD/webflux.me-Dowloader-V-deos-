@@ -6,3 +6,5 @@
  • [Prehrávač] Opravené automatické prehrávanie
  • Zavrieť predchádzajúce Snackbary pri odstraňovaní sťahovaní
  • Opravený pokus o odstránenie objektu, ktorý nie je na zozname
+
+

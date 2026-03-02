@@ -8,3 +8,5 @@
 
 ### Javítás
 * YouTube élő streamek leállnak egy idő után (#1996 @yausername jóvoltából)
+
+

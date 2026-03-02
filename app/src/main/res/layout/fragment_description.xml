@@ -99,3 +99,5 @@
             app:layout_constraintTop_toBottomOf="@+id/detail_description_view" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.core.widget.NestedScrollView>
+
+

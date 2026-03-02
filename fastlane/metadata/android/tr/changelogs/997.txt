@@ -15,3 +15,5 @@
 • Ayar içe aktarma güvenlik açığı giderildi, JSON'a geçildi
 • İndirme sorunları giderildi
 • Arama metni düzeltmeleri
+
+

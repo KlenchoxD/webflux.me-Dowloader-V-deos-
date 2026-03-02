@@ -22,3 +22,5 @@ DİQQƏT: Bu versiya yəqin ki, sonuncu versiya kimi bir bugfestdir. Lakin 17-ci
 * Fon pleyeri açmağa çalışarkən NPE # 1901 
 * Yerləşdirmə üçün düzəliş g avtomatik növbə aktivləşdirildikdə yeni axınlar #1878 
 * Bağlama şəhərinin şifrəsinin açılması problemi həll edildi
+
+

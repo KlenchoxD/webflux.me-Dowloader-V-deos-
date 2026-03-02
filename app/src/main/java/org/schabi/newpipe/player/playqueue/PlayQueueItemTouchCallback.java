@@ -59,3 +59,5 @@ public abstract class PlayQueueItemTouchCallback extends ItemTouchHelper.SimpleC
         onSwiped(viewHolder.getBindingAdapterPosition());
     }
 }
+
+

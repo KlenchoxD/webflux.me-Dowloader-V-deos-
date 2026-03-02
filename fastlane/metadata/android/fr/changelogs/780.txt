@@ -10,3 +10,5 @@ Corrections
 - Exception "java.lang.IllegalArgumentException #192
 - Flux en direct ne fonctionnant pas TeamNewPipe/NewPipeExtractor#195
 - Performance sur Android Pie lors du téléchargement d'un flux #2592
+
+

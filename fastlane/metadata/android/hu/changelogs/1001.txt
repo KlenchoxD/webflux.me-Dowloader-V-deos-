@@ -4,3 +4,5 @@ Fejlesztés
 Javítások
 • Az adatbázis/feliratkozások exportálása nem vágja le a már létező fájlt, ami esetleg sérült exportáláshoz vezethetne
 • Egy időbélyegzőre nyomva a lejátszás folytatása nem a videó elejétől indul
+
+

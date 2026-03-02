@@ -17,3 +17,5 @@
 # Geliştirme (Development)
 
 * Dahili kod modernizasyonu.
+
+

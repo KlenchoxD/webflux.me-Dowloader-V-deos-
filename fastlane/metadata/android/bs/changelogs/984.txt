@@ -5,3 +5,5 @@ Vratite promjene izreza prilikom reprodukcije u više prozora, što je uzrokoval
 Povećajte compileSdk sa 30 na 31
 Ažurirajte biblioteku za prijavljivanje grešaka
 Refaktorišite dio koda u plejeru
+
+

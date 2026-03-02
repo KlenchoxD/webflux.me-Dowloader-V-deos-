@@ -5,3 +5,5 @@
 • Poprawiono sposób otwierania szczegółów wideo, aby naprawić nieskończone buforowanie, błędne zachowanie podczas udostępniania do NewPipe i inne niespójności
 • Naprawiono awarię podczas przewijania do przodu/do tyłu
 i wiele innych
+
+

@@ -24,3 +24,5 @@
 - Sửa lỗi trình phát video chính #1509
    - [#1412] Đã sửa lỗi chế độ lặp lại khiến người chơi gặp NPE khi nhận được ý định mới trong khi hoạt động của người chơi ở chế độ nền.
    - Đã sửa lỗi thu nhỏ trình phát thành cửa sổ bật lên không hủy trình phát khi không được cấp quyền bật lên.
+
+

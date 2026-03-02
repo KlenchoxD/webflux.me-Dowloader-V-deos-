@@ -179,3 +179,5 @@ public abstract class PlaylistDialog extends DialogFragment implements StateSave
                 dialog -> dialog.show(fragmentManager, "PlaylistDialog"));
     }
 }
+
+

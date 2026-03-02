@@ -6,3 +6,5 @@
 
 ###Diperbaiki
 - Pembaikian kepada lagaan ketika memulakan muat turun (Pembaikian sekarang tersedia untuk rilis binaan) #1441
+
+

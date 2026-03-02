@@ -15,3 +15,5 @@ Fixo
 • [PeerTube] Gerir comentários apagados
 
 ...
+
+

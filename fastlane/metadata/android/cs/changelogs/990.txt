@@ -12,3 +12,5 @@ Vylepšení
 
 Opravy
 • Oprava různých problémů s oznámeními: neaktuální/chybějící informace o médiích, zkreslené miniatury
+
+

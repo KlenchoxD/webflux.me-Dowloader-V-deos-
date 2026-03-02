@@ -15,3 +15,5 @@ Javítások
 • Javítva egy beállítás import sérülékenység, átváltás JSON-ra
 • Különböző letöltési javítások
 • Keresési szöveg levágása
+
+

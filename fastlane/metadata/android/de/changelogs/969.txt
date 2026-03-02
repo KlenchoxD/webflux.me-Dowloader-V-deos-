@@ -6,3 +6,5 @@
 • Problem behoben, dass die Wiedergabe nicht automatisch abspielt wird
 • Verwerfen früherer Snackbars beim Löschen von Downloads
 • Fehler beim Löschen des Objekts, das nicht in der Liste enthalten ist
+
+

@@ -7,3 +7,5 @@ Replay des ersten Warteschlangenelements bei Spielerwechsel korrigieren
 Längeres Warten beim Puffern während Livestreams, bevor ein Fehler auftritt
 Reihenfolge der lokalen Suchergebnisse korrigieren
 Leere Felder in der Warteschlange beheben
+
+

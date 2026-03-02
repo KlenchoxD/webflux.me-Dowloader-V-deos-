@@ -140,3 +140,5 @@ Prin urmare, aplicaţia nu colectează niciun fel de informaţii fără acordul 
 NewPipe este Software Gratuit: Îl puteţi folosi şi împărtăşi cum doriţi. Mai exact, îl puteți redistribui și / sau modifica în conformitate cu termenii
 [GNU General Public License](https://www.gnu.org/licenses/gpl.html) aşa cum a fost publicat de Free Software Foundation, fie versiunea 3 a Licenței, fie
 (la alegerea dvs.) orice versiune ulterioară.
+
+

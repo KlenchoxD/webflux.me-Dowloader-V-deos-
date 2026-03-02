@@ -7,3 +7,5 @@ Ispravljeno
 
 • Ispravljeno dugme za isključivanje zvuka koje je uzrokovalo pad sistema na API 19
 • Ispravljeno preuzimanje dugih 1080p 60fps videa
+
+

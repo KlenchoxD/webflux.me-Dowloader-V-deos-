@@ -13,3 +13,5 @@ Förbättrat
 Fixat
 • Fixade media knapp som inte gömde spelarkontroller
 • Fixade uppspelningsåterställning vid spelar förändring
+
+

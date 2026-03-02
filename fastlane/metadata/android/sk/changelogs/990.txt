@@ -13,3 +13,5 @@ Vylepšenia
 Opravy
 - Oprava rôznych problémov s oznámením prehrávača: neaktuálne/chýbajúce informácie o médiách, skreslené miniatúry
 - Oprava zobrazenia na celú obrazovku pomocou 1/4 obrazovky
+
+

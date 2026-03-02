@@ -6,3 +6,4 @@
 • Fixed crash when no default browser is set on some devices and improve share dialogs
 • Toggle play/pause with hardware space button in fullscreen player
 • [media.ccc.de] Various fixes and improvements
+

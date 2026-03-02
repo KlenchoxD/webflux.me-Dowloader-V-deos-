@@ -17,3 +17,5 @@
 
 ### Bilinen Hatalar
 - Oynatma durumu Android P üzerinde kaydedilemiyor
+
+

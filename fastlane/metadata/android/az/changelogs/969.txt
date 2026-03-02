@@ -6,3 +6,5 @@
 • [Oyunçu] Sabit oyunçunun avtomatik oynamaması
  • Yükləmələri silərkən əvvəlki Snackbarları rədd edin
  • Siyahıda olmayan obyekti silmək cəhdi düzəldildi
+
+

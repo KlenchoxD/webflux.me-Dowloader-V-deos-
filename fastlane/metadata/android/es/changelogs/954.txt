@@ -7,3 +7,5 @@
 • se incrementó la calidad de video a 720p60 (en la app) y 480p (en miniatura)
 
 • muchos errores reparados y más
+
+

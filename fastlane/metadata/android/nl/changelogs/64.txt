@@ -6,3 +6,5 @@
 
 ### Opgelost
 - Crash bij openen downloads verholpen (fix nu beschikbaar voor release builds) #1441
+
+

@@ -6,3 +6,5 @@
 
 ### Fixat
 * YouTube live streams slutar spelas upp efter en kort tid (#1996 av @yausername)
+
+

@@ -15,3 +15,5 @@ Lagfært
 • Leystur öryggisgalli við innflutning stillinga og yfirfærsla í JSON
 • Ýmsar endurbætur við niðurhal
 • Afskurður óþarfa leitartexta
+
+

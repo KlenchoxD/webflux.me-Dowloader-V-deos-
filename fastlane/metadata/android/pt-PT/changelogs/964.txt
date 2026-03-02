@@ -6,3 +6,5 @@
 - Corrigida a falha quando não está definido um navegador padrão em alguns dispositivos e melhorados os diálogos de partilha
 - Alternar jogo/pausa com botão de espaço de hardware no leitor de ecrã inteiro
 - [media.ccc.de] Várias correções e melhorias
+
+

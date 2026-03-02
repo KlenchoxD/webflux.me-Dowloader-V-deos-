@@ -7,3 +7,5 @@ Fixade repris av första kö objekt vid spelar förändring
 Vänta längre vid buffring under livestreams innan misslyckande
 Fixade ordning av lokala sökresultat
 Fixade tomma objektfält i spelkö
+
+

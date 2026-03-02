@@ -6,3 +6,5 @@
 
 ### Fixade
 - Nedladdare: Fixade krasch vid laddning av ofärdig nedladdning från .giga filer #1407
+
+

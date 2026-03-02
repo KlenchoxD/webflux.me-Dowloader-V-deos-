@@ -74,3 +74,5 @@ public class UpdateSettingsFragment extends BasePreferenceFragment {
                 .getBoolean(context.getString(R.string.update_check_consent_key), false);
     }
 }
+
+

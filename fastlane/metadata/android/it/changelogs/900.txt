@@ -12,3 +12,5 @@ Fisso
 • backup del database su Android P
 • crash durante la condivisione di un file scaricato
 • tonnellate di problemi di estrazione di YouTube e altro ...
+
+

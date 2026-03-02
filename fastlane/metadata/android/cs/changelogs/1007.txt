@@ -9,3 +9,5 @@ Další vylepšení:
 • [YouTube] Opětovné povolení přetáčení živých přenosů až o 4 hodiny zpět
 • Nepřetáčení živého videa při přehrávání na pozadí
 • Nové uživatelské rozhraní pro „Odebrat zhlédnuté“
+
+

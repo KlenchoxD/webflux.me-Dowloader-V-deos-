@@ -5,3 +5,5 @@ Polished the white theme.
 Fixed overlapping fonts when using a larger font size.
 Fixed no video on Formuler and Zephier devices.
 Fixed various crashes.
+
+

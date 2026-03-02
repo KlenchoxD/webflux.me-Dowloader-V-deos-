@@ -13,3 +13,5 @@ Otros:
 • Limpieza en código y mejoras internas
 • Dependencias actualizadas
 • Traducciones
+
+

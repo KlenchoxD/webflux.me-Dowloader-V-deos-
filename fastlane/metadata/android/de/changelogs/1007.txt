@@ -9,3 +9,5 @@ Weitere Verbesserungen:
 • [YouTube] Livestreams bis zu 4 Stunden zurückspulen
 • Livestreams bei Wiedergabe im Hintergrund nicht laden
 • Neue UI für „Gesehene entfernen“
+
+

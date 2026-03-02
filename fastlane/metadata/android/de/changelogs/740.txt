@@ -10,3 +10,5 @@
 <li>Scrollen mit deaktivierten Kommentaren und verwandten Streams behoben</li>
 <li>CheckForNewAppVersionTask wird nicht mehr ausgeführt, wenn es nicht sollte</li>
 </ul>
+
+

@@ -11,3 +11,5 @@ Corregidos
 - Extracción corregida de "likes" y "dislikes" de YouTube
 - Repetición automática corregida después de volver del fondo
 Y mucho más
+
+

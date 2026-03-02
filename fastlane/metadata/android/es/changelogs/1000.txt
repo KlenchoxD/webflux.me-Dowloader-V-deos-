@@ -11,3 +11,5 @@ Corregido
 • Lista de elementos relacionados a la cola
 • Orden al añadir a la lista de reproducción
 • Diseño de favoritos en lista de reproducción
+
+

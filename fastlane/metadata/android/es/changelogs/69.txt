@@ -9,3 +9,5 @@
 
 ### Bugs conocidos
 - El estado de la reproducción no se guarda en Android P
+
+

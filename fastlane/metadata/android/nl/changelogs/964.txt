@@ -6,3 +6,5 @@
 - Opgelost : Crash als geen standaardbrowser is ingesteld op sommige toestellen. Dialogen voor delen verbeterd
 - 'Afspelen/Pauze' met spatie-knop in fullscreen speler
 - [media.ccc.de] Reparaties en verbeteringen
+
+

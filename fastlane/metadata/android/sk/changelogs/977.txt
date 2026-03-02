@@ -8,3 +8,5 @@
 • Expanded minimized player buttons clickable area
 
 To see further changes, view the changelog (and blog post) from the Links tab below.
+
+

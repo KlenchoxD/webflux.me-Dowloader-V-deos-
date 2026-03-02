@@ -17,3 +17,5 @@
 
 ### Lỗi đã biết
 - Không thể lưu trạng thái phát lại trên Android P
+
+

@@ -6,3 +6,5 @@
 • [Player] Fixed player not automatically playing
 • Dismiss previous Snackbars when deleting downloads
 • Fixed trying to delete object not in list
+
+

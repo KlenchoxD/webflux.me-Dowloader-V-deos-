@@ -6,3 +6,5 @@
 • Correction crash si aucun navigateur par défaut défini, amélioration dialogues de partage
 • Basculer lecture/pause avec bouton d'espace matériel en lecteur plein écran
 • [media.ccc.de] Corrections
+
+

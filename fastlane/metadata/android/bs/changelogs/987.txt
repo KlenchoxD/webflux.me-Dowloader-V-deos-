@@ -10,3 +10,5 @@ Poboljšano
 Ispravljeno
 • Ispravljeno uklanjanje potpuno pregledanih videozapisa s liste za reprodukciju
 • Ispravljena tema menija za dijeljenje i unos "dodaj na listu za reprodukciju"
+
+

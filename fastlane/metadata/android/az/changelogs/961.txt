@@ -9,3 +9,5 @@
 • Sabit boş ReCaptcha veb görünüşü • Siyahıdan axını silərkən baş verən qəza düzəldildi 
 • [PeerTube] Sabit əlaqəli axınlar 
 • [YouTube] Sabit YouTube Musiqi axtarışı
+
+

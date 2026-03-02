@@ -41,3 +41,5 @@ public class AcraReportSender implements ReportSender {
                 R.string.app_ui_crash));
     }
 }
+
+

@@ -12,3 +12,5 @@ Javítások
 • Adatbázis biztonsági mentás Android P-n
 • Összeomlás egy letöltött fájl megosztásánál
 • Egy tonna YouTube kivonatoló és még sok más hiba javítása...
+
+

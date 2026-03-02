@@ -1,2 +1,4 @@
 # Opgelost
 - Snelle fix decodeer functie gaf nogmaals foutmelding.
+
+

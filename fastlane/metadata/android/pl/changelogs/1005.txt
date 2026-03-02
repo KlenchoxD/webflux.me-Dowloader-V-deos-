@@ -15,3 +15,5 @@ Naprawione
 - [YouTube] Brakujące polecane wideo
 - Awarie w widoku listy Historii
 - Znaczniki czasu w odp. na komentarze
+
+

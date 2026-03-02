@@ -12,3 +12,5 @@ Fisso:
 • Correzione di miniature molto piccole nei dettagli del video durante la riproduzione in background
 • Risolto il problema con il titolo vuoto nel lettore ridotto a icona
 • Risolto il problema con l'ultima modalità di ridimensionamento che non veniva ripristinata correttamente
+
+

@@ -12,3 +12,5 @@ Fixat:
 • Fixade liten miniatyr i videodetaljer medan du spelar i bakgrunden
 • Fixade tom titel i minimerad spelare
 • Fixade senaste storleksläge som inte återställdes korrekt
+
+

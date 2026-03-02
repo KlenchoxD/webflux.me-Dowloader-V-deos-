@@ -2,3 +2,5 @@ Ispravljena greška zbog koje YouTube nije reproducirao nijedan tok zbog HTTP 40
 
 Povremene HTTP 403 greške usred YouTube videa još nisu ispravljene.
 Taj problem će biti riješen u drugom izdanju hitne ispravke što je prije moguće.
+
+

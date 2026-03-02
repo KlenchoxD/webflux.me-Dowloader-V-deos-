@@ -8,3 +8,5 @@
 • [Android TV] Bilaketa-barraren jauzi luzeak DPad-ekin konpondu
 
 Aldaketa gehiago ikusteko, ikusi aldaketa-erregistroa beheko Estekak fitxan.
+
+

@@ -11,3 +11,5 @@ Zuzenduta
 - YouTube-tik "atsegin dut" eta "ez dut" mezuen erauzketa konpondu da
 - Errepikapen automatikoa konpondu da atzeko planotik itzuli ondoren
 Eta askoz gehiago
+
+

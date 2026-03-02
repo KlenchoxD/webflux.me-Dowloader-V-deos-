@@ -10,3 +10,5 @@ Ditingkatkan
 Tetap
 • Memperbaiki URL pembuka browser, unduhan, dan pemutar eksternal di Android 11+
 • Memperbaiki interaksi dengan layar penuh yang memerlukan dua ketukan pada MIUI
+
+

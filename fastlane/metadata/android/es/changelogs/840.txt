@@ -20,3 +20,5 @@ Fijado
 • Se corrigió el archivo corrupto de video .mp4 que se reconoce como archivo de audio
 • Se corrigieron múltiples problemas de localización, incluidos códigos de idioma chino incorrectos.
 • [YouTube] Las marcas de tiempo en la descripción se pueden volver a hacer clic
+
+

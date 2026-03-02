@@ -23,3 +23,5 @@
         android:title="@string/remove_duplicates"
         app:showAsAction="never" />
 </menu>
+
+

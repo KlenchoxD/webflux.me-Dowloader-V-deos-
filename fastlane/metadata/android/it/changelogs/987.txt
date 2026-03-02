@@ -10,3 +10,5 @@ Miglioramenti
 Correzioni
 • Corretta la rimozione di video guardati da playlist
 • Sistemati colori e aggiunta a playlist nel menu condivisione
+
+

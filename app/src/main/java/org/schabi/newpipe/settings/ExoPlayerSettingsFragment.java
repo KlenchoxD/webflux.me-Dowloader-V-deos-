@@ -43,3 +43,5 @@ public class ExoPlayerSettingsFragment extends BasePreferenceFragment {
                 });
     }
 }
+
+

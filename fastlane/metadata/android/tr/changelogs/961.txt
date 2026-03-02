@@ -10,3 +10,5 @@
 • Listeden bir akışı kaldırırken meydana gelen çökme düzeltildi
 • [PeerTube] İlgili akışlar düzeltildi
 • [YouTube] YouTube Music araması düzeltildi
+
+

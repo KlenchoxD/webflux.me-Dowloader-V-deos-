@@ -29,3 +29,5 @@
    - niets repareren weergegeven uitzonderingstriggersrapport
    - miniatuur wordt niet weergegeven in de achtergrondspeler voor Android 8.1 [zie hier](https://github.com/TeamNewPipe/NewPipe/issues/943)
  - Fix registratie van uitzendingsontvanger.  Sluit #1641.
+
+

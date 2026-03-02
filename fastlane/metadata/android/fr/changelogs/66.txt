@@ -6,3 +6,5 @@
 
 ### Corrections
 - #1495 : mise à jour des métadonnées (miniature, titre et nombre de vidéos) dès que l'utilisateur accède à la liste de lecture.
+
+

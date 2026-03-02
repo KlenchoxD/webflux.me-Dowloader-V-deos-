@@ -13,3 +13,5 @@ Ditingkatkan
 Tetap
 • Memperbaiki berbagai masalah dengan notifikasi pemutar: info media yang ketinggalan jaman, gambar mini yang terdistorsi
 • Perbaiki layar penuh menggunakan 1/4 layar
+
+

@@ -6,3 +6,5 @@
 
 ### Opravené
 - Sťahovač: Oprava pádu počas načítania nedokončených súborov s príponou .giga #1407
+
+

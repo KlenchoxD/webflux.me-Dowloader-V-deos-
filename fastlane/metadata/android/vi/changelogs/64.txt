@@ -6,3 +6,5 @@
 
 ### Sửa lỗi
 - Sửa lỗi crash khi mở các file đã tải về (bản sửa lỗi này giờ đã có trên các build mới hơn) (vấn đề #1441)
+
+

@@ -23,3 +23,5 @@ Yeni
  • [SoundCloud] Sabit müştəri kimliyinin çıxarılması TeamNewPipe/NewPipeExtractor#217 • [SoundCloud] Audio axınının çıxarılmasının işlənməsini düzəldin 
 • ExoPlayer-i 2.10.8 #2791, #2816-a yeniləyin 
 • Güncəlləmə 3.5.1-ə keçin və Kotlin dəstəyi #2714 əlavə edin
+
+

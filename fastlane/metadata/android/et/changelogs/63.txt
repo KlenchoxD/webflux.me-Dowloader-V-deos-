@@ -6,3 +6,5 @@
 
 ### Parandused
 - Alla laadija: Parandati krahh, mille põhjustas katkenud .giga failide alla laadimine #1407
+
+

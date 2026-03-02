@@ -5,3 +5,5 @@
 • menu z opcjami w przypadku nie obsługiwanego adresu URL
 • poprawa sugerowanych wyników wyszukiwania w przypadku gdyby nie można ich sprawdzić. 
 • podniesiona domyślna rozdzielczość: 720p60 (w aplikacji), 480p (w wersji okienkowej)
+
+

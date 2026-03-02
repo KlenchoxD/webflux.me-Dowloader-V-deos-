@@ -413,3 +413,5 @@ public final class ThemeHelper {
         return Math.max(1, context.getResources().getDisplayMetrics().widthPixels / minWidth);
     }
 }
+
+

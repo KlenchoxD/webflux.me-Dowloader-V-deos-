@@ -10,3 +10,5 @@ Oprava formátování pro verze Androidu nižší než 7
 Oprava falešných oznámení
 Opravy souborů titulků SRT
 Oprava spousty pádů
+
+

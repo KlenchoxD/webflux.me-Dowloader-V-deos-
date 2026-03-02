@@ -13,3 +13,5 @@ Mejorados
 Corregidos
 - Arreglos varios con notificación de reproductor: antigua/falta información de medios, miniatura distorsionada
 - Arreglo pantalla completa usa 1/4 de pantalla
+
+

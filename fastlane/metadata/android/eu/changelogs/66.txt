@@ -20,3 +20,5 @@
 - Ikusi historia eguneraketa
 - Pantaila denbora-muga leiho-moduan
 - Jokalari NPE konpondua
+
+

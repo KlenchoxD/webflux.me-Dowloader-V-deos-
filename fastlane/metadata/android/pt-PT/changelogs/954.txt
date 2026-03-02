@@ -7,3 +7,5 @@
 • qualidade predefinida aumentada a 720p60 (reprodutor da app) e 480p (pop-up)
 
 • correção de bugs
+
+

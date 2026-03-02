@@ -15,3 +15,5 @@ Düzeltildi
 • [YouTube] Eksik önerilen videolar düzeltildi
 • Geçmiş listesi görünümündeki çökmeler düzeltildi
 • Yorum yanıtlarındaki zaman damgaları düzeltildi
+
+

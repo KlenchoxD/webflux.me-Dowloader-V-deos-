@@ -10,3 +10,5 @@ Javítások
 • [YouTube] 'java.lang.IllegalArgumentException javítva #192
 • [YouTube] élő streamek immáron működnek TeamNewPipe/NewPipeExtractor#195
 • Videó letöltésénél Android Pie-nál teljesítménybeli probléma javítása #2592
+
+

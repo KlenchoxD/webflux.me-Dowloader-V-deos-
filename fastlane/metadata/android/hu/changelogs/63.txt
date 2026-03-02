@@ -6,3 +6,5 @@
 
 ### Javítva
 - Letöltő: A befejezetlen .giga fájl letöltések betöltése közbeni összeomlás javítása #1407
+
+

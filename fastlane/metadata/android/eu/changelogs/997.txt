@@ -15,3 +15,5 @@ Konponduta
 • Konpondu ahultasuna ezarpenen importazioan eta JSON-era aldatu
 • Konpondu hainbat deskarga
 • Moztu bilaketa-testua
+
+

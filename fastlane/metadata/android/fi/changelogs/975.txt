@@ -15,3 +15,5 @@ Korjattua
 * Taustalle lataamaan jäänyt ReCAPTCHA
 * Poistettu klikkaukset syötteen päivittämisessä
 * Lataajan kaatumisia
+
+

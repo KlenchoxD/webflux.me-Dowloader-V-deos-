@@ -8,3 +8,5 @@ Corrigir falha no avanço/recuo rápido
 Não reorganizar listas ao arrastar miniaturas
 Lembrar sempre as propriedades pop-up
 Adicionar idioma Santali
+
+

@@ -9,3 +9,4 @@ Altri miglioramenti:
 • [YouTube] Riavvolgimento dirette fino a 4 ore
 • Non caricare il video delle dirette riprodotte in background
 • Nuova UI per "Rimuovi visti"
+

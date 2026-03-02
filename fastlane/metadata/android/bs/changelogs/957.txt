@@ -8,3 +8,5 @@
 • Nemojte preuređivati liste povlačenjem sličica
 • Uvijek pamtite svojstva skočnih prozora
 • Dodan je santalski jezik
+
+

@@ -29,3 +29,5 @@
   - nada de excepção mostrado dispara o relatório
   - thumbnail não mostrado no leitor de fundo para andróide 8.1 [ver aqui](https://github.com/TeamNewPipe/NewPipe/issues/943)
 - Correcção do registo do receptor de radiodifusão. Fecha #1641.
+
+

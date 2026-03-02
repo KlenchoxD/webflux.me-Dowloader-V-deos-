@@ -13,3 +13,5 @@ Ostalo:
 • Čišćenje koda i nekoliko internih poboljšanja
 • Ažuriranja zavisnosti
 • Ažuriranja prevoda
+
+

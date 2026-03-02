@@ -7,3 +7,5 @@ Sửa lỗi
 
 • Sửa lỗi nút tắt tiếng gây treo trên API 19.
 • Sửa lỗi tải xuống video 1080p 60fps dài
+
+

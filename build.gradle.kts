@@ -11,3 +11,5 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.parcelize) apply false
     alias(libs.plugins.sonarqube) apply false
 }
+
+

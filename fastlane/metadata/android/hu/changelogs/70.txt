@@ -23,3 +23,5 @@ FIGYELEM: Az előzőhöz hasonlóan ez is bugoktól hemzseg. A 17-i teljes leál
 * NPE a háttérben futó lejátszó megnyitásakor #1901
 * Új videók hozzáadásának javítása ha fel van töltve a lista automata videókkal #1878
 * A megfejtett leállás hiba javítása
+
+

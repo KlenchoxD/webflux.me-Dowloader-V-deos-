@@ -10,3 +10,5 @@ Improved
 Fixed
 • Fix opening browser URLs, downloads and external players on Android 11+
 • Fix interacting with fullscreen requiring two taps on MIUI
+
+

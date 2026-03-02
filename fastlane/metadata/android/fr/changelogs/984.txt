@@ -4,3 +4,5 @@ L’arc de superposition de l’avance rapide est désormais sous l’interface 
 Revient sur les modifications des découpes lors de la lecture en multi-fenêtres, qui causent la régression du lecteur mal positionné sur certains appareils
 Met à jour compileSdk à la version 31
 Met à jour la bibliothèque de rapports d’erreur
+
+

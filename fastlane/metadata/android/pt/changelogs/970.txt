@@ -9,3 +9,5 @@ Fixo
 - Caminhos de importação e exportação fixos e melhorados
 - [YouTube] Fixo comentário e contagem
 ...
+
+

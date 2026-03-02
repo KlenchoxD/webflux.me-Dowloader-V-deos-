@@ -2,3 +2,5 @@
 • Sửa lỗi parse phần comment trên YouTube.
 • Sửa lỗi tên hiển thị trên media.ccc.de.
 • Cập nhật các bản dịch.
+
+

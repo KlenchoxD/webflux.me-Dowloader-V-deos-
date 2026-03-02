@@ -7,3 +7,5 @@
 • Ökad standardvideokvalitet till 720p60 (spelare i appen) och 480p (popup-spelare)
 
 • tonvis med buggfixar och mer
+
+

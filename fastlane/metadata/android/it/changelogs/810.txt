@@ -17,3 +17,5 @@ Fisso
 • [YouTube] Risolto il problema con l'attivazione di NPE che causava NPE
 • [YouTube] Risolto il problema con la visualizzazione dei commenti all'apertura di un URL invidio.us
 • [SoundCloud] Client_id aggiornato
+
+

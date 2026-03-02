@@ -10,3 +10,5 @@
  • [YouTube] გაასწორა 'java.lang.IllegalArgumentException #192
  • [YouTube] დაფიქსირდა პირდაპირი სტრიმინგები არ მუშაობს TeamNewPipe/NewPipeExtractor#195
  • დაფიქსირდა მუშაობის პრობლემა Android Pie-ში #2592 ნაკადის ჩამოტვირთვისას
+
+

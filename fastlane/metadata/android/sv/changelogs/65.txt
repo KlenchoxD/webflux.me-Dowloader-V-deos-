@@ -22,3 +22,5 @@
 - Åtgärd av primär videospelare #1509 
   - [#1412] Åtgärdade upprepningsläge vilket orsakade "null-pointer-exception" i spelaren när ny avsikt mottas för spelare som arbetar i bakgrunden.
   - Åtgärdade att spelare utan popup-behörighet inte kraschar vid minimering till popupstorlek av fönstret.
+
+

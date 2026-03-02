@@ -10,3 +10,5 @@ Improved
 Fixed
 • Fix removing fully watched videos from playlist
 • Fix share menu theme and "add to playlist" entry
+
+

@@ -2,3 +2,5 @@ Változások a 0.17.2-ben
 
 Javítás
 • Videó nem volt elérhető javítása
+
+

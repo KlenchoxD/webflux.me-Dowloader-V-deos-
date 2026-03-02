@@ -8,3 +8,5 @@
 
 ### Fixed
 * YouTube live streams stop playing after a short time (#1996 by @yausername)
+
+

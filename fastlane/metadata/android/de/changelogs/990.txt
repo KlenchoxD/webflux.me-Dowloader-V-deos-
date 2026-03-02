@@ -12,3 +12,5 @@ Verbessert:
 Behoben:
 • Verschiedene Probleme mit Player-Benachrichtigung: veraltete/fehlende Medieninfos, verzerrte Miniaturansicht
 …
+
+

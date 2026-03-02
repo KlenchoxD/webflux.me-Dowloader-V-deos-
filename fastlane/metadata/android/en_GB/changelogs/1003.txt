@@ -4,3 +4,5 @@ This is a hotfix release that fixes YouTube errors:
 • Fix downloading info twice when opening a stream
 • [Soundcloud] Remove unplayable DRM-protected streams
 • Updated translations
+
+

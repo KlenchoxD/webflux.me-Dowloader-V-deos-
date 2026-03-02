@@ -14,3 +14,5 @@ Corregidos
 - Arreglar botón multimedia no oculta controles de reproductor
 - Corregir reinicio reproducción al cambiar tipo de reproductor
 - Arreglar rotación de diálogo de lista de reproducción
+
+

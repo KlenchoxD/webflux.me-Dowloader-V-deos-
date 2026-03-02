@@ -11,3 +11,5 @@ Fixo
 - Fixo a extração de likes e dislikes da YouTube
 - Repetição automática fixa após retornar do fundo
 ...
+
+

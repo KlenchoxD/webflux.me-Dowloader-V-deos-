@@ -12,3 +12,5 @@ Multiple player-related UI fixes
 [SoundCloud] Fix streams with long IDs
 
 and more fixes and improvements!
+
+

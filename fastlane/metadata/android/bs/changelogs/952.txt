@@ -5,3 +5,5 @@ Ispravljeno
 • Ispravljeni povezani tokovi podrškom za nove YouTube nastavke
 • Ispravljeni YouTube videozapisi s ograničenjem za određene uzraste
 • [Android TV] Ispravljeno dugotrajno preklapanje istaknutog fokusa
+
+

@@ -11,3 +11,5 @@ Melhorado
 Corrigido
 •Várias falhas
 •[YouTube] Correção no carregamento de canais, feeds não dedicados e solução alternativa de problemas de reprodução em alguns países
+
+

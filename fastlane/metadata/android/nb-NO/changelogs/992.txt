@@ -15,3 +15,5 @@ Fikset
 • Fiks overlay for DeX/mus
 • Tillat bakgrunnsspiller med ingen separate lydstrømmer
 • Diverse YouTube-fikser, med mer …
+
+

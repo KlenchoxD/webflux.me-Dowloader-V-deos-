@@ -6,3 +6,5 @@
 • Bəzi cihazlarda heç bir defolt brauzer təyin edilmədikdə qəza düzəldildi və paylaşma dialoqlarını təkmilləşdirin
  • Tam ekran pleyerində hardware sahəsi düyməsi ilə oynat/fasilə dəyişin
  • [media.ccc.de] Müxtəlif düzəlişlər və təkmilləşdirmələr
+
+

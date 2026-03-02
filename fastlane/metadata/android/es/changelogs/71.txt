@@ -4,3 +4,5 @@
 * añadir los iconos blancos que faltan y utilizar la manera de cambiar los colores de los iconos
   * comprobar si el iterador está inicializado (corrige #2031)
   * permite reintentar las descargas con el error "post-procesamiento fallido" en el nuevo muxer
+
+

@@ -5,3 +5,5 @@ Polido o tema branco.
 Corrigida a sobreposição de fontes quando se utiliza uma fonte de tamanho maior.
 Corrigido nenhum vídeo em dispositivos Formuler e Zephier.
 Corrigidas várias falhas.
+
+

@@ -6,3 +6,5 @@
 
 ### Fikset
 - Downloader: Et crash når man loadede et ikke-færdiggjort download fra .giga filer #1407
+
+

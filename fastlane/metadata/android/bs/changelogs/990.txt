@@ -13,3 +13,5 @@ Poboljšano
 Ispravljeno
 • Ispravljeni razni problemi s obavještenjima playera: zastarjele/nedostajuće informacije o medijima, iskrivljena sličica
 • Ispravljen prikaz preko cijelog ekrana koristeći 1/4 ekrana
+
+

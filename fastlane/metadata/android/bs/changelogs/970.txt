@@ -9,3 +9,5 @@ Ispravljeno
 • Ispravljeno i poboljšano podešavanje putanja uvoza i izvoza
 • [YouTube] Ispravljen broj lajkova za komentare
 I još mnogo toga
+
+

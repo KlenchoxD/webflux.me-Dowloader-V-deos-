@@ -11,3 +11,5 @@ Vylepšeno
 Opraveno
 • Oprava několika pádů
 • [YouTube] Oprava načítání kanálů, nevyhrazeného kanálu a řešení problémů s přehráváním v některých zemích
+
+

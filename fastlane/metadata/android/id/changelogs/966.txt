@@ -13,3 +13,5 @@ Diperbaiki:
 • Perbaiki judul kosong
 • Perbaiki mode ulang terakhir
 (weblate notification : Translation text too long! (terjemahan terlalu panjang)
+
+

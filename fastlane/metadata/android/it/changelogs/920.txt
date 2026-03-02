@@ -7,3 +7,5 @@ Fisso
 
 • Risolto il problema con il pulsante muto che causava arresti anomali su API 19
 • Risolto il problema con il download di video lunghi 1080p 60fps
+
+

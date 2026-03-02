@@ -142,3 +142,5 @@ public class TabsJsonHelperTest {
         assertEquals(feedGroupTab.getFeedGroupName(), grpTabFromReturnedJson.getFeedGroupName());
     }
 }
+
+

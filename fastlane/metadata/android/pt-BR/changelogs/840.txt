@@ -20,3 +20,5 @@ Fixed
 • Fixed corrupt video .mp4 file being recognized as audio file
 • Fixed multiple localization problems, including wrong Chinese language codes
 • [YouTube] Timestamps in description are clickable again
+
+

@@ -8,3 +8,5 @@
 • [Android TV] Correção de longos saltos da barra de pesquisa ao usar um DPad
 
 Ver também o registo de alterações e o blogue abaixo.
+
+

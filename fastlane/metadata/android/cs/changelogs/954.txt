@@ -4,3 +4,5 @@
 
 - zobrazení dialogu s možnostmi otevření v případě přípitku nepodporované adresy URL
 - Zlepšení zkušeností s návrhy vyhledávání, pokud nelze načíst ty vzdálené
+
+

@@ -12,3 +12,5 @@ Fixo
 - backup do banco de dados no Android P
 - falhar ao compartilhar um ficheiro descarregado
 - muitos problemas de extração no YouTube e mais ...
+
+

@@ -17,3 +17,5 @@
  • [YouTube] დაფიქსირდა NPE-ის გამომწვევი null-ის ჩართვა
  • [YouTube] დააფიქსირა კომენტარების ნახვა invidio.us url-ის გახსნისას
  • [SoundCloud] განახლებულია client_id
+
+

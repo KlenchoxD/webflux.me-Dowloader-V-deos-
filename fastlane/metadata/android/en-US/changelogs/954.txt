@@ -7,3 +7,4 @@
 • Increased default video quality to 720p60 (in-app player) and 480p (pop-up player)
 
 • tons of bug fixes and more
+

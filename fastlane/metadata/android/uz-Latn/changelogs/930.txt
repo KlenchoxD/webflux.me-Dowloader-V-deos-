@@ -13,3 +13,5 @@ Ruxsat etilgan
 • reCAPTCHA-larning ayrim turlari aniqlandi
 • Pleylist "bo'sh" bo'lsa, xatcho'plarni ochishda xato yuz berdi
 • Obunalar saralash tugmachasining aniq ko'rinishi
+
+

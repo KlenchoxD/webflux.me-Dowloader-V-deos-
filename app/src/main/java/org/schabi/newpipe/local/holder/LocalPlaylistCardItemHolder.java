@@ -15,3 +15,5 @@ public class LocalPlaylistCardItemHolder extends LocalPlaylistItemHolder {
         super(infoItemBuilder, R.layout.list_playlist_card_item, parent);
     }
 }
+
+

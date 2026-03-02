@@ -21,3 +21,5 @@
 <li>youtube feliratkozó import javítása: hibás URL címek figyelmen kívül hagyása, üres címmel ellátottak megtartása</li>
 <li>helytelen youtube url javítása: aláírás címke neve nem mindig "aláírás", mely megakadályozza a videók betöltését</li>
 </ul>
+
+

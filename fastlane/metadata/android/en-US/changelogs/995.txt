@@ -14,3 +14,4 @@ Fixed
 • Selection of wrong languages in language picker
 • Player audio focus was not respecting mute
 • Playlist item addition occasionally not working
+

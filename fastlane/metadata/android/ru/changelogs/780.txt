@@ -10,3 +10,5 @@
 • [YouTube] Исправлена ошибка java.lang.IllegalArgumentException #192
 • [YouTube] Исправлены неработающие прямые трансляции TeamNewPipe/NewPipeExtractor#195
 • Исправлена проблема с производительностью в Android Pie при загрузке потока #2592
+
+

@@ -10,3 +10,5 @@
 • Fixed crash which occurred when removing a stream from a list
 • [پیرتیوب] Fixed related streams
 • [یوتوب] Fixed YouTube Music search
+
+

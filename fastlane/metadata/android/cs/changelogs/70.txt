@@ -5,3 +5,5 @@ UPOZORNĚNÍ: Tato verze je pravděpodobně plná chyb, stejně jako ta předcho
 * podpora upuštění pro Android 4.1 - 4.3 #1884 
 * odstranění starého přehrávače #1884 
 * odstranění streamů z aktuální fronty přehrávání přejetím doprava #1915
+
+

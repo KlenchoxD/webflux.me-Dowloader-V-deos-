@@ -12,3 +12,5 @@ Opraveno:
 - Oprava velmi malé miniatury v detailech videa při přehrávání na pozadí
 - Oprava prázdného názvu v minimalizovaném přehrávači
 -
+
+

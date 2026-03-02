@@ -26,3 +26,5 @@
   - Fixed minimizing player to popup does not destroy player when popup permission is not granted.
 
 
+
+

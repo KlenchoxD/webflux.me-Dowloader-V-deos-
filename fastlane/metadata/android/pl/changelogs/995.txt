@@ -14,3 +14,5 @@ Naprawione
 • Błędne wybory w selektorze języków
 • Skupienie na dźwięku odtwarzacza nie uwzględ. wyciszenia
 • Czasami niedziałające dodawanie pozycji do playlisty
+
+

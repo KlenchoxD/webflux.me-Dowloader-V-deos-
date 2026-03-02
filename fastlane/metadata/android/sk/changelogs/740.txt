@@ -21,3 +21,5 @@
 <li>fixed youtube subscription import: ignore ones with invalid url and keep ones with empty title</li>
 <li>fix invalid YouTube url: signature tag name is not always "signature" preventing streams from loading</li>
 </ul>
+
+

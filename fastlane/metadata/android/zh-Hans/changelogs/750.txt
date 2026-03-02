@@ -19,3 +19,5 @@
 • 更新播放队列元数据#2453
 • [SoundCloud] 修复了加载播放列表时崩溃 Extractor#170
 • [YouTube] 修复持续时间无法缩短 Extractor #177
+
+

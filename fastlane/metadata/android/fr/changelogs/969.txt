@@ -6,3 +6,5 @@
 • [Player] Correction problème lecture automatique
 • Désactiver barres d'état précédentes lors suppr. des téléchargements
 • Correction suppression objet ne figurant pas dans la liste
+
+

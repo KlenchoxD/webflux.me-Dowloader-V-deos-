@@ -5,3 +5,5 @@ Annullati i cambiamenti alla gestione dei bordi dello schermo in modalità multi
 Incrementato compileSdk da 30 a 31
 Aggiornata la libreria di segnalazione degli errori
 Ristrutturato del codice nel player
+
+

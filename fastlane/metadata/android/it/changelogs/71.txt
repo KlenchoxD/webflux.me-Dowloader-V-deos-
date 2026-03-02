@@ -8,3 +8,5 @@
 
 ### Fisso
 * I live streaming di YouTube smettono di essere riprodotti dopo poco tempo (#1996 di @yausername)
+
+

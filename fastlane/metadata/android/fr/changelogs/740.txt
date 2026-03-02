@@ -7,3 +7,5 @@
 <li> Importation des abonnements YouTube : ignorer ceux dont l’URL est invalide et conserver ceux dont le titre est vide</li>
 <li>URL YouTube invalide : le nom de la balise signature n'est pas toujours "signature", ce qui empêche le chargement des flux.</li>
 </ul>
+
+

@@ -4,3 +4,5 @@ Esta é uma versão de correção que corrige erros do YouTube:
 • Corrige o download de informações duas vezes ao abrir uma transmissão.
 • [Soundcloud] Remove transmissões protegidas por DRM que não podem ser reproduzidas
 • Traduções atualizadas
+
+

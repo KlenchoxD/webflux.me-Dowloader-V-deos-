@@ -6,3 +6,5 @@
 • Jokalaria automatikoki ez jokatzea konpondu da
 • Deskargak ezabatzean, baztertu aurreko Snackbar-ak
 • Zerrendan ez zegoen objektua ezabatzen saiatzean izandako arazoa konpondu da
+
+

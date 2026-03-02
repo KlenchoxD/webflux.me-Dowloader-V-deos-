@@ -6,3 +6,5 @@
 
 ### Ispravka
 - Ispravljen pad sistema prilikom otvaranja preuzimanja (ispravka je sada dostupna za izdane verzije) #1441
+
+

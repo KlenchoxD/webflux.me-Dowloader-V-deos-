@@ -12,3 +12,5 @@
  - Afficher « Nombre d'abonnés indisponible » dans ces cas
 - Correction du blocage incorrect des vidéos YouTube Premium
 - Afficher un avertissement lors d'une tentative de téléchargement sur carte SD externe
+
+

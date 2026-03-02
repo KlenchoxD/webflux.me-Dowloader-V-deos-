@@ -8,3 +8,5 @@
 • Area cliccabile dei pulsanti del giocatore ridotta a icona espansa
 
 Per vedere ulteriori modifiche, visualizza il registro delle modifiche (e il post del blog) dalla scheda Collegamenti in basso.
+
+

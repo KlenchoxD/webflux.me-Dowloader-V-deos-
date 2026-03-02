@@ -10,3 +10,5 @@ Corrigido
 • [YouTube] Correção de erros HTTP 403 ocasionais no início ou no meio dos vídeos
 • [YouTube] Extração de avatar e banner de mais tipos de cabeçalhos de canal
 • [Bandcamp] Correção de vários bugs e uso exclusivo de HTTPS
+
+

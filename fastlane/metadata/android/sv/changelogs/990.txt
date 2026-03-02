@@ -13,3 +13,5 @@ Förbättrat
 Fixat
 • Fixade problem med spelarens meddelande: föråldrad/saknad media info, förvrängd miniatyr
 • Fixade fullskärm som använde 1/4 av skärmen
+
+

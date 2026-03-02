@@ -1,1 +1,3 @@
 YouTube-un deşifrə funksiyasının çıxarılmasını düzəldin.
+
+

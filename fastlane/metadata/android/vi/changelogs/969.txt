@@ -6,3 +6,5 @@
 • [Trình phát] Sửa lỗi trình phát không tự động phát
 • Loại bỏ Snackbars trước khi xóa tải xuống
 • Sửa lỗi cố gắng xóa đối tượng không có trong danh sách
+
+

@@ -9,3 +9,5 @@ Corregidos
 - Corregido y mejorado ajuste de rutas de importación y exportación
 - [YouTube] Corregido el recuento de comentarios preferidos
 Y mucho más
+
+

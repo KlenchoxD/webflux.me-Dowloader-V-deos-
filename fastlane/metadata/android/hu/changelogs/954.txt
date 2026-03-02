@@ -7,3 +7,5 @@
 • Alap lejátszó minőség megemelve 720p60-re (belső lejátszó) és 480p-re (felugró lejátszó)
 
 • Egy tonna hibajavítás és egyéb
+
+

@@ -15,3 +15,5 @@ Diperbaiki
 - Perbaiki overlay pada DeX/mouse
 - Izinkan pemutar latar belakang tanpa aliran audio terpisah
 - Berbagai perbaikan YouTube dan banyak lagi…
+
+

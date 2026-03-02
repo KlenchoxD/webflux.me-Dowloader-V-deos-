@@ -6,3 +6,5 @@
 
 ### Fixade
 - Fixade krasch vid öppning av nedladdningar (fixen är nu tillgänglig för release builds) #1441
+
+

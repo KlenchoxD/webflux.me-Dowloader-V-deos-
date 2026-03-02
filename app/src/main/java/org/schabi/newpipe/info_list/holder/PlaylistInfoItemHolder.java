@@ -10,3 +10,5 @@ public class PlaylistInfoItemHolder extends PlaylistMiniInfoItemHolder {
         super(infoItemBuilder, R.layout.list_playlist_item, parent);
     }
 }
+
+

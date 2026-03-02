@@ -5,3 +5,5 @@
   * kontrola, zda je iterátor inicializován (oprava #2031)
   * umožnit opakování stahování při chybě "post-processing failed" v novém muxeru
   * nový muxer MPEG-4 opravuje nesynchronní video a audio toky (#2039)
+
+

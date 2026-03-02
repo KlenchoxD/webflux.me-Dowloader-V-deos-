@@ -20,3 +20,5 @@ public class ChannelCardInfoItemHolder extends ChannelMiniInfoItemHolder {
         return 8;
     }
 }
+
+

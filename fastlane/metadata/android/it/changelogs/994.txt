@@ -13,3 +13,5 @@ Corretto
 • [PeerTube] Gli avatar dell'uploader e del sottocanale erano scambiati
 
 e altro ancora
+
+

@@ -5,3 +5,5 @@
 * Fikset krasj når ingen forvalgt nettleser er satt på noen enheter og forbedring av delingsdialoger
 * Veksle spill/pause med maskinvaremellomromstast i fullskjermsspiller
 * [media.ccc.de] Forskjellige fikser og forbedringer
+
+

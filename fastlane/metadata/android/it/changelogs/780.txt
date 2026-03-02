@@ -10,3 +10,5 @@ Fisso
 • [YouTube] Risolto 'java.lang.IllegalArgumentException #192
 • [YouTube] Risolto il problema con i live streaming che non funzionavano TeamNewPipe/NewPipeExtractor#195
 • Risolto problema di prestazioni in Android Pie durante il download di uno stream #2592
+
+

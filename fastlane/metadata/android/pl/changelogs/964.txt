@@ -6,3 +6,5 @@
 • Naprawiono błąd przy braku domyślnej przeglądarki na niektórych urządzeniach i usprawniono menu udostępniania
 • Przełączanie odtwarzanie/pauza poprzez wciśnięcie spacji na klawiaturze fizycznej w odtwarzaczu pełnoekranowym
 • [media.cc.de] Różne poprawki i usprawnienia
+
+

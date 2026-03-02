@@ -2,3 +2,5 @@
 • YouTube kommentek feldolgozásának javítása.
 • media.ccc.de szolgáltatás neve fixálva
 • Fordítások frissítése.
+
+

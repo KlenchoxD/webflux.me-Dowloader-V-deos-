@@ -10,3 +10,5 @@ Corrigido
 - [YouTube] Fixo 'java.lang.IllegalArgumentException #192
 - [YouTube] Fluxos fixos ao vivo não funcionam TeamNewPipe/NewPipeExtractor#195
 - Resolvido problema de desempenho em torta de android ao descarregar um fluxo #2592
+
+

@@ -23,3 +23,5 @@ Atenção: esta versão é provavelmente um bugfest, tal como a última. No enta
 * NPE ao tentar abrir o jogador de fundo #1901
 * Correção para inserir novos fluxos quando o enfileiramento automático está habilitado #1878
 * Corrigido o problema decypering shuttown
+
+

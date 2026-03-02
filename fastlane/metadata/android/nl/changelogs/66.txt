@@ -31,3 +31,5 @@
  - Reparatie hoofdvideospeler #1509 
    - [#1412] Probleem opgelost waarbij de herhaalmodus ervoor zorgt dat spelers NPE krijgen als er nieuwe intentie wordt ontvangen terwijl spelersactiviteit op de achtergrond plaatsvindt.
    - Probleem opgelost waarbij de speler tot een pop-up wordt geminimaliseerd, waardoor de speler niet wordt vernietigd als er geen toestemming voor de pop-up wordt verleend.
+
+

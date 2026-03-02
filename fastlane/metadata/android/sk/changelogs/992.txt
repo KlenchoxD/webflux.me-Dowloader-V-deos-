@@ -15,3 +15,5 @@ Opravená stránka
 - Oprava prekrytia na DeX/myši
 - Povolenie prehrávača na pozadí bez samostatných zvukových tokov
 - Rôzne opravy YouTube a ďalšie…
+
+

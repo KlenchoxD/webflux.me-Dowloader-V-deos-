@@ -12,3 +12,5 @@ Corregido
 - copia de seguridad de base de datos en Android P
 - caída al compartir un archivo descargado
 - montones de problema de extracción de YouTube y más ...
+
+

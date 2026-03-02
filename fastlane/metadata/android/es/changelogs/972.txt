@@ -10,3 +10,5 @@ El menú de compartir para usuarios de Android 10+ ahora muestra el título del 
 Actualizadas instancias de Invidious y soporte para enlaces de Piped
 
 ... y otras correcciones
+
+

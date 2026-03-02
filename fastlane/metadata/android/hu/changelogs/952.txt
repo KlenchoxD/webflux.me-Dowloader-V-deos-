@@ -5,3 +5,5 @@ Javítás
 • Fixálva a kapcsolódó videók a YouTube új folytatásával
 • A korhatáros videók javítása
 • [Android TV] Fixálva a késő fókusz kiemelés felületréteg
+
+

@@ -6,3 +6,5 @@ Vylepšená stránka
 - Umožnit posouvání karet hlavní stránky a jejich skrytí, pokud je k dispozici pouze jedna karta
 - Omezit počet aktualizací miniatur oznámení v přehrávači na pozadí
 - Přidání fiktivní miniatury pro prázdné místní seznamy skladeb
+
+

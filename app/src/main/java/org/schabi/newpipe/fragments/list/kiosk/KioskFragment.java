@@ -175,3 +175,5 @@ public class KioskFragment extends BaseListInfoFragment<StreamInfoItem, KioskInf
         }
     }
 }
+
+

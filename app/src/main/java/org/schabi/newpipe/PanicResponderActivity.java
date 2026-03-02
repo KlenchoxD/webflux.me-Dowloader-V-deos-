@@ -42,3 +42,5 @@ public class PanicResponderActivity extends Activity {
         finishAndRemoveTask();
     }
 }
+
+

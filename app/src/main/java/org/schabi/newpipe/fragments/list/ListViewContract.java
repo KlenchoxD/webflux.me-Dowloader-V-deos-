@@ -7,3 +7,5 @@ public interface ListViewContract<I, N> extends ViewContract<I> {
 
     void handleNextItems(N result);
 }
+
+

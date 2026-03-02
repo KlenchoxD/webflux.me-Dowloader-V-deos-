@@ -15,3 +15,5 @@ Sabit
 • Fon və video pleyerlər arasında problemsiz keçid 
 • Səthi yarımtonlarla dəyişdirin
  • Pleylistə əsas oyunçu növbəsini əlavə edin
+
+

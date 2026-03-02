@@ -31,3 +31,5 @@
 - Ispravka glavnog video plejera #1509
 - [#1412] Ispravljen je način ponavljanja koji je uzrokovao NPE plejera kada se primi nova namjera dok je aktivnost plejera u pozadini.
 - Ispravljeno je minimiziranje plejera u skočni prozor koje nije uništilo plejer kada nije odobrena dozvola za skočni prozor.
+
+

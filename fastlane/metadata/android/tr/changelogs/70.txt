@@ -23,3 +23,5 @@ DİKKAT: Bu sürüm muhtemelen bir öncekinde olduğu gibi bir hata festivalidir
 * Arka plan oynatıcısını açmaya çalışırken NPE #1901
 * Otomatik kuyruklama etkinleştirildiğinde yeni akışların eklenmesi için düzeltme #1878
 * deşifre sorunu düzeltildi
+
+

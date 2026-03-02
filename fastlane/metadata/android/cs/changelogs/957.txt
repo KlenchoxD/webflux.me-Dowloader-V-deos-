@@ -6,3 +6,5 @@
 - Zrychlení videí na YouTube a oprava videí s věkovým omezením
 - Oprava pádu při rychlém převíjení vpřed/vzad
 - Nepřeuspořádávat seznamy přetahováním miniatur
+
+

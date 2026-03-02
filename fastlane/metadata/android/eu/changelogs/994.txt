@@ -13,3 +13,5 @@ Konpondua
 • [PeerTube] Igotzailearen eta azpikanalaren avatarrak trukatu
 
 eta gehiago
+
+

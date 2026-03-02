@@ -10,3 +10,5 @@
 • [موقع YouTube] ثابت 'java.lang.IllegalArgumentException #192
 • [YouTube] البث المباشر الثابت لا يعمل TeamNewPipe/NewPipeExtractor#195
 • تم إصلاح مشكلة الأداء في أندرويد عند تنزيل البث #2592
+
+

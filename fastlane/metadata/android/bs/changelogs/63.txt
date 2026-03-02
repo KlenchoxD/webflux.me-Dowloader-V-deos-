@@ -6,3 +6,5 @@
 
 ### Popravljeno
 - Skidač: Popravljen pad tokom skidanja nedovršenih preuzimanja iz .giga datoteka # 1407
+
+

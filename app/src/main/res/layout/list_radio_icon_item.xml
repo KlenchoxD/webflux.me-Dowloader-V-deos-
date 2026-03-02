@@ -15,3 +15,5 @@
     android:textColor="?attr/textColorAlertDialogListItem"
     tools:drawableLeft="@drawable/ic_play_arrow"
     tools:text="Lorem ipsum dolor sit amet" />
+
+

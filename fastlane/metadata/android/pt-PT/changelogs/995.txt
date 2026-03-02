@@ -14,3 +14,5 @@ Corrigido
 - Seleção de idiomas errados no seletor de idiomas
 - A focagem do áudio do leitor não respeitava o silêncio
 - A adição de itens à lista de reprodução não funcionava ocasionalmente.
+
+

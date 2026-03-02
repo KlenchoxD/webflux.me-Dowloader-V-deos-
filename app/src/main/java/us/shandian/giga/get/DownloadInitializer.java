@@ -206,3 +206,5 @@ public class DownloadInitializer extends Thread {
         if (mConn != null) dispose();
     }
 }
+
+

@@ -10,3 +10,5 @@
 #### Fixat
 - Fixa tidsparsning för . format, så att NewPipe kan användas i Finland.
 - Fixa antalet prenumerationer
+
+

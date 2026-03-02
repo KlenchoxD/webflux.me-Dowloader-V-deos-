@@ -14,3 +14,5 @@ Zuzenduta
 • Jokalarien zuzenketak: errotazioa eta itxiera
 • ReCAPTCHA atzeko planoan kargatu
 • Beste zuzenketa batzuk
+
+

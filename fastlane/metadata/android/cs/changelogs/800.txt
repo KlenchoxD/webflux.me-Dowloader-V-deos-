@@ -8,3 +8,5 @@ Nový
   ◦ Vypočítat předpokládaný čas stahování
   ◦ Stáhnout opus (soubory webm) jako ogg
   ◦ Obnovení vypršených odkazů ke stažení pro obnovení stahování po dlouhé pauze
+
+

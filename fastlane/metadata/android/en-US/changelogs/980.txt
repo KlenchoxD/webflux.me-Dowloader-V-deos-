@@ -11,3 +11,5 @@ Fixed
 • Fixed YouTube likes and dislikes extraction
 • Fixed automatic replay after returning from the background
 And much more
+
+

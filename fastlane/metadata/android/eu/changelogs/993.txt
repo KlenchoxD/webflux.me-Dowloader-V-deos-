@@ -10,3 +10,5 @@ Hobetua
 Konpondua
 • Konpondu arakatzailearen URLak, deskargak eta kanpoko erreproduzitzaileak irekitzeko arazoak Android 11+-n
 • MIUI-n bi ukitu behar izatearen pantaila osoko interakzioa konpondu
+
+

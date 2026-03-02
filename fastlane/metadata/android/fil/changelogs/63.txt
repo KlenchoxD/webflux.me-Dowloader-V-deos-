@@ -6,3 +6,5 @@
 
 ### Mga Pagsasaayos
 - Pang-download: Iwasan ang pag-crash kapag pinoproseso ang mga hindi pa natatapos na download mula sa mga .giga file #1407
+
+

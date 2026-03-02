@@ -8,3 +8,5 @@
 • Kichik rasmlarni tortib ro'yxatlarni qayta tartibga solmaslik
 • Har doim popup funksiyalarini eslang
 • Santal tilini qo'shish
+
+

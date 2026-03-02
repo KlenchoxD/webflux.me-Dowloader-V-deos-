@@ -7,3 +7,5 @@ Correções
 
 - O botão de silenciamento causando falhas na API 19 corrigido
 - Descarregar de vídeos longos 1080p 60fps corrigido
+
+

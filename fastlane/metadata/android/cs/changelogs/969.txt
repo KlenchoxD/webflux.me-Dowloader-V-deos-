@@ -6,3 +6,5 @@
 - Přehrávač] Opraveno automatické nepřehrávání přehrávače
 - Zrušit předchozí Snackbary při mazání stahování
 - Opraven pokus o odstranění objektu, který není v seznamu
+
+

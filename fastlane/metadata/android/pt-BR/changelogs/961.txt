@@ -10,3 +10,5 @@
 • Corrigido travamento que ocorre ao remover um stream da lista
 • [PeerTube] Corrigidos streams relacionados
 • [YouTube] Corrigida a pesquisa do YouTube Music
+
+

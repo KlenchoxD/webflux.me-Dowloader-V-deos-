@@ -4,3 +4,5 @@ Permet à l'utilisateur de faire une pause pendant la mise en mémoire tampon d'
 Le thème blanc a été amélioré.
 Correction du chevauchement des polices lors de l'utilisation d'une taille de police plus grande.
 Correction de l'absence de vidéo sur les appareils Formuler et Zephier.
+
+

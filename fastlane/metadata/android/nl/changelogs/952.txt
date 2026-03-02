@@ -5,3 +5,5 @@ Opgelost
 • Gerelateerde streams opgelost door YouTube's nieuwe voortzettingen te steunen
 • Leeftijdsbeperkte YouTube videos opgelost
 • [Android TV] Aanhoudende focusmarkeringlaag opgelost
+
+

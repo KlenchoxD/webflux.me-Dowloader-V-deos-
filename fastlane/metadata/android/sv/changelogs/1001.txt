@@ -4,3 +4,5 @@ Förbättrat
 Fixat
 • Fixat exporterande av databas/abonnemang som inte trunkerade en redan existerande fil, vilket möjligen lede till en korrupt export
 • Fixat att spelaren återupptog från början när en tidsstämpel klickades på
+
+

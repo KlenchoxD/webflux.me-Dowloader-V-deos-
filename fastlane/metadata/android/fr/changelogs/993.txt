@@ -9,3 +9,5 @@ Amélioré
 
 Corrigé
 • Correction de l'ouverture des URL du navigateur, des téléchargements et des lecteurs externes sur Android 11+
+
+

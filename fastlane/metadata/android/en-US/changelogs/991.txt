@@ -11,3 +11,5 @@ Improved
 Fixed
 • Fix multiple crashes
 • [YouTube] Fix loading channels, non-dedicated feed and workaround playback issues in some countries
+
+

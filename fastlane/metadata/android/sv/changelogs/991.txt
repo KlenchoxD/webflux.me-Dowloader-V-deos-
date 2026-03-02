@@ -11,3 +11,5 @@ Förbättrat
 Fixat
 • Fixade flera kraschar
 • [YouTube] Fixade laddning av kanaler, icke-dedikerade flöden och uppspelningsproblem i vissa länder
+
+

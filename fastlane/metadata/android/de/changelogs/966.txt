@@ -12,3 +12,5 @@ Behoben:
 • sehr kleine Vorschaubilder wenn Videos im Hintergrund abgespielt werden
 • leerer Titel im minimierten Video-Player
 • vorheriger Video Modus wurde nicht wiederhergestellt
+
+

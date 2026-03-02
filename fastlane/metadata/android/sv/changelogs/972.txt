@@ -12,3 +12,5 @@ Uppdaterade Invidious-instanser och stöd för Piped-länkar
 Fixat
 [YouTube] Innehåll med åldersgräns
 Förhindrar leaked window Exception när valdialog öppnas
+
+

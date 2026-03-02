@@ -2,3 +2,5 @@ Opraveno nepřehrávání žádného streamu ve službě YouTube kvůli chybám 
 
 Občasné chyby HTTP 403 uprostřed videí zatím nejsou opraveny.
 Tento problém bude opraven v dalším hotfix vydání jak nejdříve to bude možné.
+
+

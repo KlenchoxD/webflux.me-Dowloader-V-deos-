@@ -29,3 +29,5 @@
   - 修復「無內容顯示」錯誤觸發回報問題  
   - 修復 Android 8.1 背景播放器未顯示縮圖問題 [詳情請參閱](https://github.com/TeamNewPipe/NewPipe/issues/943)  
 - 修復廣播接收器註冊問題。已關閉 #1641
+
+

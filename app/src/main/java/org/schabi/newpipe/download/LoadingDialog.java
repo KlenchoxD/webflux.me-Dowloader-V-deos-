@@ -85,3 +85,5 @@ public class LoadingDialog extends DialogFragment {
         super.onDestroyView();
     }
 }
+
+

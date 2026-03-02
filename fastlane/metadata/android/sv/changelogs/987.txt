@@ -10,3 +10,5 @@ Förbättrat
 Fixat
 • Fixade ta bort tittade videor från spellista
 • Fixade dela meny tema och "lägg till i spellista"
+
+

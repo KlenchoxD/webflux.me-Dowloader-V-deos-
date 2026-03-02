@@ -7,3 +7,5 @@
 • Standardvideoqualität auf 720p60 (In-App) und 480p (Pop-up) angepasst
 
 • Fehlerbehebungen
+
+

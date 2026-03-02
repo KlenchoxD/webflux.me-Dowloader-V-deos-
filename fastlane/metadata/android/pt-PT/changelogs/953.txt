@@ -1,1 +1,3 @@
 Correção da extração da função de desencriptação do YouTube.
+
+

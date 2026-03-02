@@ -11,3 +11,5 @@ Javítások
 Javítások
 • Többféle összeomlás javítása
 • [YouTube] Javítva lett a csatornák betöltése, a nem elkülönített feed, és néhány ország lejátszási gondjait megkerültük
+
+

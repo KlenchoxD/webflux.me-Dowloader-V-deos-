@@ -12,3 +12,5 @@ Fixat
 - Uppdatera metadata för uppspelningsköer #2453 
 - [SoundCloud] Fastställd krasch vid laddning av spellistor TeamNewPipe/NewPipeExtractor#170
 - YouTube] Fast varaktighet kan inte pareras TeamNewPipe/NewPipeExtractor#177
+
+

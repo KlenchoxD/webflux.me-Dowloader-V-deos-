@@ -5,3 +5,5 @@ Corrigido
 • Transmissões relacionadas, permintindo novas continuações do YouTube
 • Restrições etárias em videos do YouTube
 • [Android TV] Foco e sobreposição de destaque prolongado corrigidos
+
+

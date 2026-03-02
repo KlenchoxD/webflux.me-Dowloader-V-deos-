@@ -7,3 +7,5 @@ Corrections
 
 - Bouton de mise en sourdine entraînant des plantages sur l'API 19
 - Téléchargement de longues vidéos 1080p 60fps
+
+

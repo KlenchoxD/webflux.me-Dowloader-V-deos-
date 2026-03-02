@@ -9,3 +9,5 @@ Vylepšené stránky
 Opraveno
 - YouTube] Opraveno 'java.lang.IllegalArgumentException #192
 - YouTube] Opraveno nefunkční živé vysílání TeamNewPipe/NewPipeExtractor#195
+
+

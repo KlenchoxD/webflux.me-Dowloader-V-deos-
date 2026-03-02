@@ -8,3 +8,5 @@ Vylepšené stránky
 - Vylepšena změna velikosti vyskakovacího přehrávače pomocí gest štípnutí
 - Enqueue streamy při dlouhém stisknutí tlačítek na pozadí a vyskakovacích tlačítek v kanálu
 - Vylepšené zpracování velikosti záhlaví zásuvky
+
+

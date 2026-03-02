@@ -15,3 +15,5 @@ Javítások
 • [PeerTube] Törölt kommentek kezelése
 
 és még sok más
+
+

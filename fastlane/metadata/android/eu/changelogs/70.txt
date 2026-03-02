@@ -9,3 +9,5 @@
 * Fix crash with default resolution set to best and limited mobile data resolution
 * pop-up player crash fixed
 * NPE when trying to open background player
+
+

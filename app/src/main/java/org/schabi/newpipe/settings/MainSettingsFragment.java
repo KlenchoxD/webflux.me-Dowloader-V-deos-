@@ -69,3 +69,5 @@ public class MainSettingsFragment extends BasePreferenceFragment {
         super.onDestroy();
     }
 }
+
+

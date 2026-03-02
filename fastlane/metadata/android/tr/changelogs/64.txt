@@ -6,3 +6,5 @@
 
 ### Düzeltmeler
 - İndirilenler açılırken çökme düzeltildi(Yayın sürümleri için düzeltme mevcut) #1441
+
+

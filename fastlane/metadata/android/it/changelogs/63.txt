@@ -6,3 +6,5 @@
 
 ### Risolto
 - Downloader: risolto il crash durante il caricamento di download incompleti dai file .giga #1407
+
+

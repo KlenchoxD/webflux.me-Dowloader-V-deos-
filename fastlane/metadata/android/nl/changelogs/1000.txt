@@ -11,3 +11,5 @@ Opgelost:
 • Herstel de pop-up van de lijst met gerelateerde items enqueue
 • Herstel de volgorde in het dialoogvenster Toevoegen aan afspeellijst
 • Pas de lay-out van het bladwijzeritem van de afspeellijst aan
+
+

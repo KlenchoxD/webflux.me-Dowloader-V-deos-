@@ -32,3 +32,5 @@ final class UrlLongPressClickableSpan extends LongPressClickableSpan {
         ShareUtils.copyToClipboard(context, url);
     }
 }
+
+

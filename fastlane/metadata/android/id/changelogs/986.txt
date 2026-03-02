@@ -14,3 +14,5 @@ Diperbaiki
 • Tombol media agar tdk menyembunyikan kontrol pemain
 • Reset pemutaran pada perubahan tipe pemutar
 • Memutar dialog dftr putar
+
+

@@ -6,3 +6,5 @@
 
 ### Trwsio
 - Llwythwr: Trwsio'r chwalu wrth lwytho llwythi i lawr heb eu gorffen o ffeiliau .giga #1407
+
+

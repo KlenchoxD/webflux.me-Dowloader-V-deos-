@@ -15,3 +15,5 @@ Sabit
 • Fonda yüklənmiş qalan ReCAPTCHA-nı düzəldin 
 • Lenti təzələyərkən klikləri söndürün
  • Bəzi yükləyici qəzalarını düzəldin
+
+

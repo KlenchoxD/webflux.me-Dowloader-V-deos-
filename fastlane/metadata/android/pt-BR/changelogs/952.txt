@@ -5,3 +5,5 @@ Corrigido
 • Corrigido streams relacionados apoiando as novas continuações do YouTube
 • Corrigido vídeos com restrição de idade do YouTube
 • [Android TV] Corrigido o foco persistente de sobreposição de destaque
+
+

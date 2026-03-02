@@ -15,3 +15,5 @@ Arreglado texto de colores rotos en el modo oscuro
 [YouTube] Solucionado problema de no mostrar los videos recomendados
 Solucionado cierres inesperados en vista de listas en Historial
 Arreglado marcas de tiempo en respuestas de comentarios
+
+

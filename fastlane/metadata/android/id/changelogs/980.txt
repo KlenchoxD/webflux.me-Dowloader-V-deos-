@@ -11,3 +11,5 @@ Tetap
 • Memperbaiki ekstraksi suka dan tidak suka YouTube
 • Memperbaiki pemutaran ulang otomatis setelah kembali dari latar belakang
 Dan banyak lagi
+
+

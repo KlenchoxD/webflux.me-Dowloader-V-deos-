@@ -14,3 +14,5 @@ Fixed
 • Fix crash on opening videos and "Could not play this stream"
 
 and more
+
+

@@ -16,3 +16,5 @@
   - Přepracován dialog ovládání rychlosti přehrávání
   - Přidán přepínač pro rychlé přetočení v tichých částech
 Další změny/opravy viz GitHub.
+
+

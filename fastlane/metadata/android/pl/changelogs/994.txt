@@ -13,3 +13,5 @@ Naprawione
 • [PeerTube] Awatary przesyłającego i podkanału zostały zamienione
 
 i więcej
+
+

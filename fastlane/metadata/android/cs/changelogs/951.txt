@@ -4,3 +4,5 @@ Nový
 - Přidání karty seznamu skladeb na hlavní stránku
 - Rychlé převíjení vpřed/vzad ve frontě přehrávačů na pozadí/vyskočení.
 - Zobrazení návrhu vyhledávání: mysleli jste a zobrazení výsledku pro
+
+

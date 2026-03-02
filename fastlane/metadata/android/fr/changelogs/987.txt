@@ -6,3 +6,5 @@ Nouveautés
 Améliorations
 • Amélioration de la boîte de dialogue des paramètres de la lecture
 • Déplacement des boutons importation/exportation vers le menu à trois points
+
+

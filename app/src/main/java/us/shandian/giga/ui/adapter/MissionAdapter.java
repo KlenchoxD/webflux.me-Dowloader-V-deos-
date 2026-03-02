@@ -995,3 +995,5 @@ public class MissionAdapter extends Adapter<ViewHolder> implements Handler.Callb
         void tryRecover(DownloadMission mission);
     }
 }
+
+

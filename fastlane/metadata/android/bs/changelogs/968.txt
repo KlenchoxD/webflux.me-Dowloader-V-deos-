@@ -5,3 +5,5 @@ Dotjerana je bijela tema.
 Ispravljeno preklapanje fontova pri korištenju veće veličine fonta.
 Ispravljen je problem s nedostatkom videa na Formuler i Zephier uređajima.
 Ispravljeni su razni padovi sistema.
+
+

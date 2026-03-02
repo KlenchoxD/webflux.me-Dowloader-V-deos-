@@ -13,3 +13,5 @@ Fejlesztések
 Javítások
 • Különböző lejátszóértesítési problémák javítása: lejárt/hiányos mádia információ, zavaros bélyegkép
 • A teljes képernyős csak a negyed képet teszi ki
+
+

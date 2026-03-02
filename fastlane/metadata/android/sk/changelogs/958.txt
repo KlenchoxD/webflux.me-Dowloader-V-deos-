@@ -13,3 +13,5 @@ Other:
 • Code cleanup and several internal improvements
 • Dependency updates
 • Translation updates
+
+

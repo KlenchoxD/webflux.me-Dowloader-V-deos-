@@ -10,3 +10,5 @@ Förbättrat
 Fixat
 • Fixade öppning av webbläsar URLs, nedladdningar och externa spelare på Android 11+
 • Fixade interaktion med helskärm som kräver två tryck på MIUI
+
+

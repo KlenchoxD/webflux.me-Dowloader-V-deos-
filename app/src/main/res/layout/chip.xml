@@ -9,3 +9,4 @@
     android:theme="@style/Theme.MaterialComponents.DayNight.Bridge"
     app:chipMinTouchTargetSize="40dp"
     tools:text="I'm a correctly themed chip!" />
+

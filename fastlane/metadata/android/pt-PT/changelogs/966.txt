@@ -12,3 +12,5 @@ Fixo:
 - Fixar miniaturas muito pequenas em detalhes de vídeo enquanto se reproduz em fundo
 - Corrigir título vazio em jogador minimizado
 - O último modo de reparação do tamanho não está a ser restaurado corretamente
+
+

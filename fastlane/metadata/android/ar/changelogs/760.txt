@@ -15,3 +15,5 @@
 ثابت
 • [SoundCloud] تعطل ثابت عند تحميل قوائم التشغيل TeamNewPipe / NewPipeExtractor # 170
 • [يوتيوب] لا يمكن تحديد المدة الثابتة TeamNewPipe / NewPipeExtractor # 177
+
+

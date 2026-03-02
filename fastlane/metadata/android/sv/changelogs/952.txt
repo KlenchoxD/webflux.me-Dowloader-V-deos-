@@ -5,3 +5,5 @@ Fixat
 • Fixade relaterade strömmar genom att stödja YouTubes nya fortsättningar
 • Fixade åldersbegränsade YouTube-videor
 • [Android TV] Fixade kvardröjande fokus markerade överlägg
+
+

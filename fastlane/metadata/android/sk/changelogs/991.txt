@@ -11,3 +11,5 @@ Vylepšenia
 Opravy
 • Boli opravené viaceré problémy spôsobujúce zlyhanie aplikácie
 • [YouTube] Boli opravené problémy s načítavaním kanálov, nevyhradených informačných kanálov a prehrávaním v niektorých krajinách
+
+

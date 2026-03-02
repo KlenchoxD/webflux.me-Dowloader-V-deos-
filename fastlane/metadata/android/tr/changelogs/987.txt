@@ -10,3 +10,5 @@ Yeni
 Sabit
 • Tam olarak izlenen videoları oynatma listesinden kaldırmayı düzeltin
 • Menü temasını paylaş ve "oynatma listesine ekle" girişini düzeltin
+
+

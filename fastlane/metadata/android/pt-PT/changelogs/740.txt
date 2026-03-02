@@ -21,3 +21,5 @@
 < li>importação de assinatura fixa do youtube: ignore aqueles com url inválido e mantenha aqueles com título vazio< / li>
 < li>corrigir URL inválido do YouTube: o nome da marca de assinatura nem sempre é "Assinatura", impedindo o carregamento de fluxos< / li>
 < / ul>
+
+

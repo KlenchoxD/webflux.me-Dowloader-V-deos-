@@ -29,3 +29,5 @@
   - Gösterilen hiçbir istisna tetikleyici bildirmesi düzeltildi
   -   android 8.1 için arka plan oynatıcıda küçük resim gösterilmiyor [buradan ulaşabilirsiniz](https://github.com/TeamNewPipe/NewPipe/issues/943)
 - Yayın alıcısının kaydı düzeltildi. Kapatılır #1641.
+
+

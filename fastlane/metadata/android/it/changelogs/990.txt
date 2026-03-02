@@ -13,3 +13,5 @@ Miglioramenti
 Correzioni
 • Corretti vari problemi con la notifica del player
 • Corretto il fullscreen che utilizza 1/4 dello schermo
+
+

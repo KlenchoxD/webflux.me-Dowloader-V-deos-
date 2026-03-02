@@ -324,3 +324,5 @@ public final class NotificationUtil {
         return Bitmap.createBitmap(bitmap, x, y, dstSize, dstSize);
     }
 }
+
+

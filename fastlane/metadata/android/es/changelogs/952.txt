@@ -5,3 +5,5 @@ Arreglado
 • Streams relacionados, gracias al soporte de las nuevas continuaciones de YouTube
 • Videos con restricción de edad en YouTube
 • [Android TV] Superposición de los destacados de foco persistente
+
+

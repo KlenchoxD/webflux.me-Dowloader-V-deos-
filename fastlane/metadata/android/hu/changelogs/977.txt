@@ -8,3 +8,5 @@
 • A minimalizált lejátszó gombok klikkelhető területének növelése
 
 A további változásokért, tekintse meg a változásnaplót (és blog bejegyzést) a lenti Linkek résznél.
+
+

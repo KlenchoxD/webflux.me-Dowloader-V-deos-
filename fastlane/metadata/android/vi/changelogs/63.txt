@@ -6,3 +6,5 @@
 
 ### Sửa lỗi
 - Trình tải: Sửa lỗi crash khi nạp các file .giga chưa xong việc tải về
+
+

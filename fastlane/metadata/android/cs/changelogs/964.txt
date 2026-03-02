@@ -6,3 +6,5 @@
 - Opraven pád v případě, že na některých zařízeních není nastaven výchozí prohlížeč, a vylepšeny dialogy sdílení
 -
 -
+
+

@@ -6,3 +6,5 @@
 
 ### Korjattu
 - Lataaja: Korjattu kaatuminen ladattaessa keskeneräisiä tallennuksia .-giga-tiedostoista #1407
+
+

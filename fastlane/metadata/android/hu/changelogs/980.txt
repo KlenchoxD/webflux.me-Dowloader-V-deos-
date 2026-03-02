@@ -11,3 +11,5 @@ Javítás
 • A YouTube Tetszik/Nem tetszik kinyerés javításra került
 • Automata újrajátszás javítása a háttérből való visszaváltáskor
 És még sok minden más
+
+

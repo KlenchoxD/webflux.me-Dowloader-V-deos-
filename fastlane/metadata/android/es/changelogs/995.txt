@@ -14,3 +14,5 @@ Corregido
 • Idiomas incorrectos en selector de idiomas
 • Audio del reproductor no respetaba silencio
 • La lista de reproducción no funcionaba ocasionalmente
+
+

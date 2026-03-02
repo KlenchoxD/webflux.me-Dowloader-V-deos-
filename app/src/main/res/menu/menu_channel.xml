@@ -38,3 +38,5 @@
         android:title="@string/open_in_browser"
         app:showAsAction="never" />
 </menu>
+
+

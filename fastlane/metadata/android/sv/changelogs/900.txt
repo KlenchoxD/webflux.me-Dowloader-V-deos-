@@ -12,3 +12,5 @@ Fixat
 • databas backup på Android P
 • krasch när du delar en nedladdad fil
 • massor av YouTube problem och mer ...
+
+

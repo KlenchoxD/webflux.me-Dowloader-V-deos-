@@ -17,3 +17,4 @@ Fixed
 • [YouTube] Fixed switching on null causing NPE
 • [YouTube] Fixed viewing comments when opening an invidio.us url
 • [SoundCloud] Updated client_id
+

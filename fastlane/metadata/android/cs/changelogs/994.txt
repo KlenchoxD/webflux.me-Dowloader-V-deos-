@@ -13,3 +13,5 @@ Opraveno
 - [PeerTube] Avatary nahrávače a podkanálu byly prohozeny
 
 a další
+
+

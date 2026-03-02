@@ -6,3 +6,5 @@
 
 ### Sabit 
 - Yükləyici: .giga fayllarından bitməmiş endirmələrin yüklənməsi zamanı yaranan nasazlığı aradan qaldırın #1407
+
+

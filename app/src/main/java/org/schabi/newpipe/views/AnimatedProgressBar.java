@@ -64,3 +64,5 @@ public final class AnimatedProgressBar extends ProgressBar {
         }
     }
 }
+
+

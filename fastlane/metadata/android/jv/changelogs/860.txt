@@ -5,3 +5,5 @@ Ditingkatake
 *Ngoptimakle Youtube supaya nggunakake data kang luwih sithik
 
 Luwih seka 15 bug kaitane karo Youtube sik wes dibenakke ing rilis iki.
+
+

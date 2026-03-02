@@ -5,3 +5,5 @@ Improved
 • Optimized YouTube to use less data
 
 More than 15 YouTube-related bugs were fixed in this release.
+
+

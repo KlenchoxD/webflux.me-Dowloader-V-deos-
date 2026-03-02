@@ -11,3 +11,5 @@ Améliorations
 
 Corrections
 • Réinitialisation de la lecture lors du changement de lecteur
+
+

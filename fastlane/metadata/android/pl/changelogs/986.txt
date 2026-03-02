@@ -14,3 +14,5 @@ Naprawione
 • Przycisk multimediów nie ukrywał kontrolek odtwarzacza
 • Reset odtwarzania po zmianie typu odtwarzacz.
 • Obracanie okna playlisty
+
+

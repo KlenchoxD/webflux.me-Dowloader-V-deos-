@@ -18,3 +18,5 @@ Ispravljeno
 • [YouTube] Ispravljeno prebacivanje na null što je uzrokovalo NPE
 • [YouTube] Ispravljeno pregledavanje komentara prilikom otvaranja invidio.us URL-a
 • [SoundCloud] Ažuriran client_id
+
+

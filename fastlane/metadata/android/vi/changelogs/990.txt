@@ -13,3 +13,5 @@ Cải thiện
 Khắc phục
 • Khắc phục nhiều vấn đề khác nhau với thông báo trình phát: thông tin phương tiện lỗi thời/bị thiếu, hình thu nhỏ bị méo
 • Sửa toàn màn hình bằng 1/4 màn hình
+
+

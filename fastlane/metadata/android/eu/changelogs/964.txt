@@ -6,3 +6,5 @@
 • Lehenetsitako arakatzailerik ez zeukaten gailuetan hutsegitea konpondu eta partekatzeko elkarrizketak hobetu
 • Erreproduzitu/pausatu erreproduzitzailean hardware espazio botoiarekin
 • [media.ccc.de] Hainbat hobekuntza
+
+

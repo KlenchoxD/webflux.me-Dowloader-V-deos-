@@ -52,3 +52,5 @@ public class LocalBookmarkPlaylistItemHolder extends LocalPlaylistItemHolder {
         };
     }
 }
+
+

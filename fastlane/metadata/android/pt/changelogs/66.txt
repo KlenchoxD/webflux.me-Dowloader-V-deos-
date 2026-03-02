@@ -31,3 +31,5 @@
 - Correcção principal do leitor de vídeo #1509 
   - [#1412] Modo de repetição fixo causando NPE do jogador quando novas intenções são recebidas enquanto a actividade do jogador está em segundo plano.
   - Fixa a minimização do jogador a popup não destrói o jogador quando não é concedida permissão de popup.
+
+

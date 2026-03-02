@@ -13,3 +13,5 @@ Hobetua
 Konpondua
 • Audio eta bideo desinkronizazioa
 • [PeerTube] Ezabatutako iruzkinak
+
+

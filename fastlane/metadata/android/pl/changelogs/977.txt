@@ -8,3 +8,5 @@
 • Rozszerzono klikalny obszar przycisków na zminimalizowanym odtwarzaczu
 
 Reszta zmian w dzienniku zmian w linkach poniżej.
+
+

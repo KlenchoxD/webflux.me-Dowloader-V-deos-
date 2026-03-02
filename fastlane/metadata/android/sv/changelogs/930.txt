@@ -10,3 +10,5 @@ Förbättrat
 • Förbättrad storlekshantering av lådans rubriktitel
 
 Och mycket mer
+
+

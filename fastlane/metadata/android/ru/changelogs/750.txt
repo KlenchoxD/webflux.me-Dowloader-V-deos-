@@ -20,3 +20,5 @@
 • Обновление метаданных очереди проигрывания #2453
 • [SoundCloud] Исправлен вылет при загрузке плейлистов TeamNewPipe/NewPipeExtractor#170
 • [YouTube] Исправлена ошибка парсинга времени проигрывания TeamNewPipe/NewPipeExtractor#177
+
+

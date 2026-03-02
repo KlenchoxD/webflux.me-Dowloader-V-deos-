@@ -5,3 +5,5 @@ Reversão das mudanças para recortes ao jogar em várias janelas, causando a re
 Aumento do compileSdk de 30 para 31
 Atualização da biblioteca de relatórios de erros
 Refatoração de algum código no player
+
+

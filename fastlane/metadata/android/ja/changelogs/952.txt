@@ -5,3 +5,5 @@
 • Fixed related streams by supporting YouTube's new continuations
 • 年齢制限のあるYouTube動画を修正
 • [Android TV] Fixed lingering focus highlight overlay
+
+

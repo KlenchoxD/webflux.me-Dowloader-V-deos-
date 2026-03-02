@@ -5,3 +5,5 @@
 - Listenelement zum Abspielen von Videos auf Kodi hinzugefügt
 - Absturz behoben, wenn auf manchen Geräten kein Standardbrowser eingestellt ist, und Freigabedialoge verbessert
 ...
+
+

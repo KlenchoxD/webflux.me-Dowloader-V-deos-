@@ -49,3 +49,5 @@ public class RemotePlaylistItemHolder extends PlaylistItemHolder {
         super.updateFromItem(localItem, historyRecordManager, dateTimeFormatter);
     }
 }
+
+

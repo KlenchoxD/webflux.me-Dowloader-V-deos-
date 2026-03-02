@@ -1,1 +1,3 @@
 Zaktualizowano identyfikator klienta SoundCloud, aby naprawić problemy z SoundCloud.
+
+

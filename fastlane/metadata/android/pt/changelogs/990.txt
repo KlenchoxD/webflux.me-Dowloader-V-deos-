@@ -12,3 +12,5 @@ Melhorado
 Corrigido
 • Vários problemas com a notificação do reprodutor: informações de média desatualizadas/ausentes, miniatura distorcida
 • Ecrã cheio usando 1/4 do ecrã
+
+

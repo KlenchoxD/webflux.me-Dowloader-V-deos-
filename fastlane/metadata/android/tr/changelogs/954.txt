@@ -5,3 +5,5 @@
 • desteklenmeyen URL durumunda açma seçeneklerini içeren iletişim kutusu göster
 • Uzak olan alınamadığında arama önerisi deneyimini iyileştir
 • Öntanımlı video kalitesi 720p60 (uygulama içi) ve 480p'ye (açılır) yükseltildi
+
+

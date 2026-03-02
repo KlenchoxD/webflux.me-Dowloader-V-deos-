@@ -44,3 +44,8 @@
 -keepclassmembers class * extends com.google.protobuf.GeneratedMessageLite {
     <fields>;
 }
+
+# Fix for youtubedl-android / commons-compress
+-keep class org.apache.commons.compress.** { *; }
+-keep interface org.apache.commons.compress.** { *; }
+-dontwarn org.apache.commons.compress.**

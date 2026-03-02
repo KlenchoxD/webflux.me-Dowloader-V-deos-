@@ -5,3 +5,5 @@ Opraveno
 • Opraveny související streamy díky podpoře nové komunikace YouTubu
 • Opraveny YouTube videa s omezeným věkem
 • [Android TV]
+
+

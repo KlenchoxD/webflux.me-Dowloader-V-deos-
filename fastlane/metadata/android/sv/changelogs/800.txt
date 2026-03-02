@@ -5,3 +5,5 @@ Nytt
   ◦ Det kan uppstå problem med SSL-handskakningar på Android 4.4 och 7.1 vid åtkomst till vissa instanser, vilket resulterar i ett nätverksfel.
 
 Och mycket mer
+
+

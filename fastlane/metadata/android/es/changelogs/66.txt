@@ -31,3 +31,5 @@
 - Corrección principal del reproductor de video #1509 
   - [#1412] Se corrige el modo de repetición que provoca NPE del reproductor cuando se recibe una nueva intent mientras la actividad del reproductor está en segundo plano.
   - Corregido minimizar el reproductor a popup no destruye el reproductor cuando no se concede el permiso de popup.
+
+

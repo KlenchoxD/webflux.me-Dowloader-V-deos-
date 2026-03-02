@@ -8,3 +8,5 @@
 
 ### Corrigido
 * * As transmissões ao vivo do YouTube param de ser reproduzidas após um curto período de tempo(# 1996 por @username)
+
+

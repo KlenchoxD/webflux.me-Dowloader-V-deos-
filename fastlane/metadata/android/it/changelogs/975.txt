@@ -15,3 +15,5 @@ Fisso
 • Risolto il problema con ReCAPTCHA che rimaneva caricato in background
 • Disattiva i clic durante l'aggiornamento del feed
 • Risolti alcuni arresti anomali del downloader
+
+

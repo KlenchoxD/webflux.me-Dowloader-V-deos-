@@ -11,3 +11,5 @@ public class LocalStatisticStreamGridItemHolder extends LocalStatisticStreamItem
         super(infoItemBuilder, R.layout.list_stream_grid_item, parent);
     }
 }
+
+

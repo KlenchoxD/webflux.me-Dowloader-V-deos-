@@ -156,3 +156,5 @@ abstract class AbstractInfoPlayQueue<T extends ListInfo<? extends InfoItem>>
         return infoItems.stream().map(PlayQueueItem::new).collect(Collectors.toList());
     }
 }
+
+

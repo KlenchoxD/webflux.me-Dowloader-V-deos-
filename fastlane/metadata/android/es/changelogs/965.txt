@@ -4,3 +4,5 @@ Se ha corregido la obtención de comentarios de YouTube.
 Se ha añadido soporte para las sub-rutas /watch/, /v/ y /w/ en las URLs de YouTube.
 Se ha corregido la extracción del identificador de cliente de SoundCloud y del contenido con restricciones geográficas.
 Añadida la localización en kurdo del norte.
+
+

@@ -12,3 +12,5 @@ Zaktualizowano instancje Invidious i wsparcie dla linków Piped
 Naprawione
 [YouTube] Treść z ograniczeniem wiekowym
 Zapobieganie wyjątkowi wycieku okna podczas otwierania okna wyboru
+
+

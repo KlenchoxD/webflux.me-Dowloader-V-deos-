@@ -12,3 +12,5 @@ Aktualizované instance Invidious a podpora předávaných odkazů.
 Stabilní
 [YouTube] Obsah s věkovým omezením
 -
+
+

@@ -7,3 +7,5 @@ Sửa lỗi phát lại mục đầu tiên trong hàng đợi khi thay đổi tr
 Chờ lâu hơn khi bộ nhớ đệm trong các phát trực tiếp trước khi thất bại
 Sửa thứ tự kết quả tìm kiếm cục bộ
 Sửa lỗi trường mục trống trong hàng đợi phát
+
+

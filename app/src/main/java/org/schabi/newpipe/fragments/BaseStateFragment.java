@@ -225,3 +225,5 @@ public abstract class BaseStateFragment<I> extends BaseFragment implements ViewC
         ErrorUtil.showSnackbar(this, errorInfo);
     }
 }
+
+

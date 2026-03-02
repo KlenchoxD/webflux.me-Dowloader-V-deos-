@@ -6,3 +6,5 @@
 
 ### Fiksitaj
 - Elŝutilo: Fiksi kraŝon kiam ŝarĝi malfinitajn elŝutaĵojn el .giga-j dosieroj #1407
+
+

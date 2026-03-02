@@ -10,3 +10,5 @@ Ispravljeno
 • [YouTube] Ispravljene povremene HTTP 403 greške na početku ili usred videa
 • [YouTube] Izdvajanje avatara i banera iz više tipova zaglavlja kanala
 • [Bandcamp] Ispravljene razne greške i uvijek korištenje HTTPS-a
+
+

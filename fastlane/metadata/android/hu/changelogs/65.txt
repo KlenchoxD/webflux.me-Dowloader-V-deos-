@@ -24,3 +24,5 @@
 - Fő videólejátszó #1509
   - [#1412] a háttérben levő ismétlőmód NPE-t okozhatott.
   - Felugró mód engedélyezése nélkül való átváltás esetén nem záródik be.
+
+

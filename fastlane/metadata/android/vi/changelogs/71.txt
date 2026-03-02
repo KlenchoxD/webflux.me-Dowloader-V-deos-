@@ -8,3 +8,5 @@
 
 ### Sửa lỗi
 * Luồng trực tiếp YouTube dừng phát sau một thời gian ngắn (#1996 bởi @yausername)
+
+

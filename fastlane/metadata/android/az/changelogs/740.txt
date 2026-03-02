@@ -20,3 +20,5 @@ li> əsas video pleyerə "cari vaxtda paylaş" düyməsini əlavə edin</li>
 <li> sabit youtube abunə idxalı: etibarsız url olanlara məhəl qoymayın və başlığı boş olanları saxlayın</li>
 <li> etibarsız YouTube url-ni düzəldin: imza teqinin adı həmişə "imza" deyil, axınların yüklənməsinə mane olur</li>
 </ul>
+
+

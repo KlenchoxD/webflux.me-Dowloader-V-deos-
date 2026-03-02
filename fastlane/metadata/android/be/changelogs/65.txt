@@ -24,3 +24,5 @@
 - Main video player fix #1509 
   - [#1412] Fixed repeat mode causing player NPE when new intent is received while player activity is in background.
   - Fixed minimizing player to popup does not destroy player when popup permission is not granted.
+
+

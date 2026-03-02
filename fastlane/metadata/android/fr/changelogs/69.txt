@@ -8,3 +8,5 @@
 
 ### Bugs connus
 - État de lecture ne peut être enregistré sur Android P
+
+

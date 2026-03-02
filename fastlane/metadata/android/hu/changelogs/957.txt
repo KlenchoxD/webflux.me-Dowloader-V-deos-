@@ -8,3 +8,5 @@
 • Ne rendezze újra a listát az indexkép mozgatásával
 • Emlékezzen a kiugró lejátszó beállításokra
 • Szantáli nyelv hozzáadása
+
+

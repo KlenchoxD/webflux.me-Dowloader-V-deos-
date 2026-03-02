@@ -10,3 +10,5 @@ Zuzenduta
 • [YouTube] Bideoen hasieran edo erdian noizbehinkako HTTP 403 erroreak konpondu dira.
 • [YouTube] Atera avatarra eta bannerra kanal goiburu mota gehiagotatik
 • [Bandcamp] Hainbat akats konpontzen ditu eta beti HTTPS erabiltzen du
+
+

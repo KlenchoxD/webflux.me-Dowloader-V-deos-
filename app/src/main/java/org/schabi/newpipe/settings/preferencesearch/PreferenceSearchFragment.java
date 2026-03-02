@@ -71,3 +71,5 @@ public class PreferenceSearchFragment extends Fragment {
         ((PreferenceSearchResultListener) getActivity()).onSearchResultClicked(item);
     }
 }
+
+

@@ -4,3 +4,5 @@ Opravná verze, která opravuje chyby YouTube:
 - Oprava dvojího stahování informací při otevření streamu
 - [Soundcloud] Odstranění nepřehratelných streamů chráněných DRM
 - Aktualizovány překlady
+
+

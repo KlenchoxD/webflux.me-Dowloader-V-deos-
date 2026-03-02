@@ -4,3 +4,5 @@ Dit is een hotfix-release die YouTube-fouten verhelpt:
 • Probleem opgelost waarbij informatie twee keer werd gedownload bij het openen van een stream
 • [Soundcloud] Niet-afspeelbare DRM-beveiligde streams verwijderd
 • Vertalingen bijgewerkt
+
+

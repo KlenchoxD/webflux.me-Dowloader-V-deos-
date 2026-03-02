@@ -22,3 +22,5 @@ public abstract class ToolbarActivity extends AppCompatActivity {
 
     protected abstract int getLayoutResource();
 }
+
+

@@ -12,3 +12,5 @@ Poboljšano
 Ispravljeno
 • Ispravljeno višestruko rušenje sistema
 • [YouTube] Ispravljeno učitavanje kanala, nenamjenski feed i zaobilazno rješenje problema s reprodukcijom u nekim zemljama
+
+

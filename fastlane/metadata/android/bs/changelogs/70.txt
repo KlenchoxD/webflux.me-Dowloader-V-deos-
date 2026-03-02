@@ -23,3 +23,5 @@ PAŽNJA: Ova verzija je vjerovatno puna grešaka, baš kao i prethodna. Međutim
 * NPE pri pokušaju otvaranja pozadinskog plejera #1901
 * Ispravljeno umetanje novih tokova kada je omogućeno automatsko stavljanje u red #1878
 * Ispravljen problem sa dešifriranjem i isključivanjem sistema
+
+

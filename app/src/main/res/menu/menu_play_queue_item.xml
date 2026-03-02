@@ -20,3 +20,4 @@
         android:id="@+id/menu_item_download"
         android:title="@string/download" />
 </menu>
+

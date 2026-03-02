@@ -14,3 +14,5 @@ Correção de fechamentos bruscos (crashes).
 
 # Desenvolvimento
 Modernização do código interno.
+
+

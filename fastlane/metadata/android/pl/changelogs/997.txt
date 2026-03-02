@@ -15,3 +15,5 @@ Naprawione
 • Luka w imporcie ustawień i przełączaniu na JSON
 • Różne poprawki pobierania
 • Przycięto wyszuk. tekst
+
+

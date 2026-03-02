@@ -5,3 +5,5 @@ Weißes Design wurde aufpoliert.
 Überlappende Schriftarten bei Verwendung einer größeren Schriftgröße behoben.
 Videoanzeige auf Formuler- und Zephier-Geräten behoben.
 Verschiedene Abstürze behoben.
+
+

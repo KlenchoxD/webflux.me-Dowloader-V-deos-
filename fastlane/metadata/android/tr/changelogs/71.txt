@@ -8,3 +8,5 @@
 
 ### Sabit
 * YouTube canlı yayınları kısa bir süre sonra oynatılmayı durduruyor (#1996 by @yausername)
+
+

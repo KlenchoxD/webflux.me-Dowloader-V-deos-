@@ -4,3 +4,5 @@ YouTube-ko akatsak zuzentzen dituen zuzenketa-bertsio bat da hau:
 • Konpondu informazioa bi aldiz deskargatzea erreprodukzio bat irekitzean
 • [Soundcloud] Kendu erreproduziezinak diren DRM bidez babestutako erreprodukzioak
 • Itzulpen eguneratuak
+
+

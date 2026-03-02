@@ -11,3 +11,5 @@ Ruxsat etilgan
 • Android P-da ma'lumotlar bazasini zaxiralash
 • yuklab olingan faylni ulashishda xato
 • YouTube-dan ekstraksiya qilishda muammo va boshqalar ...
+
+

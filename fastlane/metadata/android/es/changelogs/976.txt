@@ -8,3 +8,5 @@
 • [Android TV] Corregidos saltos en barra de reproducción al usar DPad
 
 Para ver más cambios, revisa nuestro registro (y blog) en la pestaña de enlaces de abajo.
+
+

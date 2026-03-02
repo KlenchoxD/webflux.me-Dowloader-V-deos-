@@ -13,3 +13,5 @@ Ulepszone
 Naprawione
 • Różne problemy z powiadomieniem odtwarzacza: nieaktualne/brakujące info o multimediach, zniekształcona miniatura
 • Pełny ekran zajmujący 1/4 ekranu
+
+

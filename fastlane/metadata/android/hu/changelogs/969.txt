@@ -6,3 +6,5 @@
 • [Lejátszó] A lejátszó most már automatikusan elindul
 • Korábbi Snackbar-ok elutasítása a letöltések törlésénél
 • A listában nem szereplő elem törlésének javítása
+
+

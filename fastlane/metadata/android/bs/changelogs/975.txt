@@ -15,3 +15,5 @@ Ispravljeno
 • Ispravljena ReCAPTCHA koja ostaje učitana u pozadini
 • Onemogući klikove prilikom osvježavanja feeda
 • Ispravljeni neki padovi preuzimanja
+
+

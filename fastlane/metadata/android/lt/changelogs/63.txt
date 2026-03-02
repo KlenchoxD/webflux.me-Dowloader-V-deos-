@@ -6,3 +6,5 @@
 
 ### Ištaisyta
 - Downloader: ištaisykitas nebaigtų atsisiuntimų iš .giga failų įkėlimas #1407
+
+

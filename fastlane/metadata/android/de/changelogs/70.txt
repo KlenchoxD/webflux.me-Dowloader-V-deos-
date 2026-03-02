@@ -8,3 +8,5 @@ ACHTUNG: Diese Version ist wahrscheinlich ein Bugfest.
 ### Behoben
 * Crash mit Standard-Auflösung eingestellt auf beste und begrenzte mobile Datenauflösung #1835
 * Pop-up-Spieler-Absturz behoben #1874
+
+

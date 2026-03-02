@@ -11,3 +11,5 @@ Opravené
 - Vyskakovacie okno zoznamu súvisiacich položiek
 - Poradie v okne pridania do playlistu
 - Rozloženie položiek záložiek playlistu
+
+

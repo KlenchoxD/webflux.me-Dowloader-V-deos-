@@ -17,3 +17,5 @@ Javítások
 • A csoport rendező gomb láthatóságának javítása a feliratkozási mezőben
 
 és még sok más
+
+

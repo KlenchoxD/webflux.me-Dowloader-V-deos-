@@ -3,3 +3,5 @@ Hotfix
 - Oprava extrakce komentářů YouTube a pádů s vypnutými komentáři
 - Oprava vyhledávání hudby na YouTube
 - Oprava živých přenosů PeerTube
+
+

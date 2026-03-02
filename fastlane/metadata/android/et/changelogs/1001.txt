@@ -4,3 +4,5 @@ Täiendused
 Parandused
 • Parandasime olukorra, kus andmebaasi/tellimuste eksport ei tühjendanud olemasolevat faili, põhjustades sellega vigase varukoopia tekkimise
 • Parandasime esituse jätkamise klõpsides ajatemplil
+
+

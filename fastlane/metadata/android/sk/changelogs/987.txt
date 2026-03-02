@@ -10,3 +10,5 @@ Vylepšenia
 Opravy
 • Odstraňovanie dokončených videí zo zoznamu videí
 • Téma v menu zdieľania a položky „pridať do zoznamu skladieb“
+
+

@@ -7,3 +7,5 @@ Lejátszó váltáskor az első videó hiábs lejátszásának javítása
 A bufferelés során több ideig vár a lejátszó mielőtt hibára fut az élő közvetítés
 A helyi keresési eredmények sorrendjének javítása
 Üres elemek javítása a lejátszási listában
+
+

@@ -24,3 +24,5 @@
 - Correção do reprodutor de vídeo principal #1509
 - [#1412] Corrigido o modo de repetição causando NPE do reprodutor quando uma nova intenção é recebida enquanto a atividade do reprodutor está em segundo plano.
 - Corrigida a minimização de reprodutor para pop-up não destrói o reprodutor quando a permissão de pop-up não é concedida.
+
+

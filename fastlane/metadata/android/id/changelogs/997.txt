@@ -13,3 +13,5 @@ Perbaikan
 • Atasi kerentanan pengimporan pengaturan & ubah ke JSON
 • Perbaikan unduhan
 • Pangkas teks pencarian
+
+

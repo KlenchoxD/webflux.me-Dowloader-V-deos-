@@ -6,3 +6,5 @@
 
 ### Salabots
 - Salabota lietotnes nobrukšana, kad atvēra Lejupielādes (labojums pieejams relīzes laidienos) #1441
+
+

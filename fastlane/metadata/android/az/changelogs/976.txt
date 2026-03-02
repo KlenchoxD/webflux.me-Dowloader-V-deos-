@@ -7,3 +7,5 @@
 • Sabit bağlanan audio sessiya 
 • [Android TV] DPad istifadə edərkən uzun axtarış çubuğu atlamaları düzəldildi.
 Əlavə dəyişiklikləri görmək üçün aşağıdakı Linklər sekmesinden dəyişiklik jurnalına (və blog yazısına) baxın.
+
+

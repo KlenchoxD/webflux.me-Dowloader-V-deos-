@@ -8,3 +8,5 @@
 • Povećan zadani kvalitet videozapisa na 720p60 (player u aplikaciji) i 480p (skočni player)
 
 • mnoštvo ispravki grešaka i još mnogo toga
+
+

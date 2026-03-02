@@ -1,1 +1,3 @@
 Taastasime olukorra, et YouTube töötaks Euroopa Liidus. Põhjuseks oli uus küpsis ja privaatsusnõusolek, mille tõttu NewPipe salvestab nüüd CONSENT-küpsise.
+
+

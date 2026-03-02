@@ -12,3 +12,5 @@ Corrections
 • Très petite vignette dans détails de vidéo lors de lecture en arrière-plan
 • Titre vide dans lecteur réduit
 • Dernier mode redimensionnement pas restauré correctement
+
+

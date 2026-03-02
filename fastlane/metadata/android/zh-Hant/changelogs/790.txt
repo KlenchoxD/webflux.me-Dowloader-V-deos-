@@ -12,3 +12,5 @@
 • 將從 NewPipeExtractor 繼承遺失的依賴關係新增到 NewPipe 中 #2535
 • 遷移至 AndroidX #2685
 • 將 ExoPlayer 更新到 2.10.6 #2697, #2736
+
+

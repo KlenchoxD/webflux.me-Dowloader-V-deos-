@@ -10,3 +10,5 @@ Melhorado
 Fixa
 - Correção da remoção de vídeos totalmente vistos da lista de reprodução
 - Corrigir o tema do menu de partilha e a entrada "adicionar à lista de reprodução
+
+

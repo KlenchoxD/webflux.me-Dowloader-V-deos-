@@ -2,3 +2,5 @@
 • Memperbaiki penguraian komentar YouTube.
 • Memperbaiki tampilan nama layanan media.ccc.de.
 • Memperbarui terjemahan.
+
+

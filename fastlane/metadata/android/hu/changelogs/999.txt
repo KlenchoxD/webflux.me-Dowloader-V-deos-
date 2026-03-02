@@ -10,3 +10,5 @@ Javítások
 • [YouTube] A videó elején s közepén fellépő HTTP 403-as hiba javítása
 • [YouTube] Az avatár és banner kinyerése több csatorna fejlécből
 • [Bandcamp] Különböző bugok javítása, és áttérés HTTPS-re
+
+

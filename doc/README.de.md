@@ -164,3 +164,5 @@ Du findest das Dokument [hier](https://newpipe.net/legal/privacy/).
 
 NewPipe ist freie Software: Du kannst es nach Belieben benutzen, studieren, teilen, und verbessern.
 Du kannst es insbesondere unter den Bedingungen der [GNU General Public License](https://www.gnu.org/licenses/gpl-3.0.de.html), wie von der Free Software Foundation veröffentlicht, entweder Version 3 der Lizenz oder (nach deiner Wahl) jede spätere Version, weiter verbreiten und/oder verändern.
+
+

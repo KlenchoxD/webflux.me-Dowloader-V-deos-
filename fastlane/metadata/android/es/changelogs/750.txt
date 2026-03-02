@@ -11,3 +11,5 @@ Mejoras en el gestor de descargas #2149
 Mejorado
 - Eliminación de las cadenas de gema #2295
 - Manejar cambios de (auto)rotación en el ciclo de vida de la actividad #2444
+
+

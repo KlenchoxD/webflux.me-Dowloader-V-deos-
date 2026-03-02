@@ -20,3 +20,5 @@ Ispravljeno
 • Ispravljena je oštećena video .mp4 datoteka koja se prepoznaje kao audio datoteka
 • Ispravljeni su višestruki problemi s lokalizacijom, uključujući pogrešne kineske jezičke kodove
 • [YouTube] Vremenske oznake u opisu su ponovo dostupne za klikanje
+
+

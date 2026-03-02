@@ -10,3 +10,5 @@ Ulepszone
 Naprawione
 • Usuwanie w pełni obejrzanych wideo z playlisty
 • Motyw menu udostępniania i wpis „dodaj do playlisty”
+
+

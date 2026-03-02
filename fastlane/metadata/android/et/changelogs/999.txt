@@ -10,3 +10,5 @@ Parandused
 • [YouTube] Parandasime juhuslikud HTTP 403 vead videoesituse keskel
 • [YouTube] Tuvastame tunnuspildi ja päisepildi enamatest kanalipäisete tüüpidest
 • [Bandcamp] Mitmed veaparandused ja nüüdsest alati kasutame HTTPSi
+
+

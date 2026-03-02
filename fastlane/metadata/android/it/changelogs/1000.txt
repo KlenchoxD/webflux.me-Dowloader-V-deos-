@@ -11,3 +11,5 @@ Risolti
 • Fix popup di accodamento dell'elenco degli elementi correlati
 • Fix ordine nella finestra di dialogo Aggiungi alla playlist
 • Regola il layout degli elementi dei segnalibri della playlist
+
+

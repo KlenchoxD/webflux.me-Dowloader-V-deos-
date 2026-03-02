@@ -487,3 +487,5 @@ public abstract class BaseListFragment<I, N> extends BaseStateFragment<I>
         return ThemeHelper.getItemViewMode(requireContext());
     }
 }
+
+

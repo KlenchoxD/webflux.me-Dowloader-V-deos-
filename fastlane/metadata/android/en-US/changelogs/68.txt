@@ -29,3 +29,5 @@
   - fix nothing shown exception triggers report
   -  thumbnail not shown in background player for android 8.1 [see here](https://github.com/TeamNewPipe/NewPipe/issues/943)
 - Fix registering of broadcast receiver. Closes #1641.
+
+

@@ -19,3 +19,5 @@ Sabit
 - Oynatma kuyruğu meta verilerini güncelleme #2453
 - [SoundCloud] Çalma listeleri yüklenirken oluşan çökme düzeltildi TeamNewPipe/NewPipeExtractor#170
 - [YouTube] Sabit süre ayrıştırılamıyor TeamNewPipe/NewPipeExtractor#177
+
+

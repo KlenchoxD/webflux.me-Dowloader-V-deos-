@@ -8,3 +8,5 @@ Fixat:
 • Fixade krasch vid start när det inte finns någon internetanslutning
 • Fixade respekt för ljusstyrka- och volymgestinställningar
 • [YouTube] Fixade långa spellistor
+
+

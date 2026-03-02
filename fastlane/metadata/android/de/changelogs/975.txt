@@ -15,3 +15,5 @@ Behoben:
 • ReCAPTCHA lädt im Hintergrund
 • Klicks bei Feed-Aktualisierung deaktivieren
 • Einige Downloader-Abstürze
+
+

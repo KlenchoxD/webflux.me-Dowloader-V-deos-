@@ -14,3 +14,5 @@ Corretto
 • Selezione di lingue errate nel selettore
 • Il focus audio del player non rispettava il muto
 • Talvolta aggiungere elementi a playlist non funzionava
+
+

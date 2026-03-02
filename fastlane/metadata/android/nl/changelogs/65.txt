@@ -24,3 +24,5 @@
 - Hoofd video speler fix #1509 
   - #1412] Fixed repeat mode veroorzaakt speler NPE wanneer nieuwe intentie wordt ontvangen terwijl speler activiteit op de achtergrond is.
   - Fixed minimaliseren van speler naar popup vernietigt speler niet wanneer popup toestemming niet is verleend.
+
+

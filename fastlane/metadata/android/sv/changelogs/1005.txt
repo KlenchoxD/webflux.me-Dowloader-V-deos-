@@ -15,3 +15,5 @@ Fixat
 • [YouTube] Fixade saknade rekommenderade videor
 • Fixade krascher i historiklistvyn
 • Fixade tidsstämplar i kommentarsvar
+
+

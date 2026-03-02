@@ -7,3 +7,5 @@
 • Qualità predefinita aumentata a 720p60 (player integrato) e 480p (pop-up)
 
 • Svariate correzioni di bug e altro
+
+

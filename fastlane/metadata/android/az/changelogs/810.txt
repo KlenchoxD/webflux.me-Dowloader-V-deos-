@@ -16,3 +16,5 @@ Düzəltildi
 • [YouTube] NPE-yə səbəb olan null-un işə salınması düzəldildi 
 • [YouTube] invidio.us url-i açarkən şərhlərə baxılması düzəldildi 
 • [SoundCloud] Yenilənmiş müştəri_id
+
+

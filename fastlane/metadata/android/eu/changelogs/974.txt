@@ -3,3 +3,5 @@ Konponketa
 • Konpondu YouTubeko iruzkinen erauzketa eta iruzkin desgaituekin matxurak
 • Konpondu YouTubeko musika bilaketa
 • Konpondu PeerTube zuzeneko emankizunak
+
+

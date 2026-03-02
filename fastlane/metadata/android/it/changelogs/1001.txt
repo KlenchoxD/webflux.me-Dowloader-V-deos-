@@ -4,3 +4,5 @@ Migliorato
 Corretto
 • Correzione del problema per cui l'esportazione di database/abbonamenti non troncava un file già esistente, causando un'esportazione corrotta
 • Correzione del problema per cui il lettore riprendeva dall'inizio quando si faceva clic su un timestamp
+
+

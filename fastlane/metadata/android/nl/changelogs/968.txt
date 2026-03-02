@@ -5,3 +5,5 @@ Het witte thema geoptimaliseerd.
 Overlappende lettertypen opgelost bij gebruik van een grotere lettergrootte.
 Opgelost: geen video op Formuler- en Zephier-apparaten.
 Verschillende crashes opgelost.
+
+

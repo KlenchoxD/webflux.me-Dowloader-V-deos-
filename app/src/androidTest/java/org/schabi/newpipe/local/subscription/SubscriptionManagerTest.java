@@ -80,3 +80,5 @@ public class SubscriptionManagerTest {
         assertEquals(1, anotherSubscription.getNotificationMode());
     }
 }
+
+

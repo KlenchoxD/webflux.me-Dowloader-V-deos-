@@ -109,3 +109,5 @@ public class ContentSettingsFragment extends BasePreferenceFragment {
         PlayerHelper.resetFormat();
     }
 }
+
+

@@ -7,3 +7,5 @@ Nuevo
 • Gestor de descargas (#2679):
   ◦ Calcular el tiempo estimado de descarga
   ◦ Descargar opus (archivos webm) como ogg
+
+

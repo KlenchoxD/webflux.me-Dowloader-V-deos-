@@ -34,3 +34,5 @@ final class HashtagLongPressClickableSpan extends LongPressClickableSpan {
         ShareUtils.copyToClipboard(context, parsedHashtag);
     }
 }
+
+

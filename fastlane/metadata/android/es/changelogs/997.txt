@@ -15,3 +15,5 @@ Corregido
 • Fallo al importar de ajustes y JSON
 • Corrección de varias descargas
 • texto de búsqueda
+
+

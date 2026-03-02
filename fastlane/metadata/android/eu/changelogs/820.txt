@@ -1,1 +1,3 @@
 YouTube erabilezin bihurtzen zuen funtzio-izenaren regex deszifratzea konpondu da.
+
+

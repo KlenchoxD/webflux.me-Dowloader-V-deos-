@@ -6,3 +6,5 @@
 
 ### Sistemat
 - Downloader: Sistemat crash-ul la încărcarea descărcărilor neterminate din fișiere .giga #1407
+
+

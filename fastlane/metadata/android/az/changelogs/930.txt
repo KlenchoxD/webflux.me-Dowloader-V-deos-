@@ -15,3 +15,5 @@ Sabitləndi
  • Pleylist `null` olarkən əlfəcinləri açarkən qəza düzəldildi
  • Şəbəkənin sabit aşkarlanması əlaqədar istisnalar
  • Abunəliklər fraqmentində qrup çeşidləmə düyməsinin sabit görünməsi və daha çox
+
+

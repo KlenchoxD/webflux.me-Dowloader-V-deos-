@@ -13,3 +13,5 @@ Mejorado
 Reparado
 • Desincronización de audio y video
 • [PeerTube] Comentarios borrados
+
+

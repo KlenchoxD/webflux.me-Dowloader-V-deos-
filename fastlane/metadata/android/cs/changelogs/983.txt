@@ -7,3 +7,5 @@ Oprava přehrávání první položky fronty při změně hráče
 Při vyrovnávací paměti během živých přenosů čekat déle, než dojde k selhání
 Oprava pořadí výsledků místního vyhledávání
 Oprava prázdných políček položek ve frontě přehrávání
+
+

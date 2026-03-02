@@ -141,3 +141,5 @@ Il progetto NewPipe mira a fornire un'esperienza privata e anonima per usare ser
 [![Immagine GNU GPLv3](https://www.gnu.org/graphics/gplv3-127x51.png)](https://www.gnu.org/licenses/gpl-3.0.en.html)  
 
 NewPipe è Software Libero: Puoi usarlo, studiarlo, condividerlo e migliorarlo a tuoi piacimento. Specificamente, puoi ridistribuirlo e/o modificarlo sotto i termini della [GNU General Public License](https://www.gnu.org/licenses/gpl.html) come pubblicata dalla Free Software Foundation, o la versione 3 della Licenza, o (a tua scelta) qualsiasi versione successiva.
+
+

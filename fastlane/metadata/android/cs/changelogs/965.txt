@@ -4,3 +4,5 @@ Opraveno získávání komentářů YouTube.
 Přidána podpora podcest /watch/, /v/ a /w/ v adresách URL YouTube.
 Opraveno získávání id klienta služby SoundCloud a obsahu s geografickým omezením.
 Přidána lokalizace do severní kurdštiny.
+
+

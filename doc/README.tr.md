@@ -140,3 +140,5 @@ NewPipe özgür bir yazılımdır. Kendi başınıza kullanabilir, öğrenebilir
 ve geliştirebilirsiniz. Free Software Foundation tarafından yayınlanan GNU Genel Kamu Lisansı,
 Lisansın 3. sürümü veya (isteğe bağlı olarak) daha sonraki bir sürümü şartları ve
 koşulları altında yeniden dağıtabilir ve/veya değiştirebilirsiniz.
+
+

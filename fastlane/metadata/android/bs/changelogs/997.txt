@@ -15,3 +15,5 @@ Ispravljeno
 • Rješite ranjivost u uvozu postavki i prebacite se na JSON
 • Razne ispravke preuzimanja
 • Skratite tekst pretrage
+
+

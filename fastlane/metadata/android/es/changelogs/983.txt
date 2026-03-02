@@ -7,3 +7,5 @@ Arreglar la repetición del primer elemento de la cola al cambiar de jugador
 Esperar más tiempo en el búfer durante las transmisiones en directo antes de fallar
 Corregir el orden de los resultados de la búsqueda local
 Arreglar los campos de elementos vacíos en la cola de reproducción
+
+

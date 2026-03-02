@@ -10,3 +10,5 @@ Corrigé
 • Correction du paramètre de contenu restreint par âge qui ne fonctionne pas
 • Correction de certains types de reCAPTCHA
 • Correction du crash lors de l'ouverture des signets alors que la playlist est « nulle »
+
+

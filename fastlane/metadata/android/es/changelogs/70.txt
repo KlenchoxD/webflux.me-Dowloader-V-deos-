@@ -23,3 +23,5 @@ ATENCIÓN: Esta versión quizá sea un festival de errores, como la anterior. Si
 * NPE al intentar abrir el reproductor en segundo plano #1901
 * Corrección de la inserción de nuevos flujos cuando la cola automática está activada #1878
 * Corregido el problema de descifrado de shuttown
+
+

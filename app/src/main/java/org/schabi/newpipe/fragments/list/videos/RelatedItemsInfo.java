@@ -20,3 +20,5 @@ public final class RelatedItemsInfo extends ListInfo<InfoItem> {
         setRelatedItems(new ArrayList<>(info.getRelatedItems()));
     }
 }
+
+

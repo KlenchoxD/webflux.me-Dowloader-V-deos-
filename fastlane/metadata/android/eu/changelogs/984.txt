@@ -5,3 +5,5 @@ Leiho anitzetan mozketen aldaketak leheneratu (kokapen okerreko atzerakada)
 compileSdk 30etik 31ra handitu
 Erroreen liburutegia eguneratu
 Erreproduzitzailearen kodea berregituratu
+
+

@@ -12,3 +12,5 @@ Javítva:
 • A videó bélyegképe túl kicsi volt a háttérlejátszónál
 • Üres cím javítása a háttérben való lejátszásnál
 • Utolsó méretezés helyreállítása nem történt meg
+
+

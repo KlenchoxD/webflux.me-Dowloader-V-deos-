@@ -2,3 +2,5 @@
 • Fixed YouTube comments parsing.
 • Fixed display name of media.ccc.de service.
 • ترجمه‌های به‌روز شده.
+
+

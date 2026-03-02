@@ -5,3 +5,5 @@ Vrátit změny výřezů při přehrávání ve více oknech, které způsoboval
 Zvýšit compileSdk z 30 na 31
 Aktualizovat knihovnu pro hlášení chyb
 -
+
+

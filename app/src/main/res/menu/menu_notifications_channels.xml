@@ -8,3 +8,4 @@
         android:title="@string/toggle_all"
         app:showAsAction="ifRoom" />
 </menu>
+

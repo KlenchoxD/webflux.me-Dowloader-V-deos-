@@ -4,3 +4,5 @@ Vylepšení
 Opraveno
 • Oprava chyby, při které export databáze/odběrů nezkracoval již existující soubor, což mohlo vést k poškozenému exportu
 • Opraveno pokračování přehrávače v přehrávání videa po klepnutí na časovou značku
+
+

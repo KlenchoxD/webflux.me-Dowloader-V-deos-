@@ -52,3 +52,5 @@ public class RemoteBookmarkPlaylistItemHolder extends RemotePlaylistItemHolder {
         };
     }
 }
+
+

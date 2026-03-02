@@ -9,3 +9,5 @@ Förbättrat
 Fixade
 - [YouTube] Fastställande av att liveströmmar inte fungerade TeamNewPipe/NewPipeExtractor#195
 - Fastställt prestandaproblem i android pie när man laddar ner en stream #2592
+
+

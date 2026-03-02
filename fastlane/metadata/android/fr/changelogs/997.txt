@@ -10,3 +10,5 @@ Amélioré
 Corrigé
 • [YouTube] Correction des commentaires qui ne se chargent pas, ainsi que d'autres correctifs et améliorations
 • Résoudre la vulnérabilité dans l'importation des paramètres et passer à JSON
+
+

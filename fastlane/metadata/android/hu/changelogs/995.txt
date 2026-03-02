@@ -14,3 +14,5 @@ Javítások
 • A nyelv kiválasztónál többféle nem megfelelő nyelv jelent meg korábban
 • A lejátszó nem reagált a némításra eddig
 • A lista elem hozzáadás nem mindig működött
+
+

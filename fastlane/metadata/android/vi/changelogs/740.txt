@@ -21,3 +21,5 @@
 <li>sửa lỗi nhập danh sách kênh youtube đăng ký: phớt lờ url không hợp lệ và giữ nó trống với tiêu đề</li>
 <li>sửa lỗi url youtube không hợp lệ: tên thẻ chữ ký không phải lúc nào cũng là "chữ ký" ngăn luồng tải</li>
 </ul>
+
+

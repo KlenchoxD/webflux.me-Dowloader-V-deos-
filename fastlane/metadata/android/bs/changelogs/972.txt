@@ -12,3 +12,5 @@ Ažurirane su Invidious instance i podrška za preusmjerene linkove.
 Ispravljeno
 [YouTube] Sadržaj ograničen prema dobi
 Spriječen izuzetak curenja prozora prilikom otvaranja dijaloga za izbor
+
+

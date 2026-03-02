@@ -8,3 +8,5 @@
 • Listen werden beim Verschieben von Miniaturansichten nicht mehr umsortiert
 • Pop-up-Einstellungen werden immer gemerkt
 • Santali-Sprache hinzugefügt
+
+

@@ -27,3 +27,5 @@ public class BackgroundPlayerUi extends PlayerUi {
         player.useVideoAndSubtitles(false);
     }
 }
+
+

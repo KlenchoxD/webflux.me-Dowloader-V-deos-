@@ -2,3 +2,5 @@
 • YouTube yorumlarının ayrıştırılması düzeltildi.
 • media.ccc.de hizmetinin görünen adı düzeltildi.
 • Çeviriler güncellendi.
+
+

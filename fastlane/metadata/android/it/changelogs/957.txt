@@ -8,3 +8,5 @@
 • Non riordinare gli elenchi trascinando le miniature
 • Ricorda sempre le proprietà dei popup
 • Aggiungi la lingua Santali
+
+

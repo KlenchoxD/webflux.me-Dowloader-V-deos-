@@ -157,3 +157,5 @@ public class HistorySettingsFragment extends BasePreferenceFragment {
                 .show();
     }
 }
+
+

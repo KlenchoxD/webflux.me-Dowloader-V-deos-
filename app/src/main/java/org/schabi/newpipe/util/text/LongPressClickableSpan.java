@@ -10,3 +10,5 @@ public abstract class LongPressClickableSpan extends ClickableSpan {
     public abstract void onLongClick(@NonNull View view);
 
 }
+
+

@@ -5,3 +5,5 @@
         android:endColor="#00000000"
         android:startColor="@color/video_overlay_color" />
 </shape>
+
+

@@ -11,3 +11,5 @@ Opraveno
 • Oprava okna seznamu souvisejících položek
 • Oprava pořadí v okně přidání do playlistu
 • Úprava rozložení položek záložek playlistu
+
+

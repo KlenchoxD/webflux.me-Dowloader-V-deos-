@@ -29,3 +29,5 @@
 - sửa lỗi không hiển thị báo cáo kích hoạt ngoại lệ
 - hình thu nhỏ không hiển thị trong trình phát nền dành cho android 8.1 [xem tại đây](https://github.com/TeamNewPipe/NewPipe/issues/943)
 - Sửa lỗi đăng ký máy thu phát sóng. Đóng #1641.
+
+

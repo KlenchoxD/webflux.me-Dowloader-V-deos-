@@ -6,3 +6,5 @@
 
 ### Javítások
 - A letöltések megnyitásánál történő összeomlás javítása (a javítás mostantól érhető el a kiadási verziókban is) #1441
+
+

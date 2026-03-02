@@ -15,3 +15,4 @@ Fixed
 • Fix overlay on DeX/mouse
 • Allow background player with no separate audio streams
 • Various YouTube fixes and more…
+

@@ -17,3 +17,5 @@
 
 ### Ismert hibák
 - Lejátszási státusz nem menthető Android P-n
+
+

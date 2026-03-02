@@ -6,3 +6,5 @@
 
 ### Opravy
 - Oprava zlyhania pri otváraní sťahovania (oprava je teraz k dispozícii pre verzie vydania) #1441
+
+

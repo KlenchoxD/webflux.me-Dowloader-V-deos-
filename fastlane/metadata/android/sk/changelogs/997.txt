@@ -15,3 +15,5 @@ Opravené
 • Vyriešenie zraniteľnosti pri importe nastavení a prepnutie na JSON
 • Rôzne opravy sťahovania
 • Orezanie textu vyhľadávania
+
+

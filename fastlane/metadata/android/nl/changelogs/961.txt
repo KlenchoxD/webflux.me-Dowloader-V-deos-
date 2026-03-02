@@ -10,3 +10,5 @@
 • Crash opgelost die voorkwam wanneer een stream was verwijderd van een lijst
 • [PeerTube] Gerelateerde streams opgelost
 • [YouTube] Opgelost: YouTube Muziek zoeken
+
+

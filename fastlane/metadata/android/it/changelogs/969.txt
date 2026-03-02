@@ -6,3 +6,5 @@
 • [Giocatore] Risolto il problema con il giocatore che non giocava automaticamente
 • Ignora le precedenti Snackbar quando si eliminano i download
 • Risolto il problema con il tentativo di eliminare l'oggetto non nell'elenco
+
+

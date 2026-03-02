@@ -15,3 +15,5 @@ Perbaikan
 • Perbaiki ReCaptcha tetap termuat di latar belakang
 • Matikan klik saat memuat feed
 • Perbaiki beberapa kerusakan pengunduh
+
+

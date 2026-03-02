@@ -12,3 +12,5 @@
 • Fix very small thumbnail in video details while playing in the background
 • Fix empty title in minimized player
 • Fix last resize mode not being restored correctly
+
+

@@ -8,3 +8,5 @@
 • Ez berrantolatu zerrendak miniaturak arrastatuz
 • Gogoratu beti popupen propietateak
 • Gehitu Santali hizkuntza
+
+

@@ -7,3 +7,5 @@ Corregido
 • Corregido el desplazamiento en el fragmento de detalle del vídeo #2672
 • Eliminar las animaciones de doble caja de búsqueda a una sola #2695
 • [SoundCloud] Arreglar la extracción de client_id #2745
+
+

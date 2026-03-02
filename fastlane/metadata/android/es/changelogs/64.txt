@@ -6,3 +6,5 @@
 
 ### Arreglos
 - Arreglado crasheo al abrir descargas #1441
+
+

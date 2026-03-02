@@ -6,3 +6,5 @@
 • Ispravljen pad sistema kada na nekim uređajima nije postavljen zadani preglednik i poboljšani su dijalozi za dijeljenje
 • Uključivanje/isključivanje reprodukcije/pauze pomoću hardverskog dugmeta za razmak u playeru preko cijelog ekrana
 • [media.ccc.de] Razne ispravke i poboljšanja
+
+

@@ -14,3 +14,5 @@ Naprawione
 
 Rozwój
 - Modernizacja wewnętrznego kodu
+
+

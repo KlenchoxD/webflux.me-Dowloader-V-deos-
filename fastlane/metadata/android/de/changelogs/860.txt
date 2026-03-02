@@ -5,3 +5,5 @@ Verbesserungen
 • YouTube optimiert um weniger Daten zu verbrauchen
 
 Mehr als 15 weitere YouTube bezogene Fehler wurden behoben.
+
+

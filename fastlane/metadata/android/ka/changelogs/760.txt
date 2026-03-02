@@ -41,3 +41,5 @@
  • განაახლეთ სათამაშო რიგის მეტამონაცემები #2453
  • [SoundCloud] გამოსწორდა ავარია დასაკრავი სიების ჩატვირთვისას TeamNewPipe/NewPipeExtractor#170
  • [YouTube] ფიქსირებული ხანგრძლივობის გარჩევა შეუძლებელია TeamNewPipe/NewPipeExtractor#177
+
+

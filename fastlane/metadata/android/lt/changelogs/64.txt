@@ -6,3 +6,5 @@
 
 ### Ištaisyti
 - Ištaisytas gedimas atidarant atsisiuntimus (ištaisymas dabar prieinamas išleistoms kompiliacijoms) #1441
+
+

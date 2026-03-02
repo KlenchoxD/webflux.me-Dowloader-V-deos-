@@ -3,3 +3,5 @@
     <item android:drawable="@color/selected_background_color" android:state_focused="true" />
     <item android:drawable="@color/transparent_background_color" />
 </selector>
+
+

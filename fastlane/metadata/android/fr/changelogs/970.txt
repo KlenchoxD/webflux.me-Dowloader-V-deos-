@@ -9,3 +9,5 @@ Corrections
 • Correction chemins d'import/export des paramètres
 • Correction nombre de commentaires aimés
 Et bien plus encore
+
+

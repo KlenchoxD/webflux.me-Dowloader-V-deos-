@@ -15,3 +15,5 @@ Fixat
 • Lös sårbarhet i inställnings import och byt till JSON
 • Olika hämtnings fixar
 • Trimma sök text
+
+

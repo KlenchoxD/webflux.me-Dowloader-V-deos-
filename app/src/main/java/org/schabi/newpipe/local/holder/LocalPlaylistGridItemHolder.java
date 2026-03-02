@@ -11,3 +11,5 @@ public class LocalPlaylistGridItemHolder extends LocalPlaylistItemHolder {
         super(infoItemBuilder, R.layout.list_playlist_grid_item, parent);
     }
 }
+
+

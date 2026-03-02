@@ -6,3 +6,5 @@
 
 ### Corrections
 - Plantage lors de l'ouverture des téléchargements (disponible pour les versions ultérieures) #1441
+
+

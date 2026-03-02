@@ -342,3 +342,5 @@ public abstract class FragmentStatePagerAdapterMenuWorkaround extends PagerAdapt
         }
     }
 }
+
+

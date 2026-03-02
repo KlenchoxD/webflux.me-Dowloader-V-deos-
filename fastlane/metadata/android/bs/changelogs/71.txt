@@ -8,3 +8,5 @@
 
 ### Ispravljeno
 * YouTube tokovi uživo prestaju s reprodukcijom nakon kratkog vremena (#1996 od @yausername)
+
+

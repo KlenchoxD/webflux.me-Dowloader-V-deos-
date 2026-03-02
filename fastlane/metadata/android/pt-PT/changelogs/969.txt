@@ -6,3 +6,5 @@
 * [Jogador] jogador fixo que não joga automaticamente
 * Dispensar Snackbars anteriores ao excluir downloads
 * Corrigido tentando excluir objeto não na lista
+
+

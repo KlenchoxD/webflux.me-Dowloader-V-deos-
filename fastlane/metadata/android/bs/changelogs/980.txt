@@ -11,3 +11,5 @@ Ispravljeno
 • Ispravljeno izdvajanje lajkova i nesviđanja na YouTubeu
 • Ispravljena je automatska reprodukcija nakon povratka iz pozadine
 I još mnogo toga
+
+

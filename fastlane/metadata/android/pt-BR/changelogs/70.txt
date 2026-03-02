@@ -23,3 +23,5 @@ ATTENTION: This version probably is a bugfest, just like the last one. However d
 * NPE when trying to open background player #1901
 * Fix for inserting new streams when auto queuing is enabled #1878
 * Fixed the decypering shuttown issue
+
+

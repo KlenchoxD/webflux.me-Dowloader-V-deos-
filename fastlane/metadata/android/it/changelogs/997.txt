@@ -15,3 +15,5 @@ Correzioni
 • Vulnerabilità in importa impostazioni e passaggio a JSON
 • Correzioni sui download
 • Trim delle ricerche
+
+

@@ -15,3 +15,5 @@ Fixed
 • Fixed selected subtitle track name not being shown
 • Do not crash when check for app update fails
 • Fixed downloads stuck at 99.9%
+
+

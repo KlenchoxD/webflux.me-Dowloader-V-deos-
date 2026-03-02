@@ -12,3 +12,5 @@ Düzəltildi
  • NewPipeExtractor-dan NewPipe #2535-ə miras qalmış çatışmayan asılılıqları əlavə edin 
 • AndroidX #2685-ə köçürün
  • ExoPlayer 2.10.6 #2736-a yeniləyin, #2
+
+

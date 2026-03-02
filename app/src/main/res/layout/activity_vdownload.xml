@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#080808"
+    android:padding="28dp"
+    android:gravity="center">
+
+    <!-- Logo -->
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="40dp">
+        <FrameLayout
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/vdown_logo_bg">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_play_arrow"
+                android:tint="#FFFFFF"/>
+        </FrameLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:text="VDown"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="#E60A15"/>
+    </LinearLayout>
+
+    <!-- Card -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/vdown_glass_card"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Downloading..."
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#FFFFFF"
+            android:gravity="center"
+            android:layout_marginBottom="12dp"/>
+
+        <TextView
+            android:id="@+id/vdl_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:textColor="#66FFFFFF"
+            android:gravity="center"
+            android:maxLines="2"
+            android:ellipsize="middle"
+            android:layout_marginBottom="24dp"/>
+
+        <ProgressBar
+            android:id="@+id/vdl_progress"
+            style="@android:style/Widget.ProgressBar.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="8dp"
+            android:progressDrawable="@drawable/vdown_progress_bar"
+            android:max="100"
+            android:progress="0"
+            android:layout_marginBottom="16dp"/>
+
+        <TextView
+            android:id="@+id/vdl_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="13sp"
+            android:textColor="#AAFFFFFF"
+            android:gravity="center"
+            android:minLines="2"
+            android:layout_marginBottom="24dp"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/vdl_btn_cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Cancel"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/vdown_chip_bg"
+                android:paddingHorizontal="28dp"
+                android:elevation="0dp"
+                android:stateListAnimator="@null"/>
+
+            <Button
+                android:id="@+id/vdl_btn_done"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Done"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/vdown_download_btn_bg"
+                android:paddingHorizontal="28dp"
+                android:layout_marginStart="12dp"
+                android:elevation="0dp"
+                android:stateListAnimator="@null"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

@@ -15,3 +15,5 @@ Fixat
 • Fixade overlay på DeX/Mouse
 • Tillåt bakgrundsspelare utan separata ljudströmmar
 • Olika YouTube-fixar och mer…
+
+

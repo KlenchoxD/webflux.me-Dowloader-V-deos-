@@ -10,3 +10,5 @@ Vylepšená stránka
 Opravená stránka
 - Oprava otvárania adries URL prehliadača, sťahovania a externých prehrávačov v systéme Android 11+
 - Oprava interakcie s celou obrazovkou vyžadujúcou dve ťuknutia na MIUI
+
+

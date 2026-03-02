@@ -24,3 +24,5 @@
 - Correzione del lettore video principale n. 1509
   - [#1412] Risolto il problema con la modalità di ripetizione che causava NPE al giocatore quando veniva ricevuto un nuovo intento mentre l'attività del giocatore era in background.
   - Risolto il problema con la riduzione a icona del giocatore in popup che non distruggeva il giocatore quando l'autorizzazione per il popup non è concessa.
+
+

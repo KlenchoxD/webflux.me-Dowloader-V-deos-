@@ -10,3 +10,5 @@
 • [YouTube] 'java.lang.IllegalArgumentException #192 수정
 • [YouTube] 실시간 스트림이 작동하지 않는 문제 수정 TeamNewPipe/NewPipeExtractor#195
 • 스트림을 다운로드할 때 Android Pie의 성능 문제 수정 #2592
+
+

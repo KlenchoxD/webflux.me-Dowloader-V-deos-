@@ -17,3 +17,5 @@
 •修正 CheckForNewAppVersionTask在不该执行的时候被执行的问题#39。
 •修正 youtube订阅导入：忽略无效url的，保留空标题的。
 •修复 无效的YouTube网址：签名标签名并非总是"签名"了的，导致流媒体无法加载
+
+

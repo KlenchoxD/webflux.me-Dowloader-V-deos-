@@ -5,3 +5,5 @@
 • Uzaqdan olanları əldə etmək mümkün olmadıqda axtarış təklifi təcrübəsini təkmilləşdirin 
 • Defolt video keyfiyyəti 720p60 (tətbiqdaxili pleyer) və 480p (pop-up pleyer) səviyyəsinə qaldırıldı
 • tonla səhv düzəltmələri və daha çox
+
+

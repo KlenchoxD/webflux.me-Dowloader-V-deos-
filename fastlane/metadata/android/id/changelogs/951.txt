@@ -4,3 +4,5 @@ Apa yang baru?
 • Menambahan tab daftar putar ke halaman utama
 • Kecepatan pemutaran / Pemutaran mundur
 • Menampilkan saran penelusuran: "maksud Anda..." & "menampilkan hasil untuk ... "
+
+

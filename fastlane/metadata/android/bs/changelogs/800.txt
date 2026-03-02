@@ -25,3 +25,5 @@ Ispravljeno
 Razvoj
 • Ažuriranje ExoPlayera na 2.10.8 #2791, #2816
 • Ažuriranje Gradlea na 3.5.1 i dodavanje podrške za Kotlin #2714
+
+

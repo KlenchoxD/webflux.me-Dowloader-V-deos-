@@ -4,3 +4,5 @@ Detta är en snabbkorrigeringsversion som fixar YouTube-fel:
 • Fixade att information laddades ner två gånger vid öppning av en ström
 • [Soundcloud] Tog bort ospelbara DRM-skyddade strömmar
 • Uppdaterade översättningar
+
+

@@ -1,2 +1,4 @@
 # Ispravljeno
 - Ispravljena greška funkcije dešifriranja.
+
+

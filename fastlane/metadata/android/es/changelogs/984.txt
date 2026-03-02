@@ -5,3 +5,5 @@ Revertir cambios en cortes al reproducir en multiventana, que causan regresión 
 Aumentar compileSdk de 30 a 31
 Actualizar la biblioteca de informes de errores
 Refactorizar algunos códigos en reproductor
+
+

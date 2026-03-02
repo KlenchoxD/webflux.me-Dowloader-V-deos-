@@ -11,3 +11,5 @@ Những cải thiện
 • Sửa cửa sổ bật lên cho danh sách các mục liên quan khi xếp hàng.
 • Sửa thứ tự trong hộp thoại được thêm vào danh sách phát
 • Đã điều chỉnh bố cục của mục đánh dấu trong danh sách phát
+
+

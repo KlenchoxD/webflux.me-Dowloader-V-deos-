@@ -2,3 +2,4 @@
 ∙ [YouTube] Added support for more channel URL formats
 ∙ [YouTube] Added support for more video metainfo formats
 ∙ Updated translations
+

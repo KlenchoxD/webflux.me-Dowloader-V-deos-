@@ -7,3 +7,5 @@
 • nâng chất lượng video mặc định lên 720p60 (trình phát chính) và 480p (trình phát pop-up)
 
 • một đống bản vá lỗi và hơn thế nữa
+
+

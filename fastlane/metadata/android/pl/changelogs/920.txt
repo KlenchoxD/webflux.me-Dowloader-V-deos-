@@ -7,3 +7,5 @@ Naprawy
 
 • Naprawiono przycisk wyciszenia powodujący awarie w API 19
 • Naprawiono pobieranie długich filmów 1080p 60 fps
+
+

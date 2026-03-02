@@ -13,3 +13,5 @@ Bestelakoak:
 • Kodearen garbiketa eta barne hobekuntzak
 • Menpekotasunen eguneraketa
 • Itzulpenen eguneraketa
+
+

@@ -68,3 +68,5 @@
         tools:listitem="@layout/list_playlist_mini_item"
         tools:visibility="visible" />
 </RelativeLayout>
+
+

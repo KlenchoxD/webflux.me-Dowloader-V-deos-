@@ -11,3 +11,5 @@ Behoben:
 • Extraktion von YouTube Likes und Dislikes behoben
 • Automatische Wiederholung nach Rückkehr aus dem Hintergrund behoben
 Und vieles mehr
+
+

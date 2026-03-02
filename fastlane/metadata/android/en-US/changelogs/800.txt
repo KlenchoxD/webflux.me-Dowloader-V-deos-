@@ -26,3 +26,5 @@ Development
 • Update ExoPlayer to 2.10.8 #2791, #2816
 • Update Gradle to 3.5.1 and add Kotlin support #2714 
 
+
+

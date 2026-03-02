@@ -5,3 +5,5 @@ Lucidato il tema bianco.
 Corretti i caratteri sovrapposti quando si utilizza una dimensione del carattere più grande.
 Risolto nessun video sui dispositivi Formuler e Zephier.
 Risolti vari arresti anomali.
+
+

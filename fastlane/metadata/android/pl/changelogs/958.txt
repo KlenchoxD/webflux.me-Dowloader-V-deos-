@@ -11,3 +11,5 @@ Pozostałe:
 • Porządki i kilka wewnętrznych ulepszeń w kodzie programu
 • Aktualizacje zależności i tłumaczeń
 i wiele innych
+
+

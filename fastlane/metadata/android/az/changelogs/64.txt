@@ -5,3 +5,5 @@
 - media sessiyası üçün (işləyən) dəstək əlavə edin #1433
 ### Düzəliş
 - Yükləmələrin açılması zamanı qəzanı düzəldin (indi buraxılış quruluşları üçün əlçatandır) #1441
+
+

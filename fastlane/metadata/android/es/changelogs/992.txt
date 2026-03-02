@@ -15,3 +15,5 @@ Arreglos
 • Solucionar superposición en DeX/ratón
 • Permitir reproductor de fondo sin transmisiones de audio separadas
 • Varias correcciones de YouTube y más…
+
+

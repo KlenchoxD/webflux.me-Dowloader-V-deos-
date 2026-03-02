@@ -10,3 +10,5 @@
 • Naprawiono awarię występującą podczas usuwania strumienia z listy
 • [PeerTube] Naprawiono powiązane strumienie
 • [YouTube] Naprawiono wyszukiwanie w YouTube Music
+
+

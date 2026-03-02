@@ -260,3 +260,5 @@ public class DownloadSettingsFragment extends BasePreferenceFragment {
         updatePreferencesSummary();
     }
 }
+
+

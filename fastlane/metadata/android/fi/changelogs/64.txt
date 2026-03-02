@@ -6,3 +6,5 @@
 
 ### Korjaukset
 - Korjattu kaatuminen latausten avaamisessa (korjaus nyt saatavilla julkaisuversioissa) #1441
+
+

@@ -6,3 +6,5 @@
 - [Reproductor] Arreglado reproductor sin reproducción automática
 - Descartar Snackbars anteriores al borrar descargas
 - Corregido intento de eliminar objetos fuera de lista
+
+

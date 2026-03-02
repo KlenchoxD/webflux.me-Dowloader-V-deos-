@@ -15,3 +15,5 @@ Fixed
 • Fix ReCAPTCHA remaining loaded in background
 • Disable clicks while refreshing feed
 • Fix some downloader crashes
+
+

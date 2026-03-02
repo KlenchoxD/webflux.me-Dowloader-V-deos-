@@ -15,3 +15,5 @@ Correzioni
 • [YouTube] Ripristinati i video consigliati
 • Sistemati i crash nella cronologia
 * Sistemato un errore nell'orario di inserimento di una risposta nei commenti
+
+

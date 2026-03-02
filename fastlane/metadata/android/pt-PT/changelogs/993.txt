@@ -10,3 +10,5 @@ Melhorado
 Fixa
 - Corrigir URLs de abertura do navegador, downloads e leitores externos no Android 11+
 - Fixação interagindo com tela cheia requer duas torneiras no MIUI
+
+

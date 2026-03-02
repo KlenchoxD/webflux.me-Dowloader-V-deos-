@@ -14,3 +14,5 @@ Behoben
 • [YouTube] Kommentare wurden nicht geladen, weitere Fehlerbehebungen/Verbesserungen
 • Sicherheitslücke beim Einstellungsimport und Umstellung auf JSON
 • …
+
+

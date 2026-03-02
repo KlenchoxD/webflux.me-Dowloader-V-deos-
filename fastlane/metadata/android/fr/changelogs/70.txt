@@ -5,3 +5,5 @@
 
 ### Corrigé
 * Correction d'un crash avec la résolution par défaut réglée sur la meilleure et la résolution limitée des données mobiles #1835
+
+

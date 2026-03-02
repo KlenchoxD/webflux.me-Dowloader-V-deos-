@@ -12,3 +12,5 @@ Corrigido:
 Outros:
 • Limpeza de códigos e várias melhorias internas
 • Atualizações de dependência e tradução
+
+

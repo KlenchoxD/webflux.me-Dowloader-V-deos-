@@ -8,3 +8,5 @@
 - [Android TV] Lange zoekbalksprongen verholpen bij gebruik DPad
 
 Om meer wijzigingen te zien, bekijk de changelog (en blog post) op de Links tab hieronder.
+
+

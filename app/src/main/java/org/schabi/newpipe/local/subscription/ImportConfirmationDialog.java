@@ -54,3 +54,5 @@ public class ImportConfirmationDialog extends DialogFragment {
         Bridge.saveInstanceState(this, outState);
     }
 }
+
+

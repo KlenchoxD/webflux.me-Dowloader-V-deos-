@@ -11,3 +11,5 @@ Hobetua
 
 Konponketak
 • Konpondu erreprodukzio-posizioa gordeta dago, nahiz eta erlojuaren historia desaktibatuta egon.
+
+

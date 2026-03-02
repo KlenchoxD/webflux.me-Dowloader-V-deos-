@@ -8,3 +8,5 @@ Verbessert
 Behoben
 • Fix initialer Helligkeitswert für die Geste
 • [YouTube] Timestamps in der Beschreibung sind wieder anklickbar
+
+

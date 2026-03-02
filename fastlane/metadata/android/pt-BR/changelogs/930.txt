@@ -17,3 +17,5 @@ Fixed
 • Fixed visibility of group sort button in the subscriptions fragment
 
 and more
+
+

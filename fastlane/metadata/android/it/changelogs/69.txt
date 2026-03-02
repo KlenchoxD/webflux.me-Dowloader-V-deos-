@@ -17,3 +17,5 @@
 
 ### Bug noti
 - Lo stato di riproduzione non può essere salvato su Android P
+
+

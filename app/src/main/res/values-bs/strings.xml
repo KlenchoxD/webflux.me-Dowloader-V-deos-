@@ -818,3 +818,5 @@
     <string name="migration_info_7_8_message">YouTube je ukinuo kombinovanu stranicu s trendovima od 21. jula 2025. NewPipe je zamijenio zadanu stranicu s trendovima s trendovima uživo prijenosa.\n\nTakođer možete odabrati različite stranice s trendovima u \"Postavke &gt; Sadržaj &gt; Sadržaj glavne stranice\".</string>
     <string name="unsupported_content_in_country">Ovaj sadržaj nije dostupan za trenutno odabranu zemlju sadržaja.\n\nPromijenite svoj odabir u \"Postavke &gt; Sadržaj &gt; Zadana zemlja sadržaja\".</string>
 </resources>
+
+

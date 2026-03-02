@@ -5,3 +5,5 @@ Cofnięto zmiany przy odtwarzaniu w trybie wielu okien powodujące błędy na ni
 Podwyższono compileSdk z 30 do 31
 Zaktualizowano bibliotekę raportowania błędów
 Refaktoryzacja kodu odtwarzacza
+
+

@@ -138,3 +138,5 @@ El proyecto NewPipe tiene como objetivo ofrecer una experience privada y anónim
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](https://www.gnu.org/licenses/gpl-3.0.html)
 
 NewPipe es Software Libre: Puede usarlo, estudiarlo, compartirlo y mejorarlo a su voluntad. Más específicamente, puede redistribuirlo y/o modificarlo bajo los términos de la [GNU General Public License](https://www.gnu.org/licenses/gpl.html) publicada por la Free Software Foundation tanto si usa la versión 3 o posterior de la licencia.
+
+

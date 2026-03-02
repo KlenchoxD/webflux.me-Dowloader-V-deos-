@@ -829,3 +829,5 @@
     <string name="sign_in_confirm_not_bot_error">%1$s-ek datuak emateari uko egin dio, eskatzailea bot bat ez dela baieztatzeko saioa hasteko eskatuz.\n\nBaliteke zure IP helbidea %1$s-ek aldi baterako debekatu izana, denbora pixka bat itxaron dezakezu edo beste IP batera aldatu (adibidez, VPN bat aktibatu/itzaliz, edo WiFitik datu mugikorretara aldatuz).</string>
     <string name="unsupported_content_in_country">Eduki hau ez dago eskuragarri hautatutako edukiaren herrialderako.\n\nAldatu zure hautaketa \"Ezarpenak &gt; Edukia &gt; Edukiaren herrialde lehenetsia\" ataletik.</string>
 </resources>
+
+

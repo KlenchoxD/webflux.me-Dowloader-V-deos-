@@ -10,3 +10,5 @@ Corrections
 • Correction des couleurs de texte défectueuses en mode sombre
 • [YouTube] Correction du chargement des playlists de plus de 100 éléments
 • [YouTube] Correction de l'affichage des vidéos recommandées manquantes
+
+

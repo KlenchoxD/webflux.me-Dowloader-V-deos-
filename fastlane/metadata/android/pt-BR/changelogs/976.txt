@@ -7,3 +7,5 @@
 • Sessão de áudio fecha corretamente.
 • [Android TV] Saltos na barra de pesquisa pelo controle remoto corrigidos.
 Confira as alterações na aba de links abaixo.
+
+

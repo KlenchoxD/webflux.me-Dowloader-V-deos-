@@ -1,2 +1,4 @@
 - Oynatmanın davam etdirilməsi düzəldildi 
 - NewPipe-ın yeni versiyanın yoxlanılmasının olub olmadığını müəyyən edən xidmətin arxa planda başlamamasını təmin etmək üçün təkmilləşdirmələr
+
+

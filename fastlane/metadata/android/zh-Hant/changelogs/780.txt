@@ -10,3 +10,5 @@
 • [YouTube] 修復 'java.lang.IllegalArgumentException #192
 • [YouTube] 修復即時串流無法運作的問題 TeamNewPipe/NewPipeExtractor#195
 • 修復 Android Pie 中下載串流時的效能問題 #2592
+
+

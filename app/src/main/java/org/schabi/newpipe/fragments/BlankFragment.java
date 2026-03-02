@@ -69,3 +69,5 @@ public class BlankFragment extends BaseFragment {
         // I WILL FIND YOU, AND I WILL ...
     }
 }
+
+

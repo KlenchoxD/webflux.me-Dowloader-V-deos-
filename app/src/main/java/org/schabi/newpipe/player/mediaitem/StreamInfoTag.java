@@ -137,3 +137,5 @@ public final class StreamInfoTag implements MediaItemTag {
         return new StreamInfoTag(streamInfo, quality, audioTrack, extra);
     }
 }
+
+

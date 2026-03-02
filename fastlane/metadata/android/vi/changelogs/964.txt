@@ -6,3 +6,5 @@
 • Sửa lỗi crash khi không có trình duyệt mặc định được chọn trên một số thiết bị; cải thiện menu chia sẻ
 • Nhấn phát/dừng trong trình phát toàn màn hình bằng phím cách vật lý
 • [media.ccc.de] Sửa lỗi và cải thiện chung
+
+

@@ -12,3 +12,5 @@ Geliştirme
 - NewPipeExtractor'dan miras alınan eksik bağımlılıkları NewPipe'a ekleyin #2535
 - AndroidX'e geçiş #2685
 - ExoPlayer 2.10.6 #2697, #2736 için güncelleme
+
+

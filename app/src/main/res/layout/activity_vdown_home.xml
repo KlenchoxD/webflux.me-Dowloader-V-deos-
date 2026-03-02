@@ -1,0 +1,433 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#080808">
+
+    <!-- Main Content -->
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true"
+        android:paddingBottom="100dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="24dp"
+                android:gravity="center_vertical">
+
+                <!-- Logo Icon -->
+                <FrameLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/vdown_logo_bg">
+                    <ImageView
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_play_arrow"
+                        android:tint="#FFFFFF"/>
+                </FrameLayout>
+
+                <!-- App Name -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="12dp"
+                    android:text="VDown"
+                    android:textSize="24sp"
+                    android:textStyle="bold"
+                    android:textColor="#E60A15"
+                    android:fontFamily="sans-serif-medium"/>
+
+                <!-- Profile -->
+                <ImageView
+                    android:id="@+id/vdown_profile_icon"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:src="@drawable/ic_account_circle_white_24dp"
+                    android:tint="#E60A15"/>
+
+            </LinearLayout>
+
+            <!-- Download Card - centered vertically -->
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="40dp">
+
+                <!-- Glow effect background -->
+                <View
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="end|top"
+                    android:background="@drawable/vdown_glow_circle"
+                    android:alpha="0.3"/>
+
+                <!-- Glass Card -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginHorizontal="20dp"
+                    android:background="@drawable/vdown_glass_card"
+                    android:padding="28dp">
+
+                    <!-- Title -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ready to download?"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:textColor="#E8FFFFFF"
+                        android:gravity="center"
+                        android:fontFamily="sans-serif-medium"/>
+
+                    <!-- Subtitle -->
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:text="Paste any video link below to begin"
+                        android:textSize="13sp"
+                        android:textColor="#80FFFFFF"
+                        android:gravity="center"/>
+
+                    <!-- URL Input Row -->
+                    <FrameLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp">
+
+                        <EditText
+                            android:id="@+id/vdown_url_input"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/vdown_input_bg"
+                            android:paddingStart="20dp"
+                            android:paddingEnd="80dp"
+                            android:paddingTop="16dp"
+                            android:paddingBottom="16dp"
+                            android:hint="Paste URL here..."
+                            android:textColorHint="#44FFFFFF"
+                            android:textColor="#FFFFFF"
+                            android:textSize="14sp"
+                            android:inputType="textUri"
+                            android:singleLine="true"/>
+
+                        <Button
+                            android:id="@+id/vdown_paste_btn"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="end|center_vertical"
+                            android:layout_marginEnd="8dp"
+                            android:text="PASTE"
+                            android:textSize="11sp"
+                            android:textColor="#FFFFFF"
+                            android:textStyle="bold"
+                            android:background="@drawable/vdown_paste_btn_bg"
+                            android:paddingHorizontal="14dp"
+                            android:paddingVertical="8dp"
+                            android:elevation="0dp"
+                            android:stateListAnimator="@null"/>
+
+                    </FrameLayout>
+
+                </LinearLayout>
+
+            </FrameLayout>
+
+            <!-- Download Video Button -->
+            <Button
+                android:id="@+id/vdown_download_btn"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginTop="20dp"
+                android:text="  Download Video"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:background="@drawable/vdown_download_btn_bg"
+                android:drawableStart="@drawable/ic_file_download"
+                android:drawableTint="#FFFFFF"
+                android:elevation="0dp"
+                android:stateListAnimator="@null"/>
+
+            <!-- Platform Chips -->
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:scrollbars="none"
+                android:paddingStart="20dp"
+                android:paddingEnd="20dp"
+                android:clipToPadding="false">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center_vertical">
+
+                    <!-- YouTube -->
+                    <LinearLayout
+                        android:id="@+id/vdown_chip_youtube"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/vdown_chip_bg"
+                        android:paddingHorizontal="20dp"
+                        android:layout_marginEnd="10dp">
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/ic_smart_display"
+                            android:tint="#FF0000"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="YOUTUBE"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:textColor="#CCFFFFFF"
+                            android:letterSpacing="0.08"/>
+                    </LinearLayout>
+
+                    <!-- Instagram -->
+                    <LinearLayout
+                        android:id="@+id/vdown_chip_instagram"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/vdown_chip_bg"
+                        android:paddingHorizontal="20dp"
+                        android:layout_marginEnd="10dp">
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/ic_camera_white_24dp"
+                            android:tint="#E1306C"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="INSTAGRAM"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:textColor="#CCFFFFFF"
+                            android:letterSpacing="0.08"/>
+                    </LinearLayout>
+
+                    <!-- TikTok -->
+                    <LinearLayout
+                        android:id="@+id/vdown_chip_tiktok"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/vdown_chip_bg"
+                        android:paddingHorizontal="20dp"
+                        android:layout_marginEnd="10dp">
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/ic_music_note"
+                            android:tint="#FFFFFF"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="TIKTOK"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:textColor="#CCFFFFFF"
+                            android:letterSpacing="0.08"/>
+                    </LinearLayout>
+
+                    <!-- Twitter -->
+                    <LinearLayout
+                        android:id="@+id/vdown_chip_twitter"
+                        android:layout_width="wrap_content"
+                        android:layout_height="44dp"
+                        android:orientation="horizontal"
+                        android:gravity="center_vertical"
+                        android:background="@drawable/vdown_chip_bg"
+                        android:paddingHorizontal="20dp">
+                        <ImageView
+                            android:layout_width="18dp"
+                            android:layout_height="18dp"
+                            android:src="@drawable/ic_share"
+                            android:tint="#1DA1F2"/>
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="8dp"
+                            android:text="TWITTER"
+                            android:textSize="11sp"
+                            android:textStyle="bold"
+                            android:textColor="#CCFFFFFF"
+                            android:letterSpacing="0.08"/>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <!-- Bottom Navigation -->
+    <LinearLayout
+        android:id="@+id/vdown_bottom_nav"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:orientation="horizontal"
+        android:background="@drawable/vdown_bottom_nav_bg"
+        android:paddingTop="12dp"
+        android:paddingBottom="24dp"
+        android:paddingHorizontal="16dp"
+        android:gravity="center_vertical">
+
+        <!-- Home Tab -->
+        <LinearLayout
+            android:id="@+id/vdown_nav_home"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <FrameLayout
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:background="@drawable/vdown_nav_active_bg"
+                android:layout_gravity="center">
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_home"
+                    android:tint="#E60A15"/>
+            </FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="HOME"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                android:textColor="#E60A15"
+                android:letterSpacing="0.12"/>
+        </LinearLayout>
+
+        <!-- Library Tab -->
+        <LinearLayout
+            android:id="@+id/vdown_nav_library"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <FrameLayout
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center">
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_folder_white_24dp"
+                    android:tint="#44FFFFFF"/>
+            </FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="LIBRARY"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                android:textColor="#44FFFFFF"
+                android:letterSpacing="0.12"/>
+        </LinearLayout>
+
+        <!-- Pro Tab -->
+        <LinearLayout
+            android:id="@+id/vdown_nav_pro"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <FrameLayout
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center">
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_star_border_white_24dp"
+                    android:tint="#44FFFFFF"/>
+            </FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="PRO"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                android:textColor="#44FFFFFF"
+                android:letterSpacing="0.12"/>
+        </LinearLayout>
+
+        <!-- More Tab -->
+        <LinearLayout
+            android:id="@+id/vdown_nav_more"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center">
+            <FrameLayout
+                android:layout_width="44dp"
+                android:layout_height="44dp"
+                android:layout_gravity="center">
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_settings"
+                    android:tint="#44FFFFFF"/>
+            </FrameLayout>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:text="MORE"
+                android:textSize="9sp"
+                android:textStyle="bold"
+                android:textColor="#44FFFFFF"
+                android:letterSpacing="0.12"/>
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

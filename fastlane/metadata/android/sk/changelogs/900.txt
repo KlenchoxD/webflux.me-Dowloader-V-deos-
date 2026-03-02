@@ -12,3 +12,5 @@ Fixed
 • database backup on Android P
 • crash when sharing a downloaded file
 • tons of YouTube extraction issue and more ...
+
+

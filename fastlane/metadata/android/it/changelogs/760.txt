@@ -41,3 +41,5 @@ Fisso
 • Aggiorna i metadati della coda di riproduzione #2453
 • [SoundCloud] Risolto crash durante il caricamento delle playlist TeamNewPipe/NewPipeExtractor#170
 • [YouTube] La durata fissa non può essere modificata TeamNewPipe/NewPipeExtractor#177
+
+

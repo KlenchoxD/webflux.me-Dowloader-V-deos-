@@ -6,3 +6,5 @@
 • [Player] Ispravljena greška u reprodukciji u plejeru
 • Odbaci prethodne Snackbarove prilikom brisanja preuzimanja
 • Ispravljen pokušaj brisanja objekta koji nije na listi
+
+

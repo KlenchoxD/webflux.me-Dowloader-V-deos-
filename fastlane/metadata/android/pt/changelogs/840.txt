@@ -20,3 +20,5 @@ Fixa
 - Ficheiro fixo de vídeo corrupto .mp4 sendo reconhecido como ficheiro de áudio
 - Resolvidos problemas de localização múltipla, incluindo códigos de língua chinesa errados
 - Os carimbos temporais em descrição podem ser clicados novamente
+
+

@@ -13,3 +13,5 @@
 
 ### Bekannte Fehler
 - Wiedergabestatus wird unter Android P nicht gespeichert
+
+

@@ -10,3 +10,5 @@
 •Memperbaiki crash yang terjadi saat menghapus sebuah stream dari daftar
 •[PeerTube]Memperbaiki related streams
 •[YouTube]Memperbaiki pencarian YouTube
+
+

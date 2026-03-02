@@ -10,3 +10,4 @@
         android:gravity="center"
         android:drawable="@drawable/splash_foreground"/>
 </layer-list>
+

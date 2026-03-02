@@ -4,3 +4,5 @@ Tetap mendapatkan komentar YouTube.
 Menambahkan dukungan untuk / menonton /, / v / dan / w / subpath di URL YouTube.
 Ekstraksi tetap ID klien SoundCloud dan konten yang dibatasi geografis.
 Menambahkan lokalisasi Kurdi utara.
+
+

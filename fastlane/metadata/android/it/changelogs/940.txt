@@ -14,3 +14,5 @@ Aggiustato
 • Crash ed errori all'apertura di alcuni video
 
 altro
+
+

@@ -8,3 +8,5 @@ Yaddaş Giriş Çərçivəsini düzgün şəkildə dəstəkləyin
 
 Yenilənmiş
  Invidious instansiyaları və boru bağlantılarını dəstəkləyir. Sabit [YouTube] Yaş məhdudiyyəti olan məzmun Seçim dialoqunu açarkən sızan pəncərə İstisnasının qarşısını alın
+
+

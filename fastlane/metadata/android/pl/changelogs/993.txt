@@ -10,3 +10,5 @@ Ulepszone
 Naprawione
 • Otwier. URL-i przeglądarki, pobranych i zew. odtwarzaczy na Androidzie 11+
 • Interakcja z trybem pełnoekr. wymagającym dwóch naciśnięć na MIUI
+
+

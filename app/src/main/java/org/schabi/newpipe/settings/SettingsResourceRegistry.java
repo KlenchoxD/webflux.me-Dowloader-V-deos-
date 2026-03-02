@@ -150,3 +150,5 @@ public final class SettingsResourceRegistry {
         }
     }
 }
+
+

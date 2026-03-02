@@ -7,3 +7,5 @@ Konpondu jokalaria aldatzean lehenengo ilarako elementuaren errepikapena
 Itxaron denbora gehiago zuzeneko erreprodukzioetan bufferrean gordetzean huts egin aurretik
 Tokiko bilaketa-emaitzen ordena konpondu
 Konpondu erreprodukzio-ilarako elementu-eremu hutsak
+
+

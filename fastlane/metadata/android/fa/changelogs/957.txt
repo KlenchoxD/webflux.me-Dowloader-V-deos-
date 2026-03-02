@@ -8,3 +8,5 @@
 • Don't rearrange lists by dragging thumbnails
 • Always remember popup properties
 • افزودن زبان سانتالی
+
+

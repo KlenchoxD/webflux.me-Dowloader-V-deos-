@@ -5,3 +5,5 @@
 • Lägg till listobjekt för att spela video på kodi
 • Fixade krasch när ingen standardwebbläsare är inställd på vissa enheter och förbättrade dela dialog
 • Växla spela/pausa med hårdvaru mellanslags knapp i fullskärm
+
+

@@ -2,3 +2,5 @@
 • Fixade analys av YouTube-kommentarer.
 • Fixade visningsnamn för media.ccc.de tjänsten.
 • Uppdaterade översättningar.
+
+

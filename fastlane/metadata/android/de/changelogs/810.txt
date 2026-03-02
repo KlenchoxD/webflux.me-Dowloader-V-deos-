@@ -9,3 +9,5 @@ Behoben
 • [YouTube] Festes Einschalten Null verursacht NPE
 • [YouTube] Behobene Betrachtungskommentare beim Öffnen eines invidio.us url
 • [SoundCloud] Update von client_id
+
+

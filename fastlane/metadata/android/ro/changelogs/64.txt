@@ -6,3 +6,5 @@
 
 ### Fix
 - Corectarea blocării la deschiderea descărcărilor (corecția este acum disponibilă pentru versiunile de lansare) #1441
+
+

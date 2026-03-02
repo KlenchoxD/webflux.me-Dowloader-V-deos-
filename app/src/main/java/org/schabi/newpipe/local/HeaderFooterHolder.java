@@ -12,3 +12,5 @@ public class HeaderFooterHolder extends RecyclerView.ViewHolder {
         view = v;
     }
 }
+
+

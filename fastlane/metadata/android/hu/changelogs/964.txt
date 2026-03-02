@@ -6,3 +6,5 @@
 • Összeomlás javítása egyes eszközöknél ahol nincs megjelölve az alapértelmezett böngésző, megosztási panel fejlesztése
 • Lejátszás/szüneteltetés funkció a fizikai billentyűzet szóközével
 • [media.ccc.de] Számtalan javítás és fejlesztés
+
+

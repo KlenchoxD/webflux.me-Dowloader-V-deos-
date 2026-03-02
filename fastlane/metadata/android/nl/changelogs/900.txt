@@ -12,3 +12,5 @@ Gemaakt
 • Databaseback-up op Android P
 • Crasht bij het delen van een gedownload bestand
 • Tonnen YouTube-extractieprobleem en meer ...
+
+

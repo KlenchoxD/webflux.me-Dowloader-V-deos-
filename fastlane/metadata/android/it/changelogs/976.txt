@@ -8,3 +8,5 @@
 • [Android TV] Risolti i salti lunghi della barra di ricerca quando si utilizza un DPad
 
 Per vedere ulteriori modifiche, visualizza il registro delle modifiche (e il post del blog) dalla scheda Collegamenti in basso.
+
+

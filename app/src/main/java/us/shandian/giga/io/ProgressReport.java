@@ -9,3 +9,4 @@ public interface ProgressReport {
      */
     void report(long progress);
 }
+

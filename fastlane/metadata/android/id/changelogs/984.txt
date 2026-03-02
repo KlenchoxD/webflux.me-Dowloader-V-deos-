@@ -5,3 +5,5 @@ Mengembalikan perubahan pada potongan saat memutar di multi jendela, menyebabkan
 Tingkatkan kompilasiSdk dari 30 menjadi 31
 Perbarui pustaka pelaporan kesalahan
 Refactor beberapa kode di pemutar
+
+

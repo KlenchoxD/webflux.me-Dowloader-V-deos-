@@ -6,3 +6,5 @@
 
 ### Correzioni
 - Risolto il crash all'apertura dei download (correzione ora disponibile per le build di rilascio) # 1441
+
+

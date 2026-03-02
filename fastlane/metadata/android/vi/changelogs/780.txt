@@ -10,3 +10,5 @@ Cải tiến
 • [YouTube] Đã sửa 'java.lang.IllegalArgumentException #192
 • [YouTube] Đã sửa luồng không hoạt động TeamNewPipe/NewPipeExtractor#195
 • Đã sửa lỗi hiệu suất trong android Pie khi tải xuống luồng #2592
+
+

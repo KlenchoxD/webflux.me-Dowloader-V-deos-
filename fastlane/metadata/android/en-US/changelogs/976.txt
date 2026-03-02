@@ -8,3 +8,4 @@
 • [Android TV] Fixed long seekbar jumps when using a DPad
 
 To see further changes, view the changelog (and blog post) from the Links tab below.
+

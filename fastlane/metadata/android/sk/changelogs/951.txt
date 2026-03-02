@@ -15,3 +15,5 @@ Fixed
 • [PeerTube] Handle deleted comments
 
 and more
+
+

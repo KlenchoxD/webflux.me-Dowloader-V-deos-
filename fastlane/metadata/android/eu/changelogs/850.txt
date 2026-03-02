@@ -1,1 +1,3 @@
 Bertsio honetan YouTube webgunearen bertsioa eguneratu da. Webgune zaharra martxoan eten egingo da eta, beraz, NewPipe eguneratu beharko duzu.
+
+

@@ -9,3 +9,5 @@ Verbessert
 Behoben
 • [YouTube] Behoben 'java.lang.IllegalArgumentException #192
 • [YouTube] Feste Live-Streams nicht arbeiten TeamNewPipe/NewPipeExtractor#195
+
+

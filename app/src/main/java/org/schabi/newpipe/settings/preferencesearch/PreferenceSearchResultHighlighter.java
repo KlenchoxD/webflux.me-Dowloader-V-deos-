@@ -123,3 +123,5 @@ public final class PreferenceSearchResultHighlighter {
                 .postDelayed(() -> rippleDrawable.setState(new int[]{}), 1000);
     }
 }
+
+

@@ -24,3 +24,5 @@
 - Arreglo del reproductor de vídeo principal #1509 
   - [#1412] Corregido el modo de repetición que provoca NPE en el reproductor cuando se recibe una nueva intención mientras la actividad del reproductor está en segundo plano.
   - Corregido que al minimizar el reproductor a la ventana emergente no se destruye el reproductor cuando el permiso de la ventana emergente no está concedido.
+
+

@@ -14,3 +14,5 @@ Təkmilləşdirildi
 Sabit 
 • Üzən nöqtə kümülatif xətaların səbəb olduğu sabit audio/video sinxronizasiyası düzəldildi
  • [PeerTube ] Silinmiş şərhləri idarə edin və s
+
+

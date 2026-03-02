@@ -10,3 +10,5 @@ Fejlesztés
 Javítva
 • A böngésző nyitó URL-címeinek, letöltéseinek és külső lejátszóinak javítása Android 11+ rendszeren
 • A MIUI két érintést igénylő teljes képernyős kölcsönhatásának javítása
+
+

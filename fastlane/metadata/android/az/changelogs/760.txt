@@ -34,3 +34,5 @@ Təkmilləşdirildi
  • Sabit endirmələr 99,9%-də qaldı #2440 
 • Oynatma növbəsinin metadatasını yeniləyin #2453 
 • [SoundCloud] TeamNewPipe/NewPipeExtractor#170 pleylistlərini yükləyərkən yaranan xəta düzəldildi • [YouTube] Sabit müddət TeamNewPipe/NewPipeExtractor#177 ilə paresd edilə bilməz
+
+

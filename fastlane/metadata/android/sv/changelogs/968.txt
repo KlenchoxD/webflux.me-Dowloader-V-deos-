@@ -5,3 +5,5 @@ Polerade det ljusa temat.
 Fixade överlappande teckensnitt när du använder en större teckenstorlek.
 Fixade ingen video på Formuler och Zephier enheter.
 Fixade olika kraschar.
+
+

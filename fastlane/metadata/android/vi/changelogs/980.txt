@@ -11,3 +11,5 @@ Sửa lỗi
 • Sửa lỗi trích xuất thích và không thích của YouTube
 • Sửa lỗi phát lại tự động sau khi quay lại từ nền
 Và nhiều hơn nữa
+
+

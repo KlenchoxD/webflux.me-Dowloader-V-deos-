@@ -8,3 +8,5 @@
 - Rozšířena klikatelná oblast minimalizovaných tlačítek přehrávače
 
 -.
+
+

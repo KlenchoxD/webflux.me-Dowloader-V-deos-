@@ -10,3 +10,5 @@ Fejlesztések
 Javítások
 • Teljesen megnézett videók eltávolítása a feed-ből javítása
 • megosztási menü téma fixálása, és "listához adás" elem hozzáadása
+
+

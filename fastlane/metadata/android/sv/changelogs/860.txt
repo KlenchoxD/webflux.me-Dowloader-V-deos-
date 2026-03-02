@@ -5,3 +5,5 @@ Förbättrat
 • Optimerat YouTube för att använda mindre data
 
 Mer än 15 YouTube-relaterade buggar har åtgärdats i denna version.
+
+

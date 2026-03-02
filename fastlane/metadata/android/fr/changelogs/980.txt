@@ -11,3 +11,5 @@ Corrections
 • Correction extraction des likes/dislikes de YouTube
 • Correction relecture automatique après le retour de l'arrière-plan
 Et bien d'autres
+
+

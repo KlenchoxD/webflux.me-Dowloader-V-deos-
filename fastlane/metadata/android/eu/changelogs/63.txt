@@ -6,3 +6,5 @@
 
 ### Konponduta
 - Deskargatzailea: hutsegitea bukatu gabeko deskargatutako .giga fitxategiak kargatzen saiatzerakoan #1407
+
+

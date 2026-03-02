@@ -139,3 +139,5 @@ Możesz udostępniać i/lub modyfikować je na zasadach licencji
 [GNU General Public License](https://www.gnu.org/licenses/gpl.html) 
 publikowaną przez Free Software Foundation, wersję 3 Licencji, lub
 (twój wybór) każdną nowszą wersję.  
+
+

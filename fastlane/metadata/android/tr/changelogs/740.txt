@@ -20,3 +20,5 @@ Sure, I can provide a Turkish translation for your list:
 - CheckForNewAppVersionTask'in gereksiz yürütülmesini düzelt
 - Geçersiz URL'leri olan abonelikleri yok say ve başlığı boş olanları sakla
 - Geçersiz YouTube URL'lerini düzelt: İmza etiket adı her zaman "signature" olmadığından akışların yüklenmesini engelle
+
+

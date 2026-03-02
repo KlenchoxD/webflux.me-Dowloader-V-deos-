@@ -29,3 +29,5 @@
 - Ana video oynatıcı düzeltmesi #1509
 - [#1412] Oyuncu etkinliği arka plandayken yeni amaç alındığında oyuncunun NPE'sine neden olan sabit tekrar modu.
 - Oyuncunun açılır pencereye küçültülmesinin, açılır pencere izni verilmediğinde oyuncuyu yok etmemesi düzeltildi.
+
+

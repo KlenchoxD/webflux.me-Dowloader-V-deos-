@@ -10,3 +10,5 @@ Behoben
 • Beenden des Download-Dialogs, bevor er erscheint
 • Pop-up-Fenster für die Liste der verwandten Elemente in der Warteschlange
 • …
+
+

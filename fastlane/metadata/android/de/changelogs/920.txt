@@ -7,3 +7,5 @@ Korrekturen:
 
 • Bug, der den Stumm-Schalter in API 19 zum Crash der App geführt hat wurde behoben
 • Das Herunterladen von langen 1080p 60fps Videos wurde behoben
+
+

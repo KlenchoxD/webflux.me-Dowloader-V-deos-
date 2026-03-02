@@ -24,3 +24,5 @@
 - #1509
   - [#1412].
   - Fixed minimizing player.
+
+

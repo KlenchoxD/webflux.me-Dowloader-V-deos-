@@ -7,3 +7,5 @@ Naprawiono powtarzanie pierwszej pozycji kolejki przy zmianie odtwarzacza
 Wydłużono oczekiwanie podczas buforowania transmisji na żywo, zanim zakończy się ono niepowodzeniem
 Naprawiono kolejność lokalnych wyników wyszukiwania
 Naprawiono puste pozycje w kolejce odtwarzania
+
+

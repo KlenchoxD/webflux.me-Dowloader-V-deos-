@@ -4,3 +4,5 @@ Cette m.à.j corrective résout les problèmes suivants sur YouTube :
 • Correction du double téléchargement des informations lors de l'ouverture d'un flux.
 • [SoundCloud] Suppression des flux protégés par DRM et illisibles.
 • Traductions mises à jour.
+
+

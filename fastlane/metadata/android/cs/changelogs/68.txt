@@ -13,3 +13,5 @@
 ### Improvements
 - Reworked Gesture controls #1604 
 - New way to close the popup player #1597
+
+

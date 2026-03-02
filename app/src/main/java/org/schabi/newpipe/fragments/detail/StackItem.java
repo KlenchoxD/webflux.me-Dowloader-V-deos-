@@ -54,3 +54,5 @@ class StackItem implements Serializable {
         return getServiceId() + ":" + getUrl() + " > " + getTitle();
     }
 }
+
+

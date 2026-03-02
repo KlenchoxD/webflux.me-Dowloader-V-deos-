@@ -12,3 +12,5 @@
 - Nedladdningsalternativ i delningsmenyn #1498
 - Minimera huvudspelaren vid avslut #1354 
   - Omarbetat dialogrutan för kontroll av uppspelningshastighet för att stödja olika stegstorlekar för snabbare hastighetsändring.
+
+

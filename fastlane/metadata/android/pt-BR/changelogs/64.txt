@@ -6,3 +6,5 @@
 
 ### Correção
 - Corrige falha ao iniciar Downloads (correção agora disponível em versões de lançamento) # 1441
+
+

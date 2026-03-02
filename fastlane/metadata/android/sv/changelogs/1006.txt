@@ -7,3 +7,5 @@ Stöd för att öppna on.soundcloud-länkar
 Åtgärdade formatering av korta antal för Android-versioner under 7
 Åtgärdade Ghost Notifications
 Åtgärdade för SRT-undertextfiler
+
+

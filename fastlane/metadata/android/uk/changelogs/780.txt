@@ -10,3 +10,5 @@
 • [YouTube] 'java.lang.IllegalArgumentException #192
 • [YouTube] не працювали прямі трансляції TeamNewPipe/NewPipeExtractor #195
 • Проблему швидкодії android pie під час завантаження трансляцій #2592
+
+

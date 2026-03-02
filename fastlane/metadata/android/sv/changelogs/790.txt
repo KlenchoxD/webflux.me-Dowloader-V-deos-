@@ -12,3 +12,5 @@ Utveckling
 - Lägg till saknade beroenden som ärvts från NewPipeExtractor i NewPipe #2535
 - Migrera till AndroidX #2685
 - Uppdatering till ExoPlayer 2.10.6 #2697, #2736
+
+

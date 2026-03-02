@@ -6,3 +6,5 @@
 - Fallo corregido si no hay navegador por defecto en ciertos dispositivos, diálogos compartir mejorados
 - Alternar reproducción/pausa con botón de espacio de hardware en reproductor de pantalla completa
 - [media.ccc.de] Varias correcciones y mejoras
+
+

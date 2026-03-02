@@ -13,3 +13,5 @@ Ispravljeno
 • [PeerTube] Avatari za uploader i podkanal su zamijenjeni
 
 i više
+
+

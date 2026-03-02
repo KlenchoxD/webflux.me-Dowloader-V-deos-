@@ -10,3 +10,5 @@ Verbessert
 Behoben
 • Das Öffnen von Browser-URLs, Downloads und externen Videoplayern unter Android 11+
 • Vollbildmodus-Bedienung benötigte zweimaliges Tippen unter MIUI
+
+

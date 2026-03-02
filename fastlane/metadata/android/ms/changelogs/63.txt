@@ -6,3 +6,5 @@
 
 ###Diperbaiki
 - Pemuat turun: pembaikian kepada kegagalan ketika memuat muat turun yang belum selesai daripada fail-fail format .giga #1407
+
+

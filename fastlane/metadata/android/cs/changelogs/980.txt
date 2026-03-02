@@ -11,3 +11,5 @@ Opraveno
 - Opravena extrakce lajků a dislajků na YouTube
 - Opraveno automatické přehrávání po návratu z pozadí
 A mnoho dalšího
+
+

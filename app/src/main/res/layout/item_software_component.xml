@@ -26,3 +26,5 @@
         android:paddingBottom="10dp"
         tools:text="@string/copyright" />
 </RelativeLayout>
+
+

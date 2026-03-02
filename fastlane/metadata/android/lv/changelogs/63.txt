@@ -6,3 +6,5 @@
 
 ### Salabots
 - Lejupielādētājs: Salabota lietotnes nobrukšana ielādējot nepabeigtās .giga datņu lejupielādes #1407
+
+

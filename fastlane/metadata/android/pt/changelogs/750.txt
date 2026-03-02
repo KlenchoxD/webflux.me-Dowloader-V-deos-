@@ -20,3 +20,5 @@ Corrigido
 • Atualizar meta dados da fila de reprodução #2453 
 • [SoundCloud] corrigida a falha ao carregar listas de reprodução Team New Pipe / New Pipe Extractor#170
 • [YouTube] A duração fixa não pode ser analisada Team New Pipe / New Pipe Extractor#177
+
+

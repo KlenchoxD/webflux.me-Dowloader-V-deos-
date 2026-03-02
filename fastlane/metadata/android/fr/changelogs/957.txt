@@ -8,3 +8,5 @@
 • Pas réarrangement des listant en glissant les miniatures
 • Toujours mémoriser les propriétés du lecteur flottant
 • Ajout du Santali
+
+

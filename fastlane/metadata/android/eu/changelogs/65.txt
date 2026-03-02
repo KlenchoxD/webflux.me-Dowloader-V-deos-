@@ -12,3 +12,5 @@
 
 - #1440 Bideoaren informazio ikuspegia apurtuta konponduta #1491 
 - Historia ikustea konponduta #1497
+
+

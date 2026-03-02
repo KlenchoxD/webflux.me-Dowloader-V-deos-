@@ -10,3 +10,5 @@
 • Videó listából való eltávolítása esetén van összeomlás fixálása
 • [PeerTube] Kapcsolódó videók fixálása
 • [YouTube] A YouTube Music keresés fixálása
+
+

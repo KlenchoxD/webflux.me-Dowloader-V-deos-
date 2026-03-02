@@ -4,3 +4,5 @@ Ez egy azonnali kiadás, amely a YouTube hibáit javítja:
 • Az információ kétszeri letöltésének javítása a stream megnyitásakor
 • [Soundcloud] A lejátszhatatlan DRM-védett streamek eltávolítása
 • Frissített fordítások
+
+

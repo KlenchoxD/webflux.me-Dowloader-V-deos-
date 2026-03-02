@@ -5,3 +5,5 @@ A többablakos nézetnél kivágós üzemmődban fut, ezzel kijavítva, hogy egy
 A compileSdk növelése 30-ról 31-re
 Hiba jelentő mappa frissítése
 A lejátszó egyes kódjainak refaktorálása
+
+

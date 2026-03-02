@@ -25,3 +25,5 @@ Fisso
 Sviluppo
 • Aggiorna ExoPlayer a 2.10.8 #2791, #2816
 • Aggiorna Gradle a 3.5.1 e aggiungi il supporto Kotlin #2714
+
+

@@ -5,3 +5,5 @@ Das Overlay zum schnellen Vor- und Zurückspringen liegt jetzt unter der System-
 compileSDK wurde von 30auf 31 erhöht
 Die Bibliothek zum Melden von Fehlern wurde aktualisiert
 Kleine Teile des Player Codes wurden umstrukturiert
+
+

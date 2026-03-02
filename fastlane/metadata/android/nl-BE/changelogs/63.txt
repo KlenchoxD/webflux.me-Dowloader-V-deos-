@@ -6,3 +6,5 @@
 
 ### Opgelost
 - Downloader: Crash bij laden van onafgemaakte downloads van .giga bestanden verhelpen #1407
+
+

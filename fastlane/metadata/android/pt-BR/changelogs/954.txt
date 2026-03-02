@@ -5,3 +5,5 @@
 • Melhor experiência de sugestão de pesquisa quando ocorrer erro de interpretação do servidor
 • Maior qualidade do vídeo padrão para 720p60 no reprodutor interno e 480p no Pop-up
 • Correções de falhas etc
+
+

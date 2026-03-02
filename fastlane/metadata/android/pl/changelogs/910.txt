@@ -1,1 +1,3 @@
 Naprawiono migrację bazy danych, która w rzadkich przypadkach uniemożliwiała uruchomienie NewPipe.
+
+

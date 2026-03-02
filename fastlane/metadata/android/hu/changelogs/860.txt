@@ -5,3 +5,5 @@ Fejlesztések
 • Youtube optimalizálása, hogy kevesebb adatot használjon
 
 Több mint 15 YouTube orientált bug került fixálásra ebben a verzióban.
+
+

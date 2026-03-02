@@ -10,3 +10,5 @@ Fixat
 • Fixat lämnande av nedladdningsdialogen innan den visas
 • Fixat relaterade objekt listans köa popup
 • Fixat ordning i lägg till i spellista dialogruta
+
+

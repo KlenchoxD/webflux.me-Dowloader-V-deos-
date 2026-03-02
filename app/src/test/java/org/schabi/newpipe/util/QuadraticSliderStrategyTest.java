@@ -86,3 +86,5 @@ public class QuadraticSliderStrategyTest {
         assertTrue(differenceCloserToCenter < differenceFurtherFromCenter);
     }
 }
+
+

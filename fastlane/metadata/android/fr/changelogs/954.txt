@@ -7,3 +7,5 @@
 • Qualité par défaut augmentée : 720p60 (plein écran) & 480p (popup)
 
 • bcp de corrections de bug et +
+
+

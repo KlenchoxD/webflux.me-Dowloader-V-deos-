@@ -15,3 +15,5 @@ Ispravljeno
 • [PeerTube] Obrada izbrisanih komentara
 
 i više
+
+

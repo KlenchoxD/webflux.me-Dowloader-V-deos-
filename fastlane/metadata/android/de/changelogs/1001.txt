@@ -4,3 +4,5 @@ Verbessert
 Behoben
 • Beim Exportieren von Datenbanken/Abonnements wurde eine bereits vorhandene Datei nicht verkürzt, was möglicherweise zu einem beschädigten Export führte
 • Der Player wurde beim Anklicken eines Zeitstempel von Anfang an fortgesetzt
+
+

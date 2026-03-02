@@ -1,1 +1,3 @@
 Fixade databasmigrering som hindrade NewPipe från att starta i vissa sällsynta fall.
+
+

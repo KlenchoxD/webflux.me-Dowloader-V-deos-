@@ -17,3 +17,5 @@
 
 ### Poznate greške
 - Stanje reprodukcije se ne može sačuvati na Android P
+
+

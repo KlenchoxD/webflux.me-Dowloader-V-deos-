@@ -145,3 +145,5 @@ public final class FocusAwareSeekBar extends AppCompatSeekBar {
         }
     }
 }
+
+

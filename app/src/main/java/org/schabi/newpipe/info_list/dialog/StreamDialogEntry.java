@@ -29,3 +29,5 @@ public class StreamDialogEntry {
         void onClick(Fragment fragment, StreamInfoItem infoItem);
     }
 }
+
+

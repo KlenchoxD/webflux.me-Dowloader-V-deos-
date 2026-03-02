@@ -130,3 +130,5 @@ public class ProgressDrawable extends Drawable {
         mMarqueeLine.close();
     }
 }
+
+

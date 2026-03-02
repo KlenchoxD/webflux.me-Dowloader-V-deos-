@@ -2,3 +2,5 @@
 ∙ [YouTube] Lade till stöd för fler kanal-URL-format
 ∙ [YouTube] Lade till stöd för fler videometainfo-format
 ∙ Uppdaterade översättningar
+
+

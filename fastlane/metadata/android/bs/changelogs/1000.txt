@@ -11,3 +11,5 @@ Ispravljeno
 • Ispravljen skočni prozor za dodavanje u red čekanja za povezane stavke
 • Ispravljen redoslijed u dijalogu za dodavanje na listu za reprodukciju
 • Prilagodite raspored stavki označenih na listi za reprodukciju
+
+

@@ -79,3 +79,5 @@
             tools:ignore="ContentDescription,RtlHardcoded" />
     </RelativeLayout>
 </androidx.cardview.widget.CardView>
+
+

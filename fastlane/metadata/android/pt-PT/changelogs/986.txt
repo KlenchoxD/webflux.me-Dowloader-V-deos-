@@ -14,3 +14,5 @@ Fixa
 - Botão de fixação do media não esconde os controlos do leitor
 - Reposição da reprodução corrigida na mudança de tipo de leitor
 - Fixar a rotação do diálogo da lista de reprodução
+
+

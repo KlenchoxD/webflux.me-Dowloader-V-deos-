@@ -6,3 +6,5 @@
 
 #### Corrigido
 - Descarregador: Corrigir falha no carregamento de descarregas inacabadas dos ficheiros .giga #1407
+
+

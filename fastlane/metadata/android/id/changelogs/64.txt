@@ -6,3 +6,5 @@
 
 ###Perbaikan
 - Memperbaiki crash ketika memulai unduhan (perbaikan sekarang tersedia untuk rilis build) #1441
+
+

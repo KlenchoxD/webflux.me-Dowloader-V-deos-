@@ -20,3 +20,5 @@ Fisso
 • Risolto il problema con il file video .mp4 danneggiato riconosciuto come file audio
 • Risolti più problemi di localizzazione, inclusi codici di lingua cinese errati
 • [YouTube] I timestamp nella descrizione sono nuovamente selezionabili
+
+

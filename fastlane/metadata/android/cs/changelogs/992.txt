@@ -15,3 +15,5 @@ Opravy
 • Oprava překrytí s DeX/myší
 • Povolení přehrávače na pozadí bez oddělených streamů zvuku
 • Různé opravy YouTube a další…
+
+

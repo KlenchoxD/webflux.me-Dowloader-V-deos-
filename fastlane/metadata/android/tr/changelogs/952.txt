@@ -5,3 +5,5 @@ Düzeltildi
 • YouTube'un yeni devamlarını destekleyerek ilgili akışlar düzeltildi
 • Yaş kısıtlamalı YouTube videoları düzeltildi
 • [Android TV] Kalan odak vurgulama katmanı düzeltildi
+
+

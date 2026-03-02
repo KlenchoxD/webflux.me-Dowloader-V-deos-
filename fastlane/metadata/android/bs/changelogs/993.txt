@@ -10,3 +10,5 @@ Poboljšano
 Ispravljeno
 • Ispravljeno otvaranje URL-ova preglednika, preuzimanja i vanjskih playera na Androidu 11+
 • Ispravljena interakcija s cijelim ekranom koja zahtijeva dva dodira na MIUI-ju
+
+

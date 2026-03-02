@@ -36,3 +36,5 @@
 - Göstərilən heç nəyi düzəldin istisna hesabatı işə salır
 - Miniatür arxa fonda göstərilmir android 8.1 üçün oyunçu [buraya baxın](https://github.com/TeamNewPipe/NewPipe/issues/943)
 - Yayım qəbuledicisinin qeydiyyatını düzəldin. №1641 bağlanır.
+
+

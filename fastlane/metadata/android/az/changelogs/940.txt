@@ -12,3 +12,5 @@ Düzəltildi
  • Yükləmə dialoqunun dondurulmasını düzəldin
  • Brauzerdə aç düyməsi indi həqiqətən brauzerdə açılır
  • Videoların açılması zamanı yaranan nasazlığı aradan qaldırın və "Bu yayımı oynatmaq mümkün olmadı" və s.
+
+

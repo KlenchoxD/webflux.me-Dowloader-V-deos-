@@ -10,3 +10,5 @@
 • Fixed crash which occurred when removing a stream from a list
 • [PeerTube] Fixed related streams
 • [YouTube] Fixed YouTube Music search
+
+

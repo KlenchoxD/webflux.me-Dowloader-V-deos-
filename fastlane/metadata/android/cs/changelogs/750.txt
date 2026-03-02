@@ -12,3 +12,5 @@ Improved
 • Removed gema strings #2295
 • Handle (auto)rotation changes during activity lifecycle #2444
 • Make long-press menus consistent #2368
+
+

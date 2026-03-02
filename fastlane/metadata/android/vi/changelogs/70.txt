@@ -23,3 +23,5 @@ LƯU Ý: Phiên bản này có thể là một lỗi nghiêm trọng, giống nh
 * NPE khi cố mở trình phát nền #1901
 * Sửa lỗi chèn luồng mới khi bật xếp hàng tự động #1878
 * Đã khắc phục sự cố tắt máy giải mã
+
+

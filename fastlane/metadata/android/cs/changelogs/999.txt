@@ -10,3 +10,5 @@ Opravena stránka
 - [YouTube] Oprava občasných chyb HTTP 403 na začátku nebo uprostřed videí
 - YouTube] Extrahování avataru a banneru z více typů hlaviček kanálů
 - Bandcamp] Opraveny různé chyby a vynucené použití protokolu HTTPS
+
+

@@ -10,3 +10,5 @@ Migliorato
 Corretto
 • Fix apertura URL, download e player esterni su Android 11+
 • Fix interazione con schermo intero che richiedeva due otcchi su MIUI
+
+

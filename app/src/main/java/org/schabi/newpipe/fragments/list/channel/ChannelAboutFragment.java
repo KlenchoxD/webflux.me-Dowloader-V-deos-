@@ -90,3 +90,5 @@ public class ChannelAboutFragment extends BaseDescriptionFragment {
                 channelInfo.getBanners());
     }
 }
+
+

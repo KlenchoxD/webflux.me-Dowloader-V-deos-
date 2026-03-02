@@ -18,3 +18,5 @@ Förbättrad
 Fixat
 - Kraschar inte när kontrollen av appuppdatering misslyckas (GitHub-version) #2423 
 - Fixade nedladdningar som fastnade på 99,9 % #2440
+
+

@@ -52,3 +52,5 @@ public class PlayQueueItemHolder extends RecyclerView.ViewHolder {
         itemHandle = v.findViewById(R.id.itemHandle);
     }
 }
+
+

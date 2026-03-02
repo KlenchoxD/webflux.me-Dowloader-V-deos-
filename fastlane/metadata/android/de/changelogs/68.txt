@@ -17,3 +17,5 @@
 ### Behoben
 - Fehler beheben, wenn die Anzahl der Abonnements nicht verfügbar ist. Schließt #1649.
 - Zeigen Sie "Abonnentenzählung nicht verfügbar" in diesen Fällen.
+
+

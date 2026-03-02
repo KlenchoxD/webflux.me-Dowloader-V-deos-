@@ -4,3 +4,5 @@ Video buferlənərkən istifadəçiyə fasilə verməyə icazə verin.
 Ağ mövzunu cilaladı.
 Daha böyük şrift ölçüsündən istifadə edərkən üst-üstə düşən şriftlər düzəldildi.
 Formuler və Zephier cihazlarında heç bir video düzəldilməyib. Müxtəlif qəzaları aradan qaldırdı.
+
+

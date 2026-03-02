@@ -2,3 +2,5 @@
 • Das Parsen von YouTube-Kommentaren wurde behoben.
 • Anzeige des Namens des Dienstes media.ccc.de korrigiert.
 • Aktualisierte Übersetzungen.
+
+

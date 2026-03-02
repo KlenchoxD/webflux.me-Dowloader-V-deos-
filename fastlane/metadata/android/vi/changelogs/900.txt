@@ -12,3 +12,5 @@ Sửa lỗi
 • Sao lưu cơ sở dữ liệu trên Android P
 • Sự cố khi chia sẻ tệp đã tải xuống
 • Rất nhiều vấn đề trích xuất YouTube và nhiều hơn nữa...
+
+

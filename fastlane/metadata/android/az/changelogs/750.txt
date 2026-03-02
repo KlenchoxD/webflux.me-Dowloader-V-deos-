@@ -19,3 +19,5 @@ Düzəltildi
  • Oynatma növbəsi metadatasını güncəlləyin #2453 
 • [SoundCloud] Pleylistləri yükləyərkən yaranan xəta düzəldildi TeamNewPipe/NewPipeExtractor#170
  • [YouTube] Sabit müddət Team7Pipe/Newtractor paresed edilə bilməz
+
+

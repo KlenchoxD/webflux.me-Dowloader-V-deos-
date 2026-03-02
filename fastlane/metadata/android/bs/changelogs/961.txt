@@ -10,3 +10,5 @@
 • Ispravljen pad aplikacije koji se javljao prilikom uklanjanja toka s liste
 • [PeerTube] Ispravljeni povezani tokovi
 • [YouTube] Ispravljena pretraga YouTube muzike
+
+

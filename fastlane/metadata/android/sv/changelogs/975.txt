@@ -13,3 +13,5 @@ Fixat
 • Fixade oändlig buffring på dubbla köartiklar
 • Vissa spelare fixar som rotation och snabbare stängning
 • Fixade ReCAPTCHA som var kvar i bakgrunden
+
+

@@ -6,3 +6,5 @@
 
 ### Konponduta
 - Konpondu deskargak irekitzean izandako hutsegitea (konponketa bertsioen bertsioetarako erabilgarri dago orain) #1441
+
+

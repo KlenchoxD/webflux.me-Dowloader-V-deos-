@@ -15,3 +15,5 @@ Naprawione
 • Nakładka dla DeX/myszy
 • Zezwalanie na odtwarzanie w tle bez oddzielnych strumieni audio
 • Różne poprawki YouTube i więcej…
+
+

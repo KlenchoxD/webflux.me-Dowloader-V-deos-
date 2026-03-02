@@ -13,3 +13,5 @@ Opravené
 • [PeerTube] Avatary uploadera a subkanála boli vymenené
 
 a viac
+
+

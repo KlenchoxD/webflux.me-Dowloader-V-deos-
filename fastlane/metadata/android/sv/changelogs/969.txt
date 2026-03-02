@@ -6,3 +6,5 @@
 • [Player] Åtgärdat ej automatisk uppspelning
 • Avskaffa tidigare Snackbars när nedladdningar raderas
 • Åtgärdat försök att radera objekt som inte finns i listan
+
+

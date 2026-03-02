@@ -1,1 +1,3 @@
 Fixed database migration which prevented NewPipe from starting in some rare cases.
+
+

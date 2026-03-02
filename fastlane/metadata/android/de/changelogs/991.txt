@@ -11,3 +11,5 @@ Verbessert:
 Behoben:
 • Mehrere Abstürze behoben
 • [YouTube] Fehlerbehebung für Laden von Kanälen, nicht zugeordnete Feeds und Wiedergabe in einigen Ländern
+
+

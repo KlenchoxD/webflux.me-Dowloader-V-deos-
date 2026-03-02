@@ -21,3 +21,5 @@
 <li>corretta l'importazione dell'abbonamento YouTube: ignora quelli con URL non valido e mantieni quelli con titolo vuoto</li>
 <li>correggi l'URL YouTube non valido: il nome del tag della firma non è sempre "firma" che impedisce il caricamento degli stream</li>
 </ul>
+
+

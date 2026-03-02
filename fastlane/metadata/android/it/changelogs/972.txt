@@ -12,3 +12,5 @@ Aggiornate le istanze Invidious e supportano i collegamenti Piped.
 Fisso
 [YouTube] Contenuti soggetti a limiti di età
 Prevenire la finestra trapelata Eccezione all'apertura della finestra di dialogo di scelta
+
+

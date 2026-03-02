@@ -15,3 +15,5 @@ Behoben:
 • Overlay auf DeX/Maus
 • Hintergrundplayer ohne separate Audiostreams
 • YouTube-Korrekturen und mehr…
+
+

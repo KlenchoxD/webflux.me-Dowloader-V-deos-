@@ -5,3 +5,5 @@ Naprawione
 • Naprawiono powiązane strumienie, wspierając nowe kontynuacje YouTube
 • Naprawiono filmy z YouTube z ograniczeniami wiekowymi
 • [Android TV] Naprawiono utrzymującą się nakładkę podświetlenia
+
+

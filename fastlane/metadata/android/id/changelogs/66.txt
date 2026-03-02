@@ -31,3 +31,5 @@
 - Perbaikan pemutar video utama #1509
   - [#1412] Memperbaiki mode pengulangan yang menyebabkan pemutar NPE ketika intent baru diterima saat aktivitas pemutar berada di latar belakang.
   - Perbaiki meminimalkan pemutar ke popup tidak menghancurkan pemutar ketika izin popup tidak diberikan.
+
+

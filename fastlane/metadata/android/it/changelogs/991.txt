@@ -11,3 +11,5 @@ Migliorato
 Fisso
 • Correggere più arresti anomali
 • [YouTube] Risolti i problemi di caricamento dei canali, feed non dedicati e soluzioni alternative di riproduzione in alcuni paesi
+
+

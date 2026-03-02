@@ -6,3 +6,5 @@
 • Correction barre de progression qui ne se termine pas après fin de vidéo
 • Désactivation tunneling média sur RealtekATV
 • Élargissement zone cliquable des boutons de lecture minimisés
+
+

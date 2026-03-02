@@ -15,3 +15,5 @@ Fixa
 - Corrigido sobreposições no DeX/rato
 - Permitir um leitor de fundo sem fluxo de áudio separados
 - Várias correções do YouTube…
+
+

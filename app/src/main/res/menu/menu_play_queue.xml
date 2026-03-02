@@ -51,3 +51,5 @@
         android:title="@string/switch_to_main"
         app:showAsAction="never" />
 </menu>
+
+

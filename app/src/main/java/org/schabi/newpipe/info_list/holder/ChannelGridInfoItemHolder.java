@@ -11,3 +11,5 @@ public class ChannelGridInfoItemHolder extends ChannelMiniInfoItemHolder {
         super(infoItemBuilder, R.layout.list_channel_grid_item, parent);
     }
 }
+
+

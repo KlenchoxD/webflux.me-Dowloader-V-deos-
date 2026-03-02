@@ -8,3 +8,5 @@
 • [Android TV] Memperbaiki lompatan seekbar yang panjang saat menggunakan DPad
 
 Untuk melihat perubahan lebih lanjut, lihat log perubahan (dan postingan blog) dari tab Tautan di bawah.
+
+

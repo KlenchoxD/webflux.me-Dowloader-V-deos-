@@ -41,3 +41,5 @@
 • Оновити метадані черги відтворення #2453 
 • [SoundCloud] Виправлено збій під час завантаження списків відтворення TeamNewPipe/NewPipeExtractor#170 
 • [YouTube] Фіксована тривалість не може бути використана TeamNewPipe/NewPipeExtractor#177
+
+

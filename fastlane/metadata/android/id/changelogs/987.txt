@@ -10,3 +10,5 @@ Ditingkatkan
 Tetap
 • Perbaiki penghapusan video yang ditonton sepenuhnya dari daftar putar
 • Perbaiki tema menu berbagi dan entri "tambahkan ke daftar putar".
+
+

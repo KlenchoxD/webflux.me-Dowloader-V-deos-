@@ -10,3 +10,5 @@ Android 10+ erabiltzaileentzako partekatzeko menuak edukiaren izenburua erakuste
 Invidious-en instantzia eguneratuak eta Piped estekak erabiltzeko laguntza
 
 ...eta zuzenketak
+
+

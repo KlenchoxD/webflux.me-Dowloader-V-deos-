@@ -15,3 +15,5 @@ Javítva
 - [YouTube] Az ajánlott videók hiányának javítása
 - Az előzmények listanézetben bekövetkező összeomlások javítása
 - A hozzászólásválaszok időbélyegeinek javítása
+
+

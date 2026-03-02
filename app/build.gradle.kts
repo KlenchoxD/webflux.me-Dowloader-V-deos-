@@ -2,9 +2,7 @@
  * SPDX-FileCopyrightText: 2025 NewPipe e.V. <https://newpipe-ev.de>
  * SPDX-License-Identifier: GPL-3.0-or-later
  */
-
 import com.android.build.api.dsl.ApplicationExtension
-
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
@@ -14,17 +12,14 @@ plugins {
     alias(libs.plugins.sonarqube)
     checkstyle
 }
-
 val gitWorkingBranch = providers.exec {
     commandLine("git", "rev-parse", "--abbrev-ref", "HEAD")
 }.standardOutput.asText.map { it.trim() }
-
 java {
     toolchain {
         languageVersion = JavaLanguageVersion.of(17)
     }
 }
-
 kotlin {
     compilerOptions {
         // TODO: Drop annotation default target when it is stable
@@ -33,46 +28,37 @@ kotlin {
         )
     }
 }
-
 configure<ApplicationExtension> {
     compileSdk = 36
     namespace = "org.schabi.newpipe"
-
     defaultConfig {
         applicationId = "org.schabi.newpipe"
-        resValue("string", "app_name", "NewPipe")
-        minSdk = 21
+        resValue("string", "app_name", "VDown")
+        minSdk = 24
         targetSdk = 35
-
         versionCode = System.getProperty("versionCodeOverride")?.toInt() ?: 1008
-
         versionName = "0.28.3"
         System.getProperty("versionNameSuffix")?.let { versionNameSuffix = it }
-
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
-
     buildTypes {
         debug {
             isDebuggable = true
-
             // suffix the app id and the app name with git branch name
             val defaultBranches = listOf("master", "dev")
             val workingBranch = gitWorkingBranch.getOrElse("")
             val normalizedWorkingBranch = workingBranch
                 .replaceFirst("^[^A-Za-z]+".toRegex(), "")
                 .replace("[^0-9A-Za-z]+".toRegex(), "")
-
             if (normalizedWorkingBranch.isEmpty() || workingBranch in defaultBranches) {
                 // default values when branch name could not be determined or is master or dev
                 applicationIdSuffix = ".debug"
-                resValue("string", "app_name", "NewPipe Debug")
+                resValue("string", "app_name", "VDown Debug")
             } else {
                 applicationIdSuffix = ".debug.$normalizedWorkingBranch"
                 resValue("string", "app_name", "NewPipe $workingBranch")
             }
         }
-
         release {
             System.getProperty("packageSuffix")?.let { suffix ->
                 applicationIdSuffix = suffix
@@ -86,36 +72,33 @@ configure<ApplicationExtension> {
             )
         }
     }
-
     lint {
         lintConfig = file("lint.xml")
         // Continue the debug build even when errors are found
         abortOnError = false
     }
-
     compileOptions {
         // Flag to enable support for the new language APIs
         isCoreLibraryDesugaringEnabled = true
         encoding = "utf-8"
     }
-
     sourceSets {
         getByName("androidTest") {
             assets.directories += "$projectDir/schemas"
         }
     }
-
     androidResources {
         generateLocaleConfig = true
     }
-
     buildFeatures {
         viewBinding = true
         buildConfig = true
         resValues = true
     }
-
     packaging {
+        jniLibs {
+            useLegacyPackaging = true
+        }
         resources {
             // remove two files which belong to jsoup
             // no idea how they ended up in the META-INF dir...
@@ -127,29 +110,23 @@ configure<ApplicationExtension> {
         }
     }
 }
-
 ksp {
     arg("room.schemaLocation", "$projectDir/schemas")
 }
-
-
 // Custom dependency configuration for ktlint
 val ktlint by configurations.creating
-
 // https://checkstyle.org/#JRE_and_JDK
 tasks.withType<Checkstyle>().configureEach {
     javaLauncher = javaToolchains.launcherFor {
         languageVersion = JavaLanguageVersion.of(21)
     }
 }
-
 checkstyle {
     configDirectory = rootProject.file("checkstyle")
     isIgnoreFailures = false
     isShowViolations = true
     toolVersion = libs.versions.checkstyle.get()
 }
-
 tasks.register<Checkstyle>("runCheckstyle") {
     source("src")
     include("**/*.java")
@@ -157,20 +134,15 @@ tasks.register<Checkstyle>("runCheckstyle") {
     exclude("**/R.java")
     exclude("**/BuildConfig.java")
     exclude("main/java/us/shandian/giga/**")
-
     classpath = configurations.getByName("checkstyle")
-
     isShowViolations = true
-
     reports {
         xml.required = true
         html.required = true
     }
 }
-
 val outputDir = project.layout.buildDirectory.dir("reports/ktlint/")
 val inputFiles = fileTree("src") { include("**/*.kt") }
-
 tasks.register<JavaExec>("runKtlint") {
     inputs.files(inputFiles)
     outputs.dir(outputDir)
@@ -179,7 +151,6 @@ tasks.register<JavaExec>("runKtlint") {
     args = listOf("--editorconfig=../.editorconfig", "src/**/*.kt")
     jvmArgs = listOf("--add-opens", "java.base/java.lang=ALL-UNNAMED")
 }
-
 tasks.register<JavaExec>("formatKtlint") {
     inputs.files(inputFiles)
     outputs.dir(outputDir)
@@ -188,11 +159,9 @@ tasks.register<JavaExec>("formatKtlint") {
     args = listOf("--editorconfig=../.editorconfig", "-F", "src/**/*.kt")
     jvmArgs = listOf("--add-opens", "java.base/java.lang=ALL-UNNAMED")
 }
-
 tasks.register<CheckDependenciesOrder>("checkDependenciesOrder") {
     tomlFile = layout.projectDirectory.file("../gradle/libs.versions.toml")
 }
-
 afterEvaluate {
     tasks.named("preDebugBuild").configure {
         if (!System.getProperties().containsKey("skipFormatKtlint")) {
@@ -201,7 +170,6 @@ afterEvaluate {
         dependsOn("runCheckstyle", "runKtlint", "checkDependenciesOrder")
     }
 }
-
 sonar {
     properties {
         property("sonar.projectKey", "TeamNewPipe_NewPipe")
@@ -209,14 +177,13 @@ sonar {
         property("sonar.host.url", "https://sonarcloud.io")
     }
 }
-
 dependencies {
     /** Desugaring **/
     coreLibraryDesugaring(libs.android.desugar)
 
     /** NewPipe libraries **/
-    implementation(libs.newpipe.nanojson)
     implementation(libs.newpipe.extractor)
+    implementation(libs.newpipe.nanojson)
     implementation(libs.newpipe.filepicker)
 
     /** Checkstyle **/
@@ -250,13 +217,10 @@ dependencies {
     implementation(libs.livefront.bridge)
     implementation(libs.evernote.statesaver.core)
     kapt(libs.evernote.statesaver.compiler)
-
     // HTML parser
     implementation(libs.jsoup)
-
     // HTTP client
     implementation(libs.squareup.okhttp)
-
     // Media player
     implementation(libs.google.exoplayer.core)
     implementation(libs.google.exoplayer.dash)
@@ -266,33 +230,26 @@ dependencies {
     implementation(libs.google.exoplayer.mediasession)
     implementation(libs.google.exoplayer.smoothstreaming)
     implementation(libs.google.exoplayer.ui)
-
     // Manager for complex RecyclerView layouts
     implementation(libs.lisawray.groupie.core)
     implementation(libs.lisawray.groupie.viewbinding)
-
     // Image loading
     implementation(libs.coil.compose)
     implementation(libs.coil.network.okhttp)
-
     // Markdown library for Android
     implementation(libs.noties.markwon.core)
     implementation(libs.noties.markwon.linkify)
-
     // Crash reporting
     implementation(libs.acra.core)
     compileOnly(libs.google.autoservice.annotations)
     ksp(libs.zacsweers.autoservice.compiler)
-
     // Properly restarting
     implementation(libs.jakewharton.phoenix)
-
     // Reactive extensions for Java VM
     implementation(libs.reactivex.rxjava)
     implementation(libs.reactivex.rxandroid)
     // RxJava binding APIs for Android UI widgets
     implementation(libs.jakewharton.rxbinding)
-
     // Date and time formatting
     implementation(libs.ocpsoft.prettytime)
 
@@ -304,6 +261,11 @@ dependencies {
     // Debug bridge for Android
     debugImplementation(libs.facebook.stetho.core)
     debugImplementation(libs.facebook.stetho.okhttp3)
+
+    /** YoutubeDL Android (yt-dlp) — 1000+ sites **/
+    implementation(libs.youtubedl.android.library)
+    implementation(libs.youtubedl.android.ffmpeg)
+    implementation(libs.youtubedl.android.aria2c)
 
     /** Testing **/
     testImplementation(libs.junit)

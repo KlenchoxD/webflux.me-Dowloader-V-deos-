@@ -6,3 +6,5 @@
 
 ### Poprawka
 - Naprawiono crashowanie przy otwieraniu pobranych plików (poprawka jest już dostępna dla wersji release) #1441
+
+

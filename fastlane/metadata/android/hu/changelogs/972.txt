@@ -12,3 +12,5 @@ Invidious folyamatok frissítése és Piped linkek támogatása.
 Javítás
 [YouTube] Korhatáros tartalom
 Megakadályozva, hogy a kivételek ablaka belecsússzon a megnyitott lehetőség panelbe
+
+

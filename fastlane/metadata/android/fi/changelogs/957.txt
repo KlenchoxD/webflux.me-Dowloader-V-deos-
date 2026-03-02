@@ -8,3 +8,5 @@
 • Ei uudelleenjärjestä listoja raahaatessa esikatselukuvia
 • Ponnahdusikkunan ominaisuudet muistetaan aina
 • Lisätty santalin kieli
+
+

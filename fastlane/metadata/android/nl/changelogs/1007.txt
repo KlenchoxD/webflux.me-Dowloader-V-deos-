@@ -9,3 +9,5 @@ Andere verbeteringen:
 • [YouTube] Het is weer mogelijk om livestreams tot 4 uur terug te spoelen
 • Livestreamvideo's worden niet geladen wanneer ze op de achtergrond worden afgespeeld
 • Nieuwe gebruikersinterface voor "Verwijder bekeken"
+
+

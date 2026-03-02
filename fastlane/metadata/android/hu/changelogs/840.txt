@@ -20,3 +20,5 @@ Javítások
 • Hibás mp4 videó hangfájlként felismerés fixálása
 • Többféle fordítási probléma javítása, a kínai nyelvkóddal együtt
 • [YouTube] Időkódok újra klikkelhetőek a leírásban
+
+

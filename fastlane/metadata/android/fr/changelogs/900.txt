@@ -12,3 +12,5 @@ Corrections
 - Sauvegarde de la base de données sur Android P
 - Crash lors du partage d'un fichier téléchargé
 - Tonnes de problèmes d'extraction sur YouTube...
+
+

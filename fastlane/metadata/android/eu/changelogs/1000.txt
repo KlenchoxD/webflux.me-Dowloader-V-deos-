@@ -11,3 +11,5 @@ Konpondua
 • Erlazionatutako elementuen leihoa
 • Zerrendan gehitzeko ordena
 • Laster-marken diseinua
+
+

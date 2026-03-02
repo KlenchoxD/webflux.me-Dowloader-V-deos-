@@ -15,3 +15,5 @@
   - Fix YT Premium video are not blocked correctly
   - Fix Videos sometimes not loading (due to DASH parsing)
   - Fix links in video description.
+
+

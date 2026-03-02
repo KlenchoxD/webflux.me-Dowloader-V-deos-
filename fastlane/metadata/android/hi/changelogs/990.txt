@@ -13,3 +13,5 @@ Improved
 Fixed
 • Fix various issues with the player notification: outdated/missing media info, distorted thumbnail
 • Fix fullscreen using 1/4 of screen
+
+

@@ -13,3 +13,5 @@ Améliorations
 Corrections
 - Correction de la désynchronisation audio/vidéo
 - [PeerTube] Gestion des commentaires supprimés
+
+

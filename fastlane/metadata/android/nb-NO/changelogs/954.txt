@@ -7,3 +7,5 @@
 • Forvalgt videokvalitet nå 720p60 (innebygd) og 480p (i oppsprett)
 
 • +Mer
+
+

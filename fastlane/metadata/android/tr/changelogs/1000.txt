@@ -11,3 +11,5 @@ Düzeltmeler
 • Listeye ekle diyalogundaki sıra düzeltildi
 • Liste yer imi öğe düzenini ayarlandı
 ...
+
+

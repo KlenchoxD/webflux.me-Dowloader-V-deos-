@@ -6,3 +6,5 @@
 
 ### Oprava
 - Opraveno selhání aplikace při otevření stáhnutých souborů (oprava je nyní k dispozici pro vydané sestavy. #1441
+
+

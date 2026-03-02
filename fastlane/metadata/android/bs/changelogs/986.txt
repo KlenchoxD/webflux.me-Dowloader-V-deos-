@@ -15,3 +15,5 @@ Ispravljeno
 • Ispravljeno dugme za medije koje nije skrivalo kontrole playera
 • Ispravljeno resetovanje reprodukcije pri promjeni tipa playera
 • Ispravljeno rotiranje dijaloga liste za reprodukciju
+
+

@@ -5,3 +5,5 @@ Tog bort ändringar av utskärningar när man spelar i flera fönster, vilket or
 Öka compileSdk från 30 till 31
 Uppdatera biblioteket för felrapportering
 Refaktorisering av viss kod i spelaren
+
+

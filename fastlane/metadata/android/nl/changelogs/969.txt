@@ -6,3 +6,5 @@
 • [Speler] Fix: speler die niet automatisch speelt
 • Vorige Snackbalken verwijderen bij het verwijderen van downloads
 • Hersteld dat objecten die niet in de lijst staan, verwijderd moeten worden
+
+

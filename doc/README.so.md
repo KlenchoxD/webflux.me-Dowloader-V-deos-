@@ -133,3 +133,5 @@ Sidaa darteed, app-ku wax xog ah ma uruuriyo fasaxaaga la'aantii. Siyaasada Sird
 [![GNU GPLv3 Image](https://www.gnu.org/graphics/gplv3-127x51.png)](https://www.gnu.org/licenses/gpl-3.0.en.html)  
 
 NewPipe waa barnaamij bilaash ah oon lahayn xuquuqda daabacaada: Waad isticmaali kartaa, waad wadaagi kartaa waadna hormarin kartaa hadaad rabto. Gaar ahaan waad sii daabici kartaa ama wax baad ka badali kartaa ayadoo la raacayo shuruudaha sharciga guud ee [GNU](https://www.gnu.org/licenses/gpl.html) sida ay soosaareen Ururka Barnaamijyada Bilaashka ah, soosaarista 3aad ee laysinka, ama (hadaad doonto) nooc walba oo kasii dambeeyay laysinkii 3aad. 
+
+

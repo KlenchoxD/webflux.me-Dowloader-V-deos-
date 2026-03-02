@@ -4,3 +4,5 @@ Probleem opgelost met het krijgen van YouTube-opmerkingen.
 Ondersteuning toegevoegd voor / watch /, / v / en / w / subpaden in YouTube-URL's.
 Vaste extractie van SoundCloud-client-ID en geografisch beperkte inhoud.
 Noord-Koerdische lokalisatie toegevoegd.
+
+

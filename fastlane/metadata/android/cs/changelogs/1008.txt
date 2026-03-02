@@ -2,3 +2,5 @@
 ∙ [YouTube] Přidána podpora pro více formátů URL kanálů
 ∙ [YouTube] Přidána podpora pro více formátů metainformací videí
 ∙ Aktualizovány překlady
+
+

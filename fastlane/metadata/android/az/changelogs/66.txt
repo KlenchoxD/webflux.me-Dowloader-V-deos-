@@ -27,3 +27,5 @@
  - Əsas video pleyer düzəlişi #1509
  - [#1412] Oyunçu fəaliyyəti fonda olarkən yeni niyyət qəbul edildikdə oyunçu NPE-yə səbəb olan sabit təkrar rejimi. 
 - Açılan pəncərəyə icazə verilmədikdə, oyunçunun pop-up üçün minimuma endirilməsi pleyeri məhv etmir.
+
+

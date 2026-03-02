@@ -23,3 +23,5 @@
         android:layout_height="wrap_content"
         tools:listitem="@layout/select_kiosk_item" />
 </LinearLayout>
+
+

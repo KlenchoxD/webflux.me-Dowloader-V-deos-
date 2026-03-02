@@ -5,3 +5,5 @@ Vylepšené stránky
 - Optimalizováno pro YouTube tak, aby využívalo méně dat
 
 V této verzi bylo opraveno více než 15 chyb souvisejících s YouTube.
+
+

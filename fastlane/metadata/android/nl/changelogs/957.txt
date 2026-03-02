@@ -8,3 +8,5 @@
 • Herschik lijsten niet bij het slepen van miniaturen
 • Onthoud popup-eigenschappen altijd
 • Santali-taal
+
+

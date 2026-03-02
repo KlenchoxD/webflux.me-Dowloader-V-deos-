@@ -13,3 +13,5 @@ Amélioré
 Corrigé
 • Correction de la superposition sur DeX/souris
 • Autoriser le lecteur d'arrière-plan sans flux audio séparés
+
+

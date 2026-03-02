@@ -15,3 +15,5 @@ Ispravljeno
 • Ispravljen prekrivač na DeX-u/mišu
 • Omogućen pozadinski player bez odvojenih audio tokova
 • Razne ispravke za YouTube i još mnogo toga…
+
+

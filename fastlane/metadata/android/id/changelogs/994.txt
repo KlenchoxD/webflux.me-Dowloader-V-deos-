@@ -13,3 +13,5 @@ Diperbaiki
 • [PeerTube] Avatar pengunggah dan subsaluran ditukar
 
 dan banyak lagi
+
+

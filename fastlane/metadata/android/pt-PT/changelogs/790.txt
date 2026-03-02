@@ -12,3 +12,5 @@ Desenvolvimento
 - Adicionar dependências em falta herdadas de NewPipeExtractor em NewPipe #2535
 - Migrar para AndroidX #2685
 - Actualização para ExoPlayer 2.10.6 #2697, #2736
+
+

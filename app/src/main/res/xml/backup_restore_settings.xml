@@ -23,3 +23,4 @@
         app:singleLineTitle="false"
         app:iconSpaceReserved="false" />
 </PreferenceScreen>
+

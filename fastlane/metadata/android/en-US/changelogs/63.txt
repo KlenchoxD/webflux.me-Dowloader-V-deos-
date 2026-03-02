@@ -6,3 +6,5 @@
 
 ### Fixed
 - Downloader: Fix crash on loading unfinished downloads from .giga files #1407
+
+

@@ -15,3 +15,5 @@ Konpondua
 • Laster-markak null
 • Sareko salbuespena
 • Harpidetza ordenatzea
+
+

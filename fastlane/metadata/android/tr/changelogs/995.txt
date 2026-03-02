@@ -14,3 +14,5 @@ Düzeltilenler
 • Dil seçicide yanlış dil seçimi sorunu düzeltildi
 • Oynatıcı ses odaklı modda, sessize alma özelliğini dikkate almıyordu
 • Oynatma listesi öğesi ekleme özelliği bazen çalışmıyordu
+
+

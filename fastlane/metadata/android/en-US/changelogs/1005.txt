@@ -15,3 +15,4 @@ Fixed
 • [YouTube] Fix missing recommended videos
 • Fix crashes in History list view
 • Fix timestamps in comment replies
+

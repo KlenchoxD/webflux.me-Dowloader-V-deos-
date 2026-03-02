@@ -17,3 +17,5 @@ Fisso
 • Corretta la visibilità del pulsante di ordinamento dei gruppi nel frammento delle iscrizioni
 
 e altro ancora
+
+

@@ -8,3 +8,5 @@
 • Voorkom herordenen lijsten bij slepen thumbnails
 • Onthoud pop-up eigenschappen
 • Voeg taal Santali toe
+
+

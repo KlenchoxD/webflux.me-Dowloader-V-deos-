@@ -15,3 +15,5 @@ Javítások
 • ReCAPTCHA immáron nem fut tovább a háttérben
 • Interakció kikapcsolása a feed frissíténél
 • Egyes letöltő összeomlás javítása
+
+

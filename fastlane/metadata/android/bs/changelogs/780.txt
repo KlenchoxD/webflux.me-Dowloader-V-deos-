@@ -10,3 +10,5 @@ Ispravljeno
 • [YouTube] Ispravljen 'java.lang.IllegalArgumentException #192
 • [YouTube] Ispravljen prenos uživo koji nije radio TeamNewPipe/NewPipeExtractor#195
 • Ispravljen problem s performansama u android pie-u prilikom preuzimanja prenosa #2592
+
+

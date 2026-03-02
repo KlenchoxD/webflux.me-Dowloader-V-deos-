@@ -8,3 +8,5 @@ Correções
 [Player] Início automático corrigido.
 Fecha avisos antigos ao excluir downloads.
 Erro ao excluir item inexistente corrigido.
+
+

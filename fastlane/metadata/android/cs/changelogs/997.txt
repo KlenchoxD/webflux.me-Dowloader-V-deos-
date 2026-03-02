@@ -15,3 +15,5 @@ Opraveno
 • Oprava závislosti v importu nastavení a přechod na JSON
 • Různé opravy stahování
 • Trim vyhledávaného textu
+
+

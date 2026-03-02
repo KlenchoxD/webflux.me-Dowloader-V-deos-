@@ -4,3 +4,5 @@ Poboljšano
 Ispravljeno
 • Ispravljena greška izvoza baze podataka/pretplata koja nije skraćivala već postojeću datoteku, što je moglo dovesti do oštećenja izvoza
 • Ispravljeno ponovno pokretanje igrača od početka klikom na vremensku oznaku
+
+

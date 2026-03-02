@@ -25,3 +25,5 @@ Fixa
 Desenvolvimento
 - Atualizar ExoPlayer para 2.10.8 #2791, #2816
 - Atualizar o Gradle para 3.5.1 e adicionar o suporte Kotlin #2714
+
+

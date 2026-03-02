@@ -41,3 +41,5 @@ Corrigido
 • Atualizar metadados da fila de reprodução #2453 
 • [SoundCloud] corrigida a falha ao carregar listas de reprodução TeamNewPipe / NewPipeExtractor#170
 • [YouTube] duração fixa não pode ser Paresd TeamNewPipe / NewPipeExtractor#177
+
+

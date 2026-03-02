@@ -210,3 +210,5 @@ public abstract class PlayerUi {
     public void onVideoSizeChanged(@NonNull final VideoSize videoSize) {
     }
 }
+
+

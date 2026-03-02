@@ -4,3 +4,5 @@ Das Abrufen von YouTube-Kommentaren wurde behoben.
 Unterstützung für /watch/, /v/ und /w/ Unterpfade in YouTube URLs hinzugefügt.
 Die Extraktion der SoundCloud-Client-ID und geografisch eingeschränkter Inhalte wurde korrigiert.
 Nordkurdische Lokalisierung wurde hinzugefügt.
+
+

@@ -11,3 +11,5 @@ Fixat
 • Fixade YouTube tumme upp och tumme ner extraktion
 • Fixade automatisk uppspelning efter återkomst från bakgrunden
 Och mycket mer
+
+

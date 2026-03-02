@@ -9,3 +9,5 @@ Javítások
 • Javított beállítás import és export útvonalak
 • [YouTube] Komment like számláló mutatása
 És sok más
+
+

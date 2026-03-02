@@ -8,3 +8,5 @@
 • Ordna inte listor genom att dra miniatyrer
 • Kom alltid ihåg popup egenskaper
 • Lägga till Santali språk
+
+

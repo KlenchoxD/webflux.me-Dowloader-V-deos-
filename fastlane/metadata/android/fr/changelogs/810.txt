@@ -7,3 +7,5 @@ Améliorations :
 
 Corrections :
 • Correction de plusieurs problèmes lors du partage d'une vidéo sur NewPipe et du téléchargement direct de ses flux
+
+

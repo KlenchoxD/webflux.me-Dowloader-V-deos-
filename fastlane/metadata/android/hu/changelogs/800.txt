@@ -25,3 +25,5 @@ Javítások
 Frissítés
 • ExoPlayer frissítése 2.10.8 #2791-re #2816
 • Gradle frissítése 3.5.1-re, és Kotlin támogatás hozzáadása #2714
+
+

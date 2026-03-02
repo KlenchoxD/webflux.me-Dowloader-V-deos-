@@ -13,3 +13,5 @@ Fixed
 • [PeerTube] Uploader and subchannel avatars were swapped
 
 and more
+
+

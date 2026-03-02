@@ -11,3 +11,5 @@ public class LocalStatisticStreamCardItemHolder extends LocalStatisticStreamItem
         super(infoItemBuilder, R.layout.list_stream_card_item, parent);
     }
 }
+
+

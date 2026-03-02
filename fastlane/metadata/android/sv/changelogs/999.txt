@@ -10,3 +10,5 @@ Fixat
 • [YouTube] Löst tillfälliga HTTP 403 fel i början eller i mitten av videor
 • [YouTube] Extrahera avatar och banner från fler kanalhuvudtyper
 • [Bandcamp] Fixat olika buggar och använd alltid HTTPS
+
+

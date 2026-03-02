@@ -19,3 +19,5 @@ Sabitləşdirildi
  • Android KitKat-da sabit endirmə • Sabit pozulmuş video .mp4 faylının audio fayl kimi tanınması
  • Sabit multi yanlış Çin dili kodları da daxil olmaqla ple lokalizasiya problemləri 
 • [YouTube] Təsvirdəki vaxt möhürləri yenidən klikləilə bilər
+
+

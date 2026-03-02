@@ -6,3 +6,5 @@
 
 ### Tuzatish
 - Yuklab olishlarni ochilishidagi nosozlikni tuzatish (tuzatishlar hozirda mavjud) # 1441
+
+

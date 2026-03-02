@@ -4,3 +4,5 @@ Sabitlənmiş şərhləri belə vurğulayın FSFE-nin PeerTube nümunəsi üçü
  Canlı yayımlar zamanı buferləmə zamanı uğursuzluqdan əvvəl daha çox gözləyin
  Yerli axtarış nəticələrinin sırasını düzəldin 
 Oyun növbəsindəki boş element sahələrini düzəldin
+
+

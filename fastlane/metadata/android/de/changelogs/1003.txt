@@ -4,3 +4,5 @@ Dies ist eine Hotfix-Version, die YouTube-Fehler behebt:
 • Behebung des doppelten Herunterladens von Informationen beim Öffnen eines Streams
 • [Soundcloud] Entfernen von nicht abspielbaren DRM-geschützten Streams
 • Aktualisierte Übersetzungen
+
+

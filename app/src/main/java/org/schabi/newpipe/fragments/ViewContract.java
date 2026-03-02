@@ -11,3 +11,5 @@ public interface ViewContract<I> {
 
     void handleError();
 }
+
+

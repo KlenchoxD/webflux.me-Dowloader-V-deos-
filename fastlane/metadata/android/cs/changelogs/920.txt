@@ -7,3 +7,5 @@ Opraveno
 
 - Opraveno tlačítko ztlumení zvuku způsobující pády na rozhraní API 19
 - Opraveno stahování dlouhých videí 1080p 60fps
+
+

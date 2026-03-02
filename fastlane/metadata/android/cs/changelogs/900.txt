@@ -11,3 +11,5 @@ Opraveno
 - některá videa WebM nelze zobrazit
 - zálohování databáze v systému Android P
 - pád při sdílení staženého souboru
+
+

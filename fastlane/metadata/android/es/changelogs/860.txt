@@ -5,3 +5,5 @@ Mejorado
 - Optimizado YouTube para utilizar menos datos
 
 En esta versión se han corregido más de 15 errores relacionados con YouTube.
+
+

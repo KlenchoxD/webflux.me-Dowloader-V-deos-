@@ -15,3 +15,5 @@ Javítások
 • Felület javítása DeX/egérnél
 • Háttérlejátszás ha a videó nem rendelkezik hangsávval
 • Számos YouTube javítás és egyéb…
+
+

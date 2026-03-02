@@ -15,6 +15,7 @@ import coil3.request.allowRgb565
 import coil3.request.crossfade
 import coil3.util.DebugLogger
 import com.jakewharton.processphoenix.ProcessPhoenix
+import com.yausername.youtubedl_android.YoutubeDL                    // ← NUEVO
 import io.reactivex.rxjava3.exceptions.CompositeException
 import io.reactivex.rxjava3.exceptions.MissingBackpressureException
 import io.reactivex.rxjava3.exceptions.OnErrorNotImplementedException
@@ -124,6 +125,28 @@ open class App :
         configureRxJavaErrorHandler()
 
         YoutubeStreamExtractor.setPoTokenProvider(PoTokenProviderImpl)
+
+        // ← NUEVO: Inicializar yt-dlp y actualizarlo automáticamente
+        initYoutubeDL()
+    }
+
+       // Inicializa yt-dlp y FFmpeg, y actualiza yt-dlp en segundo plano
+    private fun initYoutubeDL() {
+        try {
+            YoutubeDL.getInstance().init(this)
+            com.yausername.ffmpeg.FFmpeg.getInstance().init(this)  // ← NUEVO: inicializar FFmpeg
+            // Actualizar yt-dlp en un hilo aparte para no trabar la app
+            Thread {
+                try {
+                    YoutubeDL.getInstance().updateYoutubeDL(this, YoutubeDL.UpdateChannel.NIGHTLY)
+                    Log.i(TAG, "yt-dlp actualizado correctamente")
+                } catch (e: Exception) {
+                    Log.e(TAG, "Error actualizando yt-dlp", e)
+                }
+            }.start()
+        } catch (e: Exception) {
+            Log.e(TAG, "Error inicializando yt-dlp", e)
+        }
     }
 
     override fun newImageLoader(context: Context): ImageLoader = ImageLoader

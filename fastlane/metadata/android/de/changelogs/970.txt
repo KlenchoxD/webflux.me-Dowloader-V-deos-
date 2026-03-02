@@ -9,3 +9,5 @@ Behoben:
 • Setzen von Import- und Exportpfaden wurde behoben und verbessert
 • [YouTube] Anzahl Kommentar-Likes korrigiert
 Und vieles mehr
+
+

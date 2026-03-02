@@ -15,3 +15,5 @@ Ispravljeno
 • [YouTube] Ispravljeni nedostajući preporučeni videozapisi
 • Ispravljeni rušenja u prikazu liste historije
 • Ispravljene vremenske oznake u odgovorima na komentare
+
+

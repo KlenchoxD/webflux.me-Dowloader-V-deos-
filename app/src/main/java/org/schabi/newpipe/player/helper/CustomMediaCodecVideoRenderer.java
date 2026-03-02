@@ -52,3 +52,5 @@ public final class CustomMediaCodecVideoRenderer extends MediaCodecVideoRenderer
         return true;
     }
 }
+
+

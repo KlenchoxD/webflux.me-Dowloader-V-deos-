@@ -11,3 +11,5 @@ Disempurnakan
 Diperbaiki
 • Memperbaiki beberapa kerusakan
 • [YouTube] Memperbaiki pemuatan saluran, feed non-khusus, dan mengatasi masalah pemutaran di beberapa negara
+
+

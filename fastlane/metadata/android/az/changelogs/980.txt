@@ -10,3 +10,5 @@ Sabit
 • Sabit YouTube bəyənmə və bəyənməmələrin çıxarılması 
 • Arxa fondan qayıtdıqdan sonra avtomatik təkrar oynatma düzəldildi 
 Və daha çox
+
+

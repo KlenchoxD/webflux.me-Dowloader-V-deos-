@@ -18,3 +18,5 @@ public class DebugSettingsBVDLeakCanary
         return LeakCanary.INSTANCE.newLeakDisplayActivityIntent();
     }
 }
+
+

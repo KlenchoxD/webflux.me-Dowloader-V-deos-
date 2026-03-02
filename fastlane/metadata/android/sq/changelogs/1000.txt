@@ -10,3 +10,5 @@ Rregulluar
 • U rregulla shfaqja e radhës së listës së artikujve të lidhur 
 •U rregullua rendi në shtimin e dialogut të listës së luajtjes 
 • U rregullua paraqitja e artikullit të faqerojtësve të listës së luajtjes
+
+

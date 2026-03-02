@@ -245,3 +245,5 @@ public class SeekbarPreviewThumbnailHolder {
         return Optional.ofNullable(closestFrame.get());
     }
 }
+
+

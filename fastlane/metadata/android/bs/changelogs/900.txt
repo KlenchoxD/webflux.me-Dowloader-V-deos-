@@ -13,3 +13,5 @@ Ispravljeno
 • sigurnosna kopija baze podataka na Android P
 • rušenje prilikom dijeljenja preuzete datoteke
 • mnoštvo problema s ekstrakcijom YouTubea i još mnogo toga ...
+
+

@@ -10,3 +10,5 @@ Cải thiện
 Cố định
 • Khắc phục sự cố xóa video đã xem đầy đủ khỏi danh sách phát
 • Sửa chủ đề thực đơn chia sẻ và mục "thêm vào danh sách phát"
+
+

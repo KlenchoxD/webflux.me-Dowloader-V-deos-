@@ -23,3 +23,5 @@ ATTENZIONE: Questa versione probabilmente è un bugfest, proprio come l'ultima. 
 * NPE quando si tenta di aprire il giocatore in background #1901
 * Risolto il problema con l'inserimento di nuovi flussi quando l'accodamento automatico è abilitato #1878
 * Risolto il problema del decypering shuttown
+
+

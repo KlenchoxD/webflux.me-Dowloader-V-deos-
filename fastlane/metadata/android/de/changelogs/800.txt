@@ -9,3 +9,5 @@ Verbessert
 Behoben
 • Fehler wurde behoben, der den Pop-up-Player nicht verschieben konnte, wenn ein anderer Finger beim Verschieben des Pop-up-Players #2772 platziert wurde
 • [SoundCloud] Audio-Stream-Extraktion
+
+

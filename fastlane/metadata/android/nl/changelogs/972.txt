@@ -12,3 +12,5 @@ Invidious instanties. Ondersteuning voor Piped links
 Bugfix
 [YouTube] Leeftijdsbeperkte inhoud
 Voorkom uitgelekt venster Uitzondering bij openen keuzedialoog
+
+

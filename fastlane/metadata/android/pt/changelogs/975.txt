@@ -13,3 +13,5 @@ Fixo
 • Corrigir ReCAPTCHA que permanece carregado em segundo plano
 • Desativados os cliques enquanto atualiza o feed
 • Corrigir algumas falhas do descarregador
+
+

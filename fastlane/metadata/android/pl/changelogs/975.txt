@@ -15,3 +15,5 @@ Naprawiono
 • Ładowanie ReCAPTCHA w tle
 • Wyłączono naciśnięcia podczas odświeżania kanału
 • Awarie downloadera
+
+

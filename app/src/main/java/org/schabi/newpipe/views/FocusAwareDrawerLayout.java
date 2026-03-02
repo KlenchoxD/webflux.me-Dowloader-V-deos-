@@ -113,3 +113,5 @@ public final class FocusAwareDrawerLayout extends DrawerLayout {
         drawerView.requestFocus(FOCUS_FORWARD);
     }
 }
+
+

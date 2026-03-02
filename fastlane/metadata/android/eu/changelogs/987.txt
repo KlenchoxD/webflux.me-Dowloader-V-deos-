@@ -10,3 +10,5 @@ Hobetua
 Konpondua
 • Ikusitako bideoak kentzea zerrendatik
 • Partekatzeko menuaren gaia eta zerrenda sarrera
+
+

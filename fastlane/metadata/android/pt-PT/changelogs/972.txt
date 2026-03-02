@@ -12,3 +12,5 @@ Atualização de instâncias Invidious e suporte de links Piped.
 Corrigido
 [YouTube] Conteúdo restrito à idade
 Prevenir fugas na janela Exceção ao abrir o diálogo de escolha
+
+

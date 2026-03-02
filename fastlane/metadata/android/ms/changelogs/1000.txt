@@ -11,3 +11,5 @@ Dibaiki
 • Baiki timbul baris gilir senarai item yang berkaitan
 • Baiki susunan dalam menambah dialog senarai main
 • Laraskan susun atur item penanda buku senarai main
+
+

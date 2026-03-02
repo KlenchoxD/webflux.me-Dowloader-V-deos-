@@ -4,3 +4,5 @@ Corrigida a obtenção de comentários do YouTube.
 Adicionado suporte a /watch/, /v/ e /w/ subpaths nas URLs do YouTube.
 Corrigida a extração de id de cliente SoundCloud e conteúdo geo-restrito.
 Adicionada a localização Curda do Norte.
+
+

@@ -5,3 +5,5 @@ Polesan tema putih.
 Perbaikan font tumpang tindih saat menggunakan ukuran font yang lebih besar.
 Perbaikan tidak ada video pada perangkat Formuler dan Zephier.
 Perbaikan berbagai crash.
+
+

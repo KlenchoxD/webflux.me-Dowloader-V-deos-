@@ -17,3 +17,5 @@
 
 ### Bugs conhecidos
 - O estado de reprodução não pode ser guardado no Android P
+
+

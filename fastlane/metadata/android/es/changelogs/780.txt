@@ -9,3 +9,5 @@ Se ha mejorado
 Corregido
 - YouTube] Corregido 'java.lang.IllegalArgumentException #192
 - YouTube] Arreglado que las transmisiones en directo no funcionan TeamNewPipe/NewPipeExtractor#195
+
+

@@ -12,3 +12,5 @@ Sabit:
  • Arxa fonda oxuyarkən video təfərrüatlarında çox kiçik miniatürləri düzəldin
  • Kiçilmiş oyunçuda boş başlığı düzəldin 
 • Düzgün bərpa edilməmiş sonuncu ölçü dəyişdirmə rejimi düzəldi
+
+

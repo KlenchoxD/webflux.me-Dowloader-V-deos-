@@ -12,3 +12,5 @@ Opgelost:
 - Zeer kleine miniatuur in video details bij afspelen op de achtergrond
 - Lege titel in geminimaliseerde speler
 - Laatste resize modus is niet correct
+
+

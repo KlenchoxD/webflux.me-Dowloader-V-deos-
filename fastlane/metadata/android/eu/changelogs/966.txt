@@ -12,3 +12,5 @@ Konpondua:
 • Miniatura txikiak atzeko planoan erreproduzitzen
 • Erreproduzitzaile minimizatuan izenburu hutsa
 • Tamaina aldatzeko modua leheneratzen ez zena
+
+

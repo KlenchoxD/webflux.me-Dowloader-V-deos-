@@ -9,3 +9,5 @@
         android:title="@string/clear_views_history_title"
         app:showAsAction="never" />
 </menu>
+
+

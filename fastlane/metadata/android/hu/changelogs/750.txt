@@ -20,3 +20,5 @@ Javítás
 • Lejátszási lista metaadatainak frissítése #2453 
 • [SoundCloud] Lejátszási lista betöltésnél levő összeomlás javítása TeamNewPipe/NewPipeExtractor#170
 • [YouTube] Nem kielemezhető a videó hossza javítva TeamNewPipe/NewPipeExtractor#177
+
+

@@ -12,3 +12,5 @@ Corregidos:
 - Arreglar miniatura chica en detalles de vídeo durante reproducción de fondo
 - Arreglar título vacío en el reproductor minimizado
 - Arreglar último modo de redimensionamiento no restaurable correctamente
+
+

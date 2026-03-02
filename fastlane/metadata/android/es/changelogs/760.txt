@@ -11,3 +11,5 @@ Mejora de
 Corregido
 • Arreglar la desaparición de los botones en la vista de descargas al cambiar de aplicación #2487
 • Arreglar que la posición de reproducción se almacene aunque el historial de visionado esté desactivado
+
+

@@ -13,3 +13,5 @@ Ostatní:
 - Vyčištění kódu a několik interních vylepšení
 - Aktualizace závislostí
 -
+
+

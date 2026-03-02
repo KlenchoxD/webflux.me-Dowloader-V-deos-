@@ -13,3 +13,5 @@ Fijado
 • [PeerTube] Se intercambiaron los avatares del subcanal y del cargador.
 
 y más
+
+

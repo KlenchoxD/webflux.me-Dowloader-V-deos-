@@ -29,3 +29,5 @@
   - non correggi il rapporto sui trigger di eccezione mostrati
   - miniatura non mostrata nel lettore in background per Android 8.1 [vedi qui](https://github.com/TeamNewPipe/NewPipe/issues/943)
 - Risolto il problema con la registrazione del ricevitore di trasmissione. Chiude #1641.
+
+

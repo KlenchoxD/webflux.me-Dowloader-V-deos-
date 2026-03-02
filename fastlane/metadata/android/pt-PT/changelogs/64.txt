@@ -6,3 +6,5 @@
 
 ### Correções
 - Corrigir falha na abertura de descarregar (correção agora disponível para compilações de lançamentos) #1441
+
+

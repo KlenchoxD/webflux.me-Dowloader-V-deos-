@@ -85,3 +85,5 @@
             android:textSize="@dimen/channel_rss_title_size" />
     </LinearLayout>
 </LinearLayout>
+
+

@@ -5,3 +5,5 @@ Hoàn tác thay đổi đối với phần cắt khi phát trong nhiều cửa s
 Tăng compileSdk từ 30 lên 31
 Cập nhật thư viện báo cáo lỗi
 Cấu trúc lại một số mã trong trình phát
+
+

@@ -5,3 +5,5 @@ A világos téma felfrissítve.
 Nagyobb betűméretnél nem takarják egymást a szövegek.
 Formuler és Zephier eszközökön immáron megjelennek a videók.
 Megannyi hibajavítás.
+
+

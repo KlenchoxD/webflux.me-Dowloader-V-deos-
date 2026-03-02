@@ -6,3 +6,5 @@
 
 ### Düzeltildi
 - İndirici: .giga dosyalarından bitmemiş indirmeler yüklenirken çökmeler düzeltildi #1407
+
+

@@ -17,3 +17,5 @@ public class PlayQueueItemTest {
         assertNotEquals(a, b); // they should compare different even if they have the same data
     }
 }
+
+

@@ -5,3 +5,5 @@ Poboljšano
 • Optimizovan YouTube za korištenje manje podataka
 
 U ovom izdanju ispravljeno je više od 15 grešaka povezanih s YouTubeom.
+
+

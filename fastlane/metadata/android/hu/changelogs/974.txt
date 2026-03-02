@@ -3,3 +3,5 @@ Gyorsjavítás
 • Javítva a YouTube megjegyzések kinyerése által okozott összeomlás letiltott megjegyzéseknél
 • Javítva a YouTube zenei keresés
 • A PeerTube élő közvetítések javítva
+
+

@@ -11,3 +11,5 @@ Izboljšave
 Popravki
 - Odprava večih sesutij
 - [YouTube] Odprava težave z nalaganjem kanalov, nenamenskimi viri ter predvajanjem v nekaterih državah
+
+

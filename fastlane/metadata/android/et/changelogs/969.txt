@@ -6,3 +6,5 @@
 • [Esitaja] Parandasime vea, kus automaatne esitamine ei toiminud
 • Allalaadimiste kustutamisel ära arvesta eelmiseid teateid
 • Parandasime olukorra, kus püüdsime kustutada kirjet, mis polnud loendis
+
+

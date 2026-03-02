@@ -652,3 +652,5 @@ public class ChannelFragment extends BaseStateFragment<ChannelInfo>
         binding.channelKaomoji.setTextSize(TypedValue.COMPLEX_UNIT_SP, 45f);
     }
 }
+
+

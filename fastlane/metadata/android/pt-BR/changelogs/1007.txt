@@ -9,3 +9,5 @@ Other improvements:
 • [YouTube] Allow rewinding livestreams up to 4 hours again
 • Don't load livestream video when playing in background
 • New UI for "Remove watched"
+
+

@@ -38,3 +38,5 @@ Ispravljeno
 • Ažuriranje metapodataka reda za reprodukciju #2453
 • [SoundCloud] Ispravljen pad programa prilikom učitavanja lista za reprodukciju TeamNewPipe/NewPipeExtractor#170
 • [YouTube] Fiksno trajanje se ne može parsirati TeamNewPipe/NewPipeExtractor#177
+
+

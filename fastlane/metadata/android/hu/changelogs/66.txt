@@ -31,3 +31,5 @@
 - Fő videólejátszó javítás #1509 
   - [#1412] Az ismétlő mód NPE-t okoz, amikor a háttérben futó alkalmazás ilyen parancsot kap.
   - A felugró ablak mód letiltása esetén felugró mód nem zárja be az appot.
+
+

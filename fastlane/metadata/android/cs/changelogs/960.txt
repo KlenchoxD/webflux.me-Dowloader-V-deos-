@@ -2,3 +2,5 @@
 - Opraveno zpracování komentářů na YouTube.
 - Opraveno zobrazení názvu služby media.ccc.de.
 - Aktualizovány překlady.
+
+

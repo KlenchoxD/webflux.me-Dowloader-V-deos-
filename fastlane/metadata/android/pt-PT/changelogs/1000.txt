@@ -11,3 +11,5 @@ Corrigido
 • Corrigir itens relacionados ao pop-up de colocar na fila
 • Corrigir a ordem no diálogo de adicionar à lista de reprodução
 • Ajustar o layout do item de marcador de lista de reprodução
+
+

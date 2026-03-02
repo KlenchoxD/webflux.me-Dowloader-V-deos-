@@ -39,3 +39,5 @@ public class CustomCollapsingToolbarLayout extends CollapsingToolbarLayout {
         ViewCompat.setOnApplyWindowInsetsListener(this, (v, insets) -> insets);
     }
 }
+
+

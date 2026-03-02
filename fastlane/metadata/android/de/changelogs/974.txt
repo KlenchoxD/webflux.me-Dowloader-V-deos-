@@ -3,3 +3,5 @@ Hotfix
 - Behebt die Extraktion von YouTube-Kommentaren und Abstürze bei deaktivierten Kommentaren
 - Behebung der YouTube-Musiksuche
 - Behebung von PeerTube-Livestreams
+
+

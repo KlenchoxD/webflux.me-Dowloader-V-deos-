@@ -8,3 +8,5 @@
 • No reordenar listas agarrando miniaturas
 • Recordar opciones del pop up
 • Añadido el lenguaje Santali
+
+

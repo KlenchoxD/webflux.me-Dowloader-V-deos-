@@ -8,3 +8,5 @@
 • [Android TV] Ispravljeni su dugi skokovi na traci za pretraživanje prilikom korištenja DPad-a
 
 Da biste vidjeli daljnje promjene, pogledajte dnevnik promjena (i objavu na blogu) na kartici Linkovi ispod.
+
+

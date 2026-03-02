@@ -21,3 +21,5 @@ Fixed
 • [SoundCloud] Fixed crash when loading playlists TeamNewPipe/NewPipeExtractor#170
 • [YouTube] Fixed duration can not be paresd TeamNewPipe/NewPipeExtractor#177
 
+
+

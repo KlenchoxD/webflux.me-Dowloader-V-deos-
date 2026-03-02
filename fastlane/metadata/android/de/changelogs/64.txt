@@ -6,3 +6,5 @@
 
 ### Fehlerbehebungen
 - Absturz beim Starten von Downloads wurde behoben (Fehlerbehebung nun verfügbar für Release Builds) #1441
+
+

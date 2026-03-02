@@ -11,3 +11,5 @@ Számozás javítása Android 7 alatt
 Szellem értesítések javítása
 SRT felirat javítások
 Sok összeomlás javítva
+
+

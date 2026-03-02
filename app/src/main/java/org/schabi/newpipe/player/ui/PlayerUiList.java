@@ -88,3 +88,5 @@ public final class PlayerUiList {
         playerUis.stream().forEachOrdered(consumer);
     }
 }
+
+

@@ -5,3 +5,5 @@ Hoàn thiện giao diện màu trắng.
 Sửa lỗi font chữ chồng lên nhau khi sử dụng kích thước font chữ lớn hơn.
 Sửa lỗi không có video trên thiết bị Formuler và Zephier.
 Sửa lỗi treo ứng dụng.
+
+

@@ -28,3 +28,5 @@ public interface ManagedMediaSource extends MediaSource {
      */
     boolean isStreamEqual(@NonNull PlayQueueItem stream);
 }
+
+

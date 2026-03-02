@@ -10,3 +10,5 @@ Təkmilləşdirildi
 Sabitləndi
 • Tam baxılmış videoların pleylistdən çıxarılmasını düzəldin
 • Paylaşım menyusu mövzusunu və "pleylistə əlavə et" girişini düzəldin
+
+

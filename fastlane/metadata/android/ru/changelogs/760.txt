@@ -41,3 +41,5 @@
 • Обновить метаданные очереди воспроизведения #2453
 • [SoundCloud] Исправлен сбой при загрузке плейлистов TeamNewPipe/NewPipeExtractor#170
 • [YouTube] Фиксированная продолжительность не может быть разделена на TeamNewPipe/NewPipeExtractor#177
+
+

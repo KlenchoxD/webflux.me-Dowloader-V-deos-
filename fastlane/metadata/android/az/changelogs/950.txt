@@ -2,3 +2,5 @@ Bu buraxılış üç kiçik düzəliş gətirir:
 • Adroid 10+-da sabit yaddaş girişi 
 • Sabit açılış köşkləri 
 • Uzun videoların sabit müddət təhlili
+
+

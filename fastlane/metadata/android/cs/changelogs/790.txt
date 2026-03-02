@@ -7,3 +7,5 @@ Opraveno
 - Opraveno posouvání ve fragmentu detailu videa #2672
 - Odstranění dvojité animace vymazání vyhledávacího pole na jednu #2695
 - [SoundCloud] Oprava extrakce client_id #2745
+
+

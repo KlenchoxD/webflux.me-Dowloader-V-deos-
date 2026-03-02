@@ -1,2 +1,4 @@
 # Salabots
 - Atkārtoti izlabota atšifrēšanas funkcijas kļūda.
+
+

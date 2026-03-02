@@ -14,3 +14,4 @@ Fixed
 • Fix media button not hiding player controls
 • Fix playback reset on player type change
 • Fix rotating the playlist dialog
+

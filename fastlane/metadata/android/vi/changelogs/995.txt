@@ -12,3 +12,5 @@ Cải thiện
 • Lựa chọn ngôn ngữ sai trong bộ chọn ngôn ngữ
 • Tiêu điểm âm thanh của trình phát không bị tắt tiếng
 • Thêm mục vào danh sách phát không hoạt động trong các trường hợp cụ thể
+
+

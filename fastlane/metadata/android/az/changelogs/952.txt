@@ -6,3 +6,5 @@ Sabit
 düzəldildi 
 • Sabit yaş məhdudiyyəti olan YouTube videoları 
 • [Android TV] Sabit uzanan fokus vurğulanması
+
+

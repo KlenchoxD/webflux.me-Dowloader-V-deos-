@@ -16,3 +16,5 @@
 
 - Probleme mit dem kaputten Video Info layout behoben. #1440 / #1491
 - Probleme mit dem Verlauf wurden behoben. #1497.
+
+

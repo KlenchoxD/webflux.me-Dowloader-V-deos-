@@ -10,3 +10,5 @@
 • Absturz behoben, der beim Entfernen eines Streams aus einer Liste auftrat
 • [PeerTube] Verwandte Streams korrigiert
 • [YouTube] Fehler bei YouTube-Musiksuche behoben
+
+

@@ -15,3 +15,5 @@ Cải tiến
 • Sửa lớp phủ trên DeX/chuột
 • Cho phép trình phát nền không có luồng âm thanh riêng biệt
 • Các bản sửa lỗi khác nhau của YouTube và hơn thế nữa…
+
+

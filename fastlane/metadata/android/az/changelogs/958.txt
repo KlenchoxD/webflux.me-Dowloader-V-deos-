@@ -13,3 +13,5 @@ Digər:
  • Kodun təmizlənməsi və bir sıra daxili təkmilləşdirmələr 
 • Asılılıq yeniləmələri 
 • Tərcümə yeniləmələri.
+
+

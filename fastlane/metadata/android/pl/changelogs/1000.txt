@@ -11,3 +11,5 @@ Naprawione
 • Powiązane pozycje w oknie kolejki
 • Kolejność w oknie dodaw. do playlisty
 • Dostosowano układ ulubionych pozycji playlist
+
+
