@@ -3,18 +3,28 @@ package org.schabi.newpipe
 import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
+import android.content.pm.PackageManager
+import android.os.Build
 import android.os.Bundle
+import android.os.Environment
 import android.text.TextUtils
+import android.view.View
 import android.widget.Button
 import android.widget.EditText
 import android.widget.LinearLayout
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import java.io.File
+import java.text.DecimalFormat
+import kotlin.math.log10
+import kotlin.math.pow
 
 class VDownHomeActivity : AppCompatActivity() {
 
     companion object {
         private const val TAG = "VDownHomeActivity"
+        private const val REQUEST_NOTIFICATION_PERMISSION = 1001
     }
 
     private lateinit var urlInput: EditText
@@ -27,6 +37,8 @@ class VDownHomeActivity : AppCompatActivity() {
     private lateinit var chipInstagram: LinearLayout
     private lateinit var chipTikTok: LinearLayout
     private lateinit var chipTwitter: LinearLayout
+    private lateinit var recentEmpty: LinearLayout
+    private lateinit var recentList: LinearLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -35,6 +47,13 @@ class VDownHomeActivity : AppCompatActivity() {
         bindViews()
         setupClickListeners()
         handleIncomingIntent(intent)
+        requestNotificationPermission()
+        loadRecentDownloads()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        loadRecentDownloads()
     }
 
     override fun onNewIntent(intent: Intent) {
@@ -53,6 +72,8 @@ class VDownHomeActivity : AppCompatActivity() {
         chipInstagram = findViewById(R.id.vdown_chip_instagram)
         chipTikTok = findViewById(R.id.vdown_chip_tiktok)
         chipTwitter = findViewById(R.id.vdown_chip_twitter)
+        recentEmpty = findViewById(R.id.vdown_recent_empty)
+        recentList = findViewById(R.id.vdown_recent_list)
     }
 
     private fun setupClickListeners() {
@@ -116,4 +137,63 @@ class VDownHomeActivity : AppCompatActivity() {
             }
         }
     }
+
+    private fun requestNotificationPermission() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
+            if (checkSelfPermission(android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
+                requestPermissions(arrayOf(android.Manifest.permission.POST_NOTIFICATIONS), REQUEST_NOTIFICATION_PERMISSION)
+            }
+        }
+    }
+
+    private fun loadRecentDownloads() {
+        val downloadDir = File(
+            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "MayBox"
+        )
+        if (!downloadDir.exists()) {
+            showEmptyState()
+            return
+        }
+        val files = downloadDir.listFiles()
+            ?.filter { it.isFile }
+            ?.sortedByDescending { it.lastModified() }
+            ?.take(5)
+
+        if (files.isNullOrEmpty()) {
+            showEmptyState()
+            return
+        }
+
+        recentEmpty.visibility = View.GONE
+        recentList.visibility = View.VISIBLE
+        recentList.removeAllViews()
+
+        for (file in files) {
+            val itemView = layoutInflater.inflate(android.R.layout.simple_list_item_2, recentList, false)
+            itemView.findViewById<TextView>(android.R.id.text1)?.apply {
+                text = file.name
+                setTextColor(0xFFFFFFFF.toInt())
+                textSize = 13f
+            }
+            itemView.findViewById<TextView>(android.R.id.text2)?.apply {
+                text = formatFileSize(file.length())
+                setTextColor(0x80FFFFFF.toInt())
+                textSize = 11f
+            }
+            recentList.addView(itemView)
+        }
+    }
+
+    private fun showEmptyState() {
+        recentEmpty.visibility = View.VISIBLE
+        recentList.visibility = View.GONE
+    }
+
+    private fun formatFileSize(bytes: Long): String {
+        if (bytes <= 0) return "0 B"
+        val units = arrayOf("B", "KB", "MB", "GB")
+        val digitGroups = (log10(bytes.toDouble()) / log10(1024.0)).toInt()
+        return DecimalFormat("#,##0.#").format(bytes / 1024.0.pow(digitGroups.toDouble())) + " " + units[digitGroups]
+    }
 }
+

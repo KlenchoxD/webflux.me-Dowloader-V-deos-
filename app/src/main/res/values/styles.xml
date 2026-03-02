@@ -1,5 +1,15 @@
 <resources>
 
+    <!-- MayBox Dark Theme for Library/Settings screens -->
+    <style name="MayBoxDarkTheme" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowBackground">@color/maybox_background</item>
+        <item name="android:statusBarColor">@color/maybox_background</item>
+        <item name="android:navigationBarColor">@color/maybox_background</item>
+        <item name="colorPrimary">@color/maybox_primary</item>
+        <item name="colorPrimaryDark">@color/maybox_background</item>
+        <item name="colorAccent">@color/maybox_primary</item>
+    </style>
+
     <!-- Opening Theme -->
     <style name="Base.V21.OpeningTheme" parent="Theme.AppCompat.DayNight.NoActionBar">
         <item name="colorPrimary">@android:color/transparent</item>

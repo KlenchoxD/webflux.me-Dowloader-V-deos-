@@ -128,6 +128,12 @@ class VDownloadActivity : AppCompatActivity() {
             }
             addOption("--no-mtime")
             addOption("--no-playlist")
+            addOption("--concurrent-fragments", "4")
+            addOption("--no-check-certificates")
+            addOption("--no-part")
+            addOption("--buffer-size", "16K")
+            addOption("--retries", "3")
+            addOption("--fragment-retries", "3")
         }
 
         tvStatus.text = "Starting download..."
