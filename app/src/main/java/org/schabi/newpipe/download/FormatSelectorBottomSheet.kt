@@ -1,6 +1,7 @@
 package org.schabi.newpipe.download
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -9,9 +10,9 @@ import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.RadioButton
 import android.widget.TextView
+import android.widget.Toast
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import org.schabi.newpipe.R
-import org.schabi.newpipe.VDownloadActivity
 
 /**
  * Bottom sheet dialog that lets the user pick a download format
@@ -107,14 +108,20 @@ class FormatSelectorBottomSheet : BottomSheetDialogFragment() {
     }
 
     private fun startDownload() {
-        val intent = Intent(requireContext(), VDownloadActivity::class.java).apply {
-            putExtra(VDownloadActivity.EXTRA_URL, url)
-            putStringArrayListExtra(
-                VDownloadActivity.EXTRA_FORMAT_FLAGS,
-                ArrayList(selectedFormat.formatFlags)
-            )
+        val intent = Intent(requireContext(), MayBoxDownloadService::class.java).apply {
+            putExtra(MayBoxDownloadService.EXTRA_URL, url)
+            putStringArrayListExtra(MayBoxDownloadService.EXTRA_FORMAT_FLAGS, ArrayList(selectedFormat.formatFlags))
         }
-        startActivity(intent)
+        try {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                requireContext().startForegroundService(intent)
+            } else {
+                requireContext().startService(intent)
+            }
+            Toast.makeText(requireContext(), "Download started!", Toast.LENGTH_SHORT).show()
+        } catch (e: Exception) {
+            Toast.makeText(requireContext(), "Failed to start download: ${e.message}", Toast.LENGTH_LONG).show()
+        }
         dismiss()
     }
 }

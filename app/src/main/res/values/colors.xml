@@ -6,6 +6,10 @@
 
     <color name="ic_launcher_background">#E60A15</color>
 
+    <!-- MayBox brand colors -->
+    <color name="maybox_background">#080808</color>
+    <color name="maybox_primary">#E60A15</color>
+
     <color name="placeholder_background">#999999</color>
     <color name="placeholder_foreground">#6C6C6C</color>
 

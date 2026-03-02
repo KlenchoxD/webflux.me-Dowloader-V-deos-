@@ -315,7 +315,9 @@
                 android:textStyle="bold"
                 android:textColor="#E8FFFFFF"/>
 
+            <!-- Empty state -->
             <LinearLayout
+                android:id="@+id/vdown_recent_empty"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
@@ -348,6 +350,18 @@
                     android:textColor="#44FFFFFF"/>
 
             </LinearLayout>
+
+            <!-- Recent downloads list -->
+            <LinearLayout
+                android:id="@+id/vdown_recent_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginHorizontal="20dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/vdown_glass_card"
+                android:padding="8dp"
+                android:visibility="gone"/>
 
         </LinearLayout>
 
