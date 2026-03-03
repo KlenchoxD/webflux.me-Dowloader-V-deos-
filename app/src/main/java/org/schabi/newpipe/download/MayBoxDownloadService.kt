@@ -54,7 +54,7 @@ class MayBoxDownloadService : Service() {
         val formatFlags = intent.getStringArrayListExtra(EXTRA_FORMAT_FLAGS)
 
         // Start foreground immediately with an indeterminate notification
-        startForeground(NOTIF_ID_PROGRESS, buildProgressNotification("Downloading...", 0, true))
+        startForeground(NOTIF_ID_PROGRESS, buildProgressNotification("Downloading...", "Starting...", 0, true))
 
         Thread {
             runDownload(url, formatFlags)
@@ -99,10 +99,14 @@ class MayBoxDownloadService : Service() {
             YoutubeDL.getInstance().execute(request, PROCESS_ID) { progress, bytesPerSecond, line ->
                 val speedMb = bytesPerSecond / (1024f * 1024f)
                 val speedText = if (speedMb > 0) "%.1f MB/s".format(speedMb) else ""
-                val title = if (speedText.isNotEmpty()) "Downloading... $speedText" else "Downloading..."
+                val contentText = when {
+                    progress > 0f && speedText.isNotEmpty() -> "%.0f%% • %s".format(progress, speedText)
+                    progress > 0f -> "%.0f%%".format(progress)
+                    else -> "Starting..."
+                }
                 notifManager.notify(
                     NOTIF_ID_PROGRESS,
-                    buildProgressNotification(title, progress.toInt(), progress <= 0f)
+                    buildProgressNotification("Downloading...", contentText, progress.toInt(), progress <= 0f)
                 )
                 Log.d(TAG, "progress=$progress line=$line")
             }
@@ -119,7 +123,7 @@ class MayBoxDownloadService : Service() {
         }
     }
 
-    private fun buildProgressNotification(title: String, progress: Int, indeterminate: Boolean): android.app.Notification {
+    private fun buildProgressNotification(title: String, contentText: String, progress: Int, indeterminate: Boolean): android.app.Notification {
         val cancelIntent = Intent(this, MayBoxDownloadService::class.java).apply {
             action = ACTION_CANCEL
         }
@@ -131,7 +135,7 @@ class MayBoxDownloadService : Service() {
         return NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_file_download)
             .setContentTitle(title)
-            .setContentText("Saving to Downloads/MayBox")
+            .setContentText(contentText)
             .setProgress(100, progress, indeterminate)
             .setOngoing(true)
             .setOnlyAlertOnce(true)
