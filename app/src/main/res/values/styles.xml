@@ -1,6 +1,6 @@
 <resources>
 
-    <!-- MayBox Dark Theme for Library/Settings screens -->
+    <!-- MayBox Dark Theme for Library/Settings screens (no ActionBar) -->
     <style name="MayBoxDarkTheme" parent="Theme.AppCompat.NoActionBar">
         <item name="android:windowBackground">@color/maybox_background</item>
         <item name="android:statusBarColor">@color/maybox_background</item>
@@ -8,6 +8,40 @@
         <item name="colorPrimary">@color/maybox_primary</item>
         <item name="colorPrimaryDark">@color/maybox_background</item>
         <item name="colorAccent">@color/maybox_primary</item>
+    </style>
+
+    <!-- MayBox Dark Theme with ActionBar for Library/Settings screens -->
+    <style name="MayBoxDarkTheme.ActionBar" parent="Theme.AppCompat">
+        <item name="android:windowBackground">@color/maybox_background</item>
+        <item name="android:statusBarColor">@color/maybox_background</item>
+        <item name="android:navigationBarColor">@color/maybox_background</item>
+        <item name="colorPrimary">@color/maybox_background</item>
+        <item name="colorPrimaryDark">@color/maybox_background</item>
+        <item name="colorAccent">@color/maybox_primary</item>
+        <item name="android:textColorPrimary">#FFFFFF</item>
+        <item name="android:textColorSecondary">#80FFFFFF</item>
+        <item name="actionBarStyle">@style/MayBoxActionBar</item>
+    </style>
+
+    <style name="MayBoxActionBar" parent="Widget.AppCompat.ActionBar.Solid">
+        <item name="background">@color/maybox_background</item>
+        <item name="titleTextStyle">@style/MayBoxActionBarTitle</item>
+    </style>
+
+    <style name="MayBoxActionBarTitle" parent="TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+
+    <!-- Transparent theme for ShareReceiverActivity -->
+    <style name="Theme.MayBox.Transparent" parent="Theme.AppCompat.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:backgroundDimEnabled">true</item>
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
     </style>
 
     <!-- Opening Theme -->

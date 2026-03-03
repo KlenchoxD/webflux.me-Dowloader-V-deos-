@@ -52,6 +52,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
                 <category android:name="android.intent.category.LEANBACK_LAUNCHER" />
             </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".download.ShareReceiverActivity"
+            android:theme="@style/Theme.MayBox.Transparent"
+            android:excludeFromRecents="true"
+            android:taskAffinity=""
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />
@@ -61,8 +69,8 @@
                 <action android:name="android.intent.action.VIEW" />
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
-                <data android:scheme="http" />
                 <data android:scheme="https" />
+                <data android:scheme="http" />
             </intent-filter>
         </activity>
 
@@ -116,7 +124,7 @@
             android:name=".settings.SettingsActivity"
             android:exported="false"
             android:label="@string/settings"
-            android:theme="@style/MayBoxDarkTheme" />
+            android:theme="@style/MayBoxDarkTheme.ActionBar" />
 
         <activity
             android:name=".about.AboutActivity"
@@ -169,7 +177,7 @@
             android:exported="false"
             android:label="@string/app_name"
             android:launchMode="singleTask"
-            android:theme="@style/MayBoxDarkTheme" />
+            android:theme="@style/MayBoxDarkTheme.ActionBar" />
 
         <service
             android:name=".download.MayBoxDownloadService"
