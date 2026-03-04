@@ -177,6 +177,11 @@
             android:label="Settings"
             android:theme="@style/MayBoxDarkTheme" />
 
+        <activity
+            android:name=".MayBoxLibraryActivity"
+            android:exported="false"
+            android:theme="@style/MayBoxDarkTheme" />
+
         <!-- giga get related -->
         <activity
             android:name=".download.DownloadActivity"
