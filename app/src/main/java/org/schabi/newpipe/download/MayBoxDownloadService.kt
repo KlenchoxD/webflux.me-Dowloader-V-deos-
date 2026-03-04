@@ -39,6 +39,7 @@ class MayBoxDownloadService : Service() {
     }
 
     private lateinit var notifManager: NotificationManager
+    private var lastDownloadedFile: File? = null
 
     override fun onCreate() {
         super.onCreate()
@@ -131,6 +132,10 @@ class MayBoxDownloadService : Service() {
             }
             // Success
             scanDownloadFolder(downloadDir)
+            val newestFile = downloadDir.listFiles()
+                ?.filter { it.isFile }
+                ?.maxByOrNull { it.lastModified() }
+            lastDownloadedFile = newestFile
             stopForeground(STOP_FOREGROUND_REMOVE)
             notifManager.notify(NOTIF_ID_COMPLETE, buildCompleteNotification())
         } catch (e: Exception) {
@@ -163,12 +168,40 @@ class MayBoxDownloadService : Service() {
     }
 
     private fun buildCompleteNotification(): android.app.Notification {
-        return NotificationCompat.Builder(this, CHANNEL_ID)
+        val fileName = lastDownloadedFile?.name ?: "file"
+        val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_file_download)
             .setContentTitle("Download complete!")
-            .setContentText("Saved to Downloads/MayBox")
+            .setContentText("$fileName • Tap to open")
             .setAutoCancel(true)
-            .build()
+
+        lastDownloadedFile?.let { file ->
+            try {
+                val uri = androidx.core.content.FileProvider.getUriForFile(
+                    this,
+                    "${packageName}.provider",
+                    file
+                )
+                val mimeType = when (file.extension.lowercase()) {
+                    "mp4", "mkv", "webm", "avi", "mov" -> "video/*"
+                    "mp3", "m4a", "aac", "opus", "ogg" -> "audio/*"
+                    else -> "*/*"
+                }
+                val openIntent = Intent(Intent.ACTION_VIEW).apply {
+                    setDataAndType(uri, mimeType)
+                    addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
+                }
+                val pendingIntent = PendingIntent.getActivity(
+                    this, 0, openIntent,
+                    PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
+                )
+                builder.setContentIntent(pendingIntent)
+            } catch (e: Exception) {
+                Log.e(TAG, "Failed to create open intent for notification", e)
+            }
+        }
+
+        return builder.build()
     }
 
     private fun buildErrorNotification(message: String?): android.app.Notification {
