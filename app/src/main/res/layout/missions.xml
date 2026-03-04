@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
@@ -24,7 +25,7 @@
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_arrow_back"
-                android:tint="#F1F5F9"
+                app:tint="#F1F5F9"
                 android:contentDescription="@null"/>
         </FrameLayout>
 
@@ -145,7 +146,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_home"
-                android:tint="#64748B"
+                app:tint="#64748B"
                 android:contentDescription="@null"/>
 
             <TextView
@@ -172,7 +173,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_file_download"
-                android:tint="#E60A15"
+                app:tint="#E60A15"
                 android:contentDescription="@null"/>
 
             <TextView
@@ -199,7 +200,7 @@
                 android:layout_width="24dp"
                 android:layout_height="24dp"
                 android:src="@drawable/ic_settings"
-                android:tint="#64748B"
+                app:tint="#64748B"
                 android:contentDescription="@null"/>
 
             <TextView
