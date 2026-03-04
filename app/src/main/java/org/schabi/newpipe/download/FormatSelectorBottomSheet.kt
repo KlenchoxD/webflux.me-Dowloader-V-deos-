@@ -1,5 +1,6 @@
 package org.schabi.newpipe.download
 
+import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
@@ -90,8 +91,16 @@ class FormatSelectorBottomSheet : BottomSheetDialogFragment() {
         option720p.setOnClickListener { selectFormat(FormatOption.VIDEO_720P) }
         option1080p.setOnClickListener { selectFormat(FormatOption.VIDEO_1080P) }
 
-        // Default selection
-        selectFormat(FormatOption.VIDEO_720P)
+        // Default selection from SharedPreferences
+        val prefs = requireContext().getSharedPreferences(org.schabi.newpipe.MayBoxPrefs.PREFS_NAME, Context.MODE_PRIVATE)
+        val defaultQuality = prefs.getString(org.schabi.newpipe.MayBoxPrefs.KEY_DEFAULT_QUALITY, org.schabi.newpipe.MayBoxPrefs.DEFAULT_QUALITY)
+        val defaultFormat = when (defaultQuality) {
+            "360p" -> FormatOption.VIDEO_360P
+            "720p" -> FormatOption.VIDEO_720P
+            "1080p" -> FormatOption.VIDEO_1080P
+            else -> FormatOption.VIDEO_720P
+        }
+        selectFormat(defaultFormat)
 
         view.findViewById<Button>(R.id.bs_download_btn).setOnClickListener {
             startDownload()

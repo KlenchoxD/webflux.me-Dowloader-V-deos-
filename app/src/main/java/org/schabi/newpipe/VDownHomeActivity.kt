@@ -113,7 +113,7 @@ class VDownHomeActivity : AppCompatActivity() {
 
         navHome.setOnClickListener { }
         navLibrary.setOnClickListener {
-            startActivity(Intent(this, org.schabi.newpipe.download.DownloadActivity::class.java))
+            startActivity(Intent(this, MayBoxLibraryActivity::class.java))
         }
         navMore.setOnClickListener {
             startActivity(Intent(this, MayBoxSettingsActivity::class.java))

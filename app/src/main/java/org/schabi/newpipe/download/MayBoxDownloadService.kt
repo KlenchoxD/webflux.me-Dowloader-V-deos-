@@ -4,8 +4,10 @@ import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.app.Service
+import android.content.Context
 import android.content.Intent
 import android.media.MediaScannerConnection
+import android.net.ConnectivityManager
 import android.os.Build
 import android.os.Environment
 import android.os.IBinder
@@ -13,6 +15,7 @@ import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.yausername.youtubedl_android.YoutubeDL
 import com.yausername.youtubedl_android.YoutubeDLRequest
+import org.schabi.newpipe.MayBoxPrefs
 import org.schabi.newpipe.R
 import java.io.File
 
@@ -64,6 +67,22 @@ class MayBoxDownloadService : Service() {
     }
 
     private fun runDownload(url: String, formatFlags: ArrayList<String>?) {
+        val prefs = applicationContext.getSharedPreferences(MayBoxPrefs.PREFS_NAME, Context.MODE_PRIVATE)
+        val wifiOnly = prefs.getBoolean(MayBoxPrefs.KEY_WIFI_ONLY, false)
+        if (wifiOnly) {
+            @Suppress("DEPRECATION")
+            val cm = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
+            @Suppress("DEPRECATION")
+            val activeNetwork = cm.activeNetworkInfo
+            @Suppress("DEPRECATION")
+            if (activeNetwork == null || activeNetwork.type != ConnectivityManager.TYPE_WIFI) {
+                stopForeground(STOP_FOREGROUND_REMOVE)
+                notifManager.notify(NOTIF_ID_COMPLETE, buildErrorNotification("WiFi not available. Enable WiFi or disable WiFi-only setting."))
+                stopSelf()
+                return
+            }
+        }
+
         val downloadDir = File(
             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "MayBox"
         )

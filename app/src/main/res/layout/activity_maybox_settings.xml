@@ -188,6 +188,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/settings_quality_value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginEnd="4dp"
@@ -250,6 +251,7 @@
                             android:textColor="#F1F5F9"/>
 
                         <TextView
+                            android:id="@+id/settings_audio_subtitle"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_marginTop="2dp"
@@ -337,6 +339,7 @@
                     </LinearLayout>
 
                     <TextView
+                        android:id="@+id/settings_simultaneous_value"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="3"
