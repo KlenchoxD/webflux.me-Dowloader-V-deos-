@@ -1,23 +1,27 @@
 <resources>
 
-    <!-- MayBox Dark Theme for Library/Settings screens (no ActionBar) -->
-    <style name="MayBoxDarkTheme" parent="Theme.AppCompat.NoActionBar">
+    <!-- MayBox Dark Theme for Home screen (no ActionBar) -->
+    <style name="MayBoxDarkTheme" parent="DarkTheme">
         <item name="android:windowBackground">@color/maybox_background</item>
+        <item name="windowBackground">@color/maybox_background</item>
         <item name="android:statusBarColor">@color/maybox_background</item>
         <item name="android:navigationBarColor">@color/maybox_background</item>
         <item name="colorPrimary">@color/maybox_primary</item>
         <item name="colorPrimaryDark">@color/maybox_background</item>
         <item name="colorAccent">@color/maybox_primary</item>
+        <item name="actionColor">@color/maybox_primary</item>
     </style>
 
     <!-- MayBox Dark Theme with ActionBar for Library/Settings screens -->
-    <style name="MayBoxDarkTheme.ActionBar" parent="Theme.AppCompat">
+    <style name="MayBoxDarkTheme.ActionBar" parent="DarkTheme">
         <item name="android:windowBackground">@color/maybox_background</item>
+        <item name="windowBackground">@color/maybox_background</item>
         <item name="android:statusBarColor">@color/maybox_background</item>
         <item name="android:navigationBarColor">@color/maybox_background</item>
         <item name="colorPrimary">@color/maybox_background</item>
         <item name="colorPrimaryDark">@color/maybox_background</item>
         <item name="colorAccent">@color/maybox_primary</item>
+        <item name="actionColor">@color/maybox_primary</item>
         <item name="android:textColorPrimary">#FFFFFF</item>
         <item name="android:textColorSecondary">#80FFFFFF</item>
         <item name="actionBarStyle">@style/MayBoxActionBar</item>

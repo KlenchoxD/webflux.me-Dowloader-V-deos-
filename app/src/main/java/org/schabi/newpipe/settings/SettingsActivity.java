@@ -36,7 +36,6 @@ import org.schabi.newpipe.settings.preferencesearch.PreferenceSearcher;
 import org.schabi.newpipe.util.DeviceUtils;
 import org.schabi.newpipe.util.KeyboardUtil;
 import org.schabi.newpipe.util.ReleaseVersionUtil;
-import org.schabi.newpipe.util.ThemeHelper;
 import org.schabi.newpipe.views.FocusOverlayView;
 
 import java.util.concurrent.TimeUnit;
@@ -86,7 +85,7 @@ public class SettingsActivity extends AppCompatActivity implements
 
     @Override
     protected void onCreate(final Bundle savedInstanceBundle) {
-        setTheme(ThemeHelper.getSettingsThemeStyle(this));
+        setTheme(R.style.MayBoxDarkTheme_ActionBar);
 
         super.onCreate(savedInstanceBundle);
         Bridge.restoreInstanceState(this, savedInstanceBundle);

@@ -14,7 +14,6 @@ import androidx.fragment.app.FragmentTransaction;
 import org.schabi.newpipe.R;
 import org.schabi.newpipe.databinding.ActivityDownloaderBinding;
 import org.schabi.newpipe.util.DeviceUtils;
-import org.schabi.newpipe.util.ThemeHelper;
 import org.schabi.newpipe.views.FocusOverlayView;
 
 import us.shandian.giga.service.DownloadManagerService;
@@ -31,7 +30,7 @@ public class DownloadActivity extends AppCompatActivity {
         i.setClass(this, DownloadManagerService.class);
         startService(i);
 
-        ThemeHelper.setTheme(this);
+        setTheme(R.style.MayBoxDarkTheme_ActionBar);
 
         super.onCreate(savedInstanceState);
 
