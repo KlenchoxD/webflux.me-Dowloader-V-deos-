@@ -1,503 +1,520 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="vertical"
-    android:background="@drawable/vdown_bottom_sheet_bg"
-    android:paddingBottom="24dp">
+    android:background="@drawable/vdown_bottom_sheet_bg">
 
-    <!-- Handle bar -->
-    <View
-        android:layout_width="48dp"
-        android:layout_height="6dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="12dp"
-        android:layout_marginBottom="8dp"
-        android:background="#33FFFFFF"/>
-
-    <!-- Title -->
-    <TextView
+    <!-- Scrollable content -->
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="20dp"
-        android:paddingTop="8dp"
-        android:paddingBottom="12dp"
-        android:text="Download as:"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:textColor="#E8FFFFFF"/>
-
-    <!-- Video preview card -->
-    <LinearLayout
-        android:id="@+id/bs_url_preview_card"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginHorizontal="16dp"
-        android:layout_marginBottom="16dp"
-        android:padding="12dp"
-        android:background="@drawable/vdown_preview_card_bg">
-
-        <!-- Thumbnail placeholder -->
-        <FrameLayout
-            android:layout_width="64dp"
-            android:layout_height="64dp"
-            android:background="@drawable/vdown_thumbnail_bg">
-
-            <ImageView
-                android:layout_width="28dp"
-                android:layout_height="28dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_play_arrow"
-                android:tint="#66FFFFFF"/>
-
-        </FrameLayout>
+        android:fillViewport="true"
+        android:clipToPadding="false"
+        android:paddingBottom="100dp">
 
         <LinearLayout
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_marginStart="12dp">
+            android:orientation="vertical">
 
+            <!-- Handle bar -->
+            <View
+                android:layout_width="48dp"
+                android:layout_height="6dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="8dp"
+                android:background="#33FFFFFF"/>
+
+            <!-- Title -->
             <TextView
-                android:id="@+id/bs_title_preview"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Video"
-                android:textSize="15sp"
+                android:paddingHorizontal="24dp"
+                android:paddingTop="8dp"
+                android:paddingBottom="12dp"
+                android:text="Download as:"
+                android:textSize="24sp"
                 android:textStyle="bold"
-                android:textColor="#FFFFFF"
-                android:maxLines="1"
-                android:ellipsize="end"/>
+                android:textColor="#F1F5F9"/>
 
-            <TextView
-                android:id="@+id/bs_url_preview"
+            <!-- Preview card -->
+            <LinearLayout
+                android:id="@+id/bs_preview_card"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:textSize="14sp"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginHorizontal="16dp"
+                android:layout_marginBottom="16dp"
+                android:padding="12dp"
+                android:background="@drawable/vdown_preview_card_bg">
+
+                <!-- Thumbnail placeholder -->
+                <FrameLayout
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/vdown_thumbnail_bg">
+
+                    <ImageView
+                        android:layout_width="28dp"
+                        android:layout_height="28dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_play_arrow"
+                        android:tint="#FFFFFF"/>
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:id="@+id/bs_title_preview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Video"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#F1F5F9"
+                        android:maxLines="1"
+                        android:ellipsize="end"/>
+
+                    <TextView
+                        android:id="@+id/bs_url_preview"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:textSize="13sp"
+                        android:textColor="#94A3B8"
+                        android:maxLines="1"
+                        android:ellipsize="middle"/>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- Music Section Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="24dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_music_note"
+                    android:tint="#E60A15"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Music"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#F1F5F9"/>
+
+            </LinearLayout>
+
+            <!-- M4A option -->
+            <LinearLayout
+                android:id="@+id/bs_option_m4a"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginVertical="3dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="16dp"
+                android:background="@drawable/maybox_option_row_bg"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <FrameLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/maybox_icon_badge_red">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_file_download"
+                        android:tint="#E60A15"/>
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fast (M4A)"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#F1F5F9"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="4.2 MB • Optimized for speed"
+                        android:textSize="12sp"
+                        android:textColor="#94A3B8"/>
+
+                </LinearLayout>
+
+                <RadioButton
+                    android:id="@+id/bs_radio_m4a"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:button="@drawable/maybox_radio_selector"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:checked="false"/>
+
+            </LinearLayout>
+
+            <!-- MP3 option -->
+            <LinearLayout
+                android:id="@+id/bs_option_mp3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginVertical="3dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="16dp"
+                android:background="@drawable/maybox_option_row_bg"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <FrameLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/maybox_icon_badge_gray">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_music_note"
+                        android:tint="#94A3B8"/>
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="MP3 Classic"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#F1F5F9"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="12.8 MB • High Bitrate (320kbps)"
+                        android:textSize="12sp"
+                        android:textColor="#94A3B8"/>
+
+                </LinearLayout>
+
+                <RadioButton
+                    android:id="@+id/bs_radio_mp3"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:button="@drawable/maybox_radio_selector"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:checked="false"/>
+
+            </LinearLayout>
+
+            <!-- Video Section Header -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:paddingHorizontal="24dp"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/ic_play_arrow"
+                    android:tint="#E60A15"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Video"
+                    android:textSize="18sp"
+                    android:textStyle="bold"
+                    android:textColor="#F1F5F9"/>
+
+            </LinearLayout>
+
+            <!-- 360p option -->
+            <LinearLayout
+                android:id="@+id/bs_option_360p"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginVertical="3dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="16dp"
+                android:background="@drawable/maybox_option_row_bg"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <FrameLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/maybox_icon_badge_subtle">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_file_download"
+                        android:tint="#94A3B8"/>
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Fast (360p)"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#F1F5F9"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="24.5 MB • MP4"
+                        android:textSize="12sp"
+                        android:textColor="#94A3B8"/>
+
+                </LinearLayout>
+
+                <RadioButton
+                    android:id="@+id/bs_radio_360p"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:button="@drawable/maybox_radio_selector"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:checked="false"/>
+
+            </LinearLayout>
+
+            <!-- 720p option -->
+            <LinearLayout
+                android:id="@+id/bs_option_720p"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginVertical="3dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="16dp"
+                android:background="@drawable/maybox_option_row_bg"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <FrameLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/maybox_icon_badge_subtle">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_play_arrow"
+                        android:tint="#94A3B8"/>
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="High Quality (720p)"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#F1F5F9"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="114.2 MB • HD Video"
+                        android:textSize="12sp"
+                        android:textColor="#94A3B8"/>
+
+                </LinearLayout>
+
+                <RadioButton
+                    android:id="@+id/bs_radio_720p"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:button="@drawable/maybox_radio_selector"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:checked="true"/>
+
+            </LinearLayout>
+
+            <!-- 1080p option -->
+            <LinearLayout
+                android:id="@+id/bs_option_1080p"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginVertical="3dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="16dp"
+                android:background="@drawable/maybox_option_row_bg"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <FrameLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/maybox_icon_badge_subtle">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_play_arrow"
+                        android:tint="#94A3B8"/>
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Full HD (1080p)"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#F1F5F9"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Best quality • MP4"
+                        android:textSize="12sp"
+                        android:textColor="#94A3B8"/>
+
+                </LinearLayout>
+
+                <RadioButton
+                    android:id="@+id/bs_radio_1080p"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:button="@drawable/maybox_radio_selector"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:checked="false"/>
+
+            </LinearLayout>
+
+            <!-- More formats text button -->
+            <TextView
+                android:id="@+id/bs_more_formats"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="8dp"
+                android:layout_marginBottom="4dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="8dp"
+                android:text="More formats ▾"
+                android:textSize="13sp"
                 android:textColor="#94A3B8"
-                android:maxLines="1"
-                android:ellipsize="middle"/>
+                android:clickable="true"
+                android:focusable="true"/>
 
         </LinearLayout>
 
-    </LinearLayout>
+    </ScrollView>
 
-    <!-- Divider -->
-    <View
+    <!-- Gradient footer with download button -->
+    <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#1AFFFFFF"
-        android:layout_marginBottom="4dp"/>
+        android:layout_height="120dp"
+        android:layout_gravity="bottom">
 
-    <!-- Music Section Header -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:paddingHorizontal="20dp"
-        android:paddingVertical="10dp">
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/vdown_bottom_gradient_fade"/>
 
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/ic_music_note"
-            android:tint="#E60A15"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="Music"
-            android:textSize="13sp"
+        <Button
+            android:id="@+id/bs_download_btn"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_gravity="bottom"
+            android:layout_marginHorizontal="24dp"
+            android:layout_marginBottom="24dp"
+            android:text="DOWNLOAD NOW"
+            android:textSize="15sp"
             android:textStyle="bold"
-            android:textColor="#E60A15"
-            android:letterSpacing="0.05"/>
+            android:textColor="#FFFFFF"
+            android:letterSpacing="0.05"
+            android:drawableStart="@drawable/ic_file_download"
+            android:drawableTint="#FFFFFF"
+            android:background="@drawable/maybox_download_btn_gradient"
+            android:elevation="0dp"
+            android:stateListAnimator="@null"/>
 
-    </LinearLayout>
+    </FrameLayout>
 
-    <!-- M4A option -->
-    <LinearLayout
-        android:id="@+id/bs_option_m4a"
-        android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginHorizontal="4dp"
-        android:layout_marginVertical="2dp"
-        android:paddingHorizontal="16dp"
-        android:background="@drawable/vdown_option_row_bg"
-        android:foreground="?android:attr/selectableItemBackground">
-
-        <FrameLayout
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/vdown_icon_badge_music">
-
-            <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_file_download"
-                android:tint="#E60A15"/>
-
-        </FrameLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_marginStart="12dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fast (M4A)"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:textColor="#E8FFFFFF"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="4.2 MB • Optimized for speed"
-                android:textSize="12sp"
-                android:textColor="#94A3B8"/>
-
-        </LinearLayout>
-
-        <RadioButton
-            android:id="@+id/bs_radio_m4a"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:buttonTint="#E60A15"
-            android:clickable="false"
-            android:focusable="false"
-            android:checked="false"/>
-
-    </LinearLayout>
-
-    <!-- MP3 option -->
-    <LinearLayout
-        android:id="@+id/bs_option_mp3"
-        android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginHorizontal="4dp"
-        android:layout_marginVertical="2dp"
-        android:paddingHorizontal="16dp"
-        android:background="@drawable/vdown_option_row_bg"
-        android:foreground="?android:attr/selectableItemBackground">
-
-        <FrameLayout
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/vdown_icon_badge_music">
-
-            <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_music_note"
-                android:tint="#94A3B8"/>
-
-        </FrameLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_marginStart="12dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="MP3 Classic"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:textColor="#E8FFFFFF"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="12.8 MB • High Bitrate (320kbps)"
-                android:textSize="12sp"
-                android:textColor="#94A3B8"/>
-
-        </LinearLayout>
-
-        <RadioButton
-            android:id="@+id/bs_radio_mp3"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:buttonTint="#E60A15"
-            android:clickable="false"
-            android:focusable="false"
-            android:checked="false"/>
-
-    </LinearLayout>
-
-    <!-- Divider -->
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:background="#1AFFFFFF"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="4dp"/>
-
-    <!-- Video Section Header -->
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:paddingHorizontal="20dp"
-        android:paddingVertical="10dp">
-
-        <ImageView
-            android:layout_width="20dp"
-            android:layout_height="20dp"
-            android:src="@drawable/ic_play_arrow"
-            android:tint="#E60A15"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:text="Video"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            android:textColor="#E60A15"
-            android:letterSpacing="0.05"/>
-
-    </LinearLayout>
-
-    <!-- 360p option -->
-    <LinearLayout
-        android:id="@+id/bs_option_360p"
-        android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginHorizontal="4dp"
-        android:layout_marginVertical="2dp"
-        android:paddingHorizontal="16dp"
-        android:background="@drawable/vdown_option_row_bg"
-        android:foreground="?android:attr/selectableItemBackground">
-
-        <FrameLayout
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/vdown_icon_badge_video">
-
-            <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_file_download"
-                android:tint="#94A3B8"/>
-
-        </FrameLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_marginStart="12dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Fast (360p)"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:textColor="#E8FFFFFF"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="24.5 MB • MP4"
-                android:textSize="12sp"
-                android:textColor="#94A3B8"/>
-
-        </LinearLayout>
-
-        <RadioButton
-            android:id="@+id/bs_radio_360p"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:buttonTint="#E60A15"
-            android:clickable="false"
-            android:focusable="false"
-            android:checked="false"/>
-
-    </LinearLayout>
-
-    <!-- 720p option -->
-    <LinearLayout
-        android:id="@+id/bs_option_720p"
-        android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginHorizontal="4dp"
-        android:layout_marginVertical="2dp"
-        android:paddingHorizontal="16dp"
-        android:background="@drawable/vdown_option_row_bg"
-        android:foreground="?android:attr/selectableItemBackground">
-
-        <FrameLayout
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/vdown_icon_badge_video">
-
-            <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_play_arrow"
-                android:tint="#94A3B8"/>
-
-        </FrameLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_marginStart="12dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="High Quality (720p)"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:textColor="#E8FFFFFF"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="114.2 MB • HD Video"
-                android:textSize="12sp"
-                android:textColor="#94A3B8"/>
-
-        </LinearLayout>
-
-        <RadioButton
-            android:id="@+id/bs_radio_720p"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:buttonTint="#E60A15"
-            android:clickable="false"
-            android:focusable="false"
-            android:checked="true"/>
-
-    </LinearLayout>
-
-    <!-- 1080p option -->
-    <LinearLayout
-        android:id="@+id/bs_option_1080p"
-        android:layout_width="match_parent"
-        android:layout_height="72dp"
-        android:orientation="horizontal"
-        android:gravity="center_vertical"
-        android:layout_marginHorizontal="4dp"
-        android:layout_marginVertical="2dp"
-        android:paddingHorizontal="16dp"
-        android:background="@drawable/vdown_option_row_bg"
-        android:foreground="?android:attr/selectableItemBackground">
-
-        <FrameLayout
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            android:background="@drawable/vdown_icon_badge_video">
-
-            <ImageView
-                android:layout_width="22dp"
-                android:layout_height="22dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_play_arrow"
-                android:tint="#94A3B8"/>
-
-        </FrameLayout>
-
-        <LinearLayout
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:layout_marginStart="12dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Full HD (1080p)"
-                android:textSize="14sp"
-                android:textStyle="bold"
-                android:textColor="#E8FFFFFF"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Best quality • MP4"
-                android:textSize="12sp"
-                android:textColor="#94A3B8"/>
-
-        </LinearLayout>
-
-        <RadioButton
-            android:id="@+id/bs_radio_1080p"
-            android:layout_width="24dp"
-            android:layout_height="24dp"
-            android:buttonTint="#E60A15"
-            android:clickable="false"
-            android:focusable="false"
-            android:checked="false"/>
-
-    </LinearLayout>
-
-    <!-- More formats text button -->
-    <TextView
-        android:id="@+id/bs_more_formats"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="4dp"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="8dp"
-        android:text="More formats ▾"
-        android:textSize="13sp"
-        android:textColor="#94A3B8"
-        android:clickable="true"
-        android:focusable="true"/>
-
-    <!-- Download Now Button -->
-    <Button
-        android:id="@+id/bs_download_btn"
-        android:layout_width="match_parent"
-        android:layout_height="56dp"
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="DOWNLOAD NOW"
-        android:textSize="16sp"
-        android:textStyle="bold"
-        android:textColor="#FFFFFF"
-        android:letterSpacing="0.05"
-        android:drawableStart="@drawable/ic_file_download"
-        android:drawableTint="#FFFFFF"
-        android:background="@drawable/vdown_download_btn_gradient"
-        android:elevation="0dp"
-        android:stateListAnimator="@null"/>
-
-</LinearLayout>
+</FrameLayout>
