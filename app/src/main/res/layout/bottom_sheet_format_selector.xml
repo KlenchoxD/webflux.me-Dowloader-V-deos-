@@ -4,16 +4,16 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:background="@drawable/vdown_bottom_sheet_bg"
-    android:paddingBottom="16dp">
+    android:paddingBottom="24dp">
 
     <!-- Handle bar -->
     <View
-        android:layout_width="40dp"
-        android:layout_height="4dp"
+        android:layout_width="48dp"
+        android:layout_height="6dp"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="12dp"
         android:layout_marginBottom="8dp"
-        android:background="#44FFFFFF"/>
+        android:background="#33FFFFFF"/>
 
     <!-- Title -->
     <TextView
@@ -21,30 +21,77 @@
         android:layout_height="wrap_content"
         android:paddingHorizontal="20dp"
         android:paddingTop="8dp"
-        android:paddingBottom="16dp"
+        android:paddingBottom="12dp"
         android:text="Download as:"
-        android:textSize="18sp"
+        android:textSize="24sp"
         android:textStyle="bold"
         android:textColor="#E8FFFFFF"/>
 
-    <!-- URL preview -->
-    <TextView
-        android:id="@+id/bs_url_preview"
+    <!-- Video preview card -->
+    <LinearLayout
+        android:id="@+id/bs_url_preview_card"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:paddingHorizontal="20dp"
-        android:paddingBottom="16dp"
-        android:textSize="11sp"
-        android:textColor="#66FFFFFF"
-        android:maxLines="1"
-        android:ellipsize="middle"/>
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginHorizontal="16dp"
+        android:layout_marginBottom="16dp"
+        android:padding="12dp"
+        android:background="@drawable/vdown_preview_card_bg">
+
+        <!-- Thumbnail placeholder -->
+        <FrameLayout
+            android:layout_width="64dp"
+            android:layout_height="64dp"
+            android:background="@drawable/vdown_thumbnail_bg">
+
+            <ImageView
+                android:layout_width="28dp"
+                android:layout_height="28dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_play_arrow"
+                android:tint="#66FFFFFF"/>
+
+        </FrameLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:layout_marginStart="12dp">
+
+            <TextView
+                android:id="@+id/bs_title_preview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Video"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"
+                android:maxLines="1"
+                android:ellipsize="end"/>
+
+            <TextView
+                android:id="@+id/bs_url_preview"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:textSize="14sp"
+                android:textColor="#94A3B8"
+                android:maxLines="1"
+                android:ellipsize="middle"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
     <!-- Divider -->
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="#1AFFFFFF"
-        android:layout_marginBottom="8dp"/>
+        android:layout_marginBottom="4dp"/>
 
     <!-- Music Section Header -->
     <LinearLayout
@@ -53,7 +100,7 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingHorizontal="20dp"
-        android:paddingVertical="12dp">
+        android:paddingVertical="10dp">
 
         <ImageView
             android:layout_width="20dp"
@@ -77,18 +124,28 @@
     <LinearLayout
         android:id="@+id/bs_option_m4a"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="72dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingHorizontal="20dp"
-        android:background="?android:attr/selectableItemBackground">
+        android:layout_marginHorizontal="4dp"
+        android:layout_marginVertical="2dp"
+        android:paddingHorizontal="16dp"
+        android:background="@drawable/vdown_option_row_bg"
+        android:foreground="?android:attr/selectableItemBackground">
 
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@drawable/ic_music_note"
-            android:tint="#E60A15"
-            android:padding="4dp"/>
+        <FrameLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/vdown_icon_badge_music">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_file_download"
+                android:tint="#E60A15"/>
+
+        </FrameLayout>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -100,7 +157,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="M4A"
+                android:text="Fast (M4A)"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:textColor="#E8FFFFFF"/>
@@ -108,16 +165,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Fast · Best quality"
-                android:textSize="11sp"
-                android:textColor="#80FFFFFF"/>
+                android:text="4.2 MB • Optimized for speed"
+                android:textSize="12sp"
+                android:textColor="#94A3B8"/>
 
         </LinearLayout>
 
         <RadioButton
             android:id="@+id/bs_radio_m4a"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:buttonTint="#E60A15"
             android:clickable="false"
             android:focusable="false"
@@ -129,18 +186,28 @@
     <LinearLayout
         android:id="@+id/bs_option_mp3"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="72dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingHorizontal="20dp"
-        android:background="?android:attr/selectableItemBackground">
+        android:layout_marginHorizontal="4dp"
+        android:layout_marginVertical="2dp"
+        android:paddingHorizontal="16dp"
+        android:background="@drawable/vdown_option_row_bg"
+        android:foreground="?android:attr/selectableItemBackground">
 
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@drawable/ic_music_note"
-            android:tint="#E60A15"
-            android:padding="4dp"/>
+        <FrameLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/vdown_icon_badge_music">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_music_note"
+                android:tint="#94A3B8"/>
+
+        </FrameLayout>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -152,7 +219,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="MP3"
+                android:text="MP3 Classic"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:textColor="#E8FFFFFF"/>
@@ -160,16 +227,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="320kbps · Classic"
-                android:textSize="11sp"
-                android:textColor="#80FFFFFF"/>
+                android:text="12.8 MB • High Bitrate (320kbps)"
+                android:textSize="12sp"
+                android:textColor="#94A3B8"/>
 
         </LinearLayout>
 
         <RadioButton
             android:id="@+id/bs_radio_mp3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:buttonTint="#E60A15"
             android:clickable="false"
             android:focusable="false"
@@ -183,7 +250,7 @@
         android:layout_height="1dp"
         android:background="#1AFFFFFF"
         android:layout_marginTop="8dp"
-        android:layout_marginBottom="0dp"/>
+        android:layout_marginBottom="4dp"/>
 
     <!-- Video Section Header -->
     <LinearLayout
@@ -192,7 +259,7 @@
         android:orientation="horizontal"
         android:gravity="center_vertical"
         android:paddingHorizontal="20dp"
-        android:paddingVertical="12dp">
+        android:paddingVertical="10dp">
 
         <ImageView
             android:layout_width="20dp"
@@ -216,18 +283,28 @@
     <LinearLayout
         android:id="@+id/bs_option_360p"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="72dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingHorizontal="20dp"
-        android:background="?android:attr/selectableItemBackground">
+        android:layout_marginHorizontal="4dp"
+        android:layout_marginVertical="2dp"
+        android:paddingHorizontal="16dp"
+        android:background="@drawable/vdown_option_row_bg"
+        android:foreground="?android:attr/selectableItemBackground">
 
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@drawable/ic_play_arrow"
-            android:tint="#E60A15"
-            android:padding="4dp"/>
+        <FrameLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/vdown_icon_badge_video">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_file_download"
+                android:tint="#94A3B8"/>
+
+        </FrameLayout>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -239,7 +316,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="360p"
+                android:text="Fast (360p)"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:textColor="#E8FFFFFF"/>
@@ -247,16 +324,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Small · Fast download"
-                android:textSize="11sp"
-                android:textColor="#80FFFFFF"/>
+                android:text="24.5 MB • MP4"
+                android:textSize="12sp"
+                android:textColor="#94A3B8"/>
 
         </LinearLayout>
 
         <RadioButton
             android:id="@+id/bs_radio_360p"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:buttonTint="#E60A15"
             android:clickable="false"
             android:focusable="false"
@@ -268,18 +345,28 @@
     <LinearLayout
         android:id="@+id/bs_option_720p"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="72dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingHorizontal="20dp"
-        android:background="?android:attr/selectableItemBackground">
+        android:layout_marginHorizontal="4dp"
+        android:layout_marginVertical="2dp"
+        android:paddingHorizontal="16dp"
+        android:background="@drawable/vdown_option_row_bg"
+        android:foreground="?android:attr/selectableItemBackground">
 
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@drawable/ic_play_arrow"
-            android:tint="#E60A15"
-            android:padding="4dp"/>
+        <FrameLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/vdown_icon_badge_video">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_play_arrow"
+                android:tint="#94A3B8"/>
+
+        </FrameLayout>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -291,7 +378,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="720p"
+                android:text="High Quality (720p)"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:textColor="#E8FFFFFF"/>
@@ -299,16 +386,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="HD · Recommended"
-                android:textSize="11sp"
-                android:textColor="#80FFFFFF"/>
+                android:text="114.2 MB • HD Video"
+                android:textSize="12sp"
+                android:textColor="#94A3B8"/>
 
         </LinearLayout>
 
         <RadioButton
             android:id="@+id/bs_radio_720p"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:buttonTint="#E60A15"
             android:clickable="false"
             android:focusable="false"
@@ -320,18 +407,28 @@
     <LinearLayout
         android:id="@+id/bs_option_1080p"
         android:layout_width="match_parent"
-        android:layout_height="56dp"
+        android:layout_height="72dp"
         android:orientation="horizontal"
         android:gravity="center_vertical"
-        android:paddingHorizontal="20dp"
-        android:background="?android:attr/selectableItemBackground">
+        android:layout_marginHorizontal="4dp"
+        android:layout_marginVertical="2dp"
+        android:paddingHorizontal="16dp"
+        android:background="@drawable/vdown_option_row_bg"
+        android:foreground="?android:attr/selectableItemBackground">
 
-        <ImageView
-            android:layout_width="32dp"
-            android:layout_height="32dp"
-            android:src="@drawable/ic_play_arrow"
-            android:tint="#E60A15"
-            android:padding="4dp"/>
+        <FrameLayout
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/vdown_icon_badge_video">
+
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_play_arrow"
+                android:tint="#94A3B8"/>
+
+        </FrameLayout>
 
         <LinearLayout
             android:layout_width="0dp"
@@ -343,7 +440,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1080p"
+                android:text="Full HD (1080p)"
                 android:textSize="14sp"
                 android:textStyle="bold"
                 android:textColor="#E8FFFFFF"/>
@@ -351,16 +448,16 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Full HD · Best video"
-                android:textSize="11sp"
-                android:textColor="#80FFFFFF"/>
+                android:text="Best quality • MP4"
+                android:textSize="12sp"
+                android:textColor="#94A3B8"/>
 
         </LinearLayout>
 
         <RadioButton
             android:id="@+id/bs_radio_1080p"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
             android:buttonTint="#E60A15"
             android:clickable="false"
             android:focusable="false"
@@ -368,19 +465,38 @@
 
     </LinearLayout>
 
+    <!-- More formats text button -->
+    <TextView
+        android:id="@+id/bs_more_formats"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="8dp"
+        android:text="More formats ▾"
+        android:textSize="13sp"
+        android:textColor="#94A3B8"
+        android:clickable="true"
+        android:focusable="true"/>
+
     <!-- Download Now Button -->
     <Button
         android:id="@+id/bs_download_btn"
         android:layout_width="match_parent"
         android:layout_height="56dp"
         android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Download Now"
+        android:text="DOWNLOAD NOW"
         android:textSize="16sp"
         android:textStyle="bold"
         android:textColor="#FFFFFF"
-        android:background="@drawable/vdown_download_btn_bg"
+        android:letterSpacing="0.05"
+        android:drawableStart="@drawable/ic_file_download"
+        android:drawableTint="#FFFFFF"
+        android:background="@drawable/vdown_download_btn_gradient"
         android:elevation="0dp"
         android:stateListAnimator="@null"/>
 
