@@ -42,9 +42,7 @@ public class DownloadActivity extends AppCompatActivity {
 
         final ActionBar actionBar = getSupportActionBar();
         if (actionBar != null) {
-            actionBar.setDisplayHomeAsUpEnabled(true);
-            actionBar.setTitle(R.string.downloads_title);
-            actionBar.setDisplayShowTitleEnabled(true);
+            actionBar.hide();
         }
 
         getWindow().getDecorView().getViewTreeObserver()
