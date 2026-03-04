@@ -4,6 +4,7 @@ import android.content.ClipboardManager
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
+import android.graphics.Color
 import android.os.Build
 import android.os.Bundle
 import android.os.Environment
@@ -15,6 +16,7 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.view.WindowInsetsControllerCompat
 import java.io.File
 import java.text.DecimalFormat
 import kotlin.math.log10
@@ -44,6 +46,8 @@ class VDownHomeActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_vdown_home)
         supportActionBar?.hide()
+        window.statusBarColor = Color.parseColor("#080808")
+        WindowInsetsControllerCompat(window, window.decorView).isAppearanceLightStatusBars = false
         bindViews()
         setupClickListeners()
         handleIncomingIntent(intent)
@@ -112,7 +116,7 @@ class VDownHomeActivity : AppCompatActivity() {
             startActivity(Intent(this, org.schabi.newpipe.download.DownloadActivity::class.java))
         }
         navMore.setOnClickListener {
-            startActivity(Intent(this, org.schabi.newpipe.settings.SettingsActivity::class.java))
+            startActivity(Intent(this, MayBoxSettingsActivity::class.java))
         }
     }
 

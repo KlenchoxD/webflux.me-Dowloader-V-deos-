@@ -171,13 +171,19 @@
             android:name=".error.ErrorActivity"
             android:exported="false" />
 
+        <activity
+            android:name=".MayBoxSettingsActivity"
+            android:exported="false"
+            android:label="Settings"
+            android:theme="@style/MayBoxDarkTheme" />
+
         <!-- giga get related -->
         <activity
             android:name=".download.DownloadActivity"
             android:exported="false"
             android:label="@string/app_name"
             android:launchMode="singleTask"
-            android:theme="@style/MayBoxDarkTheme.ActionBar" />
+            android:theme="@style/MayBoxDarkTheme" />
 
         <service
             android:name=".download.MayBoxDownloadService"

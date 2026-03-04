@@ -111,6 +111,24 @@ public class MissionsFragment extends Fragment {
         mEmpty = v.findViewById(R.id.list_empty_view);
         mList = v.findViewById(R.id.mission_recycler);
 
+        // Back button and bottom nav handlers
+        android.view.View backBtn = v.findViewById(R.id.missions_back_btn);
+        if (backBtn != null) {
+            backBtn.setOnClickListener(view -> requireActivity().onBackPressed());
+        }
+        android.view.View navHome = v.findViewById(R.id.missions_nav_home);
+        if (navHome != null) {
+            navHome.setOnClickListener(view -> {
+                android.content.Intent homeIntent = new android.content.Intent(mContext, org.schabi.newpipe.VDownHomeActivity.class);
+                homeIntent.setFlags(android.content.Intent.FLAG_ACTIVITY_CLEAR_TOP | android.content.Intent.FLAG_ACTIVITY_SINGLE_TOP);
+                startActivity(homeIntent);
+            });
+        }
+        android.view.View navMore = v.findViewById(R.id.missions_nav_more);
+        if (navMore != null) {
+            navMore.setOnClickListener(view -> startActivity(new android.content.Intent(mContext, org.schabi.newpipe.MayBoxSettingsActivity.class)));
+        }
+
         // Init layouts managers
         mGridManager = new GridLayoutManager(getActivity(), SPAN_SIZE);
         mGridManager.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() {

@@ -1,19 +1,218 @@
+<?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/maybox_background"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="#080808">
 
-    <include
-        android:id="@+id/list_empty_view"
-        layout="@layout/list_empty_view"
-        android:visibility="gone" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/mission_recycler"
+    <!-- [1] HEADER -->
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingVertical="12dp"
+        android:gravity="center_vertical">
+
+        <FrameLayout
+            android:id="@+id/missions_back_btn"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@drawable/maybox_empty_state_bg">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_arrow_back"
+                app:tint="#F1F5F9"
+                android:contentDescription="@null"/>
+        </FrameLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Downloads"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:textColor="#F1F5F9"
+            android:gravity="center"/>
+
+        <!-- Spacer to balance back button -->
+        <View
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+
+    </LinearLayout>
+
+    <!-- [2] TABS -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingHorizontal="16dp"
+        android:paddingBottom="12dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="History"
+            android:textSize="13sp"
+            android:textColor="#64748B"
+            android:background="@drawable/maybox_chip_bg"
+            android:layout_marginEnd="6dp"/>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:background="@drawable/maybox_action_btn_filled"
+            android:layout_marginEnd="6dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Active"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="●"
+                android:textSize="8sp"
+                android:textColor="#FFFFFF"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="36dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="Scheduled"
+            android:textSize="13sp"
+            android:textColor="#64748B"
+            android:background="@drawable/maybox_chip_bg"/>
+
+    </LinearLayout>
+
+    <!-- [3] CONTENT AREA -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <include
+            android:id="@+id/list_empty_view"
+            layout="@layout/list_empty_view"
+            android:visibility="gone" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/mission_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp"
+            android:clipToPadding="false" />
+
+    </FrameLayout>
+
+    <!-- [4] BOTTOM NAV -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
+        android:background="@drawable/maybox_nav_bg"
+        android:paddingTop="1dp">
+
+        <!-- HOME (inactive) -->
+        <LinearLayout
+            android:id="@+id/missions_nav_home"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_home"
+                app:tint="#64748B"
+                android:contentDescription="@null"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Home"
+                android:textSize="10sp"
+                android:textColor="#64748B"/>
+
+        </LinearLayout>
+
+        <!-- LIBRARY (active) -->
+        <LinearLayout
+            android:id="@+id/missions_nav_library"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_file_download"
+                app:tint="#E60A15"
+                android:contentDescription="@null"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="Library"
+                android:textSize="10sp"
+                android:textColor="#E60A15"/>
+
+        </LinearLayout>
+
+        <!-- MORE (inactive) -->
+        <LinearLayout
+            android:id="@+id/missions_nav_more"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:background="?android:attr/selectableItemBackground">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_settings"
+                app:tint="#64748B"
+                android:contentDescription="@null"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:text="More"
+                android:textSize="10sp"
+                android:textColor="#64748B"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
 
 </LinearLayout>
-
-
