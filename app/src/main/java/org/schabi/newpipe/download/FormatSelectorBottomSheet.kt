@@ -35,9 +35,18 @@ class FormatSelectorBottomSheet : BottomSheetDialogFragment() {
     enum class FormatOption(val formatFlags: List<String>) {
         M4A(listOf("-x", "--audio-format", "m4a")),
         MP3(listOf("-x", "--audio-format", "mp3")),
-        VIDEO_360P(listOf("-f", "bestvideo[height<=360]+bestaudio/best[height<=360]")),
-        VIDEO_720P(listOf("-f", "bestvideo[height<=720]+bestaudio/best[height<=720]")),
-        VIDEO_1080P(listOf("-f", "bestvideo[height<=1080]+bestaudio/best[height<=1080]"))
+        VIDEO_360P(listOf(
+            "-f", "bestvideo[height<=360][ext=mp4]+bestaudio[ext=m4a]/bestvideo[height<=360]+bestaudio/best[height<=360]/best",
+            "--merge-output-format", "mp4"
+        )),
+        VIDEO_720P(listOf(
+            "-f", "bestvideo[height<=720][ext=mp4]+bestaudio[ext=m4a]/bestvideo[height<=720]+bestaudio/best[height<=720]/best",
+            "--merge-output-format", "mp4"
+        )),
+        VIDEO_1080P(listOf(
+            "-f", "bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/bestvideo[height<=1080]+bestaudio/best[height<=1080]/best",
+            "--merge-output-format", "mp4"
+        ))
     }
 
     private var selectedFormat: FormatOption = FormatOption.VIDEO_720P
