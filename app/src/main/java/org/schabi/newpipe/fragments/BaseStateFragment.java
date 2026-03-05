@@ -13,7 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
 
-import com.evernote.android.state.State;
+import org.schabi.newpipe.util.savedstate.State;
 
 import org.schabi.newpipe.BaseFragment;
 import org.schabi.newpipe.R;

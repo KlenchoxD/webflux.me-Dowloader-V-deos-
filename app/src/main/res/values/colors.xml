@@ -10,6 +10,19 @@
     <color name="maybox_background">#080808</color>
     <color name="maybox_primary">#E60A15</color>
 
+    <!-- New MayBox Design System Colors -->
+    <color name="colorBackground">#0A0A0A</color>
+    <color name="colorSurface">#1A1A1A</color>
+    <color name="colorSurfaceVariant">#222222</color>
+    <color name="colorPrimary">#E53935</color>
+    <color name="colorPrimaryDark">#B71C1C</color>
+    <color name="colorOnPrimary">#FFFFFF</color>
+    <color name="colorOnSurface">#FFFFFF</color>
+    <color name="colorOnSurfaceVariant">#888888</color>
+    <color name="colorDivider">#2A2A2A</color>
+    <color name="colorIconBackground">#3A1010</color>
+    <color name="colorProgressBg">#333333</color>
+
     <color name="placeholder_background">#999999</color>
     <color name="placeholder_foreground">#6C6C6C</color>
 

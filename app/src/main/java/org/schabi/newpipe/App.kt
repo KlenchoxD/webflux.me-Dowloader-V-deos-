@@ -15,7 +15,7 @@ import coil3.request.allowRgb565
 import coil3.request.crossfade
 import coil3.util.DebugLogger
 import com.jakewharton.processphoenix.ProcessPhoenix
-import com.yausername.youtubedl_android.YoutubeDL                    // ← NUEVO
+import com.yausername.youtubedl_android.YoutubeDL // ← NUEVO
 import io.reactivex.rxjava3.exceptions.CompositeException
 import io.reactivex.rxjava3.exceptions.MissingBackpressureException
 import io.reactivex.rxjava3.exceptions.OnErrorNotImplementedException
@@ -25,6 +25,9 @@ import io.reactivex.rxjava3.plugins.RxJavaPlugins
 import java.io.IOException
 import java.io.InterruptedIOException
 import java.net.SocketException
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 import org.acra.ACRA.init
 import org.acra.ACRA.isACRASenderServiceProcess
 import org.acra.config.CoreConfigurationBuilder
@@ -130,20 +133,20 @@ open class App :
         initYoutubeDL()
     }
 
-       // Inicializa yt-dlp y FFmpeg, y actualiza yt-dlp en segundo plano
+    // Inicializa yt-dlp y FFmpeg, y actualiza yt-dlp en segundo plano
     private fun initYoutubeDL() {
         try {
             YoutubeDL.getInstance().init(this)
-            com.yausername.ffmpeg.FFmpeg.getInstance().init(this)  // ← NUEVO: inicializar FFmpeg
-            // Actualizar yt-dlp en un hilo aparte para no trabar la app
-            Thread {
+            com.yausername.ffmpeg.FFmpeg.getInstance().init(this) // ← NUEVO: inicializar FFmpeg
+            // Actualizar yt-dlp en segundo plano para no trabar la app
+            CoroutineScope(Dispatchers.IO).launch {
                 try {
-                    YoutubeDL.getInstance().updateYoutubeDL(this, YoutubeDL.UpdateChannel.NIGHTLY)
+                    YoutubeDL.getInstance().updateYoutubeDL(this@App, YoutubeDL.UpdateChannel.NIGHTLY)
                     Log.i(TAG, "yt-dlp actualizado correctamente")
                 } catch (e: Exception) {
                     Log.e(TAG, "Error actualizando yt-dlp", e)
                 }
-            }.start()
+            }
         } catch (e: Exception) {
             Log.e(TAG, "Error inicializando yt-dlp", e)
         }

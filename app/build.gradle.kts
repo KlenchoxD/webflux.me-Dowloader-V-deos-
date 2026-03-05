@@ -6,7 +6,6 @@ import com.android.build.api.dsl.ApplicationExtension
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
-    alias(libs.plugins.jetbrains.kotlin.kapt)
     alias(libs.plugins.google.ksp)
     alias(libs.plugins.jetbrains.kotlin.parcelize)
     alias(libs.plugins.sonarqube)
@@ -26,6 +25,7 @@ kotlin {
         freeCompilerArgs.addAll(
             "-Xannotation-default-target=param-property"
         )
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_17)
     }
 }
 configure<ApplicationExtension> {
@@ -35,7 +35,7 @@ configure<ApplicationExtension> {
         applicationId = "org.schabi.newpipe"
         resValue("string", "app_name", "MayBox")
         minSdk = 24
-        targetSdk = 35
+        targetSdk = 36
         versionCode = System.getProperty("versionCodeOverride")?.toInt() ?: 1008
         versionName = "0.28.3"
         System.getProperty("versionNameSuffix")?.let { versionNameSuffix = it }
@@ -95,9 +95,13 @@ configure<ApplicationExtension> {
         buildConfig = true
         resValues = true
     }
+    dexOptions {
+        javaMaxHeapSize = "2g"
+    }
     packaging {
         jniLibs {
             useLegacyPackaging = true
+            keepDebugSymbols.add("**/*.so")
         }
         resources {
             // remove two files which belong to jsoup
@@ -118,7 +122,7 @@ val ktlint by configurations.creating
 // https://checkstyle.org/#JRE_and_JDK
 tasks.withType<Checkstyle>().configureEach {
     javaLauncher = javaToolchains.launcherFor {
-        languageVersion = JavaLanguageVersion.of(21)
+        languageVersion = JavaLanguageVersion.of(17)
     }
 }
 checkstyle {
@@ -199,7 +203,6 @@ dependencies {
     implementation(libs.androidx.fragment)
     implementation(libs.androidx.lifecycle.livedata)
     implementation(libs.androidx.lifecycle.viewmodel)
-    implementation(libs.androidx.localbroadcastmanager)
     implementation(libs.androidx.media)
     implementation(libs.androidx.preference)
     implementation(libs.androidx.recyclerview)
@@ -215,21 +218,19 @@ dependencies {
 
     /** Third-party libraries **/
     implementation(libs.livefront.bridge)
-    implementation(libs.evernote.statesaver.core)
-    kapt(libs.evernote.statesaver.compiler)
     // HTML parser
     implementation(libs.jsoup)
     // HTTP client
     implementation(libs.squareup.okhttp)
     // Media player
-    implementation(libs.google.exoplayer.core)
-    implementation(libs.google.exoplayer.dash)
-    implementation(libs.google.exoplayer.database)
-    implementation(libs.google.exoplayer.datasource)
-    implementation(libs.google.exoplayer.hls)
-    implementation(libs.google.exoplayer.mediasession)
-    implementation(libs.google.exoplayer.smoothstreaming)
-    implementation(libs.google.exoplayer.ui)
+    implementation(libs.androidx.media3.database)
+    implementation(libs.androidx.media3.datasource)
+    implementation(libs.androidx.media3.exoplayer)
+    implementation(libs.androidx.media3.exoplayer.dash)
+    implementation(libs.androidx.media3.exoplayer.hls)
+    implementation(libs.androidx.media3.exoplayer.smoothstreaming)
+    implementation(libs.androidx.media3.session)
+    implementation(libs.androidx.media3.ui)
     // Manager for complex RecyclerView layouts
     implementation(libs.lisawray.groupie.core)
     implementation(libs.lisawray.groupie.viewbinding)
@@ -258,9 +259,6 @@ dependencies {
     debugImplementation(libs.squareup.leakcanary.watcher)
     debugImplementation(libs.squareup.leakcanary.plumber)
     debugImplementation(libs.squareup.leakcanary.core)
-    // Debug bridge for Android
-    debugImplementation(libs.facebook.stetho.core)
-    debugImplementation(libs.facebook.stetho.okhttp3)
 
     /** YoutubeDL Android (yt-dlp) — 1000+ sites **/
     implementation(libs.youtubedl.android.library)

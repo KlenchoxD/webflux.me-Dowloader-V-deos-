@@ -1,5 +1,40 @@
 <resources>
 
+    <!-- MayBox Design System Styles -->
+    <style name="Style.MayBox.Card" parent="Widget.MaterialComponents.CardView">
+        <item name="cardBackgroundColor">@color/colorSurface</item>
+        <item name="cardCornerRadius">16dp</item>
+        <item name="cardElevation">2dp</item>
+        <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    </style>
+
+    <style name="Style.MayBox.Button.Primary" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/colorPrimary</item>
+        <item name="cornerRadius">28dp</item>
+        <item name="android:insetTop">0dp</item>
+        <item name="android:insetBottom">0dp</item>
+        <item name="android:minHeight">52dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:textColor">@color/colorOnPrimary</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Style.MayBox.Button.Secondary" parent="Widget.MaterialComponents.Button">
+        <item name="backgroundTint">@color/colorIconBackground</item>
+        <item name="cornerRadius">12dp</item>
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:paddingHorizontal">16dp</item>
+    </style>
+
+    <style name="Style.MayBox.SectionLabel" parent="">
+        <item name="android:textSize">11sp</item>
+        <item name="android:textColor">@color/colorOnSurfaceVariant</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:letterSpacing">0.15</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
     <!-- MayBox Dark Theme for Home screen (no ActionBar) -->
     <style name="MayBoxDarkTheme" parent="DarkTheme">
         <item name="android:windowBackground">@color/maybox_background</item>

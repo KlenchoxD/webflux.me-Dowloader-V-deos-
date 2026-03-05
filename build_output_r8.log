@@ -1,0 +1,161 @@
+Configuration on demand is an incubating feature.
+> Task :buildSrc:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :buildSrc:compileKotlin UP-TO-DATE
+> Task :buildSrc:compileJava NO-SOURCE
+> Task :buildSrc:compileGroovy NO-SOURCE
+> Task :buildSrc:pluginDescriptors UP-TO-DATE
+> Task :buildSrc:processResources NO-SOURCE
+> Task :buildSrc:classes UP-TO-DATE
+> Task :buildSrc:jar UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preReleaseBuild UP-TO-DATE
+> Task :app:mergeReleaseJniLibFolders
+> Task :app:mergeReleaseArtProfile
+> Task :app:buildKotlinToolingMetadata
+> Task :app:expandReleaseL8ArtProfileWildcards
+> Task :app:checkKotlinGradlePluginConfigurationErrors SKIPPED
+> Task :app:dataBindingMergeDependencyArtifactsRelease
+> Task :app:checkReleaseDuplicateClasses
+> Task :app:generateReleaseResValues
+> Task :app:extractReleaseSupportedLocales
+> Task :app:generateReleaseResources
+> Task :app:generateReleaseLocaleConfig
+> Task :app:generateReleaseBuildConfig
+> Task :app:mergeReleaseNativeLibs
+> Task :app:stripReleaseDebugSymbols
+> Task :app:packageReleaseResources
+> Task :app:extractReleaseNativeSymbolTables
+> Task :app:mergeReleaseNativeDebugMetadata NO-SOURCE
+> Task :app:mapReleaseSourceSetPaths
+> Task :app:createReleaseCompatibleScreenManifests
+> Task :app:extractDeepLinksRelease
+> Task :app:checkReleaseAarMetadata
+> Task :app:parseReleaseLocalResources
+
+> Task :app:processReleaseMainManifest
+C:\Users\Kleiner\Documents\NewPipe\app\src\main\AndroidManifest.xml Warning:
+	provider#org.acra.attachment.AcraContentProvider@android:authorities was tagged at AndroidManifest.xml:0 to replace other declarations but no other declaration present
+
+> Task :app:mergeReleaseResources
+> Task :app:processReleaseManifest
+> Task :app:extractProguardFiles
+> Task :app:mergeReleaseStartupProfile UP-TO-DATE
+> Task :app:mergeReleaseShaders
+> Task :app:compileReleaseShaders NO-SOURCE
+> Task :app:javaPreCompileRelease
+> Task :app:processReleaseManifestForPackage
+> Task :app:generateReleaseAssets UP-TO-DATE
+> Task :app:mergeReleaseAssets
+> Task :app:compressReleaseAssets
+> Task :app:extractReleaseVersionControlInfo
+> Task :app:collectReleaseDependencies
+> Task :app:dataBindingGenBaseClassesRelease
+> Task :app:sdkReleaseDependencyData
+> Task :app:writeReleaseAppMetadata
+> Task :app:writeReleaseSigningConfigVersions
+> Task :app:processReleaseResources
+> Task :app:kspReleaseKotlin
+> Task :app:compileReleaseKotlin
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/App.kt:236:21 Only safe (?.) or non-null asserted (!!.) calls are allowed on a nullable receiver of type 'Thread.UncaughtExceptionHandler?'.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/MayBoxLibraryActivity.kt:40:16 'var statusBarColor: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/MayBoxSettingsActivity.kt:48:16 'var statusBarColor: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/VDownHomeActivity.kt:50:16 'var statusBarColor: Int' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/error/ErrorActivity.kt:118:17 'fun onBackPressed(): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/error/ErrorPanelHelper.kt:74:26 'fun startActivityForResult(p0: Intent, p1: Int): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/feed/FeedFragment.kt:112:9 'fun setHasOptionsMenu(p0: Boolean): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/feed/FeedFragment.kt:207:18 This declaration overrides a deprecated member but is not marked as deprecated itself. Add the '@Deprecated' annotation or suppress the diagnostic.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/feed/FeedFragment.kt:208:15 'fun onCreateOptionsMenu(p0: Menu, p1: MenuInflater): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/feed/FeedFragment.kt:217:18 This declaration overrides a deprecated member but is not marked as deprecated itself. Add the '@Deprecated' annotation or suppress the diagnostic.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/feed/FeedFragment.kt:242:22 'fun onOptionsItemSelected(p0: MenuItem): Boolean' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/feed/FeedFragment.kt:272:18 This declaration overrides a deprecated member but is not marked as deprecated itself. Add the '@Deprecated' annotation or suppress the diagnostic.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/feed/FeedFragment.kt:273:15 'fun onDestroyOptionsMenu(): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/subscription/SubscriptionFragment.kt:97:9 'fun setHasOptionsMenu(p0: Boolean): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/subscription/SubscriptionFragment.kt:133:18 This declaration overrides a deprecated member but is not marked as deprecated itself. Add the '@Deprecated' annotation or suppress the diagnostic.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/subscription/SubscriptionFragment.kt:134:15 'fun onCreateOptionsMenu(p0: Menu, p1: MenuInflater): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/subscription/dialog/FeedGroupDialog.kt:124:27 'fun onBackPressed(): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/settings/export/ImportExportManager.kt:40:35 'val FILE_NAME_SERIALIZED_PREFS: String' is deprecated. Serializing preferences with Java's ObjectOutputStream is vulnerable to injections.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/settings/export/ImportExportManager.kt:98:69 'val FILE_NAME_SERIALIZED_PREFS: String' is deprecated. Serializing preferences with Java's ObjectOutputStream is vulnerable to injections.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/settings/export/ImportExportManager.kt:114:65 'val FILE_NAME_SERIALIZED_PREFS: String' is deprecated. Serializing preferences with Java's ObjectOutputStream is vulnerable to injections.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/settings/export/ImportExportManager.kt:148:63 'val FILE_NAME_SERIALIZED_PREFS: String' is deprecated. Serializing preferences with Java's ObjectOutputStream is vulnerable to injections.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/settings/notifications/NotificationModeConfigFragment.kt:42:9 'fun setHasOptionsMenu(p0: Boolean): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/settings/notifications/NotificationModeConfigFragment.kt:80:18 This declaration overrides a deprecated member but is not marked as deprecated itself. Add the '@Deprecated' annotation or suppress the diagnostic.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/settings/notifications/NotificationModeConfigFragment.kt:81:15 'fun onCreateOptionsMenu(p0: Menu, p1: MenuInflater): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/settings/notifications/NotificationModeConfigFragment.kt:85:18 This declaration overrides a deprecated member but is not marked as deprecated itself. Add the '@Deprecated' annotation or suppress the diagnostic.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/settings/notifications/NotificationModeConfigFragment.kt:92:27 'fun onOptionsItemSelected(p0: MenuItem): Boolean' is deprecated. Deprecated in Java.
+The message received from the daemon indicates that the daemon has disappeared.
+Build request sent: Build{id=911b17e7-26ef-4789-8034-8469dc47081f, currentDir=C:\Users\Kleiner\Documents\NewPipe}
+Attempting to read last messages from the daemon log...
+Daemon pid: 21764
+  log file: C:\Users\Kleiner\.gradle\daemon\9.3.1\daemon-21764.out.log
+----- Last 20 lines from daemon log file - daemon-21764.out.log -----
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/feed/FeedFragment.kt:112:9 'fun setHasOptionsMenu(p0: Boolean): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/feed/FeedFragment.kt:207:18 This declaration overrides a deprecated member but is not marked as deprecated itself. Add the '@Deprecated' annotation or suppress the diagnostic.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/feed/FeedFragment.kt:208:15 'fun onCreateOptionsMenu(p0: Menu, p1: MenuInflater): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/feed/FeedFragment.kt:217:18 This declaration overrides a deprecated member but is not marked as deprecated itself. Add the '@Deprecated' annotation or suppress the diagnostic.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/feed/FeedFragment.kt:242:22 'fun onOptionsItemSelected(p0: MenuItem): Boolean' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/feed/FeedFragment.kt:272:18 This declaration overrides a deprecated member but is not marked as deprecated itself. Add the '@Deprecated' annotation or suppress the diagnostic.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/feed/FeedFragment.kt:273:15 'fun onDestroyOptionsMenu(): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/subscription/SubscriptionFragment.kt:97:9 'fun setHasOptionsMenu(p0: Boolean): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/subscription/SubscriptionFragment.kt:133:18 This declaration overrides a deprecated member but is not marked as deprecated itself. Add the '@Deprecated' annotation or suppress the diagnostic.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/subscription/SubscriptionFragment.kt:134:15 'fun onCreateOptionsMenu(p0: Menu, p1: MenuInflater): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/local/subscription/dialog/FeedGroupDialog.kt:124:27 'fun onBackPressed(): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/settings/export/ImportExportManager.kt:40:35 'val FILE_NAME_SERIALIZED_PREFS: String' is deprecated. Serializing preferences with Java's ObjectOutputStream is vulnerable to injections.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/settings/export/ImportExportManager.kt:98:69 'val FILE_NAME_SERIALIZED_PREFS: String' is deprecated. Serializing preferences with Java's ObjectOutputStream is vulnerable to injections.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/settings/export/ImportExportManager.kt:114:65 'val FILE_NAME_SERIALIZED_PREFS: String' is deprecated. Serializing preferences with Java's ObjectOutputStream is vulnerable to injections.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/settings/export/ImportExportManager.kt:148:63 'val FILE_NAME_SERIALIZED_PREFS: String' is deprecated. Serializing preferences with Java's ObjectOutputStream is vulnerable to injections.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/settings/notifications/NotificationModeConfigFragment.kt:42:9 'fun setHasOptionsMenu(p0: Boolean): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/settings/notifications/NotificationModeConfigFragment.kt:80:18 This declaration overrides a deprecated member but is not marked as deprecated itself. Add the '@Deprecated' annotation or suppress the diagnostic.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/settings/notifications/NotificationModeConfigFragment.kt:81:15 'fun onCreateOptionsMenu(p0: Menu, p1: MenuInflater): Unit' is deprecated. Deprecated in Java.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/settings/notifications/NotificationModeConfigFragment.kt:85:18 This declaration overrides a deprecated member but is not marked as deprecated itself. Add the '@Deprecated' annotation or suppress the diagnostic.
+w: file:///C:/Users/Kleiner/Documents/NewPipe/app/src/main/java/org/schabi/newpipe/settings/notifications/NotificationModeConfigFragment.kt:92:27 'fun onOptionsItemSelected(p0: MenuItem): Boolean' is deprecated. Deprecated in Java.----- End of the daemon log -----
+
+JVM crash log found: file:///C:/Users/Kleiner/Documents/NewPipe/hs_err_pid21764.log
+
+FAILURE: Build failed with an exception.
+
+* What went wrong:
+Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed)
+
+* Try:
+> Run with --info or --debug option to get more log output.
+> Run with --scan to get full insights from a Build Scan (powered by Develocity).
+> Get more help at https://help.gradle.org.
+
+* Exception is:
+org.gradle.launcher.daemon.client.DaemonDisappearedException: Gradle build daemon disappeared unexpectedly (it may have been killed or may have crashed)
+	at org.gradle.launcher.daemon.client.DaemonClient.handleDaemonDisappearance(DaemonClient.java:283)
+	at org.gradle.launcher.daemon.client.DaemonClient.monitorBuild(DaemonClient.java:256)
+	at org.gradle.launcher.daemon.client.DaemonClient.executeBuild(DaemonClient.java:209)
+	at org.gradle.launcher.daemon.client.DaemonClient.execute(DaemonClient.java:158)
+	at org.gradle.launcher.daemon.client.DaemonClient.execute(DaemonClient.java:97)
+	at org.gradle.launcher.cli.RunBuildAction.run(RunBuildAction.java:56)
+	at org.gradle.internal.Actions$RunnableActionAdapter.execute(Actions.java:167)
+	at org.gradle.launcher.cli.DefaultCommandLineActionFactory$ParseAndBuildAction.execute(DefaultCommandLineActionFactory.java:377)
+	at org.gradle.launcher.cli.DefaultCommandLineActionFactory$ParseAndBuildAction.execute(DefaultCommandLineActionFactory.java:341)
+	at org.gradle.launcher.cli.DebugLoggerWarningAction.execute(DebugLoggerWarningAction.java:74)
+	at org.gradle.launcher.cli.DebugLoggerWarningAction.execute(DebugLoggerWarningAction.java:30)
+	at org.gradle.launcher.cli.WelcomeMessageAction.execute(WelcomeMessageAction.java:97)
+	at org.gradle.launcher.cli.WelcomeMessageAction.execute(WelcomeMessageAction.java:40)
+	at org.gradle.launcher.cli.NativeServicesInitializingAction.execute(NativeServicesInitializingAction.java:50)
+	at org.gradle.launcher.cli.NativeServicesInitializingAction.execute(NativeServicesInitializingAction.java:27)
+	at org.gradle.launcher.cli.ExceptionReportingAction.execute(ExceptionReportingAction.java:41)
+	at org.gradle.launcher.cli.ExceptionReportingAction.execute(ExceptionReportingAction.java:26)
+	at org.gradle.launcher.cli.DefaultCommandLineActionFactory$WithLogging.execute(DefaultCommandLineActionFactory.java:489)
+	at org.gradle.launcher.Main.doAction(Main.java:35)
+	at org.gradle.launcher.bootstrap.EntryPoint.run(EntryPoint.java:53)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.gradle.launcher.bootstrap.ProcessBootstrap.runNoExit(ProcessBootstrap.java:72)
+	at org.gradle.launcher.bootstrap.ProcessBootstrap.run(ProcessBootstrap.java:39)
+	at org.gradle.launcher.GradleMain.main(GradleMain.java:26)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:569)
+	at org.gradle.wrapper.GradleWrapperMain.lambda$prepareWrapper$0(SourceFile:26)
+	at org.gradle.wrapper.GradleWrapperMain.main(SourceFile:2)
+
+
+> Task :app:compileReleaseJavaWithJavac

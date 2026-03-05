@@ -41,7 +41,7 @@ import androidx.lifecycle.Lifecycle;
 import androidx.lifecycle.LifecycleOwner;
 import androidx.preference.PreferenceManager;
 
-import com.evernote.android.state.State;
+import org.schabi.newpipe.util.savedstate.State;
 import com.livefront.bridge.Bridge;
 
 import org.schabi.newpipe.database.stream.model.StreamEntity;

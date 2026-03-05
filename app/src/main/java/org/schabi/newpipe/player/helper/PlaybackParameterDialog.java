@@ -23,7 +23,7 @@ import androidx.core.math.MathUtils;
 import androidx.fragment.app.DialogFragment;
 import androidx.preference.PreferenceManager;
 
-import com.evernote.android.state.State;
+import org.schabi.newpipe.util.savedstate.State;
 import com.livefront.bridge.Bridge;
 
 import org.schabi.newpipe.R;

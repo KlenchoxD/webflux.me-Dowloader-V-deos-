@@ -35,18 +35,40 @@ class FormatSelectorBottomSheet : BottomSheetDialogFragment() {
     enum class FormatOption(val formatFlags: List<String>) {
         M4A(listOf("-x", "--audio-format", "m4a")),
         MP3(listOf("-x", "--audio-format", "mp3")),
-        VIDEO_360P(listOf(
-            "-f", "bestvideo[height<=360][ext=mp4]+bestaudio[ext=m4a]/bestvideo[height<=360]+bestaudio/best[height<=360]/best",
-            "--merge-output-format", "mp4"
-        )),
-        VIDEO_720P(listOf(
-            "-f", "bestvideo[height<=720][ext=mp4]+bestaudio[ext=m4a]/bestvideo[height<=720]+bestaudio/best[height<=720]/best",
-            "--merge-output-format", "mp4"
-        )),
-        VIDEO_1080P(listOf(
-            "-f", "bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/bestvideo[height<=1080]+bestaudio/best[height<=1080]/best",
-            "--merge-output-format", "mp4"
-        ))
+        VIDEO_360P(
+            listOf(
+                "-f",
+                "bestvideo[height<=360][ext=mp4]+bestaudio[ext=m4a]/bestvideo[height<=360]+bestaudio/best[height<=360]/best",
+                "--merge-output-format",
+                "mp4"
+            )
+        ),
+        VIDEO_720P(
+            listOf(
+                "-f",
+                "bestvideo[height<=720][ext=mp4]+bestaudio[ext=m4a]/bestvideo[height<=720]+bestaudio/best[height<=720]/best",
+                "--merge-output-format",
+                "mp4"
+            )
+        ),
+
+        // Best available quality
+        BEST_QUALITY(
+            listOf(
+                "-f",
+                "bestvideo+bestaudio/best"
+            )
+        ),
+
+        // High quality with MP4 preference
+        VIDEO_1080P(
+            listOf(
+                "-f",
+                "bestvideo[ext=mp4]+bestaudio[ext=m4a]/bestvideo+bestaudio/best",
+                "--merge-output-format",
+                "mp4"
+            )
+        )
     }
 
     private var selectedFormat: FormatOption = FormatOption.VIDEO_720P
@@ -59,6 +81,7 @@ class FormatSelectorBottomSheet : BottomSheetDialogFragment() {
     private lateinit var option360p: LinearLayout
     private lateinit var option720p: LinearLayout
     private lateinit var option1080p: LinearLayout
+    private lateinit var optionBestQuality: LinearLayout
 
     // Radio buttons
     private lateinit var radioM4a: RadioButton
@@ -66,6 +89,7 @@ class FormatSelectorBottomSheet : BottomSheetDialogFragment() {
     private lateinit var radio360p: RadioButton
     private lateinit var radio720p: RadioButton
     private lateinit var radio1080p: RadioButton
+    private lateinit var radioBestQuality: RadioButton
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -78,7 +102,10 @@ class FormatSelectorBottomSheet : BottomSheetDialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        url = arguments?.getString(ARG_URL) ?: run { dismiss(); return }
+        url = arguments?.getString(ARG_URL) ?: run {
+            dismiss()
+            return
+        }
 
         view.findViewById<TextView>(R.id.bs_url_preview).text = url
 
@@ -87,18 +114,21 @@ class FormatSelectorBottomSheet : BottomSheetDialogFragment() {
         option360p = view.findViewById(R.id.bs_option_360p)
         option720p = view.findViewById(R.id.bs_option_720p)
         option1080p = view.findViewById(R.id.bs_option_1080p)
+        optionBestQuality = view.findViewById(R.id.bs_option_best_quality)
 
         radioM4a = view.findViewById(R.id.bs_radio_m4a)
         radioMp3 = view.findViewById(R.id.bs_radio_mp3)
         radio360p = view.findViewById(R.id.bs_radio_360p)
         radio720p = view.findViewById(R.id.bs_radio_720p)
         radio1080p = view.findViewById(R.id.bs_radio_1080p)
+        radioBestQuality = view.findViewById(R.id.radio_best_quality)
 
         optionM4a.setOnClickListener { selectFormat(FormatOption.M4A) }
         optionMp3.setOnClickListener { selectFormat(FormatOption.MP3) }
         option360p.setOnClickListener { selectFormat(FormatOption.VIDEO_360P) }
         option720p.setOnClickListener { selectFormat(FormatOption.VIDEO_720P) }
         option1080p.setOnClickListener { selectFormat(FormatOption.VIDEO_1080P) }
+        optionBestQuality.setOnClickListener { selectFormat(FormatOption.BEST_QUALITY) }
 
         // Default selection from SharedPreferences
         val prefs = requireContext().getSharedPreferences(org.schabi.newpipe.MayBoxPrefs.PREFS_NAME, Context.MODE_PRIVATE)
@@ -107,6 +137,7 @@ class FormatSelectorBottomSheet : BottomSheetDialogFragment() {
             "360p" -> FormatOption.VIDEO_360P
             "720p" -> FormatOption.VIDEO_720P
             "1080p" -> FormatOption.VIDEO_1080P
+            "Best", "best", "Best quality", "best_quality" -> FormatOption.BEST_QUALITY
             else -> FormatOption.VIDEO_720P
         }
         selectFormat(defaultFormat)
@@ -123,6 +154,7 @@ class FormatSelectorBottomSheet : BottomSheetDialogFragment() {
         radio360p.isChecked = format == FormatOption.VIDEO_360P
         radio720p.isChecked = format == FormatOption.VIDEO_720P
         radio1080p.isChecked = format == FormatOption.VIDEO_1080P
+        radioBestQuality.isChecked = format == FormatOption.BEST_QUALITY
     }
 
     private fun startDownload() {

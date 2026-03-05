@@ -26,7 +26,6 @@ import android.net.Uri;
 import android.util.Log;
 
 import androidx.core.content.IntentCompat;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
@@ -50,8 +49,8 @@ public class SubscriptionsExportService extends BaseImportExportService {
     public static final String KEY_FILE_PATH = "key_file_path";
 
     /**
-     * A {@link LocalBroadcastManager local broadcast} will be made with this action
-     * when the export is successfully completed.
+     * Kept for compatibility with existing intent-based integrations.
+     * Internally export completion now uses {@link SubscriptionServiceEvents}.
      */
     public static final String EXPORT_COMPLETE_ACTION = App.PACKAGE_NAME + ".local.subscription"
             + ".services.SubscriptionsExportService.EXPORT_COMPLETE";
@@ -150,8 +149,7 @@ public class SubscriptionsExportService extends BaseImportExportService {
 
             @Override
             public void onComplete() {
-                LocalBroadcastManager.getInstance(SubscriptionsExportService.this)
-                        .sendBroadcast(new Intent(EXPORT_COMPLETE_ACTION));
+                SubscriptionServiceEvents.emitExportCompleted();
                 showToast(R.string.export_complete_toast);
                 stopService();
             }
@@ -169,5 +167,4 @@ public class SubscriptionsExportService extends BaseImportExportService {
         super.handleError(R.string.subscriptions_export_unsuccessful, error);
     }
 }
-
 

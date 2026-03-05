@@ -21,6 +21,7 @@ import java.io.File
 import java.text.DecimalFormat
 import kotlin.math.log10
 import kotlin.math.pow
+import org.schabi.newpipe.download.extractUrl
 
 class VDownHomeActivity : AppCompatActivity() {
 
@@ -122,7 +123,13 @@ class VDownHomeActivity : AppCompatActivity() {
 
     /** Show format selector, then route URL through yt-dlp (YouTube, Instagram, TikTok, 1000+ sites) */
     private fun routeDownload(url: String) {
-        val sheet = org.schabi.newpipe.download.FormatSelectorBottomSheet.newInstance(url)
+        val sanitizedUrl = extractUrl(url)
+        if (sanitizedUrl == null) {
+            Toast.makeText(this, "No se encontró un enlace válido", Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        val sheet = org.schabi.newpipe.download.FormatSelectorBottomSheet.newInstance(sanitizedUrl)
         sheet.show(supportFragmentManager, "format_selector")
     }
 
@@ -132,12 +139,22 @@ class VDownHomeActivity : AppCompatActivity() {
         val data = intent.data
         when {
             intent.action == Intent.ACTION_SEND && extraText != null -> {
-                urlInput.setText(extraText)
-                routeDownload(extraText.trim())
+                val extractedUrl = extractUrl(extraText)
+                if (extractedUrl == null) {
+                    Toast.makeText(this, "No se encontró un enlace válido", Toast.LENGTH_SHORT).show()
+                    return
+                }
+                urlInput.setText(extractedUrl)
+                routeDownload(extractedUrl)
             }
 
             intent.action == Intent.ACTION_VIEW && data != null -> {
-                urlInput.setText(data.toString())
+                val extractedUrl = extractUrl(data.toString())
+                if (extractedUrl == null) {
+                    Toast.makeText(this, "No se encontró un enlace válido", Toast.LENGTH_SHORT).show()
+                    return
+                }
+                urlInput.setText(extractedUrl)
             }
         }
     }
@@ -152,7 +169,8 @@ class VDownHomeActivity : AppCompatActivity() {
 
     private fun loadRecentDownloads() {
         val downloadDir = File(
-            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "MayBox"
+            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
+            "MayBox"
         )
         if (!downloadDir.exists()) {
             showEmptyState()
@@ -200,4 +218,3 @@ class VDownHomeActivity : AppCompatActivity() {
         return DecimalFormat("#,##0.#").format(bytes / 1024.0.pow(digitGroups.toDouble())) + " " + units[digitGroups]
     }
 }
-

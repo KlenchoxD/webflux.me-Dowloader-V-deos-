@@ -14,7 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.evernote.android.state.State;
+import org.schabi.newpipe.util.savedstate.State;
 import com.google.android.material.snackbar.Snackbar;
 
 import org.reactivestreams.Subscriber;

@@ -80,10 +80,6 @@
             android:label="@string/app_name"
             android:launchMode="singleTask"/>
 
-        <activity
-            android:name=".VDownloadActivity"
-            android:exported="false"
-            android:theme="@style/OpeningTheme"/>
 
         <receiver
             android:name="androidx.media.session.MediaButtonReceiver"
@@ -397,12 +393,7 @@
                 <data android:pathPrefix="/" />
             </intent-filter>
 
-            <!-- Share filter -->
-            <intent-filter>
-                <action android:name="android.intent.action.SEND" />
-                <category android:name="android.intent.category.DEFAULT" />
-                <data android:mimeType="text/plain" />
-            </intent-filter>
+
 
             <!-- media.ccc.de filter -->
             <intent-filter>

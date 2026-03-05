@@ -49,3 +49,21 @@
 -keep class org.apache.commons.compress.** { *; }
 -keep interface org.apache.commons.compress.** { *; }
 -dontwarn org.apache.commons.compress.**
+
+# Keep youtubedl-android and native binary wrappers
+-keep class com.yausername.youtubedl_android.** { *; }
+-keep class com.yausername.ffmpeg.** { *; }
+-keep class com.yausername.aria2c.** { *; }
+
+# Kotlin Coroutines
+-keepnames class kotlinx.coroutines.internal.MainDispatcherFactory { *; }
+-keepnames class kotlinx.coroutines.CoroutineExceptionHandler { *; }
+
+# Enums (evita que R8 rompa los estados del Service)
+-keepclassmembers enum * {
+    public static **[] values();
+    public static ** valueOf(java.lang.String);
+}
+
+# SharedPreferences keys (evita que R8 renombre las keys de MayBoxPrefs)
+-keep class org.schabi.newpipe.MayBoxPrefs { *; }

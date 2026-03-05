@@ -25,7 +25,7 @@ import androidx.core.graphics.ColorUtils;
 import androidx.core.view.MenuProvider;
 import androidx.preference.PreferenceManager;
 
-import com.evernote.android.state.State;
+import org.schabi.newpipe.util.savedstate.State;
 import com.google.android.material.snackbar.Snackbar;
 import com.google.android.material.tabs.TabLayout;
 import com.jakewharton.rxbinding4.view.RxView;

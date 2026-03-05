@@ -27,7 +27,7 @@ import androidx.annotation.StringRes;
 import androidx.appcompat.app.ActionBar;
 import androidx.core.text.util.LinkifyCompat;
 
-import com.evernote.android.state.State;
+import org.schabi.newpipe.util.savedstate.State;
 
 import org.schabi.newpipe.BaseFragment;
 import org.schabi.newpipe.R;

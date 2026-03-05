@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBar;
 
-import com.evernote.android.state.State;
+import org.schabi.newpipe.util.savedstate.State;
 
 import org.schabi.newpipe.R;
 import org.schabi.newpipe.error.ErrorInfo;

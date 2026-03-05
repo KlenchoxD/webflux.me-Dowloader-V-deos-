@@ -11,7 +11,6 @@ import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.ItemTouchHelper.SimpleCallback
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.evernote.android.state.State
 import com.livefront.bridge.Bridge
 import com.xwray.groupie.GroupieAdapter
 import com.xwray.groupie.TouchCallback
@@ -23,6 +22,7 @@ import org.schabi.newpipe.local.subscription.dialog.FeedGroupReorderDialogViewMo
 import org.schabi.newpipe.local.subscription.dialog.FeedGroupReorderDialogViewModel.DialogEvent.SuccessEvent
 import org.schabi.newpipe.local.subscription.item.FeedGroupReorderItem
 import org.schabi.newpipe.util.ThemeHelper
+import org.schabi.newpipe.util.savedstate.State
 
 class FeedGroupReorderDialog : DialogFragment() {
     private var _binding: DialogFeedGroupReorderBinding? = null

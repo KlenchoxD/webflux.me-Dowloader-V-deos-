@@ -19,7 +19,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.preference.Preference;
 import androidx.preference.PreferenceFragmentCompat;
 
-import com.evernote.android.state.State;
+import org.schabi.newpipe.util.savedstate.State;
 import com.jakewharton.rxbinding4.widget.RxTextView;
 import com.livefront.bridge.Bridge;
 

@@ -7,12 +7,12 @@ import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import android.widget.LinearLayout
-import android.widget.Switch
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowInsetsControllerCompat
+import com.google.android.material.switchmaterial.SwitchMaterial
 
 object MayBoxPrefs {
     const val PREFS_NAME = "maybox_settings"
@@ -33,10 +33,12 @@ class MayBoxSettingsActivity : AppCompatActivity() {
     private lateinit var qualityValue: TextView
     private lateinit var audioSubtitle: TextView
     private lateinit var simultaneousValue: TextView
-    private lateinit var wifiSwitch: Switch
+    private lateinit var wifiSwitch: SwitchMaterial
 
     private val audioOptions = arrayOf("MP3 (320kbps)", "M4A (Best quality)", "AAC", "Opus")
     private val audioKeys = arrayOf("mp3", "m4a", "aac", "opus")
+    private val qualityOptions = arrayOf("360p", "720p", "1080p", "Best quality")
+    private val qualityKeys = arrayOf("360p", "720p", "1080p", "best_quality")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -70,16 +72,17 @@ class MayBoxSettingsActivity : AppCompatActivity() {
         }
 
         // 2. Default quality
-        val qualityOptions = arrayOf("360p", "720p", "1080p", "Best quality")
         findViewById<View>(R.id.settings_default_quality).setOnClickListener {
-            val current = prefs.getString(MayBoxPrefs.KEY_DEFAULT_QUALITY, MayBoxPrefs.DEFAULT_QUALITY)
-            val currentIndex = qualityOptions.indexOf(current).coerceAtLeast(0)
+            val currentKey = normalizeQualityKey(
+                prefs.getString(MayBoxPrefs.KEY_DEFAULT_QUALITY, MayBoxPrefs.DEFAULT_QUALITY)
+            )
+            val currentIndex = qualityKeys.indexOf(currentKey).coerceAtLeast(0)
             AlertDialog.Builder(this)
                 .setTitle("Default quality")
                 .setSingleChoiceItems(qualityOptions, currentIndex) { dialog, which ->
-                    val selected = qualityOptions[which]
-                    prefs.edit().putString(MayBoxPrefs.KEY_DEFAULT_QUALITY, selected).apply()
-                    qualityValue.text = selected
+                    val selectedKey = qualityKeys[which]
+                    prefs.edit().putString(MayBoxPrefs.KEY_DEFAULT_QUALITY, selectedKey).apply()
+                    qualityValue.text = qualityOptions[which]
                     dialog.dismiss()
                 }
                 .setNegativeButton("Cancel", null)
@@ -132,9 +135,11 @@ class MayBoxSettingsActivity : AppCompatActivity() {
 
         // Bottom nav
         findViewById<LinearLayout>(R.id.settings_nav_home).setOnClickListener {
-            startActivity(Intent(this, VDownHomeActivity::class.java).apply {
-                flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-            })
+            startActivity(
+                Intent(this, VDownHomeActivity::class.java).apply {
+                    flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+                }
+            )
             finish()
         }
         findViewById<LinearLayout>(R.id.settings_nav_library).setOnClickListener {
@@ -147,9 +152,11 @@ class MayBoxSettingsActivity : AppCompatActivity() {
     }
 
     private fun restoreSettings() {
-        val quality = prefs.getString(MayBoxPrefs.KEY_DEFAULT_QUALITY, MayBoxPrefs.DEFAULT_QUALITY)
-            ?: MayBoxPrefs.DEFAULT_QUALITY
-        qualityValue.text = quality
+        val qualityKey = normalizeQualityKey(
+            prefs.getString(MayBoxPrefs.KEY_DEFAULT_QUALITY, MayBoxPrefs.DEFAULT_QUALITY)
+        )
+        val qualityIndex = qualityKeys.indexOf(qualityKey).coerceAtLeast(0)
+        qualityValue.text = qualityOptions[qualityIndex]
 
         val audioKey = prefs.getString(MayBoxPrefs.KEY_DEFAULT_AUDIO, MayBoxPrefs.DEFAULT_AUDIO)
             ?: MayBoxPrefs.DEFAULT_AUDIO
@@ -160,5 +167,13 @@ class MayBoxSettingsActivity : AppCompatActivity() {
         simultaneousValue.text = simultaneous.toString()
 
         wifiSwitch.isChecked = prefs.getBoolean(MayBoxPrefs.KEY_WIFI_ONLY, MayBoxPrefs.DEFAULT_WIFI_ONLY)
+    }
+
+    private fun normalizeQualityKey(value: String?): String {
+        return when (value) {
+            "Best", "best", "Best quality", "best_quality" -> "best_quality"
+            "360p", "720p", "1080p" -> value
+            else -> MayBoxPrefs.DEFAULT_QUALITY
+        }
     }
 }

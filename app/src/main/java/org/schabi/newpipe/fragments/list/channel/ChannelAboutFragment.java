@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.evernote.android.state.State;
+import org.schabi.newpipe.util.savedstate.State;
 
 import org.schabi.newpipe.R;
 import org.schabi.newpipe.extractor.StreamingService;

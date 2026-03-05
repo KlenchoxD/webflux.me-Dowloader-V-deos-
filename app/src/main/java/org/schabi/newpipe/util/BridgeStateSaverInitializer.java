@@ -8,10 +8,11 @@ import android.view.View;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.evernote.android.state.StateSaver;
 import com.livefront.bridge.Bridge;
 import com.livefront.bridge.SavedStateHandler;
 import com.livefront.bridge.ViewSavedStateHandler;
+
+import org.schabi.newpipe.util.savedstate.SavedStateHandleStateSaver;
 
 /**
  * Configures Bridge's state saver.
@@ -26,14 +27,14 @@ public final class BridgeStateSaverInitializer {
                 public void saveInstanceState(
                     @NonNull final Object target,
                     @NonNull final Bundle state) {
-                    StateSaver.saveInstanceState(target, state);
+                    SavedStateHandleStateSaver.saveInstanceState(target, state);
                 }
 
                 @Override
                 public void restoreInstanceState(
                     @NonNull final Object target,
                     @Nullable final Bundle state) {
-                    StateSaver.restoreInstanceState(target, state);
+                    SavedStateHandleStateSaver.restoreInstanceState(target, state);
                 }
             },
             new ViewSavedStateHandler() {
@@ -42,7 +43,7 @@ public final class BridgeStateSaverInitializer {
                 public <T extends View> Parcelable saveInstanceState(
                     @NonNull final T target,
                     @Nullable final Parcelable parentState) {
-                    return StateSaver.saveInstanceState(target, parentState);
+                    return SavedStateHandleStateSaver.saveInstanceState(target, parentState);
                 }
 
                 @Nullable
@@ -50,7 +51,7 @@ public final class BridgeStateSaverInitializer {
                 public <T extends View> Parcelable restoreInstanceState(
                     @NonNull final T target,
                     @Nullable final Parcelable state) {
-                    return StateSaver.restoreInstanceState(target, state);
+                    return SavedStateHandleStateSaver.restoreInstanceState(target, state);
                 }
             }
         );
@@ -59,5 +60,4 @@ public final class BridgeStateSaverInitializer {
     private BridgeStateSaverInitializer() {
     }
 }
-
 

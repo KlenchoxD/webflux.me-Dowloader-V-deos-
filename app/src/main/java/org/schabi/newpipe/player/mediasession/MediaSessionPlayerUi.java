@@ -15,9 +15,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.media.session.MediaButtonReceiver;
 
-import com.google.android.exoplayer2.ForwardingPlayer;
-import com.google.android.exoplayer2.Player.RepeatMode;
-import com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector;
+import androidx.media3.common.ForwardingPlayer;
+import androidx.media3.common.Player.RepeatMode;
+import androidx.media3.session.MediaSessionConnector;
 
 import org.schabi.newpipe.R;
 import org.schabi.newpipe.extractor.stream.StreamInfo;

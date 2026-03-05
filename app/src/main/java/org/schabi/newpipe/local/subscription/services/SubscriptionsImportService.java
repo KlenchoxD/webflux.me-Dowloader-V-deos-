@@ -31,7 +31,6 @@ import android.util.Pair;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.core.content.IntentCompat;
-import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 
 import org.reactivestreams.Subscriber;
 import org.reactivestreams.Subscription;
@@ -70,8 +69,8 @@ public class SubscriptionsImportService extends BaseImportExportService {
     public static final String KEY_VALUE = "key_value";
 
     /**
-     * A {@link LocalBroadcastManager local broadcast} will be made with this action
-     * when the import is successfully completed.
+     * Kept for compatibility with existing intent-based integrations.
+     * Internally import completion now uses {@link SubscriptionServiceEvents}.
      */
     public static final String IMPORT_COMPLETE_ACTION = App.PACKAGE_NAME + ".local.subscription"
             + ".services.SubscriptionsImportService.IMPORT_COMPLETE";
@@ -257,8 +256,7 @@ public class SubscriptionsImportService extends BaseImportExportService {
 
             @Override
             public void onComplete() {
-                LocalBroadcastManager.getInstance(SubscriptionsImportService.this)
-                        .sendBroadcast(new Intent(IMPORT_COMPLETE_ACTION));
+                SubscriptionServiceEvents.emitImportCompleted();
                 showToast(R.string.import_complete_toast);
                 stopService();
             }
@@ -325,5 +323,4 @@ public class SubscriptionsImportService extends BaseImportExportService {
         super.handleError(R.string.subscriptions_import_unsuccessful, error);
     }
 }
-
 

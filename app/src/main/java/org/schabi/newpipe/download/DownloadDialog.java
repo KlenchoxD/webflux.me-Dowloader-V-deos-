@@ -38,7 +38,7 @@ import androidx.documentfile.provider.DocumentFile;
 import androidx.fragment.app.DialogFragment;
 import androidx.preference.PreferenceManager;
 
-import com.evernote.android.state.State;
+import org.schabi.newpipe.util.savedstate.State;
 import com.livefront.bridge.Bridge;
 import com.nononsenseapps.filepicker.Utils;
 

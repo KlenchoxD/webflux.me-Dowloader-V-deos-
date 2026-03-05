@@ -18,7 +18,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.evernote.android.state.State
 import com.livefront.bridge.Bridge
 import com.xwray.groupie.GroupieAdapter
 import com.xwray.groupie.OnItemClickListener
@@ -41,6 +40,7 @@ import org.schabi.newpipe.local.subscription.item.PickerIconItem
 import org.schabi.newpipe.local.subscription.item.PickerSubscriptionItem
 import org.schabi.newpipe.util.DeviceUtils
 import org.schabi.newpipe.util.ThemeHelper
+import org.schabi.newpipe.util.savedstate.State
 
 class FeedGroupDialog : DialogFragment(), BackPressable {
     private var _feedGroupCreateBinding: DialogFeedGroupCreateBinding? = null

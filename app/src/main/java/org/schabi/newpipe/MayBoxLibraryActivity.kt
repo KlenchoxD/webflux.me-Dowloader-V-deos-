@@ -87,7 +87,8 @@ class MayBoxLibraryActivity : AppCompatActivity() {
 
     private fun loadFiles() {
         val downloadDir = File(
-            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "MayBox"
+            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
+            "MayBox"
         )
         val files = if (downloadDir.exists()) {
             downloadDir.listFiles()
@@ -119,9 +120,11 @@ class MayBoxLibraryActivity : AppCompatActivity() {
 
     private fun setupBottomNav() {
         findViewById<LinearLayout>(R.id.library_nav_home).setOnClickListener {
-            startActivity(Intent(this, VDownHomeActivity::class.java).apply {
-                flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
-            })
+            startActivity(
+                Intent(this, VDownHomeActivity::class.java).apply {
+                    flags = Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_SINGLE_TOP
+                }
+            )
             finish()
         }
         findViewById<LinearLayout>(R.id.library_nav_library).setOnClickListener { /* already here */ }
@@ -132,7 +135,7 @@ class MayBoxLibraryActivity : AppCompatActivity() {
 
     private fun openFile(file: File) {
         try {
-            val uri = FileProvider.getUriForFile(this, "${packageName}.provider", file)
+            val uri = FileProvider.getUriForFile(this, "$packageName.provider", file)
             val intent = Intent(Intent.ACTION_VIEW).apply {
                 setDataAndType(uri, getMimeType(file.extension))
                 addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
@@ -197,7 +200,7 @@ class MayBoxLibraryActivity : AppCompatActivity() {
                 AlertDialog.Builder(this@MayBoxLibraryActivity)
                     .setTitle("Delete ${file.name}?")
                     .setPositiveButton("Delete") { _, _ ->
-                        val pos = holder.adapterPosition
+                        val pos = holder.bindingAdapterPosition
                         if (pos != RecyclerView.NO_POSITION) {
                             file.delete()
                             files.removeAt(pos)

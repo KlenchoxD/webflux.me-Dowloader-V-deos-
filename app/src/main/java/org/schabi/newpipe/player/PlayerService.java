@@ -33,7 +33,7 @@ import androidx.annotation.Nullable;
 import androidx.core.app.ServiceCompat;
 import androidx.media.MediaBrowserServiceCompat;
 
-import com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector;
+import androidx.media3.session.MediaSessionConnector;
 
 import org.schabi.newpipe.ktx.BundleKt;
 import org.schabi.newpipe.player.mediabrowser.MediaBrowserImpl;

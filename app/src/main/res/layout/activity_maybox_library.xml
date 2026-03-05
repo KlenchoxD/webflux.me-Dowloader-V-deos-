@@ -1,89 +1,149 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="#080808">
+    android:background="@color/colorBackground">
 
     <!-- HEADER -->
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:paddingHorizontal="16dp"
-        android:paddingVertical="12dp"
-        android:gravity="center_vertical">
+        android:padding="20dp">
 
-        <FrameLayout
+        <com.google.android.material.card.MaterialCardView
             android:id="@+id/library_back_btn"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:background="@drawable/maybox_empty_state_bg">
+            android:layout_alignParentStart="true"
+            app:cardCornerRadius="20dp"
+            app:cardBackgroundColor="@color/colorSurface"
+            app:cardElevation="0dp"
+            app:strokeWidth="1dp"
+            app:strokeColor="@color/colorDivider">
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:layout_gravity="center"
                 android:src="@drawable/ic_arrow_back"
-                android:tint="#F1F5F9"
-                android:contentDescription="@null"/>
-        </FrameLayout>
+                app:tint="@color/colorOnSurface" />
+        </com.google.android.material.card.MaterialCardView>
 
         <TextView
-            android:layout_width="0dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
+            android:layout_centerInParent="true"
             android:text="Downloads"
-            android:textSize="18sp"
+            android:textSize="20sp"
             android:textStyle="bold"
-            android:textColor="#F1F5F9"
-            android:gravity="center"/>
+            android:textColor="@color/colorOnSurface" />
+    </RelativeLayout>
 
-        <View
-            android:layout_width="40dp"
-            android:layout_height="40dp"/>
-
-    </LinearLayout>
-
-    <!-- TAB BAR -->
+    <!-- TAB BAR (Custom Styled) -->
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="64dp"
         android:orientation="horizontal"
-        android:background="@drawable/maybox_card_bg"
-        android:paddingHorizontal="8dp">
+        android:background="@color/colorBackground"
+        android:paddingHorizontal="16dp">
 
-        <TextView
-            android:id="@+id/library_tab_history"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="44dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="History"
-            android:textSize="13sp"
-            android:textStyle="bold"
-            android:textColor="#E60A15"/>
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/library_tab_history"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="History"
+                android:textAllCaps="true"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorPrimary"
+                android:letterSpacing="0.05"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"/>
+            <!-- Indicator for active state (controlled by Logic or simple horizontal line) -->
+            <View
+                android:id="@+id/indicator_history"
+                android:layout_width="40dp"
+                android:layout_height="3dp"
+                android:background="@color/colorPrimary" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/library_tab_active"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="44dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="Active"
-            android:textSize="13sp"
-            android:textColor="#64748B"/>
+            android:orientation="vertical"
+            android:gravity="center">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/library_tab_active"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="Active"
+                    android:textAllCaps="true"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    android:textColor="#666666"
+                    android:letterSpacing="0.05"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"/>
+                <!-- Badge for active (placeholder - logic may already update text) -->
+            </RelativeLayout>
+            <View
+                android:id="@+id/indicator_active"
+                android:layout_width="40dp"
+                android:layout_height="3dp"
+                android:background="@android:color/transparent" />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/library_tab_scheduled"
+        <LinearLayout
             android:layout_width="0dp"
-            android:layout_height="44dp"
+            android:layout_height="match_parent"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="Scheduled"
-            android:textSize="13sp"
-            android:textColor="#64748B"/>
+            android:orientation="vertical"
+            android:gravity="center">
+            <TextView
+                android:id="@+id/library_tab_scheduled"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="Scheduled"
+                android:textAllCaps="true"
+                android:textSize="13sp"
+                android:textStyle="bold"
+                android:textColor="#666666"
+                android:letterSpacing="0.05"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"/>
+            <View
+                android:id="@+id/indicator_scheduled"
+                android:layout_width="40dp"
+                android:layout_height="3dp"
+                android:background="@android:color/transparent" />
+        </LinearLayout>
 
     </LinearLayout>
+    
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/colorDivider" />
 
     <!-- CONTENT AREA -->
     <FrameLayout
@@ -96,169 +156,180 @@
             android:id="@+id/library_recycler"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="8dp"
+            android:paddingTop="12dp"
             android:clipToPadding="false"
-            android:visibility="gone"/>
+            android:visibility="visible"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
         <!-- EMPTY STATE -->
         <LinearLayout
             android:id="@+id/library_empty_state"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center"
             android:padding="32dp"
             android:visibility="gone">
 
-            <ImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:src="@drawable/ic_file_download"
-                android:tint="#64748B"
-                android:contentDescription="@null"/>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:cardCornerRadius="40dp"
+                app:cardBackgroundColor="@color/colorSurface"
+                app:cardElevation="0dp">
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_file_download"
+                    app:tint="@color/colorOnSurfaceVariant" />
+            </com.google.android.material.card.MaterialCardView>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:text="No downloads yet"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#64748B"/>
+                android:textColor="@color/colorOnSurface" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="4dp"
-                android:text="Downloaded videos will appear here"
-                android:textSize="12sp"
-                android:textColor="#475569"
-                android:gravity="center"/>
-
+                android:layout_marginTop="8dp"
+                android:text="Downloaded videos will appear here\nfor offline collection"
+                android:textSize="14sp"
+                android:textColor="@color/colorOnSurfaceVariant"
+                android:gravity="center" />
         </LinearLayout>
 
         <!-- PLACEHOLDER (Active/Scheduled) -->
         <LinearLayout
             android:id="@+id/library_placeholder"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:orientation="vertical"
             android:gravity="center"
             android:padding="32dp"
             android:visibility="gone">
 
-            <ImageView
-                android:layout_width="64dp"
-                android:layout_height="64dp"
-                android:src="@drawable/ic_hourglass_top"
-                android:tint="#64748B"
-                android:contentDescription="@null"/>
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                app:cardCornerRadius="40dp"
+                app:cardBackgroundColor="@color/colorSurface"
+                app:cardElevation="0dp">
+                <ImageView
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_hourglass_top"
+                    app:tint="@color/colorOnSurfaceVariant" />
+            </com.google.android.material.card.MaterialCardView>
 
             <TextView
                 android:id="@+id/library_placeholder_text"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="24dp"
                 android:text="No active downloads"
-                android:textSize="16sp"
+                android:textSize="18sp"
                 android:textStyle="bold"
-                android:textColor="#64748B"/>
-
+                android:textColor="@color/colorOnSurface" />
         </LinearLayout>
 
     </FrameLayout>
 
-    <!-- BOTTOM NAV -->
-    <LinearLayout
+    <!-- NAVIGATION BAR -->
+    <com.google.android.material.card.MaterialCardView
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:orientation="horizontal"
-        android:background="@drawable/maybox_nav_bg"
-        android:paddingTop="1dp">
+        android:layout_height="72dp"
+        app:cardBackgroundColor="@color/colorSurface"
+        app:cardCornerRadius="0dp"
+        app:cardElevation="16dp"
+        app:strokeWidth="1dp"
+        app:strokeColor="@color/colorDivider">
 
-        <!-- HOME (inactive) -->
         <LinearLayout
-            android:id="@+id/library_nav_home"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:background="?android:attr/selectableItemBackground">
+            android:orientation="horizontal">
 
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_home"
-                android:tint="#64748B"
-                android:contentDescription="@null"/>
+            <LinearLayout
+                android:id="@+id/library_nav_home"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_home"
+                    app:tint="@color/colorOnSurfaceVariant" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Home"
+                    android:textSize="11sp"
+                    android:textColor="@color/colorOnSurfaceVariant" />
+            </LinearLayout>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="Home"
-                android:textSize="10sp"
-                android:textColor="#64748B"/>
+            <LinearLayout
+                android:id="@+id/library_nav_library"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_file_download"
+                    app:tint="@color/colorPrimary" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="Library"
+                    android:textSize="11sp"
+                    android:textColor="@color/colorPrimary"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/library_nav_more"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="center"
+                android:background="?android:attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true">
+                <ImageView
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@drawable/ic_settings"
+                    app:tint="@color/colorOnSurfaceVariant" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="More"
+                    android:textSize="11sp"
+                    android:textColor="@color/colorOnSurfaceVariant" />
+            </LinearLayout>
 
         </LinearLayout>
-
-        <!-- LIBRARY (active) -->
-        <LinearLayout
-            android:id="@+id/library_nav_library"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:background="?android:attr/selectableItemBackground">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_file_download"
-                android:tint="#E60A15"
-                android:contentDescription="@null"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="Library"
-                android:textSize="10sp"
-                android:textColor="#E60A15"/>
-
-        </LinearLayout>
-
-        <!-- MORE (inactive) -->
-        <LinearLayout
-            android:id="@+id/library_nav_more"
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="vertical"
-            android:gravity="center"
-            android:background="?android:attr/selectableItemBackground">
-
-            <ImageView
-                android:layout_width="24dp"
-                android:layout_height="24dp"
-                android:src="@drawable/ic_settings"
-                android:tint="#64748B"
-                android:contentDescription="@null"/>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="2dp"
-                android:text="More"
-                android:textSize="10sp"
-                android:textColor="#64748B"/>
-
-        </LinearLayout>
-
-    </LinearLayout>
+    </com.google.android.material.card.MaterialCardView>
 
 </LinearLayout>

@@ -8,6 +8,7 @@ import android.content.Context
 import android.content.Intent
 import android.media.MediaScannerConnection
 import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Build
 import android.os.Environment
 import android.os.IBinder
@@ -15,9 +16,9 @@ import android.util.Log
 import androidx.core.app.NotificationCompat
 import com.yausername.youtubedl_android.YoutubeDL
 import com.yausername.youtubedl_android.YoutubeDLRequest
+import java.io.File
 import org.schabi.newpipe.MayBoxPrefs
 import org.schabi.newpipe.R
-import java.io.File
 
 /**
  * Foreground service that runs yt-dlp downloads in the background,
@@ -49,12 +50,17 @@ class MayBoxDownloadService : Service() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         if (intent?.action == ACTION_CANCEL) {
-            try { YoutubeDL.getInstance().destroyProcessById(PROCESS_ID) } catch (e: Exception) {}
+            try {
+                YoutubeDL.getInstance().destroyProcessById(PROCESS_ID)
+            } catch (e: Exception) {}
             stopSelf()
             return START_NOT_STICKY
         }
 
-        val url = intent?.getStringExtra(EXTRA_URL) ?: run { stopSelf(); return START_NOT_STICKY }
+        val url = intent?.getStringExtra(EXTRA_URL) ?: run {
+            stopSelf()
+            return START_NOT_STICKY
+        }
         val formatFlags = intent.getStringArrayListExtra(EXTRA_FORMAT_FLAGS)
 
         // Start foreground immediately with an indeterminate notification
@@ -71,12 +77,12 @@ class MayBoxDownloadService : Service() {
         val prefs = applicationContext.getSharedPreferences(MayBoxPrefs.PREFS_NAME, Context.MODE_PRIVATE)
         val wifiOnly = prefs.getBoolean(MayBoxPrefs.KEY_WIFI_ONLY, false)
         if (wifiOnly) {
-            @Suppress("DEPRECATION")
             val cm = getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-            @Suppress("DEPRECATION")
-            val activeNetwork = cm.activeNetworkInfo
-            @Suppress("DEPRECATION")
-            if (activeNetwork == null || activeNetwork.type != ConnectivityManager.TYPE_WIFI) {
+            val network = cm.activeNetwork
+            val caps = if (network != null) cm.getNetworkCapabilities(network) else null
+            val isWifi = caps?.hasCapability(NetworkCapabilities.NET_CAPABILITY_NOT_METERED) == true
+
+            if (!isWifi) {
                 stopForeground(STOP_FOREGROUND_REMOVE)
                 notifManager.notify(NOTIF_ID_COMPLETE, buildErrorNotification("WiFi not available. Enable WiFi or disable WiFi-only setting."))
                 stopSelf()
@@ -85,51 +91,13 @@ class MayBoxDownloadService : Service() {
         }
 
         val downloadDir = File(
-            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS), "MayBox"
+            Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
+            "MayBox"
         )
         if (!downloadDir.exists()) downloadDir.mkdirs()
 
-        val request = YoutubeDLRequest(url).apply {
-            addOption("-o", "${downloadDir.absolutePath}/%(title)s.%(ext)s")
-            if (formatFlags != null && formatFlags.isNotEmpty()) {
-                val iter = formatFlags.listIterator()
-                while (iter.hasNext()) {
-                    val flag = iter.next()
-                    val nextIdx = iter.nextIndex()
-                    if (nextIdx < formatFlags.size && !formatFlags[nextIdx].startsWith("-")) {
-                        addOption(flag, iter.next())
-                    } else {
-                        addOption(flag)
-                    }
-                }
-            } else {
-                addOption("-f", "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best")
-            }
-            addOption("--no-mtime")
-            addOption("--no-playlist")
-            addOption("--concurrent-fragments", "4")
-            addOption("--no-check-certificates")
-            addOption("--no-part")
-            addOption("--buffer-size", "16K")
-            addOption("--retries", "3")
-            addOption("--fragment-retries", "3")
-        }
-
         try {
-            YoutubeDL.getInstance().execute(request, PROCESS_ID) { progress, bytesPerSecond, line ->
-                val speedMb = bytesPerSecond / (1024f * 1024f)
-                val speedText = if (speedMb > 0) "%.1f MB/s".format(speedMb) else ""
-                val contentText = when {
-                    progress > 0f && speedText.isNotEmpty() -> "%.0f%% • %s".format(progress, speedText)
-                    progress > 0f -> "%.0f%%".format(progress)
-                    else -> "Starting..."
-                }
-                notifManager.notify(
-                    NOTIF_ID_PROGRESS,
-                    buildProgressNotification("Downloading...", contentText, progress.toInt(), progress <= 0f)
-                )
-                Log.d(TAG, "progress=$progress line=$line")
-            }
+            executeWithFallback(url, downloadDir, formatFlags)
             // Success
             scanDownloadFolder(downloadDir)
             val newestFile = downloadDir.listFiles()
@@ -141,9 +109,122 @@ class MayBoxDownloadService : Service() {
         } catch (e: Exception) {
             Log.e(TAG, "Download error", e)
             stopForeground(STOP_FOREGROUND_REMOVE)
-            notifManager.notify(NOTIF_ID_COMPLETE, buildErrorNotification(e.message))
+            notifManager.notify(NOTIF_ID_COMPLETE, buildErrorNotification(parseYtDlpError(e.message)))
         } finally {
             stopSelf()
+        }
+    }
+
+    private fun executeWithFallback(
+        url: String,
+        downloadDir: File,
+        formatFlags: List<String>?
+    ) {
+        if (!formatFlags.isNullOrEmpty()) {
+            executeRequest(buildRequest(url, downloadDir, formatFlags = formatFlags))
+            return
+        }
+
+        try {
+            executeRequest(
+                buildRequest(
+                    url,
+                    downloadDir,
+                    formatOverride = listOf("-f", "bestvideo+bestaudio/best")
+                )
+            )
+            return
+        } catch (firstError: Exception) {
+            if (!isNoVideoInPostError(firstError.message)) {
+                throw firstError
+            }
+            Log.w(TAG, "No video stream found, retrying with audio fallback", firstError)
+        }
+
+        try {
+            executeRequest(
+                buildRequest(
+                    url,
+                    downloadDir,
+                    formatOverride = listOf("-f", "bestaudio/best")
+                )
+            )
+            return
+        } catch (secondError: Exception) {
+            Log.w(TAG, "Audio fallback failed, retrying without explicit format", secondError)
+        }
+
+        executeRequest(buildRequest(url, downloadDir, formatOverride = emptyList()))
+    }
+
+    private fun executeRequest(request: YoutubeDLRequest) {
+        YoutubeDL.getInstance().execute(request, PROCESS_ID) { progress, bytesPerSecond, line ->
+            val speedMb = bytesPerSecond / (1024f * 1024f)
+            val speedText = if (speedMb > 0) "%.1f MB/s".format(speedMb) else ""
+            val contentText = when {
+                progress > 0f && speedText.isNotEmpty() -> "%.0f%% • %s".format(progress, speedText)
+                progress > 0f -> "%.0f%%".format(progress)
+                else -> "Starting..."
+            }
+            notifManager.notify(
+                NOTIF_ID_PROGRESS,
+                buildProgressNotification("Downloading...", contentText, progress.toInt(), progress <= 0f)
+            )
+            Log.d(TAG, "progress=$progress line=$line")
+        }
+    }
+
+    private fun buildRequest(
+        url: String,
+        downloadDir: File,
+        formatFlags: List<String>? = null,
+        formatOverride: List<String>? = null
+    ): YoutubeDLRequest {
+        val cleanUrl = extractUrl(url) ?: url
+        return YoutubeDLRequest(cleanUrl).apply {
+            addOption("-o", "${downloadDir.absolutePath}/%(title)s.%(ext)s")
+
+            when {
+                formatOverride != null && formatOverride.isNotEmpty() -> {
+                    addFlags(this, formatOverride)
+                }
+
+                !formatFlags.isNullOrEmpty() -> {
+                    addFlags(this, formatFlags)
+                }
+            }
+
+            addOption("--no-mtime")
+            if (!isCarouselUrl(cleanUrl)) {
+                addOption("--no-playlist")
+            }
+            val prefs = applicationContext.getSharedPreferences(
+                MayBoxPrefs.PREFS_NAME,
+                Context.MODE_PRIVATE
+            )
+            val fragments = prefs.getInt(
+                MayBoxPrefs.KEY_SIMULTANEOUS,
+                MayBoxPrefs.DEFAULT_SIMULTANEOUS
+            )
+            addOption("--concurrent-fragments", fragments.toString())
+            addOption("--no-check-certificates")
+            addOption("--no-part")
+            addOption("--buffer-size", "16K")
+            addOption("--retries", "3")
+            addOption("--fragment-retries", "3")
+        }
+    }
+
+    private fun addFlags(request: YoutubeDLRequest, flags: List<String>) {
+        val iter = flags.listIterator()
+        while (iter.hasNext()) {
+            val flag = iter.next()
+            val nextIdx = iter.nextIndex()
+            if (nextIdx < flags.size && !flags[nextIdx].startsWith("-")) {
+                request.addOption(flag, iter.next())
+            } else {
+                request.addOption(flag)
+            }
         }
     }
 
@@ -152,7 +233,9 @@ class MayBoxDownloadService : Service() {
             action = ACTION_CANCEL
         }
         val cancelPending = PendingIntent.getService(
-            this, 0, cancelIntent,
+            this,
+            0,
+            cancelIntent,
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
@@ -179,7 +262,7 @@ class MayBoxDownloadService : Service() {
             try {
                 val uri = androidx.core.content.FileProvider.getUriForFile(
                     this,
-                    "${packageName}.provider",
+                    "$packageName.provider",
                     file
                 )
                 val mimeType = when (file.extension.lowercase()) {
@@ -192,7 +275,9 @@ class MayBoxDownloadService : Service() {
                     addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION)
                 }
                 val pendingIntent = PendingIntent.getActivity(
-                    this, 0, openIntent,
+                    this,
+                    0,
+                    openIntent,
                     PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
                 )
                 builder.setContentIntent(pendingIntent)
@@ -221,8 +306,6 @@ class MayBoxDownloadService : Service() {
                 NotificationManager.IMPORTANCE_LOW
             ).apply {
                 description = "Shows progress for MayBox yt-dlp downloads"
-                vibrationPattern = longArrayOf(0, 250, 100, 250)
-                enableVibration(true)
             }
             notifManager.createNotificationChannel(channel)
         }
