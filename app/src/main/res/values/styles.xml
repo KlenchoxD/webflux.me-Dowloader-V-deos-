@@ -35,8 +35,8 @@
         <item name="android:textStyle">bold</item>
     </style>
 
-    <!-- MayBox Dark Theme for Home screen (no ActionBar) -->
-    <style name="MayBoxDarkTheme" parent="DarkTheme">
+    <!-- ✅ MayBox Dark Theme para Home — hereda de MaterialComponents para soportar MaterialCardView -->
+    <style name="MayBoxDarkTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowBackground">@color/maybox_background</item>
         <item name="windowBackground">@color/maybox_background</item>
         <item name="android:statusBarColor">@color/maybox_background</item>
@@ -47,8 +47,8 @@
         <item name="actionColor">@color/maybox_primary</item>
     </style>
 
-    <!-- MayBox Dark Theme with ActionBar for Library/Settings screens -->
-    <style name="MayBoxDarkTheme.ActionBar" parent="DarkTheme">
+    <!-- ✅ MayBox Dark Theme con ActionBar para Library/Settings — hereda de MaterialComponents -->
+    <style name="MayBoxDarkTheme.ActionBar" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <item name="android:windowBackground">@color/maybox_background</item>
         <item name="windowBackground">@color/maybox_background</item>
         <item name="android:statusBarColor">@color/maybox_background</item>
@@ -239,5 +239,3 @@
     <style name="RouterActivityThemeDark" parent="Base.RouterActivityThemeDark" />
 
 </resources>
-
-
