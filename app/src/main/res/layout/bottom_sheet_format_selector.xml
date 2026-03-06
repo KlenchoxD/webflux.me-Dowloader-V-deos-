@@ -466,6 +466,69 @@
 
             </LinearLayout>
 
+            <!-- ✅ Best Quality option — NUEVO (ERROR 3 corregido) -->
+            <LinearLayout
+                android:id="@+id/bs_option_best_quality"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:layout_marginHorizontal="4dp"
+                android:layout_marginVertical="3dp"
+                android:paddingHorizontal="16dp"
+                android:paddingVertical="16dp"
+                android:background="@drawable/maybox_option_row_bg"
+                android:foreground="?android:attr/selectableItemBackground">
+
+                <FrameLayout
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/maybox_icon_badge_red">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_gravity="center"
+                        android:src="@drawable/ic_star"
+                        android:tint="#E60A15"/>
+
+                </FrameLayout>
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical"
+                    android:layout_marginStart="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Best Quality"
+                        android:textSize="15sp"
+                        android:textStyle="bold"
+                        android:textColor="#F1F5F9"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Max resolution • bestvideo+bestaudio"
+                        android:textSize="12sp"
+                        android:textColor="#94A3B8"/>
+
+                </LinearLayout>
+
+                <RadioButton
+                    android:id="@+id/radio_best_quality"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:button="@drawable/maybox_radio_selector"
+                    android:clickable="false"
+                    android:focusable="false"
+                    android:checked="false"/>
+
+            </LinearLayout>
+
             <!-- More formats text button -->
             <TextView
                 android:id="@+id/bs_more_formats"
