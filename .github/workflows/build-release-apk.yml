@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v6
         with:
-          ref: 'master'
+          ref: 'main'
 
       - uses: actions/setup-java@v5
         with:
