@@ -95,10 +95,7 @@ configure<ApplicationExtension> {
         buildConfig = true
         resValues = true
     }
-    dexOptions {
-        javaMaxHeapSize = "2g"
-    }
-    packaging {
+       packaging {
         jniLibs {
             useLegacyPackaging = true
             keepDebugSymbols.add("**/*.so")
