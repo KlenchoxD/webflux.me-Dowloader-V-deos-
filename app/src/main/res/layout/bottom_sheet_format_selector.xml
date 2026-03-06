@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@drawable/maybox_bottom_sheet_bg">
+    android:background="@drawable/vdown_bottom_sheet_bg">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -17,7 +16,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- Handle bar — sin margen extra arriba -->
+            <!-- Handle bar -->
             <View
                 android:layout_width="40dp"
                 android:layout_height="4dp"
@@ -54,14 +53,12 @@
                     android:layout_width="52dp"
                     android:layout_height="52dp"
                     android:background="@drawable/vdown_thumbnail_bg">
-
                     <ImageView
                         android:layout_width="22dp"
                         android:layout_height="22dp"
                         android:layout_gravity="center"
                         android:src="@drawable/ic_play_arrow"
                         android:tint="#FFFFFF"/>
-
                 </FrameLayout>
 
                 <LinearLayout
@@ -70,7 +67,6 @@
                     android:layout_weight="1"
                     android:orientation="vertical"
                     android:layout_marginStart="12dp">
-
                     <TextView
                         android:id="@+id/bs_title_preview"
                         android:layout_width="match_parent"
@@ -81,7 +77,6 @@
                         android:textColor="#F1F5F9"
                         android:maxLines="1"
                         android:ellipsize="end"/>
-
                     <TextView
                         android:id="@+id/bs_url_preview"
                         android:layout_width="match_parent"
@@ -91,7 +86,6 @@
                         android:textColor="#94A3B8"
                         android:maxLines="1"
                         android:ellipsize="middle"/>
-
                 </LinearLayout>
 
             </LinearLayout>
@@ -105,13 +99,11 @@
                 android:paddingHorizontal="20dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="6dp">
-
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
                     android:src="@drawable/ic_music_note"
                     android:tint="#E60A15"/>
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -120,7 +112,6 @@
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:textColor="#F1F5F9"/>
-
             </LinearLayout>
 
             <!-- M4A -->
@@ -136,7 +127,6 @@
                 android:paddingVertical="12dp"
                 android:background="@drawable/maybox_option_row_bg"
                 android:foreground="?android:attr/selectableItemBackground">
-
                 <FrameLayout
                     android:layout_width="38dp"
                     android:layout_height="38dp"
@@ -148,7 +138,6 @@
                         android:src="@drawable/ic_file_download"
                         android:tint="#E60A15"/>
                 </FrameLayout>
-
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -169,7 +158,6 @@
                         android:textSize="12sp"
                         android:textColor="#94A3B8"/>
                 </LinearLayout>
-
                 <RadioButton
                     android:id="@+id/bs_radio_m4a"
                     android:layout_width="24dp"
@@ -177,7 +165,6 @@
                     android:button="@drawable/maybox_radio_selector"
                     android:clickable="false"
                     android:focusable="false"/>
-
             </LinearLayout>
 
             <!-- MP3 -->
@@ -193,7 +180,6 @@
                 android:paddingVertical="12dp"
                 android:background="@drawable/maybox_option_row_bg"
                 android:foreground="?android:attr/selectableItemBackground">
-
                 <FrameLayout
                     android:layout_width="38dp"
                     android:layout_height="38dp"
@@ -205,7 +191,6 @@
                         android:src="@drawable/ic_music_note"
                         android:tint="#94A3B8"/>
                 </FrameLayout>
-
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -226,7 +211,6 @@
                         android:textSize="12sp"
                         android:textColor="#94A3B8"/>
                 </LinearLayout>
-
                 <RadioButton
                     android:id="@+id/bs_radio_mp3"
                     android:layout_width="24dp"
@@ -234,7 +218,6 @@
                     android:button="@drawable/maybox_radio_selector"
                     android:clickable="false"
                     android:focusable="false"/>
-
             </LinearLayout>
 
             <!-- Video Section -->
@@ -246,13 +229,11 @@
                 android:paddingHorizontal="20dp"
                 android:paddingTop="12dp"
                 android:paddingBottom="6dp">
-
                 <ImageView
                     android:layout_width="18dp"
                     android:layout_height="18dp"
                     android:src="@drawable/ic_play_arrow"
                     android:tint="#E60A15"/>
-
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -261,7 +242,6 @@
                     android:textSize="15sp"
                     android:textStyle="bold"
                     android:textColor="#F1F5F9"/>
-
             </LinearLayout>
 
             <!-- 360p -->
@@ -277,7 +257,6 @@
                 android:paddingVertical="12dp"
                 android:background="@drawable/maybox_option_row_bg"
                 android:foreground="?android:attr/selectableItemBackground">
-
                 <FrameLayout
                     android:layout_width="38dp"
                     android:layout_height="38dp"
@@ -289,7 +268,6 @@
                         android:src="@drawable/ic_file_download"
                         android:tint="#94A3B8"/>
                 </FrameLayout>
-
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -310,7 +288,6 @@
                         android:textSize="12sp"
                         android:textColor="#94A3B8"/>
                 </LinearLayout>
-
                 <RadioButton
                     android:id="@+id/bs_radio_360p"
                     android:layout_width="24dp"
@@ -318,7 +295,6 @@
                     android:button="@drawable/maybox_radio_selector"
                     android:clickable="false"
                     android:focusable="false"/>
-
             </LinearLayout>
 
             <!-- 720p -->
@@ -334,7 +310,6 @@
                 android:paddingVertical="12dp"
                 android:background="@drawable/maybox_option_row_bg"
                 android:foreground="?android:attr/selectableItemBackground">
-
                 <FrameLayout
                     android:layout_width="38dp"
                     android:layout_height="38dp"
@@ -346,7 +321,6 @@
                         android:src="@drawable/ic_play_arrow"
                         android:tint="#94A3B8"/>
                 </FrameLayout>
-
                 <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
@@ -367,7 +341,6 @@
                         android:textSize="12sp"
                         android:textColor="#94A3B8"/>
                 </LinearLayout>
-
                 <RadioButton
                     android:id="@+id/bs_radio_720p"
                     android:layout_width="24dp"
@@ -376,7 +349,6 @@
                     android:clickable="false"
                     android:focusable="false"
                     android:checked="true"/>
-
             </LinearLayout>
 
             <!-- More formats toggle -->
@@ -392,7 +364,6 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:foreground="?android:attr/selectableItemBackgroundBorderless">
-
                 <TextView
                     android:id="@+id/bs_more_formats_text"
                     android:layout_width="wrap_content"
@@ -400,7 +371,6 @@
                     android:text="More formats"
                     android:textSize="13sp"
                     android:textColor="#94A3B8"/>
-
                 <ImageView
                     android:id="@+id/bs_more_formats_arrow"
                     android:layout_width="18dp"
@@ -409,10 +379,9 @@
                     android:src="@drawable/ic_arrow_forward"
                     android:rotation="90"
                     android:tint="#94A3B8"/>
-
             </LinearLayout>
 
-            <!-- Contenedor expandible: 1080p + Best Quality — GONE por defecto -->
+            <!-- Expandible: 1080p + Best Quality -->
             <LinearLayout
                 android:id="@+id/bs_extra_formats_container"
                 android:layout_width="match_parent"
@@ -433,7 +402,6 @@
                     android:paddingVertical="12dp"
                     android:background="@drawable/maybox_option_row_bg"
                     android:foreground="?android:attr/selectableItemBackground">
-
                     <FrameLayout
                         android:layout_width="38dp"
                         android:layout_height="38dp"
@@ -445,7 +413,6 @@
                             android:src="@drawable/ic_play_arrow"
                             android:tint="#94A3B8"/>
                     </FrameLayout>
-
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -466,7 +433,6 @@
                             android:textSize="12sp"
                             android:textColor="#94A3B8"/>
                     </LinearLayout>
-
                     <RadioButton
                         android:id="@+id/bs_radio_1080p"
                         android:layout_width="24dp"
@@ -474,7 +440,6 @@
                         android:button="@drawable/maybox_radio_selector"
                         android:clickable="false"
                         android:focusable="false"/>
-
                 </LinearLayout>
 
                 <!-- Best Quality -->
@@ -490,7 +455,6 @@
                     android:paddingVertical="12dp"
                     android:background="@drawable/maybox_option_row_bg"
                     android:foreground="?android:attr/selectableItemBackground">
-
                     <FrameLayout
                         android:layout_width="38dp"
                         android:layout_height="38dp"
@@ -502,7 +466,6 @@
                             android:src="@drawable/ic_star"
                             android:tint="#E60A15"/>
                     </FrameLayout>
-
                     <LinearLayout
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
@@ -523,7 +486,6 @@
                             android:textSize="12sp"
                             android:textColor="#94A3B8"/>
                     </LinearLayout>
-
                     <RadioButton
                         android:id="@+id/radio_best_quality"
                         android:layout_width="24dp"
@@ -531,7 +493,6 @@
                         android:button="@drawable/maybox_radio_selector"
                         android:clickable="false"
                         android:focusable="false"/>
-
                 </LinearLayout>
 
             </LinearLayout>
@@ -551,7 +512,8 @@
             android:layout_height="match_parent"
             android:background="@drawable/vdown_bottom_gradient_fade"/>
 
-        <com.google.android.material.button.MaterialButton
+        <!-- ✅ Button normal — no requiere Theme.MaterialComponents -->
+        <Button
             android:id="@+id/bs_download_btn"
             android:layout_width="match_parent"
             android:layout_height="52dp"
@@ -565,11 +527,7 @@
             android:letterSpacing="0.05"
             android:elevation="0dp"
             android:stateListAnimator="@null"
-            app:backgroundTint="#E53935"
-            app:cornerRadius="26dp"
-            app:icon="@drawable/ic_file_download"
-            app:iconTint="#FFFFFF"
-            app:iconGravity="textStart"/>
+            android:backgroundTint="#E53935"/>
 
     </FrameLayout>
 
