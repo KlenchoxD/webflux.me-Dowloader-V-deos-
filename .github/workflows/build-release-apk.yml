@@ -23,18 +23,24 @@ jobs:
           KEYSTORE_PASSWORD: ${{ secrets.KEYSTORE_PASSWORD }}
           KEY_ALIAS: ${{ secrets.KEY_ALIAS }}
           KEY_PASSWORD: ${{ secrets.KEY_PASSWORD }}
-      - name: "Sign APK"
+      - name: "Sign and align APK"
         run: |
-          jarsigner -verbose \
-            -sigalg SHA256withRSA \
-            -digestalg SHA-256 \
-            -keystore app/vdown.jks \
-            -storepass ${{ secrets.KEYSTORE_PASSWORD }} \
-            -keypass ${{ secrets.KEY_PASSWORD }} \
+          BUILD_TOOLS=${ANDROID_HOME}/build-tools/$(ls ${ANDROID_HOME}/build-tools | tail -1)
+
+          # Zipalign primero (requerido por Android)
+          ${BUILD_TOOLS}/zipalign -v 4 \
             app/build/outputs/apk/release/app-release-unsigned.apk \
-            ${{ secrets.KEY_ALIAS }}
-          mv app/build/outputs/apk/release/app-release-unsigned.apk \
-             app/build/outputs/apk/release/MayBox-signed.apk
+            app/build/outputs/apk/release/app-release-aligned.apk
+
+          # Firmar con apksigner (correcto para Android moderno)
+          ${BUILD_TOOLS}/apksigner sign \
+            --ks app/vdown.jks \
+            --ks-pass pass:${{ secrets.KEYSTORE_PASSWORD }} \
+            --key-pass pass:${{ secrets.KEY_PASSWORD }} \
+            --ks-key-alias ${{ secrets.KEY_ALIAS }} \
+            --out app/build/outputs/apk/release/MayBox-signed.apk \
+            app/build/outputs/apk/release/app-release-aligned.apk
+
       - name: "Upload APK"
         uses: actions/upload-artifact@v4
         with:
