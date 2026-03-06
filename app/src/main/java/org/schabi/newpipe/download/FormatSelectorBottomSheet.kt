@@ -162,7 +162,7 @@ class FormatSelectorBottomSheet : BottomSheetDialogFragment() {
 
         selectFormat(defaultFormat)
 
-        view.findViewById<com.google.android.material.button.MaterialButton>(R.id.bs_download_btn)
+        view.findViewById<android.widget.Button>(R.id.bs_download_btn)
             .setOnClickListener { startDownload() }
     }
 
