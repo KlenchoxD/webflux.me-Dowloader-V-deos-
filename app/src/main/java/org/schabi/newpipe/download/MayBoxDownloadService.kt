@@ -33,6 +33,8 @@ class MayBoxDownloadService : Service() {
         private const val PROCESS_ID = "maybox_svc_dl"
 
         const val ACTION_CANCEL = "org.schabi.newpipe.download.CANCEL_DOWNLOAD"
+private val activeDownloads = mutableSetOf<String>()
+        fun getActiveDownloads(): Set<String> = activeDownloads.toSet()
 
         // Descargas activas — visible desde MayBoxLibraryActivity
         private val activeDownloads = mutableSetOf<String>()

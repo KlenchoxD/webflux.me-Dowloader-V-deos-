@@ -120,6 +120,14 @@ class VDownHomeActivity : AppCompatActivity() {
             startActivity(Intent(this, MayBoxSettingsActivity::class.java))
         }
 
+findViewById<View>(R.id.vdown_see_all)?.setOnClickListener {
+            startActivity(Intent(this, MayBoxLibraryActivity::class.java))
+        }
+
+        findViewById<View>(R.id.vdown_see_all)?.setOnClickListener {
+            startActivity(Intent(this, MayBoxLibraryActivity::class.java))
+        }
+
         // "See all" abre Library en tab History
         findViewById<View>(R.id.vdown_see_all)?.setOnClickListener {
             startActivity(Intent(this, MayBoxLibraryActivity::class.java))
@@ -225,3 +233,7 @@ class VDownHomeActivity : AppCompatActivity() {
         ) + " " + units[digitGroups]
     }
 }
+
+
+
+
