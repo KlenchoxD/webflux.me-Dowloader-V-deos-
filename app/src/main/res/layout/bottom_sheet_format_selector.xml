@@ -560,7 +560,7 @@
             android:layout_height="match_parent"
             android:background="@drawable/vdown_bottom_gradient_fade"/>
 
-        <Button
+        <com.google.android.material.button.MaterialButton
             android:id="@+id/bs_download_btn"
             android:layout_width="match_parent"
             android:layout_height="56dp"
@@ -573,10 +573,12 @@
             android:textColor="#FFFFFF"
             android:letterSpacing="0.05"
             android:drawableStart="@drawable/ic_file_download"
-            android:drawableTint="#FFFFFF"
-            android:background="@drawable/maybox_download_btn_gradient"
             android:elevation="0dp"
-            android:stateListAnimator="@null"/>
+            android:stateListAnimator="@null"
+            app:backgroundTint="#E53935"
+            app:cornerRadius="28dp"
+            app:iconTint="#FFFFFF"
+            xmlns:app="http://schemas.android.com/apk/res-auto"/>
 
     </FrameLayout>
 
