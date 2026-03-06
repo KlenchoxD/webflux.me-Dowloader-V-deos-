@@ -112,23 +112,26 @@ class VDownHomeActivity : AppCompatActivity() {
         chipTikTok.setOnClickListener { urlInput.setText("https://www.tiktok.com/") }
         chipTwitter.setOnClickListener { urlInput.setText("https://twitter.com/") }
 
-        navHome.setOnClickListener { }
+        navHome.setOnClickListener { /* already here */ }
         navLibrary.setOnClickListener {
             startActivity(Intent(this, MayBoxLibraryActivity::class.java))
         }
         navMore.setOnClickListener {
             startActivity(Intent(this, MayBoxSettingsActivity::class.java))
         }
+
+        // "See all" abre Library en tab History
+        findViewById<View>(R.id.vdown_see_all)?.setOnClickListener {
+            startActivity(Intent(this, MayBoxLibraryActivity::class.java))
+        }
     }
 
-    /** Show format selector, then route URL through yt-dlp (YouTube, Instagram, TikTok, 1000+ sites) */
     private fun routeDownload(url: String) {
         val sanitizedUrl = extractUrl(url)
         if (sanitizedUrl == null) {
             Toast.makeText(this, "No se encontró un enlace válido", Toast.LENGTH_SHORT).show()
             return
         }
-
         val sheet = org.schabi.newpipe.download.FormatSelectorBottomSheet.newInstance(sanitizedUrl)
         sheet.show(supportFragmentManager, "format_selector")
     }
@@ -147,7 +150,6 @@ class VDownHomeActivity : AppCompatActivity() {
                 urlInput.setText(extractedUrl)
                 routeDownload(extractedUrl)
             }
-
             intent.action == Intent.ACTION_VIEW && data != null -> {
                 val extractedUrl = extractUrl(data.toString())
                 if (extractedUrl == null) {
@@ -162,7 +164,10 @@ class VDownHomeActivity : AppCompatActivity() {
     private fun requestNotificationPermission() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.TIRAMISU) {
             if (checkSelfPermission(android.Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED) {
-                requestPermissions(arrayOf(android.Manifest.permission.POST_NOTIFICATIONS), REQUEST_NOTIFICATION_PERMISSION)
+                requestPermissions(
+                    arrayOf(android.Manifest.permission.POST_NOTIFICATIONS),
+                    REQUEST_NOTIFICATION_PERMISSION
+                )
             }
         }
     }
@@ -215,6 +220,8 @@ class VDownHomeActivity : AppCompatActivity() {
         if (bytes <= 0) return "0 B"
         val units = arrayOf("B", "KB", "MB", "GB")
         val digitGroups = (log10(bytes.toDouble()) / log10(1024.0)).toInt()
-        return DecimalFormat("#,##0.#").format(bytes / 1024.0.pow(digitGroups.toDouble())) + " " + units[digitGroups]
+        return DecimalFormat("#,##0.#").format(
+            bytes / 1024.0.pow(digitGroups.toDouble())
+        ) + " " + units[digitGroups]
     }
 }

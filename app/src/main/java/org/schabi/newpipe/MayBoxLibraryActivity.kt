@@ -19,6 +19,7 @@ import java.io.File
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
+import org.schabi.newpipe.download.MayBoxDownloadService
 
 class MayBoxLibraryActivity : AppCompatActivity() {
 
@@ -30,7 +31,7 @@ class MayBoxLibraryActivity : AppCompatActivity() {
     private lateinit var tabActive: TextView
     private lateinit var tabScheduled: TextView
 
-    private var currentTab = 0 // 0=History, 1=Active, 2=Scheduled
+    private var currentTab = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,7 +59,11 @@ class MayBoxLibraryActivity : AppCompatActivity() {
 
     override fun onResume() {
         super.onResume()
-        if (currentTab == 0) loadFiles()
+        when (currentTab) {
+            0 -> loadFiles()
+            1 -> loadActiveDownloads()
+            2 -> showPlaceholder("Scheduled downloads coming soon.\nUse the download button to start now.")
+        }
     }
 
     private fun setupTabs() {
@@ -80,11 +85,14 @@ class MayBoxLibraryActivity : AppCompatActivity() {
 
         when (index) {
             0 -> loadFiles()
-            1 -> showPlaceholder("No active downloads")
-            2 -> showPlaceholder("No scheduled downloads")
+            1 -> loadActiveDownloads()
+            2 -> showPlaceholder("Scheduled downloads coming soon.\nUse the download button to start now.")
         }
     }
 
+    /**
+     * History tab — archivos ya descargados en la carpeta MayBox
+     */
     private fun loadFiles() {
         val downloadDir = File(
             Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS),
@@ -108,6 +116,31 @@ class MayBoxLibraryActivity : AppCompatActivity() {
         } else {
             recyclerView.visibility = View.VISIBLE
             recyclerView.adapter = LibraryAdapter(files.toMutableList())
+        }
+    }
+
+    /**
+     * Active tab — descargas en curso desde MayBoxDownloadService
+     */
+    private fun loadActiveDownloads() {
+        recyclerView.visibility = View.GONE
+        emptyState.visibility = View.GONE
+        placeholder.visibility = View.GONE
+
+        val activeUrls = MayBoxDownloadService.getActiveDownloads()
+
+        if (activeUrls.isEmpty()) {
+            showPlaceholder("No active downloads.\nStart a download from the home screen.")
+        } else {
+            placeholder.visibility = View.VISIBLE
+            val text = buildString {
+                append("${activeUrls.size} download(s) in progress:\n\n")
+                activeUrls.forEachIndexed { i, url ->
+                    val short = if (url.length > 50) url.take(47) + "..." else url
+                    append("${i + 1}. $short\n")
+                }
+            }
+            placeholderText.text = text
         }
     }
 

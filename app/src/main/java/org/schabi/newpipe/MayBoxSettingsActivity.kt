@@ -4,11 +4,14 @@ import android.content.Context
 import android.content.Intent
 import android.content.SharedPreferences
 import android.net.Uri
+import android.os.Build
 import android.os.Bundle
+import android.os.Environment
 import android.view.View
 import android.widget.LinearLayout
 import android.widget.TextView
 import android.widget.Toast
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowInsetsControllerCompat
@@ -25,6 +28,14 @@ object MayBoxPrefs {
     const val DEFAULT_AUDIO = "mp3"
     const val DEFAULT_SIMULTANEOUS = 3
     const val DEFAULT_WIFI_ONLY = false
+
+    /** Ruta por defecto — /storage/emulated/0/Download/MayBox */
+    fun getDefaultDownloadPath(): String =
+        "${Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS)}/MayBox"
+
+    /** Obtiene la ruta guardada o la predeterminada */
+    fun getDownloadPath(prefs: SharedPreferences): String =
+        prefs.getString(KEY_DOWNLOAD_PATH, null) ?: getDefaultDownloadPath()
 }
 
 class MayBoxSettingsActivity : AppCompatActivity() {
@@ -34,11 +45,29 @@ class MayBoxSettingsActivity : AppCompatActivity() {
     private lateinit var audioSubtitle: TextView
     private lateinit var simultaneousValue: TextView
     private lateinit var wifiSwitch: SwitchMaterial
+    private lateinit var downloadLocationSubtitle: TextView
 
     private val audioOptions = arrayOf("MP3 (320kbps)", "M4A (Best quality)", "AAC", "Opus")
     private val audioKeys = arrayOf("mp3", "m4a", "aac", "opus")
     private val qualityOptions = arrayOf("360p", "720p", "1080p", "Best quality")
     private val qualityKeys = arrayOf("360p", "720p", "1080p", "best_quality")
+
+    /** Lanzador del selector de carpeta del sistema */
+    private val folderPicker = registerForActivityResult(
+        ActivityResultContracts.OpenDocumentTree()
+    ) { uri: Uri? ->
+        if (uri != null) {
+            // Persistir permisos para acceder a la carpeta en el futuro
+            contentResolver.takePersistableUriPermission(
+                uri,
+                Intent.FLAG_GRANT_READ_URI_PERMISSION or Intent.FLAG_GRANT_WRITE_URI_PERMISSION
+            )
+            val path = uri.toString()
+            prefs.edit().putString(MayBoxPrefs.KEY_DOWNLOAD_PATH, path).apply()
+            downloadLocationSubtitle.text = uriToDisplayPath(uri)
+            Toast.makeText(this, "Download location updated", Toast.LENGTH_SHORT).show()
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +83,7 @@ class MayBoxSettingsActivity : AppCompatActivity() {
         audioSubtitle = findViewById(R.id.settings_audio_subtitle)
         simultaneousValue = findViewById(R.id.settings_simultaneous_value)
         wifiSwitch = findViewById(R.id.settings_wifi_only_switch)
+        downloadLocationSubtitle = findViewById(R.id.settings_download_location_subtitle)
 
         setupClickListeners()
         restoreSettings()
@@ -62,13 +92,23 @@ class MayBoxSettingsActivity : AppCompatActivity() {
     private fun setupClickListeners() {
         findViewById<View>(R.id.settings_back_btn).setOnClickListener { finish() }
 
-        // 1. Download location
+        // 1. Download location — muestra ruta actual y permite cambiarla
         findViewById<View>(R.id.settings_download_location).setOnClickListener {
-            Toast.makeText(
-                this,
-                "/storage/emulated/0/Download/MayBox/",
-                Toast.LENGTH_LONG
-            ).show()
+            val currentPath = MayBoxPrefs.getDownloadPath(prefs)
+            AlertDialog.Builder(this)
+                .setTitle("Download location")
+                .setMessage("Current:\n$currentPath\n\nDo you want to change it?")
+                .setPositiveButton("Change folder") { _, _ ->
+                    // Abre el selector de carpetas del sistema
+                    folderPicker.launch(null)
+                }
+                .setNeutralButton("Reset to default") { _, _ ->
+                    prefs.edit().remove(MayBoxPrefs.KEY_DOWNLOAD_PATH).apply()
+                    downloadLocationSubtitle.text = shortenPath(MayBoxPrefs.getDefaultDownloadPath())
+                    Toast.makeText(this, "Reset to default location", Toast.LENGTH_SHORT).show()
+                }
+                .setNegativeButton("Cancel", null)
+                .show()
         }
 
         // 2. Default quality
@@ -80,8 +120,7 @@ class MayBoxSettingsActivity : AppCompatActivity() {
             AlertDialog.Builder(this)
                 .setTitle("Default quality")
                 .setSingleChoiceItems(qualityOptions, currentIndex) { dialog, which ->
-                    val selectedKey = qualityKeys[which]
-                    prefs.edit().putString(MayBoxPrefs.KEY_DEFAULT_QUALITY, selectedKey).apply()
+                    prefs.edit().putString(MayBoxPrefs.KEY_DEFAULT_QUALITY, qualityKeys[which]).apply()
                     qualityValue.text = qualityOptions[which]
                     dialog.dismiss()
                 }
@@ -126,7 +165,7 @@ class MayBoxSettingsActivity : AppCompatActivity() {
             prefs.edit().putBoolean(MayBoxPrefs.KEY_WIFI_ONLY, isChecked).apply()
         }
 
-        // 7. Check for updates
+        // 6. Check for updates
         findViewById<View>(R.id.settings_check_updates).setOnClickListener {
             startActivity(
                 Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Mondacazo/VDown/releases"))
@@ -146,33 +185,63 @@ class MayBoxSettingsActivity : AppCompatActivity() {
             startActivity(Intent(this, MayBoxLibraryActivity::class.java))
             finish()
         }
-        findViewById<LinearLayout>(R.id.settings_nav_more).setOnClickListener {
-            // Already here
-        }
+        findViewById<LinearLayout>(R.id.settings_nav_more).setOnClickListener { /* already here */ }
     }
 
     private fun restoreSettings() {
+        // Download location
+        val savedPath = prefs.getString(MayBoxPrefs.KEY_DOWNLOAD_PATH, null)
+        downloadLocationSubtitle.text = if (savedPath != null) {
+            try {
+                uriToDisplayPath(Uri.parse(savedPath))
+            } catch (e: Exception) {
+                shortenPath(MayBoxPrefs.getDefaultDownloadPath())
+            }
+        } else {
+            shortenPath(MayBoxPrefs.getDefaultDownloadPath())
+        }
+
+        // Quality
         val qualityKey = normalizeQualityKey(
             prefs.getString(MayBoxPrefs.KEY_DEFAULT_QUALITY, MayBoxPrefs.DEFAULT_QUALITY)
         )
         val qualityIndex = qualityKeys.indexOf(qualityKey).coerceAtLeast(0)
         qualityValue.text = qualityOptions[qualityIndex]
 
+        // Audio
         val audioKey = prefs.getString(MayBoxPrefs.KEY_DEFAULT_AUDIO, MayBoxPrefs.DEFAULT_AUDIO)
             ?: MayBoxPrefs.DEFAULT_AUDIO
         val audioIndex = audioKeys.indexOf(audioKey).coerceAtLeast(0)
         audioSubtitle.text = audioOptions[audioIndex]
 
+        // Simultaneous
         val simultaneous = prefs.getInt(MayBoxPrefs.KEY_SIMULTANEOUS, MayBoxPrefs.DEFAULT_SIMULTANEOUS)
         simultaneousValue.text = simultaneous.toString()
 
+        // WiFi only
         wifiSwitch.isChecked = prefs.getBoolean(MayBoxPrefs.KEY_WIFI_ONLY, MayBoxPrefs.DEFAULT_WIFI_ONLY)
+    }
+
+    /** Convierte una URI de carpeta a una ruta legible */
+    private fun uriToDisplayPath(uri: Uri): String {
+        return try {
+            val path = uri.lastPathSegment ?: uri.toString()
+            // Ejemplo: "primary:Download/MayBox" → "/Download/MayBox"
+            val clean = path.replace("primary:", "/storage/emulated/0/")
+            shortenPath(clean)
+        } catch (e: Exception) {
+            uri.toString().takeLast(40)
+        }
+    }
+
+    private fun shortenPath(path: String): String {
+        return if (path.length > 45) "..." + path.takeLast(42) else path
     }
 
     private fun normalizeQualityKey(value: String?): String {
         return when (value) {
             "Best", "best", "Best quality", "best_quality" -> "best_quality"
-            "360p", "720p", "1080p" -> value
+            "360p", "720p", "1080p" -> value ?: MayBoxPrefs.DEFAULT_QUALITY
             else -> MayBoxPrefs.DEFAULT_QUALITY
         }
     }
