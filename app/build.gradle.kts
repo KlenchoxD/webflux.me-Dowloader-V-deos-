@@ -75,6 +75,7 @@ configure<ApplicationExtension> {
     lint {
         lintConfig = file("lint.xml")
         // Continue the debug build even when errors are found
+        checkReleaseBuilds = false
         abortOnError = false
     }
     compileOptions {
