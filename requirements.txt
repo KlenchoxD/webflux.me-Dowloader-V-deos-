@@ -1,0 +1,5 @@
+flask
+flask-cors
+yt-dlp[default]
+curl-cffi>=0.7,<0.14
+gunicorn
