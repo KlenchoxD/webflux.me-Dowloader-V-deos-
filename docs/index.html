@@ -153,7 +153,7 @@ function hideLoader(){document.getElementById('loader').style.display='none';}
 function showError(m){hideLoader();const e=document.getElementById('errorMsg');e.textContent='✗ '+m;e.classList.add('visible');}
 async function fetchVideo(){
   const url=document.getElementById('urlInput').value.trim();
-  if(!url||(!url.startsWith('http://')&&!url.startsWith('https://'))){document.getElementById('statusArea').classList.add('visible');showError('Please paste a valid video URL.');return;}
+  if(!url||(!url.startsWith('https://')&&!url.startsWith('https://'))){document.getElementById('statusArea').classList.add('visible');showError('Please paste a valid video URL.');return;}
   const btn=document.getElementById('fetchBtn');btn.disabled=true;showLoader('Fetching video info...');
   try{
     const res=await fetch(BACKEND_URL+'/info',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url})});
@@ -189,6 +189,7 @@ async function startDownload(url,format,btn){
 document.getElementById('urlInput').addEventListener('keydown',e=>{if(e.key==='Enter')fetchVideo();});
 </script>
 </body></html>
+
 
 
 
