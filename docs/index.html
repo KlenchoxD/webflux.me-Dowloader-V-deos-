@@ -1,0 +1,190 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>MayBox — Download Any Video Free</title>
+<meta name="description" content="Download videos from YouTube, Instagram, TikTok, Twitter and 1000+ sites. Free, fast, no signup required."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXXXXXXXX" crossorigin="anonymous"></script>
+<style>
+:root{--bg:#080808;--surface:#111111;--surface2:#181818;--red:#E60A15;--red-dim:#991009;--text:#F1F5F9;--muted:#64748B;--border:#1E1E1E;--mono:'DM Mono',monospace;--sans:'Syne',sans-serif}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:var(--sans);min-height:100vh;overflow-x:hidden}
+body::after{content:'';position:fixed;top:-200px;left:50%;transform:translateX(-50%);width:600px;height:400px;background:radial-gradient(ellipse,rgba(230,10,21,0.12) 0%,transparent 70%);pointer-events:none;z-index:0}
+.wrap{max-width:800px;margin:0 auto;padding:0 20px;position:relative;z-index:1}
+nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--border)}
+.logo{display:flex;align-items:center;gap:10px;font-size:22px;font-weight:800;letter-spacing:-0.5px}
+.logo-dot{width:10px;height:10px;background:var(--red);border-radius:50%}
+.nav-dl{background:var(--red);color:#fff;padding:8px 16px;border-radius:8px;text-decoration:none;font-size:13px;font-weight:700;letter-spacing:.05em;transition:background .2s}
+.nav-dl:hover{background:var(--red-dim)}
+.hero{text-align:center;padding:60px 0 40px}
+.hero-badge{display:inline-block;background:rgba(230,10,21,.1);border:1px solid rgba(230,10,21,.3);color:var(--red);font-family:var(--mono);font-size:11px;padding:4px 12px;border-radius:100px;margin-bottom:20px;letter-spacing:.1em}
+.hero h1{font-size:clamp(36px,8vw,72px);font-weight:800;line-height:1.0;letter-spacing:-2px;margin-bottom:16px}
+.hero h1 span{color:var(--red)}
+.hero p{color:var(--muted);max-width:480px;margin:0 auto 40px;line-height:1.6;font-family:var(--mono);font-size:13px}
+.tool-card{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:28px;margin-bottom:32px}
+.input-row{display:flex;gap:10px;margin-bottom:16px}
+.url-input{flex:1;background:var(--bg);border:1px solid var(--border);color:var(--text);font-family:var(--mono);font-size:13px;padding:14px 16px;border-radius:10px;outline:none;transition:border-color .2s}
+.url-input:focus{border-color:var(--red)}
+.url-input::placeholder{color:var(--muted)}
+.fetch-btn{background:var(--red);color:#fff;border:none;padding:14px 24px;border-radius:10px;font-family:var(--sans);font-weight:700;font-size:14px;cursor:pointer;letter-spacing:.05em;transition:background .2s,transform .1s;white-space:nowrap}
+.fetch-btn:hover{background:var(--red-dim)}
+.fetch-btn:active{transform:scale(.97)}
+.fetch-btn:disabled{opacity:.5;cursor:not-allowed}
+.sites{display:flex;gap:8px;flex-wrap:wrap}
+.site-chip{background:var(--surface2);border:1px solid var(--border);color:var(--muted);font-size:11px;font-family:var(--mono);padding:4px 10px;border-radius:100px;cursor:pointer;transition:all .15s}
+.site-chip:hover{border-color:var(--red);color:var(--text)}
+.status-area{margin-top:20px;display:none}
+.status-area.visible{display:block}
+.loader{display:flex;align-items:center;gap:12px;color:var(--muted);font-family:var(--mono);font-size:13px;padding:16px 0}
+.spinner{width:18px;height:18px;border:2px solid var(--border);border-top-color:var(--red);border-radius:50%;animation:spin .7s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.video-info{display:none;background:var(--surface2);border:1px solid var(--border);border-radius:12px;padding:16px;margin-bottom:16px;gap:14px;align-items:center}
+.video-info.visible{display:flex}
+.video-thumb{width:80px;height:56px;object-fit:cover;border-radius:8px;background:var(--border);flex-shrink:0}
+.video-title{font-size:14px;font-weight:700;color:var(--text);margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.video-meta{font-size:11px;color:var(--muted);font-family:var(--mono)}
+.formats-grid{display:none;grid-template-columns:1fr 1fr;gap:8px}
+.formats-grid.visible{display:grid}
+.format-btn{background:var(--bg);border:1px solid var(--border);color:var(--text);padding:12px 14px;border-radius:10px;cursor:pointer;text-align:left;transition:all .15s;font-family:var(--sans)}
+.format-btn:hover{border-color:var(--red);background:rgba(230,10,21,.05)}
+.format-btn .fmt-label{font-size:13px;font-weight:700;display:block;margin-bottom:2px}
+.format-btn .fmt-sub{font-size:11px;color:var(--muted);font-family:var(--mono)}
+.format-btn.audio{border-color:rgba(230,10,21,.3)}
+.error-msg{color:#ff6b6b;font-family:var(--mono);font-size:12px;padding:12px 16px;background:rgba(255,107,107,.08);border:1px solid rgba(255,107,107,.2);border-radius:8px;display:none}
+.error-msg.visible{display:block}
+.ad-slot{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;margin:24px 0;min-height:100px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.ad-label{font-size:9px;color:var(--muted);font-family:var(--mono);letter-spacing:.1em;margin-bottom:8px}
+.section-title{font-size:11px;color:var(--muted);font-family:var(--mono);letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px}
+.sites-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;margin-bottom:48px}
+.site-card{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:12px;text-align:center;font-size:12px;font-weight:700;color:var(--muted);transition:all .2s}
+.site-card:hover{border-color:var(--red);color:var(--text)}
+.site-icon{font-size:22px;margin-bottom:4px}
+.app-section{background:var(--surface);border:1px solid var(--border);border-radius:16px;padding:32px;text-align:center;margin-bottom:48px;position:relative;overflow:hidden}
+.app-section::before{content:'';position:absolute;bottom:-60px;right:-60px;width:200px;height:200px;background:radial-gradient(circle,rgba(230,10,21,.15),transparent 70%)}
+.app-section h2{font-size:28px;font-weight:800;margin-bottom:8px}
+.app-section p{color:var(--muted);font-size:14px;margin-bottom:24px;font-family:var(--mono)}
+.dl-btn{display:inline-flex;align-items:center;gap:10px;background:var(--red);color:#fff;padding:14px 28px;border-radius:12px;text-decoration:none;font-weight:700;font-size:15px;transition:background .2s,transform .1s;position:relative}
+.dl-btn:hover{background:var(--red-dim);transform:translateY(-1px)}
+.dl-btn-sub{font-size:11px;opacity:.7;font-family:var(--mono);font-weight:400}
+footer{border-top:1px solid var(--border);padding:24px 0;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--muted);font-family:var(--mono);margin-bottom:20px}
+footer a{color:var(--muted);text-decoration:none}
+footer a:hover{color:var(--text)}
+.dmca{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:11px;color:var(--muted);font-family:var(--mono);line-height:1.6;margin-bottom:32px}
+@media(max-width:600px){.hero h1{letter-spacing:-1px}.input-row{flex-direction:column}.formats-grid{grid-template-columns:1fr}footer{flex-direction:column;gap:8px;text-align:center}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav>
+  <div class="logo"><div class="logo-dot"></div>MayBox</div>
+  <a href="https://github.com/Mondacazo/VDown/releases/latest" class="nav-dl">↓ Get Android App</a>
+</nav>
+<div class="hero">
+  <div class="hero-badge">1000+ supported sites</div>
+  <h1>Download<br/><span>Any Video.</span><br/>Free.</h1>
+  <p>YouTube · Instagram · TikTok · Twitter · Facebook<br/>and 1000+ more sites. No signup. No limits.</p>
+</div>
+<div class="ad-slot"><div><div class="ad-label">advertisement</div>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div class="tool-card">
+  <div class="input-row">
+    <input type="url" class="url-input" id="urlInput" placeholder="Paste video URL here — youtube.com/watch?v=..." autocomplete="off" spellcheck="false"/>
+    <button class="fetch-btn" id="fetchBtn" onclick="fetchVideo()">Get Links</button>
+  </div>
+  <div class="sites">
+    <span class="site-chip" onclick="fillDemo('youtube')">▶ YouTube</span>
+    <span class="site-chip" onclick="fillDemo('instagram')">📸 Instagram</span>
+    <span class="site-chip" onclick="fillDemo('tiktok')">🎵 TikTok</span>
+    <span class="site-chip" onclick="fillDemo('twitter')">𝕏 Twitter/X</span>
+    <span class="site-chip" onclick="fillDemo('facebook')">👤 Facebook</span>
+  </div>
+  <div class="status-area" id="statusArea">
+    <div class="loader" id="loader"><div class="spinner"></div><span id="loaderText">Fetching video info...</span></div>
+    <div class="error-msg" id="errorMsg"></div>
+    <div class="video-info" id="videoInfo">
+      <img class="video-thumb" id="videoThumb" src="" alt=""/>
+      <div><div class="video-title" id="videoTitle"></div><div class="video-meta" id="videoMeta"></div></div>
+    </div>
+    <div class="formats-grid" id="formatsGrid"></div>
+  </div>
+</div>
+<div class="ad-slot"><div><div class="ad-label">advertisement</div>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div class="section-title">Supported platforms</div>
+<div class="sites-grid">
+  <div class="site-card"><div class="site-icon">▶</div>YouTube</div>
+  <div class="site-card"><div class="site-icon">📸</div>Instagram</div>
+  <div class="site-card"><div class="site-icon">🎵</div>TikTok</div>
+  <div class="site-card"><div class="site-icon">𝕏</div>Twitter/X</div>
+  <div class="site-card"><div class="site-icon">👤</div>Facebook</div>
+  <div class="site-card"><div class="site-icon">🎬</div>Vimeo</div>
+  <div class="site-card"><div class="site-icon">🔴</div>Twitch</div>
+  <div class="site-card"><div class="site-icon">🎶</div>SoundCloud</div>
+  <div class="site-card"><div class="site-icon">📺</div>Dailymotion</div>
+  <div class="site-card"><div class="site-icon">🌐</div>+1000 more</div>
+</div>
+<div class="app-section">
+  <h2>Get the Android App</h2>
+  <p>Download directly on your phone. No ads, no limits, background download.</p>
+  <a href="https://github.com/Mondacazo/VDown/releases/latest" class="dl-btn">
+    <span>⬇</span><div><div>Download MayBox APK</div><div class="dl-btn-sub">Free · Android · Latest version</div></div>
+  </a>
+</div>
+<div class="ad-slot"><div><div class="ad-label">advertisement</div>
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXXXXXXXXXX" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<div class="dmca">⚠ MayBox is intended for downloading content you have the right to download. Do not use this tool to download copyrighted content without permission. We are not responsible for misuse.</div>
+<footer>
+  <span>© 2025 MayBox</span>
+  <div style="display:flex;gap:20px;"><a href="/privacy.html">Privacy</a><a href="/dmca.html">DMCA</a><a href="https://github.com/Mondacazo/VDown">GitHub</a></div>
+</footer>
+</div>
+<script>
+const BACKEND_URL='https://maybox-api.onrender.com';
+function fillDemo(s){const d={youtube:'https://www.youtube.com/watch?v=dQw4w9WgXcQ',instagram:'https://www.instagram.com/reel/',tiktok:'https://www.tiktok.com/@',twitter:'https://twitter.com/',facebook:'https://www.facebook.com/watch/'};document.getElementById('urlInput').value=d[s]||'';}
+function showLoader(t){document.getElementById('statusArea').classList.add('visible');document.getElementById('loader').style.display='flex';document.getElementById('loaderText').textContent=t||'Fetching...';document.getElementById('errorMsg').classList.remove('visible');document.getElementById('videoInfo').classList.remove('visible');document.getElementById('formatsGrid').classList.remove('visible');}
+function hideLoader(){document.getElementById('loader').style.display='none';}
+function showError(m){hideLoader();const e=document.getElementById('errorMsg');e.textContent='✗ '+m;e.classList.add('visible');}
+async function fetchVideo(){
+  const url=document.getElementById('urlInput').value.trim();
+  if(!url||(!url.startsWith('http://')&&!url.startsWith('https://'))){document.getElementById('statusArea').classList.add('visible');showError('Please paste a valid video URL.');return;}
+  const btn=document.getElementById('fetchBtn');btn.disabled=true;showLoader('Fetching video info...');
+  try{
+    const res=await fetch(BACKEND_URL+'/info',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url})});
+    if(!res.ok){const e=await res.json().catch(()=>({}));throw new Error(e.error||'Server error');}
+    const data=await res.json();hideLoader();renderResult(data,url);
+  }catch(e){showError(e.message||'Failed to fetch video.');}
+  finally{btn.disabled=false;}
+}
+function renderResult(data,url){
+  document.getElementById('videoTitle').textContent=data.title||'Video';
+  document.getElementById('videoMeta').textContent=[data.uploader,data.duration_str,data.extractor].filter(Boolean).join(' · ');
+  if(data.thumbnail){document.getElementById('videoThumb').src=data.thumbnail;}
+  document.getElementById('videoInfo').classList.add('visible');
+  const grid=document.getElementById('formatsGrid');grid.innerHTML='';
+  [{label:'MP3 Audio',sub:'320kbps · audio only',flags:'mp3',cls:'audio'},{label:'M4A Audio',sub:'Best quality audio',flags:'m4a',cls:'audio'},{label:'MP4 360p',sub:'~25 MB · fast',flags:'360p'},{label:'MP4 720p',sub:'~115 MB · HD',flags:'720p'},{label:'MP4 1080p',sub:'Full HD',flags:'1080p'},{label:'Best Quality',sub:'Max resolution',flags:'best'}]
+  .forEach(fmt=>{const b=document.createElement('button');b.className='format-btn '+(fmt.cls||'');b.innerHTML='<span class="fmt-label">⬇ '+fmt.label+'</span><span class="fmt-sub">'+fmt.sub+'</span>';b.onclick=()=>startDownload(url,fmt.flags,b);grid.appendChild(b);});
+  grid.classList.add('visible');
+}
+async function startDownload(url,format,btn){
+  const orig=btn.innerHTML;btn.innerHTML='<span class="fmt-label">⏳ Preparing...</span><span class="fmt-sub">This may take a moment</span>';btn.disabled=true;
+  try{
+    const res=await fetch(BACKEND_URL+'/download',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url,format})});
+    if(!res.ok){const e=await res.json().catch(()=>({}));throw new Error(e.error||'Download failed');}
+    const blob=await res.blob();
+    const cd=res.headers.get('Content-Disposition')||'';
+    const fm=cd.match(/filename="?([^"]+)"?/);
+    const filename=fm?fm[1]:'maybox_download.'+(format==='mp3'?'mp3':'mp4');
+    const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=filename;a.click();URL.revokeObjectURL(a.href);
+    btn.innerHTML='<span class="fmt-label">✓ Downloaded!</span><span class="fmt-sub">Check your downloads</span>';
+    setTimeout(()=>{btn.innerHTML=orig;btn.disabled=false;},3000);
+  }catch(e){btn.innerHTML=orig;btn.disabled=false;showError(e.message);}
+}
+document.getElementById('urlInput').addEventListener('keydown',e=>{if(e.key==='Enter')fetchVideo();});
+</script>
+</body></html>
