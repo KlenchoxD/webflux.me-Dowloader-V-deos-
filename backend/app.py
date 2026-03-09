@@ -1,6 +1,7 @@
 ﻿from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 import yt_dlp, os, tempfile, re
+from yt_dlp.networking.impersonate import ImpersonateTarget
 
 app = Flask(__name__)
 CORS(app)
@@ -18,6 +19,8 @@ FORMATS = {
 def valid_url(u):
     return bool(re.match(r'^https?://',u)) and len(u)<2048
 
+IMPERSONATE = ImpersonateTarget("chrome")
+
 @app.route("/")
 def health():
     return jsonify({"status":"ok","service":"MayBox API"})
@@ -28,7 +31,7 @@ def get_info():
     url = (data.get("url") or "").strip()
     if not url or not valid_url(url):
         return jsonify({"error":"Invalid URL"}),400
-    opts = {"quiet":True,"no_warnings":True,"skip_download":True,"no_check_certificates":True}
+    opts = {"quiet":True,"no_warnings":True,"skip_download":True,"no_check_certificates":True,"impersonate":IMPERSONATE}
     try:
         with yt_dlp.YoutubeDL(opts) as ydl:
             info = ydl.extract_info(url, download=False)
@@ -51,7 +54,7 @@ def download_video():
     if not url or not valid_url(url): return jsonify({"error":"Invalid URL"}),400
     if fmt not in FORMATS: return jsonify({"error":"Invalid format"}),400
     with tempfile.TemporaryDirectory() as tmp:
-        opts = {"outtmpl":os.path.join(tmp,"%(title).60s.%(ext)s"),"quiet":True,"no_warnings":True,"no_check_certificates":True,"no_playlist":True,"no_mtime":True,"retries":3}
+        opts = {"outtmpl":os.path.join(tmp,"%(title).60s.%(ext)s"),"quiet":True,"no_warnings":True,"no_check_certificates":True,"no_playlist":True,"no_mtime":True,"retries":3,"impersonate":IMPERSONATE}
         opts.update(FORMATS[fmt])
         try:
             with yt_dlp.YoutubeDL(opts) as ydl:
