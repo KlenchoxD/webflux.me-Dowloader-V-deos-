@@ -33,10 +33,6 @@ class MayBoxDownloadService : Service() {
         private const val PROCESS_ID = "maybox_svc_dl"
 
         const val ACTION_CANCEL = "org.schabi.newpipe.download.CANCEL_DOWNLOAD"
-private val activeDownloads = mutableSetOf<String>()
-        fun getActiveDownloads(): Set<String> = activeDownloads.toSet()
-
-        // Descargas activas — visible desde MayBoxLibraryActivity
         private val activeDownloads = mutableSetOf<String>()
         fun getActiveDownloads(): Set<String> = activeDownloads.toSet()
     }
@@ -135,7 +131,7 @@ private val activeDownloads = mutableSetOf<String>()
             val speedMb = bytesPerSecond / (1024f * 1024f)
             val speedText = if (speedMb > 0) "%.1f MB/s".format(speedMb) else ""
             val contentText = when {
-                progress > 0f && speedText.isNotEmpty() -> "%.0f%% • %s".format(progress, speedText)
+                progress > 0f && speedText.isNotEmpty() -> "%.0f%% â€¢ %s".format(progress, speedText)
                 progress > 0f -> "%.0f%%".format(progress)
                 else -> "Starting..."
             }
@@ -205,7 +201,7 @@ private val activeDownloads = mutableSetOf<String>()
         val builder = NotificationCompat.Builder(this, CHANNEL_ID)
             .setSmallIcon(R.drawable.ic_file_download)
             .setContentTitle("Download complete!")
-            .setContentText("$fileName • Tap to open")
+            .setContentText("$fileName â€¢ Tap to open")
             .setAutoCancel(true)
         lastDownloadedFile?.let { file ->
             try {
