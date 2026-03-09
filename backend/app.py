@@ -28,7 +28,12 @@ def get_info():
     url = (data.get("url") or "").strip()
     if not url or not valid_url(url):
         return jsonify({"error":"Invalid URL"}),400
-    opts = {"quiet":False,"no_warnings":False,"skip_download":True,"no_check_certificates":True}
+    opts = {
+        "quiet":False,"no_warnings":False,"skip_download":True,
+        "no_check_certificates":True,
+        "extractor_args":{"dailymotion":{"cdn":["none"]}},
+        "http_headers":{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
+    }
     try:
         with yt_dlp.YoutubeDL(opts) as ydl:
             info = ydl.extract_info(url, download=False)
@@ -51,7 +56,13 @@ def download_video():
     if not url or not valid_url(url): return jsonify({"error":"Invalid URL"}),400
     if fmt not in FORMATS: return jsonify({"error":"Invalid format"}),400
     with tempfile.TemporaryDirectory() as tmp:
-        opts = {"outtmpl":os.path.join(tmp,"%(title).60s.%(ext)s"),"quiet":False,"no_warnings":False,"no_check_certificates":True,"no_playlist":True,"no_mtime":True,"retries":3}
+        opts = {
+            "outtmpl":os.path.join(tmp,"%(title).60s.%(ext)s"),
+            "quiet":True,"no_warnings":True,"no_check_certificates":True,
+            "no_playlist":True,"no_mtime":True,"retries":3,
+            "extractor_args":{"dailymotion":{"cdn":["none"]}},
+            "http_headers":{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
+        }
         opts.update(FORMATS[fmt])
         try:
             with yt_dlp.YoutubeDL(opts) as ydl:
