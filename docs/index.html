@@ -145,7 +145,7 @@ footer a:hover{color:var(--text)}
 </footer>
 </div>
 <script>
-const BACKEND_URL='https://maybox-api.onrender.com';
+const BACKEND_URL='https://vdown-y7yf.onrender.com';
 function fillDemo(s){const d={youtube:'https://www.youtube.com/watch?v=dQw4w9WgXcQ',instagram:'https://www.instagram.com/reel/',tiktok:'https://www.tiktok.com/@',twitter:'https://twitter.com/',facebook:'https://www.facebook.com/watch/'};document.getElementById('urlInput').value=d[s]||'';}
 function showLoader(t){document.getElementById('statusArea').classList.add('visible');document.getElementById('loader').style.display='flex';document.getElementById('loaderText').textContent=t||'Fetching...';document.getElementById('errorMsg').classList.remove('visible');document.getElementById('videoInfo').classList.remove('visible');document.getElementById('formatsGrid').classList.remove('visible');}
 function hideLoader(){document.getElementById('loader').style.display='none';}
@@ -188,3 +188,4 @@ async function startDownload(url,format,btn){
 document.getElementById('urlInput').addEventListener('keydown',e=>{if(e.key==='Enter')fetchVideo();});
 </script>
 </body></html>
+
