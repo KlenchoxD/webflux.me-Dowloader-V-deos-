@@ -1,7 +1,6 @@
 ﻿from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
 import yt_dlp, os, tempfile, re
-from yt_dlp.networking.impersonate import ImpersonateTarget
 
 app = Flask(__name__)
 CORS(app)
@@ -19,8 +18,6 @@ FORMATS = {
 def valid_url(u):
     return bool(re.match(r'^https?://',u)) and len(u)<2048
 
-IMPERSONATE = ImpersonateTarget("chrome")
-
 @app.route("/")
 def health():
     return jsonify({"status":"ok","service":"MayBox API"})
@@ -31,7 +28,7 @@ def get_info():
     url = (data.get("url") or "").strip()
     if not url or not valid_url(url):
         return jsonify({"error":"Invalid URL"}),400
-    opts = {"quiet":True,"no_warnings":True,"skip_download":True,"no_check_certificates":True,"impersonate":IMPERSONATE}
+    opts = {"quiet":False,"no_warnings":False,"skip_download":True,"no_check_certificates":True}
     try:
         with yt_dlp.YoutubeDL(opts) as ydl:
             info = ydl.extract_info(url, download=False)
@@ -44,7 +41,7 @@ def get_info():
         dur_str = f"{h}:{m:02d}:{sec:02d}" if h else f"{m}:{sec:02d}"
         return jsonify({"title":info.get("title","Video"),"uploader":info.get("uploader",""),"duration_str":dur_str,"thumbnail":thumb,"extractor":info.get("extractor_key","")})
     except Exception as e:
-        return jsonify({"error":"Could not fetch video info"}),400
+        return jsonify({"error": str(e)}),400
 
 @app.route("/download", methods=["POST"])
 def download_video():
@@ -54,7 +51,7 @@ def download_video():
     if not url or not valid_url(url): return jsonify({"error":"Invalid URL"}),400
     if fmt not in FORMATS: return jsonify({"error":"Invalid format"}),400
     with tempfile.TemporaryDirectory() as tmp:
-        opts = {"outtmpl":os.path.join(tmp,"%(title).60s.%(ext)s"),"quiet":True,"no_warnings":True,"no_check_certificates":True,"no_playlist":True,"no_mtime":True,"retries":3,"impersonate":IMPERSONATE}
+        opts = {"outtmpl":os.path.join(tmp,"%(title).60s.%(ext)s"),"quiet":False,"no_warnings":False,"no_check_certificates":True,"no_playlist":True,"no_mtime":True,"retries":3}
         opts.update(FORMATS[fmt])
         try:
             with yt_dlp.YoutubeDL(opts) as ydl:
@@ -66,7 +63,7 @@ def download_video():
             mime = {".mp4":"video/mp4",".mp3":"audio/mpeg",".m4a":"audio/mp4",".webm":"video/webm"}.get(ext,"application/octet-stream")
             return send_file(fpath,as_attachment=True,download_name=files[0],mimetype=mime)
         except Exception as e:
-            return jsonify({"error":"Download failed"}),400
+            return jsonify({"error": str(e)}),400
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT",5000)))
