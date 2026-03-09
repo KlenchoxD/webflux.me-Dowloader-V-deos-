@@ -151,6 +151,33 @@ function fillDemo(s){const d={youtube:'https://www.youtube.com/watch?v=dQw4w9WgX
 function showLoader(t){document.getElementById('statusArea').classList.add('visible');document.getElementById('loader').style.display='flex';document.getElementById('loaderText').textContent=t||'Fetching...';document.getElementById('errorMsg').classList.remove('visible');document.getElementById('videoInfo').classList.remove('visible');document.getElementById('formatsGrid').classList.remove('visible');}
 function hideLoader(){document.getElementById('loader').style.display='none';}
 function showError(m){hideLoader();const e=document.getElementById('errorMsg');e.textContent='✗ '+m;e.classList.add('visible');}
+async function fetchDailymotion(url) {
+  const id = url.split('/video/')[1]?.split('?')[0]?.split('/')[0];
+  if (!id) throw new Error('Invalid Dailymotion URL');
+  const res = await fetch(https://api.dailymotion.com/video/+id+?fields=title,thumbnail_url,stream_h264_url,stream_h264_hd_url,stream_h264_hd1080_url,duration,owner.screenname);
+  if (!res.ok) throw new Error('Dailymotion API error');
+  const d = await res.json();
+  const s = parseInt(d.duration||0); const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sec=s%60;
+  const dur = h ? ${h}:: : ${m}:;
+  hideLoader();
+  document.getElementById('videoTitle').textContent = d.title||'Video';
+  document.getElementById('videoMeta').textContent = [d['owner.screenname'], dur, 'Dailymotion'].filter(Boolean).join(' · ');
+  if(d.thumbnail_url) document.getElementById('videoThumb').src = d.thumbnail_url;
+  document.getElementById('videoInfo').classList.add('visible');
+  const grid = document.getElementById('formatsGrid'); grid.innerHTML='';
+  const fmts = [];
+  if(d.stream_h264_url) fmts.push({label:'MP4 480p',sub:'Standard quality',url:d.stream_h264_url});
+  if(d.stream_h264_hd_url) fmts.push({label:'MP4 720p',sub:'HD quality',url:d.stream_h264_hd_url});
+  if(d.stream_h264_hd1080_url) fmts.push({label:'MP4 1080p',sub:'Full HD',url:d.stream_h264_hd1080_url});
+  if(!fmts.length) throw new Error('No formats available for this video');
+  fmts.forEach(fmt=>{
+    const b=document.createElement('button'); b.className='format-btn';
+    b.innerHTML='<span class="fmt-label">⬇ '+fmt.label+'</span><span class="fmt-sub">'+fmt.sub+'</span>';
+    b.onclick=()=>{const a=document.createElement('a');a.href=fmt.url;a.target='_blank';a.download='';a.click();};
+    grid.appendChild(b);
+  });
+  grid.classList.add('visible');
+}
 async function fetchVideo(){
   const url=document.getElementById('urlInput').value.trim();
   if(!url||(!url.startsWith('https://')&&!url.startsWith('https://'))){document.getElementById('statusArea').classList.add('visible');showError('Please paste a valid video URL.');return;}
@@ -189,6 +216,7 @@ async function startDownload(url,format,btn){
 document.getElementById('urlInput').addEventListener('keydown',e=>{if(e.key==='Enter')fetchVideo();});
 </script>
 </body></html>
+
 
 
 
