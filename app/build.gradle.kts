@@ -272,3 +272,4 @@ dependencies {
     androidTestImplementation(libs.androidx.room.testing)
     androidTestImplementation(libs.assertj.core)
 }
+
