@@ -41,11 +41,11 @@
         
         android:requestLegacyExternalStorage="true">
         <activity
-            android:name=".VDownHomeActivity"
+            android:name=".WebFluxBoxHomeActivity"
             android:exported="true"
             android:label="@string/app_name"
             android:launchMode="singleTask"
-            android:theme="@style/MayBoxDarkTheme"
+            android:theme="@style/WebFluxBoxDarkTheme"
             android:windowSoftInputMode="adjustResize">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -56,7 +56,7 @@
 
         <activity
             android:name=".download.ShareReceiverActivity"
-            android:theme="@style/Theme.MayBox.Transparent"
+            android:theme="@style/Theme.WebFluxBox.Transparent"
             android:excludeFromRecents="true"
             android:taskAffinity=""
             android:exported="true">
@@ -120,7 +120,7 @@
             android:name=".settings.SettingsActivity"
             android:exported="false"
             android:label="@string/settings"
-            android:theme="@style/MayBoxDarkTheme.ActionBar" />
+            android:theme="@style/WebFluxBoxDarkTheme.ActionBar" />
 
         <activity
             android:name=".about.AboutActivity"
@@ -168,15 +168,15 @@
             android:exported="false" />
 
         <activity
-            android:name=".MayBoxSettingsActivity"
+            android:name=".WebFluxBoxSettingsActivity"
             android:exported="false"
             android:label="Settings"
-            android:theme="@style/MayBoxDarkTheme" />
+            android:theme="@style/WebFluxBoxDarkTheme" />
 
         <activity
-            android:name=".MayBoxLibraryActivity"
+            android:name=".WebFluxBoxLibraryActivity"
             android:exported="false"
-            android:theme="@style/MayBoxDarkTheme" />
+            android:theme="@style/WebFluxBoxDarkTheme" />
 
         <!-- giga get related -->
         <activity
@@ -184,10 +184,10 @@
             android:exported="false"
             android:label="@string/app_name"
             android:launchMode="singleTask"
-            android:theme="@style/MayBoxDarkTheme" />
+            android:theme="@style/WebFluxBoxDarkTheme" />
 
         <service
-            android:name=".download.MayBoxDownloadService"
+            android:name=".download.WebFluxBoxDownloadService"
             android:foregroundServiceType="dataSync"
             android:exported="false" />
 
@@ -505,5 +505,6 @@
             android:resource="@mipmap/ic_launcher" />
     </application>
 </manifest>
+
 
 

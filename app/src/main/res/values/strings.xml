@@ -194,8 +194,8 @@
     <string name="just_once">Just Once</string>
     <string name="file">File</string>
     <string name="notifications">Notifications</string>
-    <string name="notification_channel_name">MayBox notification</string>
-    <string name="notification_channel_description">Notifications for MayBox\'s player</string>
+    <string name="notification_channel_name">WebFluxBox notification</string>
+    <string name="notification_channel_description">Notifications for WebFluxBox\'s player</string>
     <string name="app_update_notification_channel_name">App update notification</string>
     <string name="app_update_notification_channel_description">Notifications for new NewPipe versions</string>
     <string name="hash_channel_name">Video hash notification</string>
@@ -344,7 +344,7 @@
     <string name="msg_name">Filename</string>
     <string name="msg_threads">Threads</string>
     <string name="msg_error">Error</string>
-    <string name="msg_running">MayBox Downloading</string>
+    <string name="msg_running">WebFluxBox Downloading</string>
     <string name="msg_running_detail">Tap for details</string>
     <string name="msg_calculating_hash">Calculating hash</string>
     <string name="msg_wait">Please wait…</string>
@@ -368,7 +368,7 @@
     <string name="charset_letters_and_digits">Letters and digits</string>
     <string name="charset_most_special_characters">Most special characters</string>
     <!-- About -->
-    <string name="title_activity_about">About MayBox</string>
+    <string name="title_activity_about">About WebFluxBox</string>
     <string name="title_licenses">Third-party Licenses</string>
     <string name="copyright">© %1$s by %2$s under %3$s</string>
     <string name="tab_about">About \u0026 FAQ</string>
@@ -884,5 +884,8 @@
     <string name="kao_dialog_more_info">Details</string>
     <string name="kao_solution">Solution</string>
 </resources>
+
+
+
 
 
