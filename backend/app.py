@@ -18,6 +18,16 @@ FORMATS = {
 def valid_url(u):
     return bool(re.match(r'^https?://',u)) and len(u)<2048
 
+def get_cookies_path():
+    """Get cookies file path from env var or default location"""
+    env_path = os.environ.get("YTDLP_COOKIES_FILE")
+    if env_path and os.path.exists(env_path):
+        return env_path
+    default_path = os.path.join(os.path.dirname(__file__), "cookies.txt")
+    if os.path.exists(default_path):
+        return default_path
+    return None
+
 @app.route("/")
 def health():
     return jsonify({"status":"ok","service":"MayBox API"})
@@ -34,6 +44,9 @@ def get_info():
         "extractor_args":{"dailymotion":{"cdn":["none"]}},
         "http_headers":{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
     }
+    cookies_path = get_cookies_path()
+    if cookies_path:
+        opts["cookiefile"] = cookies_path
     try:
         with yt_dlp.YoutubeDL(opts) as ydl:
             info = ydl.extract_info(url, download=False)
@@ -63,6 +76,9 @@ def download_video():
             "extractor_args":{"dailymotion":{"cdn":["none"]}},
             "http_headers":{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
         }
+        cookies_path = get_cookies_path()
+        if cookies_path:
+            opts["cookiefile"] = cookies_path
         opts.update(FORMATS[fmt])
         try:
             with yt_dlp.YoutubeDL(opts) as ydl:

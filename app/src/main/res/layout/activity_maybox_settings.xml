@@ -375,6 +375,67 @@
                             app:trackDecorationTint="@color/colorDivider" />
                     </LinearLayout>
 
+                    <View android:layout_width="match_parent" android:layout_height="1dp" android:layout_marginStart="72dp" android:background="@color/colorDivider" />
+
+                    <LinearLayout
+                        android:id="@+id/settings_cookies_file"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="16dp"
+                        android:gravity="center_vertical"
+                        android:background="?android:attr/selectableItemBackground">
+                        <com.google.android.material.card.MaterialCardView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            app:cardCornerRadius="10dp"
+                            app:cardBackgroundColor="@color/colorIconBackground"
+                            app:cardElevation="0dp">
+                            <ImageView
+                                android:layout_width="20dp"
+                                android:layout_height="20dp"
+                                android:layout_gravity="center"
+                                android:src="@drawable/ic_cookie"
+                                app:tint="@color/colorPrimary" />
+                        </com.google.android.material.card.MaterialCardView>
+                        <LinearLayout
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:orientation="vertical"
+                            android:layout_marginStart="16dp">
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:text="Cookies file"
+                                android:textSize="14sp"
+                                android:textStyle="bold"
+                                android:textColor="@color/colorOnSurface" />
+                            <TextView
+                                android:id="@+id/settings_cookies_subtitle"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="2dp"
+                                android:text="Not set"
+                                android:textSize="12sp"
+                                android:textColor="@color/colorOnSurfaceVariant" />
+                        </LinearLayout>
+                        <TextView
+                            android:id="@+id/settings_cookies_status"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="8dp"
+                            android:text="Not set"
+                            android:textSize="13sp"
+                            android:textStyle="bold"
+                            android:textColor="@color/colorPrimary" />
+                        <ImageView
+                            android:layout_width="16dp"
+                            android:layout_height="16dp"
+                            android:src="@drawable/ic_arrow_forward"
+                            app:tint="@color/colorOnSurfaceVariant" />
+                    </LinearLayout>
+
                 </LinearLayout>
             </com.google.android.material.card.MaterialCardView>
 

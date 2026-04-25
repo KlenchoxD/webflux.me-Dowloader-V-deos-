@@ -19,6 +19,7 @@ import com.yausername.youtubedl_android.YoutubeDLRequest
 import java.io.File
 import org.schabi.newpipe.MayBoxPrefs
 import org.schabi.newpipe.R
+import java.net.URLDecoder
 
 class MayBoxDownloadService : Service() {
 
@@ -150,6 +151,7 @@ class MayBoxDownloadService : Service() {
         formatOverride: List<String>? = null
     ): YoutubeDLRequest {
         val cleanUrl = extractUrl(url) ?: url
+        val cookiesPath = getCookiesFilePath()
         return YoutubeDLRequest(cleanUrl).apply {
             addOption("-o", "${downloadDir.absolutePath}/%(title)s.%(ext)s")
             when {
@@ -166,6 +168,65 @@ class MayBoxDownloadService : Service() {
             addOption("--buffer-size", "16K")
             addOption("--retries", "3")
             addOption("--fragment-retries", "3")
+            cookiesPath?.let { path ->
+                addOption("--cookies", path)
+            }
+        }
+    }
+
+    private fun getCookiesFilePath(): String? {
+        val prefs = applicationContext.getSharedPreferences(MayBoxPrefs.PREFS_NAME, Context.MODE_PRIVATE)
+        
+        val savedPath = prefs.getString(MayBoxPrefs.KEY_COOKIES_FILE, null)
+        if (!savedPath.isNullOrBlank()) {
+            val file = resolveCookiesFile(savedPath)
+            if (file?.exists() == true) {
+                return file.absolutePath
+            }
+            Log.w(TAG, "Saved cookies file not found: $savedPath")
+        }
+        
+        val envPath = System.getenv("YTDLP_COOKIES_FILE")
+        if (!envPath.isNullOrBlank()) {
+            val file = resolveCookiesFile(envPath)
+            if (file?.exists() == true) {
+                return file.absolutePath
+            }
+            Log.w(TAG, "YTDLP_COOKIES_FILE env var points to non-existent file: $envPath")
+        }
+        
+        val defaultFile = File(applicationContext.filesDir, "cookies.txt")
+        if (defaultFile.exists()) {
+            return defaultFile.absolutePath
+        }
+        
+        return null
+    }
+
+    private fun resolveCookiesFile(path: String): File? {
+        return when {
+            path.startsWith("content://") -> {
+                try {
+                    val uri = android.net.Uri.parse(path)
+                    applicationContext.contentResolver.openInputStream(uri)?.use { input ->
+                        val tempFile = File(applicationContext.cacheDir, "cookies_temp.txt")
+                        tempFile.outputStream().use { output -> input.copyTo(output) }
+                        tempFile.deleteOnExit()
+                        tempFile
+                    }
+                } catch (e: Exception) {
+                    Log.w(TAG, "Failed to read content URI: $path", e)
+                    null
+                }
+            }
+            path.startsWith("http://", "https://") -> {
+                Log.w(TAG, "Remote cookies URL not supported: $path")
+                null
+            }
+            else -> {
+                val decodedPath = try { URLDecoder.decode(path, "UTF-8") } catch (e: Exception) { path }
+                File(decodedPath)
+            }
         }
     }
 

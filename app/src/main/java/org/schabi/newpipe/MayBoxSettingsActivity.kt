@@ -24,6 +24,7 @@ object MayBoxPrefs {
     const val KEY_SIMULTANEOUS = "simultaneous_downloads"
     const val KEY_WIFI_ONLY = "wifi_only"
     const val KEY_DOWNLOAD_PATH = "download_path"
+    const val KEY_COOKIES_FILE = "cookies_file"
     const val DEFAULT_QUALITY = "720p"
     const val DEFAULT_AUDIO = "mp3"
     const val DEFAULT_SIMULTANEOUS = 3
@@ -46,6 +47,8 @@ class MayBoxSettingsActivity : AppCompatActivity() {
     private lateinit var simultaneousValue: TextView
     private lateinit var wifiSwitch: SwitchMaterial
     private lateinit var downloadLocationSubtitle: TextView
+    private lateinit var cookiesSubtitle: TextView
+    private lateinit var cookiesStatus: TextView
 
     private val audioOptions = arrayOf("MP3 (320kbps)", "M4A (Best quality)", "AAC", "Opus")
     private val audioKeys = arrayOf("mp3", "m4a", "aac", "opus")
@@ -84,6 +87,8 @@ class MayBoxSettingsActivity : AppCompatActivity() {
         simultaneousValue = findViewById(R.id.settings_simultaneous_value)
         wifiSwitch = findViewById(R.id.settings_wifi_only_switch)
         downloadLocationSubtitle = findViewById(R.id.settings_download_location_subtitle)
+        cookiesSubtitle = findViewById(R.id.settings_cookies_subtitle)
+        cookiesStatus = findViewById(R.id.settings_cookies_status)
 
         setupClickListeners()
         restoreSettings()
@@ -165,7 +170,50 @@ class MayBoxSettingsActivity : AppCompatActivity() {
             prefs.edit().putBoolean(MayBoxPrefs.KEY_WIFI_ONLY, isChecked).apply()
         }
 
-        // 6. Check for updates
+        // 6. Cookies file
+        val filePicker = registerForActivityResult(ActivityResultContracts.GetContent()) { uri: Uri? ->
+            uri?.let { selectedUri ->
+                try {
+                    contentResolver.takePersistableUriPermission(
+                        selectedUri,
+                        Intent.FLAG_GRANT_READ_URI_PERMISSION
+                    )
+                    val path = selectedUri.toString()
+                    prefs.edit().putString(MayBoxPrefs.KEY_COOKIES_FILE, path).apply()
+                    cookiesSubtitle.text = "cookies.txt"
+                    cookiesStatus.text = "Set"
+                    Toast.makeText(this, "Cookies file set", Toast.LENGTH_SHORT).show()
+                } catch (e: Exception) {
+                    Toast.makeText(this, "Failed to set cookies: ${e.message}", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+
+        findViewById<View>(R.id.settings_cookies_file).setOnClickListener {
+            val currentPath = prefs.getString(MayBoxPrefs.KEY_COOKIES_FILE, null)
+            AlertDialog.Builder(this)
+                .setTitle("Cookies file (cookies.txt)")
+                .setMessage(
+                    if (currentPath != null) {
+                        "Current: $currentPath\n\nSelect a new cookies.txt file or reset to default."
+                    } else {
+                        "Select a cookies.txt file exported from your browser.\n\nThis allows yt-dlp to access logged-in content on YouTube and other sites."
+                    }
+                )
+                .setPositiveButton("Select file") { _, _ ->
+                    filePicker.launch("text/plain")
+                }
+                .setNeutralButton("Reset") { _, _ ->
+                    prefs.edit().remove(MayBoxPrefs.KEY_COOKIES_FILE).apply()
+                    cookiesSubtitle.text = "Not set"
+                    cookiesStatus.text = "Not set"
+                    Toast.makeText(this, "Cookies file reset", Toast.LENGTH_SHORT).show()
+                }
+                .setNegativeButton("Cancel", null)
+                .show()
+        }
+
+        // 7. Check for updates
         findViewById<View>(R.id.settings_check_updates).setOnClickListener {
             startActivity(
                 Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Mondacazo/VDown/releases"))
@@ -220,6 +268,16 @@ class MayBoxSettingsActivity : AppCompatActivity() {
 
         // WiFi only
         wifiSwitch.isChecked = prefs.getBoolean(MayBoxPrefs.KEY_WIFI_ONLY, MayBoxPrefs.DEFAULT_WIFI_ONLY)
+
+        // Cookies file
+        val cookiesPath = prefs.getString(MayBoxPrefs.KEY_COOKIES_FILE, null)
+        if (cookiesPath != null) {
+            cookiesSubtitle.text = "cookies.txt"
+            cookiesStatus.text = "Set"
+        } else {
+            cookiesSubtitle.text = "Not set"
+            cookiesStatus.text = "Not set"
+        }
     }
 
     /** Convierte una URI de carpeta a una ruta legible */
