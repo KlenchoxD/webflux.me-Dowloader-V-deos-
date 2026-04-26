@@ -169,7 +169,12 @@ footer a:hover,footer a:active{color:var(--red)}
 </footer>
 </div>
 <script>
-const API_BASE_URL=(window.WEBFLUX_API_BASE||window.location.origin).replace(/\/$/,'');
+const API_BASE_URL=(
+  window.WEBFLUX_API_BASE ||
+  (['localhost','127.0.0.1'].includes(window.location.hostname)
+    ? 'http://localhost:5000'
+    : 'https://api.webflux.me')
+).replace(/\/$/,'');
 const INFO_ENDPOINT=API_BASE_URL+'/info';
 
 function fillDemo(s){const d={youtube:'https://www.youtube.com/watch?v=dQw4w9WgXcQ',instagram:'https://www.instagram.com/reel/',tiktok:'https://www.tiktok.com/@',twitter:'https://twitter.com/',facebook:'https://www.facebook.com/watch/'};document.getElementById('urlInput').value=d[s]||'';}
