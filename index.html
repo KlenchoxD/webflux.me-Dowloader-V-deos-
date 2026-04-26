@@ -169,7 +169,8 @@ footer a:hover,footer a:active{color:var(--red)}
 </footer>
 </div>
 <script>
-const INFO_ENDPOINT='http://localhost:5000/info';
+const API_BASE_URL=(window.WEBFLUX_API_BASE||window.location.origin).replace(/\/$/,'');
+const INFO_ENDPOINT=API_BASE_URL+'/info';
 
 function fillDemo(s){const d={youtube:'https://www.youtube.com/watch?v=dQw4w9WgXcQ',instagram:'https://www.instagram.com/reel/',tiktok:'https://www.tiktok.com/@',twitter:'https://twitter.com/',facebook:'https://www.facebook.com/watch/'};document.getElementById('urlInput').value=d[s]||'';}
 function showLoader(t){document.getElementById('statusArea').classList.add('visible');document.getElementById('loader').style.display='flex';document.getElementById('loaderText').textContent=t||'Fetching...';document.getElementById('errorMsg').classList.remove('visible');document.getElementById('videoInfo').classList.remove('visible');document.getElementById('formatsGrid').classList.remove('visible');}
