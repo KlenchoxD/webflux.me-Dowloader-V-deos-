@@ -1,0 +1,12 @@
+{
+  "name": "webflux.me",
+  "short_name": "webflux",
+  "description": "Descarga videos de YouTube, TikTok, Instagram y más gratis en webflux.me",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#000000",
+  "theme_color": "#cc0000",
+  "orientation": "portrait-primary",
+  "categories": ["utilities", "video"]
+}
