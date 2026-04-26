@@ -170,10 +170,9 @@ footer a:hover,footer a:active{color:var(--red)}
 </div>
 <script>
 const API_BASE_URL=(
-  window.WEBFLUX_API_BASE ||
-  (['localhost','127.0.0.1'].includes(window.location.hostname)
+  ['localhost','127.0.0.1'].includes(window.location.hostname)
     ? 'http://localhost:5000'
-    : 'https://api.webflux.me')
+    : 'https://api.webflux.me'
 ).replace(/\/$/,'');
 const INFO_ENDPOINT=API_BASE_URL+'/info';
 
