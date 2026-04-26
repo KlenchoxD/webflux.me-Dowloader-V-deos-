@@ -29,6 +29,7 @@ def get_cookies_path():
     return None
 
 @app.route("/")
+@app.route("/health")
 def health():
     return jsonify({"status":"ok","service":"MayBox API"})
 

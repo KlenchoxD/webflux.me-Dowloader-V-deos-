@@ -74,7 +74,8 @@ footer{border-top:1px solid var(--border);padding:24px 0;display:flex;justify-co
 footer a{color:var(--muted);text-decoration:none}
 footer a:hover{color:var(--text)}
 .dmca{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:8px;padding:12px 16px;font-size:11px;color:var(--muted);font-family:var(--mono);line-height:1.6;margin-bottom:32px}
-@media(max-width:639px){.hero h1{letter-spacing:-1px}.input-row{flex-direction:column}.formats-grid{grid-template-columns:1fr}footer{flex-direction:column;gap:8px;text-align:center}#urlInput{height:54px!important;font-size:1rem!important;background:#1a1a1a!important;border:2px solid rgba(255,255,255,.3)!important;border-radius:8px!important;color:#fff!important;padding:0 16px!important;width:100%!important;box-sizing:border-box!important;display:block!important}#urlInput::placeholder{color:rgba(255,255,255,.5)!important;font-size:.9rem!important}#urlInput:focus{border-color:#cc0000!important;box-shadow:0 0 0 3px rgba(204,0,0,.25)!important;outline:none!important}#fetchBtn{height:54px!important;width:100%!important;font-size:1rem!important;font-weight:700!important;border-radius:8px!important;margin-top:10px!important;display:block!important;box-sizing:border-box!important}}
+  @media(max-width:639px){.hero h1{letter-spacing:-1px}.input-row{flex-direction:column}.formats-grid{grid-template-columns:1fr}footer{flex-direction:column;gap:8px;text-align:center}.tool-card .input-row{gap:0!important}.tool-card .input-row > #urlInput{height:54px!important;min-height:54px!important;flex:none!important;font-size:1rem!important;background:#1a1a1a!important;border:2px solid rgba(255,255,255,.35)!important;border-radius:8px!important;color:#fff!important;padding:0 16px!important;width:100%!important;box-sizing:border-box!important;display:block!important}.tool-card .input-row > #urlInput::placeholder{color:rgba(255,255,255,.5)!important;font-size:.9rem!important}.tool-card .input-row > #urlInput:focus{border-color:#cc0000!important;box-shadow:0 0 0 3px rgba(204,0,0,.25)!important;outline:none!important}.tool-card .input-row > #fetchBtn{height:54px!important;min-height:54px!important;width:100%!important;font-size:1rem!important;font-weight:700!important;border-radius:8px!important;margin-top:10px!important;display:block!important;box-sizing:border-box!important}}
+  </style>
 </head>
 <body>
 <div class="wrap">
@@ -89,7 +90,7 @@ footer a:hover{color:var(--text)}
 </div>
 <div class="ad-slot"><div><div class="ad-label">advertisement</div>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5613136693294323" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<script>try{const ad=document.currentScript.previousElementSibling;if(ad&&!/^X+$/.test(ad.dataset.adSlot||''))(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}</script></div></div>
 <div class="tool-card">
   <div class="input-row">
     <input type="url" class="url-input" id="urlInput" placeholder="Paste video URL here — youtube.com/watch?v=..." autocomplete="off" spellcheck="false"/>
@@ -114,7 +115,7 @@ footer a:hover{color:var(--text)}
 </div>
 <div class="ad-slot"><div><div class="ad-label">advertisement</div>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5613136693294323" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<script>try{const ad=document.currentScript.previousElementSibling;if(ad&&!/^X+$/.test(ad.dataset.adSlot||''))(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}</script></div></div>
 <div class="section-title">Supported platforms</div>
 <div class="sites-grid">
   <div class="site-card"><div class="site-icon">▶</div>YouTube</div>
@@ -137,7 +138,7 @@ footer a:hover{color:var(--text)}
 </div>
 <div class="ad-slot"><div><div class="ad-label">advertisement</div>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5613136693294323" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
-<script>(adsbygoogle=window.adsbygoogle||[]).push({});</script></div></div>
+<script>try{const ad=document.currentScript.previousElementSibling;if(ad&&!/^X+$/.test(ad.dataset.adSlot||''))(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}</script></div></div>
 <div class="dmca">⚠ MayBox is intended for downloading content you have the right to download. Do not use this tool to download copyrighted content without permission. We are not responsible for misuse.</div>
 <footer>
   <span>© 2025 MayBox</span>
@@ -145,38 +146,11 @@ footer a:hover{color:var(--text)}
 </footer>
 </div>
 <script>
-const BACKEND_URL='https://vdown-y7yf.onrender.com';
+const BACKEND_URL='http://localhost:5000';
 function fillDemo(s){const d={youtube:'https://www.youtube.com/watch?v=dQw4w9WgXcQ',instagram:'https://www.instagram.com/reel/',tiktok:'https://www.tiktok.com/@',twitter:'https://twitter.com/',facebook:'https://www.facebook.com/watch/'};document.getElementById('urlInput').value=d[s]||'';}
 function showLoader(t){document.getElementById('statusArea').classList.add('visible');document.getElementById('loader').style.display='flex';document.getElementById('loaderText').textContent=t||'Fetching...';document.getElementById('errorMsg').classList.remove('visible');document.getElementById('videoInfo').classList.remove('visible');document.getElementById('formatsGrid').classList.remove('visible');}
 function hideLoader(){document.getElementById('loader').style.display='none';}
 function showError(m){hideLoader();const e=document.getElementById('errorMsg');e.textContent='✗ '+m;e.classList.add('visible');}
-async function fetchDailymotion(url) {
-  const id = url.split('/video/')[1]?.split('?')[0]?.split('/')[0];
-  if (!id) throw new Error('Invalid Dailymotion URL');
-  const res = await fetch(https://api.dailymotion.com/video/+id+?fields=title,thumbnail_url,stream_h264_url,stream_h264_hd_url,stream_h264_hd1080_url,duration,owner.screenname);
-  if (!res.ok) throw new Error('Dailymotion API error');
-  const d = await res.json();
-  const s = parseInt(d.duration||0); const h=Math.floor(s/3600),m=Math.floor((s%3600)/60),sec=s%60;
-  const dur = h ? ${h}:: : ${m}:;
-  hideLoader();
-  document.getElementById('videoTitle').textContent = d.title||'Video';
-  document.getElementById('videoMeta').textContent = [d['owner.screenname'], dur, 'Dailymotion'].filter(Boolean).join(' · ');
-  if(d.thumbnail_url) document.getElementById('videoThumb').src = d.thumbnail_url;
-  document.getElementById('videoInfo').classList.add('visible');
-  const grid = document.getElementById('formatsGrid'); grid.innerHTML='';
-  const fmts = [];
-  if(d.stream_h264_url) fmts.push({label:'MP4 480p',sub:'Standard quality',url:d.stream_h264_url});
-  if(d.stream_h264_hd_url) fmts.push({label:'MP4 720p',sub:'HD quality',url:d.stream_h264_hd_url});
-  if(d.stream_h264_hd1080_url) fmts.push({label:'MP4 1080p',sub:'Full HD',url:d.stream_h264_hd1080_url});
-  if(!fmts.length) throw new Error('No formats available for this video');
-  fmts.forEach(fmt=>{
-    const b=document.createElement('button'); b.className='format-btn';
-    b.innerHTML='<span class="fmt-label">⬇ '+fmt.label+'</span><span class="fmt-sub">'+fmt.sub+'</span>';
-    b.onclick=()=>{const a=document.createElement('a');a.href=fmt.url;a.target='_blank';a.download='';a.click();};
-    grid.appendChild(b);
-  });
-  grid.classList.add('visible');
-}
 async function fetchDailymotion(url){
   const id=url.split('/video/')[1]?.split('?')[0]?.split('/')[0];
   if(!id)throw new Error('Invalid Dailymotion URL');
@@ -201,7 +175,7 @@ async function fetchDailymotion(url){
 }
 async function fetchVideo(){
   const url=document.getElementById('urlInput').value.trim();
-  if(!url||(!url.startsWith('https://')&&!url.startsWith('https://'))){document.getElementById('statusArea').classList.add('visible');showError('Please paste a valid video URL.');return;}
+  if(!url||(!url.startsWith('https://')&&!url.startsWith('http://'))){document.getElementById('statusArea').classList.add('visible');showError('Please paste a valid video URL.');return;}
   const btn=document.getElementById('fetchBtn');btn.disabled=true;showLoader('Fetching video info...');
   try{
     const res=await fetch(BACKEND_URL+'/info',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({url})});
