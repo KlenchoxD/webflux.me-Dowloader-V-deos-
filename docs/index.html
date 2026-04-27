@@ -149,7 +149,7 @@ footer a:hover{color:var(--text)}
 const BACKEND_URL=(
   ['localhost','127.0.0.1'].includes(window.location.hostname)
     ? 'http://localhost:5000'
-    : 'https://api.webflux.me'
+    : 'https://maybox-api.onrender.com'
 ).replace(/\/$/,'');
 function fillDemo(s){const d={youtube:'https://www.youtube.com/watch?v=dQw4w9WgXcQ',instagram:'https://www.instagram.com/reel/',tiktok:'https://www.tiktok.com/@',twitter:'https://twitter.com/',facebook:'https://www.facebook.com/watch/'};document.getElementById('urlInput').value=d[s]||'';}
 function showLoader(t){document.getElementById('statusArea').classList.add('visible');document.getElementById('loader').style.display='flex';document.getElementById('loaderText').textContent=t||'Fetching...';document.getElementById('errorMsg').classList.remove('visible');document.getElementById('videoInfo').classList.remove('visible');document.getElementById('formatsGrid').classList.remove('visible');}
