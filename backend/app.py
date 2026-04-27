@@ -25,9 +25,13 @@ def get_cookies_path():
     if env_path and os.path.exists(env_path):
         source = env_path
     else:
-        default_path = os.path.join(os.path.dirname(__file__), "cookies.txt")
-        if os.path.exists(default_path):
-            source = default_path
+        render_secret_path = "/etc/secrets/cookies.txt"
+        if os.path.exists(render_secret_path):
+            source = render_secret_path
+        else:
+            default_path = os.path.join(os.path.dirname(__file__), "cookies.txt")
+            if os.path.exists(default_path):
+                source = default_path
     if source is None:
         return None
     tmp = tempfile.NamedTemporaryFile(
