@@ -56,21 +56,19 @@ def get_info():
         "http_headers":{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
     }
     cookies_path = get_cookies_path()
+    if cookies_path and os.path.exists(cookies_path):
+        _tmp = tempfile.mkstemp(suffix=".txt")[1]
+        shutil.copy2(cookies_path, _tmp)
+        cookies_path = _tmp
     if cookies_path:
-        if cookies_path and os.path.exists(cookies_path):
-            _tmp = tempfile.NamedTemporaryFile(
-                delete=False, suffix=".txt",
-                mode="w", encoding="utf-8"
-            )
-            with open(cookies_path, "r", encoding="utf-8") as _f:
-                _tmp.write(_f.read())
-            _tmp.close()
-            cookies_path = _tmp.name
         opts["cookiefile"] = cookies_path
         opts["no_cookies_write"] = True
     try:
         ydl = yt_dlp.YoutubeDL(opts)
-        ydl.save_cookies = lambda: None
+        try:
+            ydl.cookiejar.filename = None
+        except Exception:
+            pass
         try:
             info = ydl.extract_info(url, download=False)
         finally:
@@ -102,22 +100,20 @@ def download_video():
             "http_headers":{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
         }
         cookies_path = get_cookies_path()
+        if cookies_path and os.path.exists(cookies_path):
+            _tmp = tempfile.mkstemp(suffix=".txt")[1]
+            shutil.copy2(cookies_path, _tmp)
+            cookies_path = _tmp
         if cookies_path:
-            if cookies_path and os.path.exists(cookies_path):
-                _tmp = tempfile.NamedTemporaryFile(
-                    delete=False, suffix=".txt",
-                    mode="w", encoding="utf-8"
-                )
-                with open(cookies_path, "r", encoding="utf-8") as _f:
-                    _tmp.write(_f.read())
-                _tmp.close()
-                cookies_path = _tmp.name
             opts["cookiefile"] = cookies_path
             opts["no_cookies_write"] = True
         opts.update(FORMATS[fmt])
         try:
             ydl = yt_dlp.YoutubeDL(opts)
-            ydl.save_cookies = lambda: None
+            try:
+                ydl.cookiejar.filename = None
+            except Exception:
+                pass
             try:
                 ydl.download([url])
             finally:
