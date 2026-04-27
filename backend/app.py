@@ -69,8 +69,12 @@ def get_info():
         opts["cookiefile"] = cookies_path
         opts["no_cookies_write"] = True
     try:
-        with yt_dlp.YoutubeDL(opts) as ydl:
+        ydl = yt_dlp.YoutubeDL(opts)
+        ydl.save_cookies = lambda: None
+        try:
             info = ydl.extract_info(url, download=False)
+        finally:
+            pass
         dur = info.get("duration",0)
         if dur and dur > MAX_DURATION:
             return jsonify({"error":"Video too long (max 1 hour)"}),400
@@ -112,8 +116,12 @@ def download_video():
             opts["no_cookies_write"] = True
         opts.update(FORMATS[fmt])
         try:
-            with yt_dlp.YoutubeDL(opts) as ydl:
+            ydl = yt_dlp.YoutubeDL(opts)
+            ydl.save_cookies = lambda: None
+            try:
                 ydl.download([url])
+            finally:
+                pass
             files = [f for f in os.listdir(tmp) if os.path.isfile(os.path.join(tmp,f))]
             if not files: return jsonify({"error":"Download failed"}),500
             fpath = os.path.join(tmp,files[0])
