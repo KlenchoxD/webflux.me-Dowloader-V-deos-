@@ -1,6 +1,6 @@
 ﻿from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
-import yt_dlp, os, tempfile, re
+import yt_dlp, os, tempfile, re, shutil
 
 app = Flask(__name__)
 CORS(app, origins=["https://webflux.me", "https://www.webflux.me"])
@@ -57,6 +57,15 @@ def get_info():
     }
     cookies_path = get_cookies_path()
     if cookies_path:
+        if cookies_path and os.path.exists(cookies_path):
+            _tmp = tempfile.NamedTemporaryFile(
+                delete=False, suffix=".txt",
+                mode="w", encoding="utf-8"
+            )
+            with open(cookies_path, "r", encoding="utf-8") as _f:
+                _tmp.write(_f.read())
+            _tmp.close()
+            cookies_path = _tmp.name
         opts["cookiefile"] = cookies_path
         opts["no_cookies_write"] = True
     try:
@@ -90,6 +99,15 @@ def download_video():
         }
         cookies_path = get_cookies_path()
         if cookies_path:
+            if cookies_path and os.path.exists(cookies_path):
+                _tmp = tempfile.NamedTemporaryFile(
+                    delete=False, suffix=".txt",
+                    mode="w", encoding="utf-8"
+                )
+                with open(cookies_path, "r", encoding="utf-8") as _f:
+                    _tmp.write(_f.read())
+                _tmp.close()
+                cookies_path = _tmp.name
             opts["cookiefile"] = cookies_path
             opts["no_cookies_write"] = True
         opts.update(FORMATS[fmt])
