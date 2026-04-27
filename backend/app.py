@@ -3,7 +3,7 @@ from flask_cors import CORS
 import yt_dlp, os, tempfile, re
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, origins=["https://webflux.me", "https://www.webflux.me"])
 
 MAX_DURATION = 3600
 FORMATS = {
