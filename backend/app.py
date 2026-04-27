@@ -48,6 +48,7 @@ def get_info():
     cookies_path = get_cookies_path()
     if cookies_path:
         opts["cookiefile"] = cookies_path
+        opts["no_cookies_write"] = True
     try:
         with yt_dlp.YoutubeDL(opts) as ydl:
             info = ydl.extract_info(url, download=False)
@@ -80,6 +81,7 @@ def download_video():
         cookies_path = get_cookies_path()
         if cookies_path:
             opts["cookiefile"] = cookies_path
+            opts["no_cookies_write"] = True
         opts.update(FORMATS[fmt])
         try:
             with yt_dlp.YoutubeDL(opts) as ydl:
