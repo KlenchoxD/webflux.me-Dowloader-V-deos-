@@ -19,14 +19,24 @@ def valid_url(u):
     return bool(re.match(r'^https?://',u)) and len(u)<2048
 
 def get_cookies_path():
-    """Get cookies file path from env var or default location"""
+    import shutil, tempfile
     env_path = os.environ.get("YTDLP_COOKIES_FILE")
+    source = None
     if env_path and os.path.exists(env_path):
-        return env_path
-    default_path = os.path.join(os.path.dirname(__file__), "cookies.txt")
-    if os.path.exists(default_path):
-        return default_path
-    return None
+        source = env_path
+    else:
+        default_path = os.path.join(os.path.dirname(__file__), "cookies.txt")
+        if os.path.exists(default_path):
+            source = default_path
+    if source is None:
+        return None
+    tmp = tempfile.NamedTemporaryFile(
+        delete=False, suffix=".txt", mode="w", encoding="utf-8"
+    )
+    with open(source, "r", encoding="utf-8") as f:
+        tmp.write(f.read())
+    tmp.close()
+    return tmp.name
 
 @app.route("/")
 @app.route("/health")
