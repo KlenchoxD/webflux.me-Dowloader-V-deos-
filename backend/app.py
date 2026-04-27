@@ -43,10 +43,10 @@ def get_cookies_path():
 def health():
     return jsonify({"status":"ok","service":"MayBox API"})
 
-@app.route("/info", methods=["POST"])
+@app.route("/info", methods=["GET", "POST"])
 def get_info():
     data = request.get_json(silent=True) or {}
-    url = (data.get("url") or "").strip()
+    url = ((request.args.get("url") if request.method == "GET" else data.get("url")) or "").strip()
     if not url or not valid_url(url):
         return jsonify({"error":"Invalid URL"}),400
     opts = {
