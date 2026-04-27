@@ -49,6 +49,7 @@ def get_info():
     url = ((request.args.get("url") if request.method == "GET" else data.get("url")) or "").strip()
     if not url or not valid_url(url):
         return jsonify({"error":"Invalid URL"}),400
+    print("DEBUG cookies path:", get_cookies_path())
     opts = {
         "quiet":False,"no_warnings":False,"skip_download":True,
         "no_check_certificates":True,
@@ -63,6 +64,7 @@ def get_info():
     if cookies_path:
         opts["cookiefile"] = cookies_path
         opts["no_cookies_write"] = True
+    print("DEBUG opts cookiefile:", opts.get("cookiefile"))
     try:
         ydl = yt_dlp.YoutubeDL(opts)
         try:
