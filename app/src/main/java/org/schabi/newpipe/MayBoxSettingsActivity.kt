@@ -216,7 +216,7 @@ class MayBoxSettingsActivity : AppCompatActivity() {
         // 7. Check for updates
         findViewById<View>(R.id.settings_check_updates).setOnClickListener {
             startActivity(
-                Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Mondacazo/VDown/releases"))
+                Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/KlenchoxD/webflux.me-Dowloader-V-deos-/releases"))
             )
         }
 

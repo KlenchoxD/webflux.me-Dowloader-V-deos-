@@ -2,10 +2,12 @@
   - type: web
     name: webflux-api
     runtime: python
-    buildCommand: pip install -r backend/requirements.txt
+    buildCommand: "pip install -r backend/requirements.txt && curl -fsSL https://deno.land/install.sh | DENO_INSTALL=/opt/render/project/.deno sh"
     startCommand: gunicorn backend.app:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
       - key: YTDLP_COOKIES_FILE
         value: /etc/secrets/cookies.txt
+      - key: DENO_PATH
+        value: /opt/render/project/.deno/bin/deno

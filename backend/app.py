@@ -9,6 +9,10 @@ CORS(app, origins=["https://webflux.me", "https://www.webflux.me"])
 MAX_DURATION = 3600
 VIDEO_HEIGHTS = (144, 240, 360, 480, 720, 1080)
 
+def js_runtime_options():
+    deno_path = os.environ.get("DENO_PATH")
+    return {"deno":{"path":deno_path}} if deno_path else {"deno":{}}
+
 def mp4_format(max_height=None):
     height = f"[height<={max_height}]" if max_height else ""
     return (
@@ -80,7 +84,12 @@ def build_servers(video_url, info=None):
     servers = [{"name":"MP3 Audio","url":base + "?" + urlencode({"url":video_url,"format":"mp3"}),"type":"mp3"}]
     heights = available_mp4_heights(info or {})
     if not heights:
-        heights = [1080, 720, 360, 240]
+        servers.append({
+            "name":"Best MP4",
+            "url":base + "?" + urlencode({"url":video_url,"format":"mp4"}),
+            "type":"mp4"
+        })
+        return servers
     for height in heights[:4]:
         servers.append({
             "name":f"MP4 {height}p",
@@ -112,7 +121,7 @@ def get_cookies_path():
 @app.route("/")
 @app.route("/health")
 def health():
-    return jsonify({"status":"ok","service":"MayBox API"})
+    return jsonify({"status":"ok","service":"webflux API"})
 
 @app.route("/info", methods=["GET", "POST"])
 def get_info():
@@ -123,6 +132,7 @@ def get_info():
     opts = {
         "quiet":False,"no_warnings":False,"skip_download":True,
         "ignore_no_formats_error":True,
+        "js_runtimes":js_runtime_options(),
         "no_check_certificates":True,
         "extractor_args":{"dailymotion":{"cdn":["none"]}},
         "http_headers":{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
@@ -170,6 +180,7 @@ def download_video():
             "outtmpl":os.path.join(tmp,"%(title).60s.%(ext)s"),
             "quiet":True,"no_warnings":True,"no_check_certificates":True,
             "no_playlist":True,"no_mtime":True,"retries":3,
+            "js_runtimes":js_runtime_options(),
             "extractor_args":{"dailymotion":{"cdn":["none"]}},
             "http_headers":{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
         }
@@ -182,16 +193,23 @@ def download_video():
             opts["cookiefile"] = cookies_path
             opts["no_cookies_write"] = True
         opts.update(format_opts)
-        try:
-            ydl = yt_dlp.YoutubeDL(opts)
+        def run_download(download_opts):
+            ydl = yt_dlp.YoutubeDL(download_opts)
             try:
                 ydl.cookiejar.filename = None
             except Exception:
                 pass
+            ydl.download([url])
+
+        try:
             try:
-                ydl.download([url])
-            finally:
-                pass
+                run_download(opts)
+            except Exception as e:
+                if fmt not in ("mp3","m4a","mp4","best") and "Requested format is not available" in str(e):
+                    opts.update(get_format_options("mp4"))
+                    run_download(opts)
+                else:
+                    raise
             files = [f for f in os.listdir(tmp) if os.path.isfile(os.path.join(tmp,f))]
             if not files: return jsonify({"error":"Download failed"}),500
             fpath = os.path.join(tmp,files[0])
