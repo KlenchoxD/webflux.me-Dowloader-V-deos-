@@ -8,10 +8,23 @@ CORS(app, origins=["https://webflux.me", "https://www.webflux.me"])
 
 MAX_DURATION = 3600
 VIDEO_HEIGHTS = (144, 240, 360, 480, 720, 1080)
+YOUTUBE_CLIENT_SETS = (
+    ["tv_downgraded", "web", "web_safari"],
+    ["web", "web_safari", "mweb"],
+    ["ios", "android"],
+    ["android_vr", "ios", "android"],
+    ["mweb"],
+)
 
 def js_runtime_options():
     deno_path = os.environ.get("DENO_PATH")
     return {"deno":{"path":deno_path}} if deno_path else {"deno":{}}
+
+def extractor_args(youtube_clients=None):
+    args = {"dailymotion":{"cdn":["none"]}}
+    if youtube_clients:
+        args["youtube"] = {"player_client":youtube_clients}
+    return args
 
 def mp4_format(max_height=None):
     height = f"[height<={max_height}]" if max_height else ""
@@ -134,7 +147,7 @@ def get_info():
         "ignore_no_formats_error":True,
         "js_runtimes":js_runtime_options(),
         "no_check_certificates":True,
-        "extractor_args":{"dailymotion":{"cdn":["none"]}},
+        "extractor_args":extractor_args(),
         "http_headers":{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
     }
     cookies_path = get_cookies_path()
@@ -146,15 +159,26 @@ def get_info():
         opts["cookiefile"] = cookies_path
         opts["no_cookies_write"] = True
     try:
-        ydl = yt_dlp.YoutubeDL(opts)
-        try:
-            ydl.cookiejar.filename = None
-        except Exception:
-            pass
-        try:
-            info = ydl.extract_info(url, download=False)
-        finally:
-            pass
+        def extract_with_options(info_opts):
+            ydl = yt_dlp.YoutubeDL(info_opts)
+            try:
+                ydl.cookiejar.filename = None
+            except Exception:
+                pass
+            return ydl.extract_info(url, download=False)
+
+        info = extract_with_options(opts)
+        if detect_platform(url) == "youtube" and not available_mp4_heights(info):
+            for clients in YOUTUBE_CLIENT_SETS:
+                retry_opts = dict(opts)
+                retry_opts["extractor_args"] = extractor_args(clients)
+                try:
+                    retry_info = extract_with_options(retry_opts)
+                except Exception:
+                    continue
+                info = retry_info
+                if available_mp4_heights(info):
+                    break
         dur = info.get("duration",0)
         if dur and dur > MAX_DURATION:
             return jsonify({"error":"Video too long (max 1 hour)"}),400
@@ -181,7 +205,7 @@ def download_video():
             "quiet":True,"no_warnings":True,"no_check_certificates":True,
             "no_playlist":True,"no_mtime":True,"retries":3,
             "js_runtimes":js_runtime_options(),
-            "extractor_args":{"dailymotion":{"cdn":["none"]}},
+            "extractor_args":extractor_args(),
             "http_headers":{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
         }
         cookies_path = get_cookies_path()
@@ -205,9 +229,20 @@ def download_video():
             try:
                 run_download(opts)
             except Exception as e:
-                if fmt not in ("mp3","m4a","mp4","best") and "Requested format is not available" in str(e):
+                if "Requested format is not available" in str(e):
                     opts.update(get_format_options("mp4"))
-                    run_download(opts)
+                    last_error = e
+                    for clients in (None, *YOUTUBE_CLIENT_SETS):
+                        retry_opts = dict(opts)
+                        retry_opts["extractor_args"] = extractor_args(clients)
+                        try:
+                            run_download(retry_opts)
+                            last_error = None
+                            break
+                        except Exception as retry_error:
+                            last_error = retry_error
+                    if last_error:
+                        raise last_error
                 else:
                     raise
             files = [f for f in os.listdir(tmp) if os.path.isfile(os.path.join(tmp,f))]
