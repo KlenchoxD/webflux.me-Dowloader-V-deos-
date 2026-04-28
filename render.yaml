@@ -1,9 +1,11 @@
 ﻿services:
   - type: web
-    name: maybox-api
+    name: webflux-api
     runtime: python
     buildCommand: pip install -r backend/requirements.txt
     startCommand: gunicorn backend.app:app --bind 0.0.0.0:$PORT --workers 2 --timeout 120
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
+      - key: YTDLP_COOKIES_FILE
+        value: /etc/secrets/cookies.txt
