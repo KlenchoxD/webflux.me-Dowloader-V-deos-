@@ -122,6 +122,7 @@ def get_info():
         return jsonify({"error":"Invalid URL"}),400
     opts = {
         "quiet":False,"no_warnings":False,"skip_download":True,
+        "ignore_no_formats_error":True,
         "no_check_certificates":True,
         "extractor_args":{"dailymotion":{"cdn":["none"]}},
         "http_headers":{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
