@@ -7,13 +7,31 @@ app = Flask(__name__)
 CORS(app, origins=["https://webflux.me", "https://www.webflux.me"])
 
 MAX_DURATION = 3600
+VIDEO_HEIGHTS = (144, 240, 360, 480, 720, 1080)
+
+def mp4_format(max_height=None):
+    height = f"[height<={max_height}]" if max_height else ""
+    return (
+        f"bestvideo{height}[ext=mp4]+bestaudio[ext=m4a]/"
+        f"bestvideo{height}[ext=mp4]+bestaudio/"
+        f"best{height}[ext=mp4]/"
+        f"best{height}/"
+        "bestvideo[ext=mp4]+bestaudio[ext=m4a]/"
+        "bestvideo[ext=mp4]+bestaudio/"
+        "best[ext=mp4]/best"
+    )
+
 FORMATS = {
     "mp3":  {"format":"bestaudio/best","postprocessors":[{"key":"FFmpegExtractAudio","preferredcodec":"mp3","preferredquality":"0"}]},
     "m4a":  {"format":"bestaudio/best","postprocessors":[{"key":"FFmpegExtractAudio","preferredcodec":"m4a","preferredquality":"5"}]},
-    "360p": {"format":"bestvideo[height<=360][ext=mp4]+bestaudio[ext=m4a]/best[height<=360]/best","merge_output_format":"mp4"},
-    "720p": {"format":"bestvideo[height<=720][ext=mp4]+bestaudio[ext=m4a]/best[height<=720]/best","merge_output_format":"mp4"},
-    "1080p":{"format":"bestvideo[height<=1080][ext=mp4]+bestaudio[ext=m4a]/best[height<=1080]/best","merge_output_format":"mp4"},
-    "best": {"format":"bestvideo+bestaudio/best","merge_output_format":"mp4"},
+    "144p": {"format":mp4_format(144),"merge_output_format":"mp4"},
+    "240p": {"format":mp4_format(240),"merge_output_format":"mp4"},
+    "360p": {"format":mp4_format(360),"merge_output_format":"mp4"},
+    "480p": {"format":mp4_format(480),"merge_output_format":"mp4"},
+    "720p": {"format":mp4_format(720),"merge_output_format":"mp4"},
+    "1080p":{"format":mp4_format(1080),"merge_output_format":"mp4"},
+    "best": {"format":mp4_format(),"merge_output_format":"mp4"},
+    "mp4":  {"format":mp4_format(),"merge_output_format":"mp4"},
 }
 
 INFO_FORMATS = [
@@ -41,12 +59,35 @@ def detect_platform(u):
         return "facebook"
     return "unknown"
 
-def build_servers(video_url):
+def get_format_options(fmt):
+    if fmt in FORMATS:
+        return dict(FORMATS[fmt])
+    match = re.fullmatch(r"(\d{3,4})p", fmt)
+    if match:
+        return {"format":mp4_format(int(match.group(1))),"merge_output_format":"mp4"}
+    return None
+
+def available_mp4_heights(info):
+    heights = set()
+    for fmt in info.get("formats") or []:
+        height = fmt.get("height")
+        if fmt.get("ext") == "mp4" and height and fmt.get("vcodec") != "none":
+            heights.add(int(height))
+    return sorted(heights, reverse=True)
+
+def build_servers(video_url, info=None):
     base = request.host_url.rstrip("/") + "/download"
-    return [
-        {"name": label, "url": base + "?" + urlencode({"url": video_url, "format": fmt}), "type": kind}
-        for label, fmt, kind in INFO_FORMATS
-    ]
+    servers = [{"name":"MP3 Audio","url":base + "?" + urlencode({"url":video_url,"format":"mp3"}),"type":"mp3"}]
+    heights = available_mp4_heights(info or {})
+    if not heights:
+        heights = [1080, 720, 360, 240]
+    for height in heights[:4]:
+        servers.append({
+            "name":f"MP4 {height}p",
+            "url":base + "?" + urlencode({"url":video_url,"format":f"{height}p"}),
+            "type":"mp4"
+        })
+    return servers[:5]
 
 def get_cookies_path():
     import shutil, tempfile
@@ -111,7 +152,7 @@ def get_info():
         s = int(dur or 0); h,r=divmod(s,3600); m,sec=divmod(r,60)
         dur_str = f"{h}:{m:02d}:{sec:02d}" if h else f"{m}:{sec:02d}"
         platform = detect_platform(url)
-        return jsonify({"platform":platform,"title":info.get("title","Video"),"uploader":info.get("uploader",""),"duration_str":dur_str,"thumbnail":thumb,"extractor":info.get("extractor_key",""),"servers":build_servers(url)})
+        return jsonify({"platform":platform,"title":info.get("title","Video"),"uploader":info.get("uploader",""),"duration_str":dur_str,"thumbnail":thumb,"extractor":info.get("extractor_key",""),"servers":build_servers(url, info)})
     except Exception as e:
         return jsonify({"error": str(e)}),400
 
@@ -121,7 +162,8 @@ def download_video():
     url = ((request.args.get("url") if request.method == "GET" else data.get("url")) or "").strip()
     fmt = ((request.args.get("format") or request.args.get("type")) if request.method == "GET" else (data.get("format") or data.get("type")) or "720p").strip().lower()
     if not url or not valid_url(url): return jsonify({"error":"Invalid URL"}),400
-    if fmt not in FORMATS: return jsonify({"error":"Invalid format"}),400
+    format_opts = get_format_options(fmt)
+    if not format_opts: return jsonify({"error":"Invalid format"}),400
     with tempfile.TemporaryDirectory() as tmp:
         opts = {
             "outtmpl":os.path.join(tmp,"%(title).60s.%(ext)s"),
@@ -138,7 +180,7 @@ def download_video():
         if cookies_path:
             opts["cookiefile"] = cookies_path
             opts["no_cookies_write"] = True
-        opts.update(FORMATS[fmt])
+        opts.update(format_opts)
         try:
             ydl = yt_dlp.YoutubeDL(opts)
             try:
