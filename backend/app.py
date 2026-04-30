@@ -43,13 +43,25 @@ def extractor_args(youtube_clients=None):
         args["youtube"] = {"player_client":youtube_clients}
     return args
 
+def ffmpeg_location():
+    env_path = os.environ.get("FFMPEG_LOCATION")
+    if env_path:
+        return env_path
+    try:
+        import imageio_ffmpeg
+        return imageio_ffmpeg.get_ffmpeg_exe()
+    except Exception:
+        return None
+
 def mp4_format(max_height=None):
     height = f"[height<={max_height}]" if max_height else ""
     return (
-        f"bestvideo{height}[ext=mp4]+bestaudio[ext=m4a]/"
-        f"bestvideo{height}[ext=mp4]+bestaudio/"
+        f"best{height}[ext=mp4][vcodec!=none][acodec!=none]/"
+        f"best{height}[vcodec!=none][acodec!=none]/"
         f"best{height}[ext=mp4]/"
         f"best{height}/"
+        f"bestvideo{height}[ext=mp4]+bestaudio[ext=m4a]/"
+        f"bestvideo{height}[ext=mp4]+bestaudio/"
         "bestvideo[ext=mp4]+bestaudio[ext=m4a]/"
         "bestvideo[ext=mp4]+bestaudio/"
         "best[ext=mp4]/best"
@@ -105,7 +117,7 @@ def available_mp4_heights(info):
     heights = set()
     for fmt in info.get("formats") or []:
         height = fmt.get("height")
-        if fmt.get("ext") == "mp4" and height and fmt.get("vcodec") != "none":
+        if fmt.get("ext") == "mp4" and height and fmt.get("vcodec") != "none" and fmt.get("acodec") != "none":
             heights.add(int(height))
     return sorted(heights, reverse=True)
 
@@ -198,7 +210,8 @@ def download_video():
     if not url or not valid_url(url): return jsonify({"error":"Invalid URL"}),400
     format_opts = get_format_options(fmt)
     if not format_opts: return jsonify({"error":"Invalid format"}),400
-    with tempfile.TemporaryDirectory() as tmp:
+    tmp = tempfile.mkdtemp(prefix="webflux_")
+    try:
         opts = {
             "outtmpl":os.path.join(tmp,"%(title).60s.%(ext)s"),
             "quiet":True,"no_warnings":True,"no_check_certificates":True,
@@ -207,47 +220,52 @@ def download_video():
             "extractor_args":extractor_args(),
             "http_headers":{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
         }
-        try:
-            cookies_path = get_cookies_path()
-            if cookies_path:
-                opts["cookiefile"] = cookies_path
-                opts["no_cookies_write"] = True
-            opts.update(format_opts)
-            def run_download(download_opts):
-                ydl = yt_dlp.YoutubeDL(download_opts)
-                try:
-                    ydl.cookiejar.filename = None
-                except Exception:
-                    pass
-                ydl.download([url])
-
+        ffmpeg = ffmpeg_location()
+        if ffmpeg:
+            opts["ffmpeg_location"] = ffmpeg
+        cookies_path = get_cookies_path()
+        if cookies_path:
+            opts["cookiefile"] = cookies_path
+            opts["no_cookies_write"] = True
+        opts.update(format_opts)
+        def run_download(download_opts):
+            ydl = yt_dlp.YoutubeDL(download_opts)
             try:
-                run_download(opts)
-            except Exception as e:
-                if "Requested format is not available" in str(e):
-                    opts.update(get_format_options("mp4"))
-                    last_error = e
-                    for clients in (None, *YOUTUBE_CLIENT_SETS):
-                        retry_opts = dict(opts)
-                        retry_opts["extractor_args"] = extractor_args(clients)
-                        try:
-                            run_download(retry_opts)
-                            last_error = None
-                            break
-                        except Exception as retry_error:
-                            last_error = retry_error
-                    if last_error:
-                        raise last_error
-                else:
-                    raise
-            files = [f for f in os.listdir(tmp) if os.path.isfile(os.path.join(tmp,f))]
-            if not files: return jsonify({"error":"Download failed"}),500
-            fpath = os.path.join(tmp,files[0])
-            ext = os.path.splitext(files[0])[1].lower()
-            mime = {".mp4":"video/mp4",".mp3":"audio/mpeg",".m4a":"audio/mp4",".webm":"video/webm"}.get(ext,"application/octet-stream")
-            return send_file(fpath,as_attachment=True,download_name=files[0],mimetype=mime)
+                ydl.cookiejar.filename = None
+            except Exception:
+                pass
+            ydl.download([url])
+
+        try:
+            run_download(opts)
         except Exception as e:
-            return jsonify({"error": str(e)}),400
+            if "Requested format is not available" in str(e):
+                opts.update(get_format_options("mp4"))
+                last_error = e
+                for clients in (None, *YOUTUBE_CLIENT_SETS):
+                    retry_opts = dict(opts)
+                    retry_opts["extractor_args"] = extractor_args(clients)
+                    try:
+                        run_download(retry_opts)
+                        last_error = None
+                        break
+                    except Exception as retry_error:
+                        last_error = retry_error
+                if last_error:
+                    raise last_error
+            else:
+                raise
+        files = [f for f in os.listdir(tmp) if os.path.isfile(os.path.join(tmp,f))]
+        if not files: return jsonify({"error":"Download failed"}),500
+        fpath = os.path.join(tmp,files[0])
+        ext = os.path.splitext(files[0])[1].lower()
+        mime = {".mp4":"video/mp4",".mp3":"audio/mpeg",".m4a":"audio/mp4",".webm":"video/webm"}.get(ext,"application/octet-stream")
+        response = send_file(fpath,as_attachment=True,download_name=files[0],mimetype=mime)
+        response.call_on_close(lambda: shutil.rmtree(tmp, ignore_errors=True))
+        return response
+    except Exception as e:
+        shutil.rmtree(tmp, ignore_errors=True)
+        return jsonify({"error": str(e)}),400
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT",5000)))
