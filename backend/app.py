@@ -199,6 +199,8 @@ def build_servers(video_url, info=None):
     servers = [{"name":"MP3 Audio","url":base + "?" + urlencode({"url":video_url,"format":"mp3"}),"type":"mp3"}]
     heights = available_mp4_heights(info or {})
     if not heights:
+        if detect_platform(video_url) == "youtube":
+            return servers
         servers.append({
             "name":"Best MP4",
             "url":base + "?" + urlencode({"url":video_url,"format":"mp4"}),
@@ -344,7 +346,13 @@ def download_video():
         return response
     except Exception as e:
         shutil.rmtree(tmp, ignore_errors=True)
-        return jsonify({"error": str(e)}),400
+        message = str(e)
+        if "Requested format is not available" in message:
+            message = (
+                "MP4 download is not available for this YouTube video with the current "
+                "cookies. Configure a valid YouTube PO Token in Render using YOUTUBE_PO_TOKEN."
+            )
+        return jsonify({"error": message}),400
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT",5000)))
