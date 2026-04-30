@@ -158,6 +158,7 @@ def get_info():
     opts = {
         "quiet":False,"no_warnings":False,"skip_download":True,
         "ignore_no_formats_error":True,
+        "socket_timeout":20,
         "js_runtimes":js_runtime_options(),
         "no_check_certificates":True,
         "extractor_args":extractor_args(),
@@ -177,17 +178,6 @@ def get_info():
             return ydl.extract_info(url, download=False)
 
         info = extract_with_options(opts)
-        if detect_platform(url) == "youtube" and not available_mp4_heights(info):
-            for clients in YOUTUBE_CLIENT_SETS:
-                retry_opts = dict(opts)
-                retry_opts["extractor_args"] = extractor_args(clients)
-                try:
-                    retry_info = extract_with_options(retry_opts)
-                except Exception:
-                    continue
-                info = retry_info
-                if available_mp4_heights(info):
-                    break
         dur = info.get("duration",0)
         if dur and dur > MAX_DURATION:
             return jsonify({"error":"Video too long (max 1 hour)"}),400
