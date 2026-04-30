@@ -1,8 +1,9 @@
-﻿from flask import Flask, request, jsonify, send_file
+﻿from flask import Flask, request, jsonify, send_file, Response
 from flask_cors import CORS
 from werkzeug.exceptions import HTTPException
 import yt_dlp, os, tempfile, re, shutil
 from urllib.parse import urlencode
+import requests
 
 app = Flask(__name__)
 ALLOWED_ORIGINS = {"https://webflux.me", "https://www.webflux.me"}
@@ -37,10 +38,31 @@ def js_runtime_options():
     deno_path = os.environ.get("DENO_PATH")
     return {"deno":{"path":deno_path}} if deno_path else {"deno":{}}
 
+def env_list(name):
+    return [part.strip() for part in os.environ.get(name, "").split(",") if part.strip()]
+
 def extractor_args(youtube_clients=None):
     args = {"dailymotion":{"cdn":["none"]}}
+    youtube = {}
+    env_clients = env_list("YOUTUBE_PLAYER_CLIENTS")
+    if env_clients:
+        youtube["player_client"] = env_clients
+    elif youtube_clients:
+        youtube["player_client"] = youtube_clients
+    po_tokens = env_list("YOUTUBE_PO_TOKEN")
+    if po_tokens:
+        youtube["po_token"] = [token if "+" in token else f"mweb.gvs+{token}" for token in po_tokens]
+        youtube.setdefault("player_client", ["mweb", "web", "web_safari"])
+    visitor_data = os.environ.get("YOUTUBE_VISITOR_DATA", "").strip()
+    if visitor_data:
+        youtube["visitor_data"] = [visitor_data]
+    data_sync_id = os.environ.get("YOUTUBE_DATA_SYNC_ID", "").strip()
+    if data_sync_id:
+        youtube["data_sync_id"] = [data_sync_id]
     if youtube_clients:
-        args["youtube"] = {"player_client":youtube_clients}
+        youtube.setdefault("player_client", youtube_clients)
+    if youtube:
+        args["youtube"] = youtube
     return args
 
 def ffmpeg_location():
@@ -120,6 +142,57 @@ def available_mp4_heights(info):
         if fmt.get("ext") == "mp4" and height and fmt.get("vcodec") != "none" and fmt.get("acodec") != "none":
             heights.add(int(height))
     return sorted(heights, reverse=True)
+
+def safe_filename(name, ext):
+    name = re.sub(r'[\\/:*?"<>|]+', "_", name or "webflux_download").strip()
+    return f"{name[:80] or 'webflux_download'}.{ext}"
+
+def extract_info_with_options(video_url, options):
+    ydl = yt_dlp.YoutubeDL(options)
+    try:
+        ydl.cookiejar.filename = None
+    except Exception:
+        pass
+    return ydl.extract_info(video_url, download=False)
+
+def direct_media_info(video_url, options):
+    info = extract_info_with_options(video_url, options)
+    if info.get("url"):
+        return info
+    raise RuntimeError(
+        "No direct MP4 stream is available for this video. Try MP3 or configure "
+        "a valid YouTube PO Token in Render for protected YouTube downloads."
+    )
+
+def stream_direct_media(media_url, filename, mime, request_headers=None):
+    headers = request_headers or {
+        "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    }
+    upstream = requests.get(media_url, stream=True, timeout=(10, 30), headers=headers)
+    try:
+        upstream.raise_for_status()
+    except requests.HTTPError as error:
+        status = upstream.status_code
+        upstream.close()
+        if status == 403:
+            raise RuntimeError(
+                "YouTube blocked the media URL (HTTP 403). Configure a valid YouTube PO Token "
+                "in Render using YOUTUBE_PO_TOKEN, and refresh cookies if needed."
+            ) from error
+        raise
+
+    def generate():
+        try:
+            for chunk in upstream.iter_content(chunk_size=1024 * 256):
+                if chunk:
+                    yield chunk
+        finally:
+            upstream.close()
+
+    headers = {"Content-Disposition":f'attachment; filename="{filename}"'}
+    if upstream.headers.get("Content-Length"):
+        headers["Content-Length"] = upstream.headers["Content-Length"]
+    return Response(generate(), mimetype=mime, headers=headers)
 
 def build_servers(video_url, info=None):
     base = request.host_url.rstrip("/") + "/download"
@@ -206,7 +279,8 @@ def get_info():
 def download_video():
     data = request.get_json(silent=True) or {}
     url = ((request.args.get("url") if request.method == "GET" else data.get("url")) or "").strip()
-    fmt = ((request.args.get("format") or request.args.get("type")) if request.method == "GET" else (data.get("format") or data.get("type")) or "720p").strip().lower()
+    fmt_value = (request.args.get("format") or request.args.get("type")) if request.method == "GET" else (data.get("format") or data.get("type"))
+    fmt = (fmt_value or "720p").strip().lower()
     if not url or not valid_url(url): return jsonify({"error":"Invalid URL"}),400
     format_opts = get_format_options(fmt)
     if not format_opts: return jsonify({"error":"Invalid format"}),400
@@ -215,7 +289,7 @@ def download_video():
         opts = {
             "outtmpl":os.path.join(tmp,"%(title).60s.%(ext)s"),
             "quiet":True,"no_warnings":True,"no_check_certificates":True,
-            "no_playlist":True,"no_mtime":True,"retries":3,
+            "no_playlist":True,"no_mtime":True,"retries":3,"socket_timeout":20,
             "js_runtimes":js_runtime_options(),
             "extractor_args":extractor_args(),
             "http_headers":{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
@@ -228,6 +302,11 @@ def download_video():
             opts["cookiefile"] = cookies_path
             opts["no_cookies_write"] = True
         opts.update(format_opts)
+        if fmt not in ("mp3", "m4a"):
+            info = direct_media_info(url, opts)
+            ext = info.get("ext") or "mp4"
+            mime = {".mp4":"video/mp4",".webm":"video/webm"}.get(f".{ext}", "application/octet-stream")
+            return stream_direct_media(info["url"], safe_filename(info.get("title"), ext), mime, info.get("http_headers"))
         def run_download(download_opts):
             ydl = yt_dlp.YoutubeDL(download_opts)
             try:
