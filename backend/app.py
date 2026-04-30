@@ -139,7 +139,7 @@ def available_mp4_heights(info):
     heights = set()
     for fmt in info.get("formats") or []:
         height = fmt.get("height")
-        if fmt.get("ext") == "mp4" and height and fmt.get("vcodec") != "none" and fmt.get("acodec") != "none":
+        if fmt.get("ext") == "mp4" and height and fmt.get("vcodec") != "none":
             heights.add(int(height))
     return sorted(heights, reverse=True)
 
@@ -159,10 +159,7 @@ def direct_media_info(video_url, options):
     info = extract_info_with_options(video_url, options)
     if info.get("url"):
         return info
-    raise RuntimeError(
-        "No direct MP4 stream is available for this video. Try MP3 or configure "
-        "a valid YouTube PO Token in Render for protected YouTube downloads."
-    )
+    return None
 
 def stream_direct_media(media_url, filename, mime, request_headers=None):
     headers = request_headers or {
@@ -199,8 +196,6 @@ def build_servers(video_url, info=None):
     servers = [{"name":"MP3 Audio","url":base + "?" + urlencode({"url":video_url,"format":"mp3"}),"type":"mp3"}]
     heights = available_mp4_heights(info or {})
     if not heights:
-        if detect_platform(video_url) == "youtube":
-            return servers
         servers.append({
             "name":"Best MP4",
             "url":base + "?" + urlencode({"url":video_url,"format":"mp4"}),
@@ -231,6 +226,13 @@ def get_cookies_path():
     shutil.copyfile(source, tmp_path)
     return tmp_path
 
+def cleanup_temp_file(path):
+    if path:
+        try:
+            os.unlink(path)
+        except OSError:
+            pass
+
 @app.route("/")
 @app.route("/health")
 def health():
@@ -251,6 +253,7 @@ def get_info():
         "extractor_args":extractor_args(),
         "http_headers":{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
     }
+    cookies_path = None
     try:
         cookies_path = get_cookies_path()
         if cookies_path:
@@ -276,6 +279,8 @@ def get_info():
         return jsonify({"platform":platform,"title":info.get("title","Video"),"uploader":info.get("uploader",""),"duration_str":dur_str,"thumbnail":thumb,"extractor":info.get("extractor_key",""),"servers":build_servers(url, info)})
     except Exception as e:
         return jsonify({"error": str(e)}),400
+    finally:
+        cleanup_temp_file(cookies_path)
 
 @app.route("/download", methods=["GET", "POST"])
 def download_video():
@@ -287,6 +292,7 @@ def download_video():
     format_opts = get_format_options(fmt)
     if not format_opts: return jsonify({"error":"Invalid format"}),400
     tmp = tempfile.mkdtemp(prefix="webflux_")
+    cookies_path = None
     try:
         opts = {
             "outtmpl":os.path.join(tmp,"%(title).60s.%(ext)s"),
@@ -305,10 +311,16 @@ def download_video():
             opts["no_cookies_write"] = True
         opts.update(format_opts)
         if fmt not in ("mp3", "m4a"):
-            info = direct_media_info(url, opts)
-            ext = info.get("ext") or "mp4"
-            mime = {".mp4":"video/mp4",".webm":"video/webm"}.get(f".{ext}", "application/octet-stream")
-            return stream_direct_media(info["url"], safe_filename(info.get("title"), ext), mime, info.get("http_headers"))
+            try:
+                info = direct_media_info(url, opts)
+                if info and info.get("url"):
+                    ext = info.get("ext") or "mp4"
+                    mime = {".mp4":"video/mp4",".webm":"video/webm"}.get(f".{ext}", "application/octet-stream")
+                    response = stream_direct_media(info["url"], safe_filename(info.get("title"), ext), mime, info.get("http_headers"))
+                    shutil.rmtree(tmp, ignore_errors=True)
+                    return response
+            except Exception as direct_error:
+                print("Direct media stream unavailable, falling back to yt-dlp:", direct_error)
         def run_download(download_opts):
             ydl = yt_dlp.YoutubeDL(download_opts)
             try:
@@ -337,7 +349,9 @@ def download_video():
             else:
                 raise
         files = [f for f in os.listdir(tmp) if os.path.isfile(os.path.join(tmp,f))]
-        if not files: return jsonify({"error":"Download failed"}),500
+        if not files:
+            shutil.rmtree(tmp, ignore_errors=True)
+            return jsonify({"error":"Download failed"}),500
         fpath = os.path.join(tmp,files[0])
         ext = os.path.splitext(files[0])[1].lower()
         mime = {".mp4":"video/mp4",".mp3":"audio/mpeg",".m4a":"audio/mp4",".webm":"video/webm"}.get(ext,"application/octet-stream")
@@ -353,6 +367,8 @@ def download_video():
                 "cookies. Configure a valid YouTube PO Token in Render using YOUTUBE_PO_TOKEN."
             )
         return jsonify({"error": message}),400
+    finally:
+        cleanup_temp_file(cookies_path)
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT",5000)))

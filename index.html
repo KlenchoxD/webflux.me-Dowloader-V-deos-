@@ -76,6 +76,7 @@ nav{display:flex;align-items:center;justify-content:space-between;padding:22px 0
 .error-msg{color:#ff7777;font-family:var(--mono);font-size:.76rem;padding:12px 16px;background:rgba(204,0,0,.08);border:1px solid rgba(204,0,0,.24);border-radius:8px;display:none;line-height:1.5}
 .error-msg.visible{display:block}
 .ad-slot{border:1px dashed #2a2a2a;border-radius:8px;padding:8px;text-align:center;margin:28px 0;min-height:104px;display:flex;align-items:center;justify-content:center;overflow:hidden;color:#444;font-size:.7rem;background:rgba(10,10,10,.55)}
+.ad-slot.placeholder-ad{display:none}
 .ad-label{font-size:.7rem;color:#444;font-family:var(--mono);letter-spacing:.12em;margin-bottom:8px;text-transform:uppercase}
 .section-title{max-width:960px;border-top:1px solid var(--divider);padding:28px 24px 0;font-size:.72rem;color:var(--quiet);font-family:var(--mono);letter-spacing:.16em;text-transform:uppercase;margin:0 auto 16px}
 .sites-grid{max-width:960px;display:grid;grid-template-columns:repeat(auto-fill,minmax(100px,1fr));gap:10px;margin:0 auto 48px;padding:0 24px}
@@ -111,7 +112,7 @@ footer a:hover,footer a:active{color:var(--red)}
   <h1>Download<br/><span>Any Video.</span><br/>Free.</h1>
   <p>YouTube · Instagram · TikTok · Twitter · Facebook<br/>and 1000+ more sites. No signup. No limits.</p>
 </div>
-<div class="ad-slot"><div><div class="ad-label">advertisement</div>
+<div class="ad-slot placeholder-ad"><div><div class="ad-label">advertisement</div>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5613136693294323" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>try{const ad=document.currentScript.previousElementSibling;if(ad&&!/^X+$/.test(ad.dataset.adSlot||''))(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}</script></div></div>
 <div class="tool-card">
@@ -136,7 +137,7 @@ footer a:hover,footer a:active{color:var(--red)}
     <div class="formats-grid" id="formatsGrid"></div>
   </div>
 </div>
-<div class="ad-slot"><div><div class="ad-label">advertisement</div>
+<div class="ad-slot placeholder-ad"><div><div class="ad-label">advertisement</div>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5613136693294323" data-ad-slot="XXXXXXXXXX" data-ad-format="rectangle" data-full-width-responsive="true"></ins>
 <script>try{const ad=document.currentScript.previousElementSibling;if(ad&&!/^X+$/.test(ad.dataset.adSlot||''))(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}</script></div></div>
 <div class="section-title">Supported platforms</div>
@@ -159,7 +160,7 @@ footer a:hover,footer a:active{color:var(--red)}
     <span>⬇</span><div><div>Download webflux APK</div><div class="dl-btn-sub">Free · Android · Latest version</div></div>
   </a>
 </div>
-<div class="ad-slot"><div><div class="ad-label">advertisement</div>
+<div class="ad-slot placeholder-ad"><div><div class="ad-label">advertisement</div>
 <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-5613136693294323" data-ad-slot="XXXXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
 <script>try{const ad=document.currentScript.previousElementSibling;if(ad&&!/^X+$/.test(ad.dataset.adSlot||''))(adsbygoogle=window.adsbygoogle||[]).push({});}catch(e){}</script></div></div>
 <div class="dmca">⚠ webflux.me is intended for downloading content you have the right to download. Do not use this tool to download copyrighted content without permission. We are not responsible for misuse.</div>
@@ -176,9 +177,10 @@ const API_BASE_URL=(
 ).replace(/\/$/,'');
 const INFO_ENDPOINT=API_BASE_URL+'/info';
 
-function fillDemo(s){const d={youtube:'https://www.youtube.com/watch?v=dQw4w9WgXcQ',instagram:'https://www.instagram.com/reel/',tiktok:'https://www.tiktok.com/@',twitter:'https://twitter.com/',facebook:'https://www.facebook.com/watch/'};document.getElementById('urlInput').value=d[s]||'';}
-function showLoader(t){document.getElementById('statusArea').classList.add('visible');document.getElementById('loader').style.display='flex';document.getElementById('loaderText').textContent=t||'Fetching...';document.getElementById('errorMsg').classList.remove('visible');document.getElementById('videoInfo').classList.remove('visible');document.getElementById('formatsGrid').classList.remove('visible');}
-function hideLoader(){document.getElementById('loader').style.display='none';}
+let wakeTimer;
+function fillDemo(s){const d={youtube:'https://www.youtube.com/watch?v=dQw4w9WgXcQ',instagram:'https://www.instagram.com/reels/DL4nsV6MdGA/',tiktok:'https://www.tiktok.com/@scout2015/video/6718335390845095173',twitter:'https://x.com/NASA/status/1816862466816496101',facebook:'https://www.facebook.com/facebook/videos/10153231379946729/'};document.getElementById('urlInput').value=d[s]||'';}
+function showLoader(t){clearTimeout(wakeTimer);document.getElementById('statusArea').classList.add('visible');document.getElementById('loader').style.display='flex';document.getElementById('loaderText').textContent=t||'Fetching...';document.getElementById('errorMsg').classList.remove('visible');document.getElementById('videoInfo').classList.remove('visible');document.getElementById('formatsGrid').classList.remove('visible');wakeTimer=setTimeout(()=>{if(document.getElementById('loader').style.display!=='none')document.getElementById('loaderText').textContent='Server is waking up, this may take 30-60 seconds on first use...';},5000);}
+function hideLoader(){clearTimeout(wakeTimer);document.getElementById('loader').style.display='none';}
 function showError(m){document.getElementById('statusArea').classList.add('visible');hideLoader();const e=document.getElementById('errorMsg');e.textContent='✗ '+m;e.classList.add('visible');}
 function isValidUrl(value){try{const u=new URL(value);return u.protocol==='http:'||u.protocol==='https:';}catch(e){return false;}}
 function setButtonText(btn,label,sub){btn.textContent='';const a=document.createElement('span');a.className='fmt-label';a.textContent=label;const b=document.createElement('span');b.className='fmt-sub';b.textContent=sub;btn.appendChild(a);btn.appendChild(b);}
