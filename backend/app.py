@@ -1,5 +1,6 @@
 ﻿from flask import Flask, request, jsonify, send_file
 from flask_cors import CORS
+from werkzeug.exceptions import HTTPException
 import yt_dlp, os, tempfile, re, shutil
 from urllib.parse import urlencode
 
@@ -16,6 +17,11 @@ def add_cors_headers(response):
     response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
     response.headers["Access-Control-Allow-Headers"] = "Content-Type, Authorization"
     return response
+
+@app.errorhandler(Exception)
+def handle_unexpected_error(error):
+    code = error.code if isinstance(error, HTTPException) else 500
+    return jsonify({"error":str(error)}), code
 
 MAX_DURATION = 3600
 VIDEO_HEIGHTS = (144, 240, 360, 480, 720, 1080)
@@ -123,7 +129,6 @@ def build_servers(video_url, info=None):
     return servers[:5]
 
 def get_cookies_path():
-    import shutil, tempfile
     env_path = os.environ.get("YTDLP_COOKIES_FILE")
     source = None
     if env_path and os.path.exists(env_path):
@@ -134,13 +139,10 @@ def get_cookies_path():
             source = render_secret_path
     if source is None:
         return None
-    tmp = tempfile.NamedTemporaryFile(
-        delete=False, suffix=".txt", mode="w", encoding="utf-8"
-    )
-    with open(source, "r", encoding="utf-8") as f:
-        tmp.write(f.read())
-    tmp.close()
-    return tmp.name
+    fd, tmp_path = tempfile.mkstemp(suffix=".txt")
+    os.close(fd)
+    shutil.copyfile(source, tmp_path)
+    return tmp_path
 
 @app.route("/")
 @app.route("/health")
@@ -161,15 +163,11 @@ def get_info():
         "extractor_args":extractor_args(),
         "http_headers":{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
     }
-    cookies_path = get_cookies_path()
-    if cookies_path and os.path.exists(cookies_path):
-        _tmp = tempfile.mkstemp(suffix=".txt")[1]
-        shutil.copy2(cookies_path, _tmp)
-        cookies_path = _tmp
-    if cookies_path:
-        opts["cookiefile"] = cookies_path
-        opts["no_cookies_write"] = True
     try:
+        cookies_path = get_cookies_path()
+        if cookies_path:
+            opts["cookiefile"] = cookies_path
+            opts["no_cookies_write"] = True
         def extract_with_options(info_opts):
             ydl = yt_dlp.YoutubeDL(info_opts)
             try:
@@ -219,24 +217,20 @@ def download_video():
             "extractor_args":extractor_args(),
             "http_headers":{"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"}
         }
-        cookies_path = get_cookies_path()
-        if cookies_path and os.path.exists(cookies_path):
-            _tmp = tempfile.mkstemp(suffix=".txt")[1]
-            shutil.copy2(cookies_path, _tmp)
-            cookies_path = _tmp
-        if cookies_path:
-            opts["cookiefile"] = cookies_path
-            opts["no_cookies_write"] = True
-        opts.update(format_opts)
-        def run_download(download_opts):
-            ydl = yt_dlp.YoutubeDL(download_opts)
-            try:
-                ydl.cookiejar.filename = None
-            except Exception:
-                pass
-            ydl.download([url])
-
         try:
+            cookies_path = get_cookies_path()
+            if cookies_path:
+                opts["cookiefile"] = cookies_path
+                opts["no_cookies_write"] = True
+            opts.update(format_opts)
+            def run_download(download_opts):
+                ydl = yt_dlp.YoutubeDL(download_opts)
+                try:
+                    ydl.cookiejar.filename = None
+                except Exception:
+                    pass
+                ydl.download([url])
+
             try:
                 run_download(opts)
             except Exception as e:
